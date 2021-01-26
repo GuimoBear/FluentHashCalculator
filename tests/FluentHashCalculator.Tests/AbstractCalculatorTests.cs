@@ -5,12 +5,12 @@ namespace FluentHashCalculator.Tests
 {
     public class AbstractCalculatorTests
     {
-        private static readonly AbstractCalculator<Entity>.CRC64 CALCULATOR
-            = new EntityFluentHashCalculator();
 
         [Fact]
         public void Test()
         {
+            var calculator = new EntityFluentHashCalculator();
+
             var instance = new Entity
             {
                 Id = 2,
@@ -18,7 +18,7 @@ namespace FluentHashCalculator.Tests
                 Name = "Test"
             };
 
-            CALCULATOR.Compute(instance);
+            var crc64 = calculator.Compute(instance);
         }
     }
 }
