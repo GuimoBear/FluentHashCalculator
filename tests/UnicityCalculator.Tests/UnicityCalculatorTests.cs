@@ -10,8 +10,9 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingBoolPropertyInCalculatorWhenComputeThenReturnBoolCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.BoolProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+
+            calculator.Using(e => e.BoolProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, bool>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -23,8 +24,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingNullableBoolPropertyInCalculatorWhenComputeThenReturnNullableBoolCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.NullableBoolProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.NullableBoolProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, bool?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -36,8 +37,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingBytePropertyInCalculatorWhenComputeThenReturnByteCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.ByteProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.ByteProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, byte>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -49,8 +50,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingNullableBytePropertyInCalculatorWhenComputeThenReturnNullableByteCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.NullableByteProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.NullableByteProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, byte?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -62,8 +63,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingSbytePropertyInCalculatorWhenComputeThenReturnSbyteCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.SbyteProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.SbyteProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, sbyte>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -75,8 +76,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingNullableSbytePropertyInCalculatorWhenComputeThenReturnNullableSbyteCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.NullableSbyteProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.NullableSbyteProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, sbyte?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -88,8 +89,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingShortPropertyInCalculatorWhenComputeThenReturnShortCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.ShortProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.ShortProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, short>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -101,8 +102,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingNullableShortPropertyInCalculatorWhenComputeThenReturnNullableShortCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.NullableShortProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.NullableShortProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, short?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -114,8 +115,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingUshortPropertyInCalculatorWhenComputeThenReturnUshortCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.UshortProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.UshortProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, ushort>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -127,8 +128,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingNullableUshortPropertyInCalculatorWhenComputeThenReturnNullableUshortCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.NullableUshortProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.NullableUshortProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, ushort?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -140,8 +141,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingIntPropertyInCalculatorWhenComputeThenReturnIntCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.IntProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.IntProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, int>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -153,8 +154,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingNullableIntPropertyInCalculatorWhenComputeThenReturnNullableIntCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.NullableIntProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.NullableIntProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, int?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -166,8 +167,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingUintPropertyInCalculatorWhenComputeThenReturnUintCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.UintProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.UintProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, uint>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -179,8 +180,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingNullableUintPropertyInCalculatorWhenComputeThenReturnNullableUintCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.NullableUintProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.NullableUintProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, uint?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -192,8 +193,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingLongPropertyInCalculatorWhenComputeThenReturnLongCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.LongProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.LongProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, long>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -205,8 +206,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingNullableLongPropertyInCalculatorWhenComputeThenReturnNullableLongCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.NullableLongProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.NullableLongProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, long?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -218,8 +219,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingUlongPropertyInCalculatorWhenComputeThenReturnUlongCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.UlongProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.UlongProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, ulong>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -231,8 +232,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingNullableUlongPropertyInCalculatorWhenComputeThenReturnNullableUlongCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.NullableUlongProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.NullableUlongProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, ulong?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -244,8 +245,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingFloatPropertyInCalculatorWhenComputeThenReturnFloatCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.FloatProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.FloatProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, float>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -257,8 +258,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingNullableFloatPropertyInCalculatorWhenComputeThenReturnNullableFloatCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.NullableFloatProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.NullableFloatProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, float?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -270,8 +271,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingDoublePropertyInCalculatorWhenComputeThenReturnDoubleCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.DoubleProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.DoubleProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, double>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -283,8 +284,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingNullableDoublePropertyInCalculatorWhenComputeThenReturnNullableDoubleCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.NullableDoubleProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.NullableDoubleProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, double?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -296,8 +297,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingDecimalPropertyInCalculatorWhenComputeThenReturnDecimalCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.DecimalProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.DecimalProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, decimal>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -309,8 +310,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingNullableDecimalPropertyInCalculatorWhenComputeThenReturnNullableDecimalCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.NullableDecimalProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.NullableDecimalProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, decimal?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -322,8 +323,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingDateTimePropertyInCalculatorWhenComputeThenReturnDateTimeCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.DateTimeProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.DateTimeProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, DateTime>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -335,8 +336,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingNullableDateTimePropertyInCalculatorWhenComputeThenReturnNullableDateTimeCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.NullableDateTimeProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.NullableDateTimeProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, DateTime?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -348,8 +349,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingTimeSpanPropertyInCalculatorWhenComputeThenReturnTimeSpanCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.TimeSpanProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.TimeSpanProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, TimeSpan>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -361,8 +362,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingNullableTimeSpanPropertyInCalculatorWhenComputeThenReturnNullableTimeSpanCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.NullableTimeSpanProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.NullableTimeSpanProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, TimeSpan?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -374,8 +375,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingCharPropertyInCalculatorWhenComputeThenReturnCharCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.CharProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.CharProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, char>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -387,8 +388,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingNullableCharPropertyInCalculatorWhenComputeThenReturnNullableCharCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.NullableCharProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.NullableCharProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, char?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -400,8 +401,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.NullableStringProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.NullableStringProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, string?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -413,8 +414,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingGuidPropertyInCalculatorWhenComputeThenReturnGuidCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.GuidProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.GuidProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, Guid>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -426,8 +427,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.NullableGuidProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.NullableGuidProperty);
 
             Expression<Func<EntityWithAllSupportedTypes, Guid?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
@@ -439,8 +440,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingNullEntityWhenComputeThenReturnNullableGuidCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.BoolProperty);
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.BoolProperty);
 
             var actual = calculator.Compute(null);
             Assert.Equal(ulong.MinValue, actual);
@@ -449,8 +450,8 @@ namespace UnicityCalculator.Tests
         [Fact]
         public void UsingAllPropertiesInCalculatorWhenComputeThenReturnCRC64()
         {
-            var calculator = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.BoolProperty)
+            var calculator = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.BoolProperty)
                 .Using(e => e.NullableBoolProperty)
                 .Using(e => e.ByteProperty)
                 .Using(e => e.NullableByteProperty)
@@ -491,8 +492,8 @@ namespace UnicityCalculator.Tests
             Assert.Equal(Consts.ENTITY_WITH_ALL_SUPPORTED_TYPES_CRC64, actual2);
 
 
-            var calculator2 = new UnicityCalculator<EntityWithAllSupportedTypes>()
-                .Using(e => e.BoolProperty)
+            var calculator2 = new AbstractCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator2.Using(e => e.BoolProperty)
                 .Using(e => e.NullableBoolProperty)
                 .Using(e => e.ByteProperty)
                 .Using(e => e.NullableByteProperty)

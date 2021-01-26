@@ -1,4 +1,6 @@
-﻿namespace UnicityCalculator.Internal
+﻿using System;
+
+namespace UnicityCalculator.Internal
 {
     internal class Crc64
     {
@@ -133,9 +135,9 @@
             0x536fa08fdfd90e51, 0x29b7d047efec8728,
         };
 
-        public static ulong Compute(byte[] s, ulong crc = 0)
+        internal static ulong Compute(ReadOnlySpan<byte> s, ulong crc = 0)
         {
-            if (s is null || s.Length == 0)
+            if (s.Length == 0)
                 return crc;
             for (int j = 0; j < s.Length; j++)
             {

@@ -5,7 +5,7 @@ namespace UnicityCalculator.Tests
 {
     public class AbstractCalculatorTests
     {
-        private static readonly AbstractCalculator<Entity> CALCULATOR
+        private static readonly AbstractCalculator<Entity>.CRC64 CALCULATOR
             = new EntityUnicityCalculator();
 
         [Fact]

@@ -5,23 +5,13 @@ using UnicityCalculator.Internal;
 
 namespace UnicityCalculator
 {
-    public class UnicityCalculator<T> : ICalculatorMaker<T> where T : class
+    public abstract partial class AbstractCalculatorBuilder<T> : IAbstractCalculatorBuilder<T>
+        where T : class
     {
         private readonly List<Func<T, object>> getters
             = new List<Func<T, object>>();
 
-        public UnicityCalculator<T> Using(Expression<Func<T, bool>> expression)
-        {
-            if (expression is null)
-                throw new ArgumentNullException(nameof(expression));
-
-            var member = expression.GetMember();
-            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
-            getters.Add(compiled.CoerceToNonGeneric<T, bool>());
-            return this;
-        }
-
-        public UnicityCalculator<T> Using(Expression<Func<T, bool?>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, bool>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -32,7 +22,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, byte>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, bool?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -43,7 +33,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, byte?>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, byte>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -54,7 +44,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, sbyte>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, byte?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -65,7 +55,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, sbyte?>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, sbyte>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -76,7 +66,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, short>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, sbyte?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -87,7 +77,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, short?>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, short>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -98,7 +88,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, ushort>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, short?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -109,7 +99,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, ushort?>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, ushort>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -120,18 +110,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, int>> expression)
-        {
-            if (expression is null)
-                throw new ArgumentNullException(nameof(expression));
-
-            var member = expression.GetMember();
-            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
-            getters.Add(compiled.CoerceToNonGeneric<T, int>());
-            return this;
-        }
-
-        public UnicityCalculator<T> Using(Expression<Func<T, int?>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, ushort?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -142,7 +121,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, uint>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, int>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -153,7 +132,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, uint?>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, int?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -164,18 +143,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, long>> expression)
-        {
-            if (expression is null)
-                throw new ArgumentNullException(nameof(expression));
-
-            var member = expression.GetMember();
-            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
-            getters.Add(compiled.CoerceToNonGeneric<T, long>());
-            return this;
-        }
-
-        public UnicityCalculator<T> Using(Expression<Func<T, long?>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, uint>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -186,7 +154,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, ulong>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, uint?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -197,7 +165,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, ulong?>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, long>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -208,7 +176,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, float>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, long?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -219,7 +187,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, float?>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, ulong>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -230,7 +198,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, double>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, ulong?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -241,7 +209,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, double?>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, float>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -252,7 +220,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, decimal>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, float?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -263,7 +231,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, decimal?>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, double>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -274,7 +242,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, DateTime>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, double?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -285,7 +253,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, DateTime?>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, decimal>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -296,7 +264,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, TimeSpan>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, decimal?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -307,7 +275,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, TimeSpan?>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, DateTime>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -318,7 +286,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, char>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, DateTime?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -329,7 +297,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, char?>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, TimeSpan>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -340,7 +308,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, string?>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, TimeSpan?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -351,7 +319,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, Guid>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, char>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -362,7 +330,7 @@ namespace UnicityCalculator
             return this;
         }
 
-        public UnicityCalculator<T> Using(Expression<Func<T, Guid?>> expression)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, char?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -373,17 +341,43 @@ namespace UnicityCalculator
             return this;
         }
 
-        public ulong Compute(T instance)
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, string?>> expression)
         {
-            if (instance is null)
-                return ulong.MinValue;
-            using(var calculator = new UnicityCalculatorBuilder())
-            {
-                foreach (var getter in getters)
-                    calculator.With(getter(instance));
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
 
-                return calculator.Build();
-            }
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, Guid>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, Guid?>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        protected IEnumerable<object> ValuesFor(T instance)
+        {
+            foreach (var accessor in getters)
+                yield return accessor(instance);
         }
     }
 }

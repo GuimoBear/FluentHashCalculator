@@ -1,6 +1,6 @@
 ﻿namespace UnicityCalculator.Tests.Fakes
 {
-    public class EntityUnicityCalculator : AbstractCalculator<Entity>
+    public class EntityUnicityCalculator : AbstractCalculator<Entity>.CRC64
     {
         public EntityUnicityCalculator()
         {
