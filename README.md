@@ -1,1 +1,1 @@
-# UnicityCalculator
+# FluentHashCalculator
