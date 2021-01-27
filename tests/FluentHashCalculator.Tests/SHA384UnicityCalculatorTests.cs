@@ -6,804 +6,804 @@ using Xunit;
 
 namespace FluentHashCalculator.Tests
 {
-    public class CRC64FluentHashCalculatorTests
+    public class SHA384FluentHashCalculatorTests
     {
         [Fact]
-        public ulong UsingBoolPropertyInCalculatorWhenComputeThenReturnBoolCRC64()
+        public byte[] UsingBoolPropertyInCalculatorWhenComputeThenReturnBoolSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.BoolProperty);
             Expression<Func<EntityWithAllSupportedTypes, bool>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.BOOL_CRC64, actual);
+            Assert.Equal(Consts.BOOL_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingBoolArrayPropertyInCalculatorWhenComputeThenReturnBoolArrayCRC64()
+        public byte[] UsingBoolArrayPropertyInCalculatorWhenComputeThenReturnBoolArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.BoolArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<bool>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.BOOL_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.BOOL_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableBoolPropertyInCalculatorWhenComputeThenReturnNullableBoolCRC64()
+        public byte[] UsingNullableBoolPropertyInCalculatorWhenComputeThenReturnNullableBoolSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.NullableBoolProperty);
             Expression<Func<EntityWithAllSupportedTypes, bool?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_BOOL_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_BOOL_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableBoolArrayPropertyInCalculatorWhenComputeThenReturnNullableBoolArrayCRC64()
+        public byte[] UsingNullableBoolArrayPropertyInCalculatorWhenComputeThenReturnNullableBoolArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.NullableBoolArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<bool?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_BOOL_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_BOOL_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingBytePropertyInCalculatorWhenComputeThenReturnByteCRC64()
+        public byte[] UsingBytePropertyInCalculatorWhenComputeThenReturnByteSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.ByteProperty);
             Expression<Func<EntityWithAllSupportedTypes, byte>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.BYTE_CRC64, actual);
+            Assert.Equal(Consts.BYTE_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingByteArrayPropertyInCalculatorWhenComputeThenReturnByteArrayCRC64()
+        public byte[] UsingByteArrayPropertyInCalculatorWhenComputeThenReturnByteArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.ByteArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<byte>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.BYTE_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.BYTE_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableBytePropertyInCalculatorWhenComputeThenReturnNullableByteCRC64()
+        public byte[] UsingNullableBytePropertyInCalculatorWhenComputeThenReturnNullableByteSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.NullableByteProperty);
             Expression<Func<EntityWithAllSupportedTypes, byte?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_BYTE_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_BYTE_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableByteArrayPropertyInCalculatorWhenComputeThenReturnNullableByteArrayCRC64()
+        public byte[] UsingNullableByteArrayPropertyInCalculatorWhenComputeThenReturnNullableByteArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.NullableByteArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<byte?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_BYTE_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_BYTE_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingSbytePropertyInCalculatorWhenComputeThenReturnSbyteCRC64()
+        public byte[] UsingSbytePropertyInCalculatorWhenComputeThenReturnSbyteSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.SbyteProperty);
             Expression<Func<EntityWithAllSupportedTypes, sbyte>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.SBYTE_CRC64, actual);
+            Assert.Equal(Consts.SBYTE_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingSbyteArrayPropertyInCalculatorWhenComputeThenReturnSbyteArrayCRC64()
+        public byte[] UsingSbyteArrayPropertyInCalculatorWhenComputeThenReturnSbyteArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.SbyteArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<sbyte>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.SBYTE_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.SBYTE_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableSbytePropertyInCalculatorWhenComputeThenReturnNullableSbyteCRC64()
+        public byte[] UsingNullableSbytePropertyInCalculatorWhenComputeThenReturnNullableSbyteSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.NullableSbyteProperty);
             Expression<Func<EntityWithAllSupportedTypes, sbyte?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_SBYTE_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_SBYTE_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableSbyteArrayPropertyInCalculatorWhenComputeThenReturnNullableSbyteArrayCRC64()
+        public byte[] UsingNullableSbyteArrayPropertyInCalculatorWhenComputeThenReturnNullableSbyteArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.NullableSbyteArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<sbyte?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_SBYTE_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_SBYTE_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingShortPropertyInCalculatorWhenComputeThenReturnShortCRC64()
+        public byte[] UsingShortPropertyInCalculatorWhenComputeThenReturnShortSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.ShortProperty);
             Expression<Func<EntityWithAllSupportedTypes, short>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.SHORT_CRC64, actual);
+            Assert.Equal(Consts.SHORT_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingShortArrayPropertyInCalculatorWhenComputeThenReturnShortArrayCRC64()
+        public byte[] UsingShortArrayPropertyInCalculatorWhenComputeThenReturnShortArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.ShortArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<short>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.SHORT_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.SHORT_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableShortPropertyInCalculatorWhenComputeThenReturnNullableShortCRC64()
+        public byte[] UsingNullableShortPropertyInCalculatorWhenComputeThenReturnNullableShortSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.NullableShortProperty);
             Expression<Func<EntityWithAllSupportedTypes, short?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_SHORT_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_SHORT_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableShortArrayPropertyInCalculatorWhenComputeThenReturnNullableShortArrayCRC64()
+        public byte[] UsingNullableShortArrayPropertyInCalculatorWhenComputeThenReturnNullableShortArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.NullableShortArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<short?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_SHORT_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_SHORT_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingUshortPropertyInCalculatorWhenComputeThenReturnUshortCRC64()
+        public byte[] UsingUshortPropertyInCalculatorWhenComputeThenReturnUshortSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.UshortProperty);
             Expression<Func<EntityWithAllSupportedTypes, ulong>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.USHORT_CRC64, actual);
+            Assert.Equal(Consts.USHORT_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingUshortArrayPropertyInCalculatorWhenComputeThenReturnUshortArrayCRC64()
+        public byte[] UsingUshortArrayPropertyInCalculatorWhenComputeThenReturnUshortArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.UshortArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<ulong>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.USHORT_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.USHORT_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableUshortPropertyInCalculatorWhenComputeThenReturnNullableUshortCRC64()
+        public byte[] UsingNullableUshortPropertyInCalculatorWhenComputeThenReturnNullableUshortSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.NullableUshortProperty);
             Expression<Func<EntityWithAllSupportedTypes, ulong?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_USHORT_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_USHORT_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableUshortArrayPropertyInCalculatorWhenComputeThenReturnNullableUshortArrayCRC64()
+        public byte[] UsingNullableUshortArrayPropertyInCalculatorWhenComputeThenReturnNullableUshortArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.NullableUshortArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<ulong?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_USHORT_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_USHORT_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingIntPropertyInCalculatorWhenComputeThenReturnIntCRC64()
+        public byte[] UsingIntPropertyInCalculatorWhenComputeThenReturnIntSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.IntProperty);
             Expression<Func<EntityWithAllSupportedTypes, int>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.INT_CRC64, actual);
+            Assert.Equal(Consts.INT_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingIntArrayPropertyInCalculatorWhenComputeThenReturnIntArrayCRC64()
+        public byte[] UsingIntArrayPropertyInCalculatorWhenComputeThenReturnIntArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.IntArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<int>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.INT_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.INT_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableIntPropertyInCalculatorWhenComputeThenReturnNullableIntCRC64()
+        public byte[] UsingNullableIntPropertyInCalculatorWhenComputeThenReturnNullableIntSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.NullableIntProperty);
             Expression<Func<EntityWithAllSupportedTypes, int?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_INT_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_INT_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableIntArrayPropertyInCalculatorWhenComputeThenReturnNullableIntArrayCRC64()
+        public byte[] UsingNullableIntArrayPropertyInCalculatorWhenComputeThenReturnNullableIntArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.NullableIntArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<int?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_INT_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_INT_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingUintPropertyInCalculatorWhenComputeThenReturnUintCRC64()
+        public byte[] UsingUintPropertyInCalculatorWhenComputeThenReturnUintSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.UintProperty);
             Expression<Func<EntityWithAllSupportedTypes, ulong>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.UINT_CRC64, actual);
+            Assert.Equal(Consts.UINT_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingUintArrayPropertyInCalculatorWhenComputeThenReturnUintArrayCRC64()
+        public byte[] UsingUintArrayPropertyInCalculatorWhenComputeThenReturnUintArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.UintArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<ulong>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.UINT_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.UINT_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableUintPropertyInCalculatorWhenComputeThenReturnNullableUintCRC64()
+        public byte[] UsingNullableUintPropertyInCalculatorWhenComputeThenReturnNullableUintSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.NullableUintProperty);
             Expression<Func<EntityWithAllSupportedTypes, ulong?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_UINT_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_UINT_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableUintArrayPropertyInCalculatorWhenComputeThenReturnNullableUintArrayCRC64()
+        public byte[] UsingNullableUintArrayPropertyInCalculatorWhenComputeThenReturnNullableUintArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.NullableUintArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<ulong?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_UINT_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_UINT_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingLongPropertyInCalculatorWhenComputeThenReturnLongCRC64()
+        public byte[] UsingLongPropertyInCalculatorWhenComputeThenReturnLongSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.LongProperty);
             Expression<Func<EntityWithAllSupportedTypes, long>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.LONG_CRC64, actual);
+            Assert.Equal(Consts.LONG_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingLongArrayPropertyInCalculatorWhenComputeThenReturnLongArrayCRC64()
+        public byte[] UsingLongArrayPropertyInCalculatorWhenComputeThenReturnLongArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.LongArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<long>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.LONG_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.LONG_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableLongPropertyInCalculatorWhenComputeThenReturnNullableLongCRC64()
+        public byte[] UsingNullableLongPropertyInCalculatorWhenComputeThenReturnNullableLongSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.NullableLongProperty);
             Expression<Func<EntityWithAllSupportedTypes, long?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_LONG_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_LONG_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableLongArrayPropertyInCalculatorWhenComputeThenReturnNullableLongArrayCRC64()
+        public byte[] UsingNullableLongArrayPropertyInCalculatorWhenComputeThenReturnNullableLongArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.NullableLongArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<long?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_LONG_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_LONG_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingUlongPropertyInCalculatorWhenComputeThenReturnUlongCRC64()
+        public byte[] UsingUlongPropertyInCalculatorWhenComputeThenReturnUlongSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.UlongProperty);
             Expression<Func<EntityWithAllSupportedTypes, ulong>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.ULONG_CRC64, actual);
+            Assert.Equal(Consts.ULONG_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingUlongArrayPropertyInCalculatorWhenComputeThenReturnUlongArrayCRC64()
+        public byte[] UsingUlongArrayPropertyInCalculatorWhenComputeThenReturnUlongArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.UlongArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<ulong>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.ULONG_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.ULONG_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableUlongPropertyInCalculatorWhenComputeThenReturnNullableUlongCRC64()
+        public byte[] UsingNullableUlongPropertyInCalculatorWhenComputeThenReturnNullableUlongSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.NullableUlongProperty);
             Expression<Func<EntityWithAllSupportedTypes, ulong?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_ULONG_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_ULONG_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableUlongArrayPropertyInCalculatorWhenComputeThenReturnNullableUlongArrayCRC64()
+        public byte[] UsingNullableUlongArrayPropertyInCalculatorWhenComputeThenReturnNullableUlongArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.NullableUlongArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<ulong?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_ULONG_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_ULONG_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingFloatPropertyInCalculatorWhenComputeThenReturnFloatCRC64()
+        public byte[] UsingFloatPropertyInCalculatorWhenComputeThenReturnFloatSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.FloatProperty);
             Expression<Func<EntityWithAllSupportedTypes, float>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.FLOAT_CRC64, actual);
+            Assert.Equal(Consts.FLOAT_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingFloatArrayPropertyInCalculatorWhenComputeThenReturnFloatArrayCRC64()
+        public byte[] UsingFloatArrayPropertyInCalculatorWhenComputeThenReturnFloatArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.FloatArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<float>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.FLOAT_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.FLOAT_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableFloatPropertyInCalculatorWhenComputeThenReturnNullableFloatCRC64()
+        public byte[] UsingNullableFloatPropertyInCalculatorWhenComputeThenReturnNullableFloatSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.NullableFloatProperty);
             Expression<Func<EntityWithAllSupportedTypes, float?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_FLOAT_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_FLOAT_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableFloatArrayPropertyInCalculatorWhenComputeThenReturnNullableFloatArrayCRC64()
+        public byte[] UsingNullableFloatArrayPropertyInCalculatorWhenComputeThenReturnNullableFloatArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.NullableFloatArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<float?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_FLOAT_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_FLOAT_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingDoublePropertyInCalculatorWhenComputeThenReturnDoubleCRC64()
+        public byte[] UsingDoublePropertyInCalculatorWhenComputeThenReturnDoubleSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.DoubleProperty);
             Expression<Func<EntityWithAllSupportedTypes, double>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.DOUBLE_CRC64, actual);
+            Assert.Equal(Consts.DOUBLE_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingDoubleArrayPropertyInCalculatorWhenComputeThenReturnDoubleArrayCRC64()
+        public byte[] UsingDoubleArrayPropertyInCalculatorWhenComputeThenReturnDoubleArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.DoubleArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<double>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.DOUBLE_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.DOUBLE_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableDoublePropertyInCalculatorWhenComputeThenReturnNullableDoubleCRC64()
+        public byte[] UsingNullableDoublePropertyInCalculatorWhenComputeThenReturnNullableDoubleSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.NullableDoubleProperty);
             Expression<Func<EntityWithAllSupportedTypes, double?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_DOUBLE_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_DOUBLE_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableDoubleArrayPropertyInCalculatorWhenComputeThenReturnNullableDoubleArrayCRC64()
+        public byte[] UsingNullableDoubleArrayPropertyInCalculatorWhenComputeThenReturnNullableDoubleArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.NullableDoubleArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<double?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_DOUBLE_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_DOUBLE_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingDecimalPropertyInCalculatorWhenComputeThenReturnDecimalCRC64()
+        public byte[] UsingDecimalPropertyInCalculatorWhenComputeThenReturnDecimalSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.DecimalProperty);
             Expression<Func<EntityWithAllSupportedTypes, decimal>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.DECIMAL_CRC64, actual);
+            Assert.Equal(Consts.DECIMAL_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingDecimalArrayPropertyInCalculatorWhenComputeThenReturnDecimalArrayCRC64()
+        public byte[] UsingDecimalArrayPropertyInCalculatorWhenComputeThenReturnDecimalArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.DecimalArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<decimal>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.DECIMAL_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.DECIMAL_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableDecimalPropertyInCalculatorWhenComputeThenReturnNullableDecimalCRC64()
+        public byte[] UsingNullableDecimalPropertyInCalculatorWhenComputeThenReturnNullableDecimalSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.NullableDecimalProperty);
             Expression<Func<EntityWithAllSupportedTypes, decimal?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_DECIMAL_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_DECIMAL_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableDecimalArrayPropertyInCalculatorWhenComputeThenReturnNullableDecimalArrayCRC64()
+        public byte[] UsingNullableDecimalArrayPropertyInCalculatorWhenComputeThenReturnNullableDecimalArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.NullableDecimalArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<decimal?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_DECIMAL_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_DECIMAL_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingDateTimePropertyInCalculatorWhenComputeThenReturnDateTimeCRC64()
+        public byte[] UsingDateTimePropertyInCalculatorWhenComputeThenReturnDateTimeSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.DateTimeProperty);
             Expression<Func<EntityWithAllSupportedTypes, DateTime>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.DATETIME_CRC64, actual);
+            Assert.Equal(Consts.DATETIME_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingDateTimeArrayPropertyInCalculatorWhenComputeThenReturnDateTimeArrayCRC64()
+        public byte[] UsingDateTimeArrayPropertyInCalculatorWhenComputeThenReturnDateTimeArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.DateTimeArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<DateTime>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.DATETIME_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.DATETIME_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableDateTimePropertyInCalculatorWhenComputeThenReturnNullableDateTimeCRC64()
+        public byte[] UsingNullableDateTimePropertyInCalculatorWhenComputeThenReturnNullableDateTimeSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.NullableDateTimeProperty);
             Expression<Func<EntityWithAllSupportedTypes, DateTime?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_DATETIME_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_DATETIME_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableDateTimeArrayPropertyInCalculatorWhenComputeThenReturnNullableDateTimeArrayCRC64()
+        public byte[] UsingNullableDateTimeArrayPropertyInCalculatorWhenComputeThenReturnNullableDateTimeArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.NullableDateTimeArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<DateTime?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_DATETIME_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_DATETIME_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingTimeSpanPropertyInCalculatorWhenComputeThenReturnTimeSpanCRC64()
+        public byte[] UsingTimeSpanPropertyInCalculatorWhenComputeThenReturnTimeSpanSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.TimeSpanProperty);
             Expression<Func<EntityWithAllSupportedTypes, TimeSpan>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.TIMESPAN_CRC64, actual);
+            Assert.Equal(Consts.TIMESPAN_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingTimeSpanArrayPropertyInCalculatorWhenComputeThenReturnTimeSpanArrayCRC64()
+        public byte[] UsingTimeSpanArrayPropertyInCalculatorWhenComputeThenReturnTimeSpanArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.TimeSpanArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<TimeSpan>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.TIMESPAN_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.TIMESPAN_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableTimeSpanPropertyInCalculatorWhenComputeThenReturnNullableTimeSpanCRC64()
+        public byte[] UsingNullableTimeSpanPropertyInCalculatorWhenComputeThenReturnNullableTimeSpanSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.NullableTimeSpanProperty);
             Expression<Func<EntityWithAllSupportedTypes, TimeSpan?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_TIMESPAN_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_TIMESPAN_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableTimeSpanArrayPropertyInCalculatorWhenComputeThenReturnNullableTimeSpanArrayCRC64()
+        public byte[] UsingNullableTimeSpanArrayPropertyInCalculatorWhenComputeThenReturnNullableTimeSpanArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.NullableTimeSpanArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<TimeSpan?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_TIMESPAN_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_TIMESPAN_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingCharPropertyInCalculatorWhenComputeThenReturnCharCRC64()
+        public byte[] UsingCharPropertyInCalculatorWhenComputeThenReturnCharSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.CharProperty);
             Expression<Func<EntityWithAllSupportedTypes, char>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.CHAR_CRC64, actual);
+            Assert.Equal(Consts.CHAR_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingCharArrayPropertyInCalculatorWhenComputeThenReturnCharArrayCRC64()
+        public byte[] UsingCharArrayPropertyInCalculatorWhenComputeThenReturnCharArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.CharArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<char>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.CHAR_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.CHAR_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableCharPropertyInCalculatorWhenComputeThenReturnNullableCharCRC64()
+        public byte[] UsingNullableCharPropertyInCalculatorWhenComputeThenReturnNullableCharSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.NullableCharProperty);
             Expression<Func<EntityWithAllSupportedTypes, char?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_CHAR_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_CHAR_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableCharArrayPropertyInCalculatorWhenComputeThenReturnNullableCharArrayCRC64()
+        public byte[] UsingNullableCharArrayPropertyInCalculatorWhenComputeThenReturnNullableCharArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.NullableCharArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<char?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_CHAR_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_CHAR_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringCRC64()
+        public byte[] UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.NullableStringProperty);
             Expression<Func<EntityWithAllSupportedTypes, string?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_STRING_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_STRING_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArrayCRC64()
+        public byte[] UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.NullableStringArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<string?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_STRING_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_STRING_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingGuidPropertyInCalculatorWhenComputeThenReturnGuidCRC64()
+        public byte[] UsingGuidPropertyInCalculatorWhenComputeThenReturnGuidSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.GuidProperty);
             Expression<Func<EntityWithAllSupportedTypes, Guid>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.GUID_CRC64, actual);
+            Assert.Equal(Consts.GUID_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArrayCRC64()
+        public byte[] UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.GuidArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<Guid>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.GUID_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.GUID_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidCRC64()
+        public byte[] UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.NullableGuidProperty);
             Expression<Func<EntityWithAllSupportedTypes, Guid?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_GUID_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_GUID_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public ulong UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArrayCRC64()
+        public byte[] UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArraySHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.UsingEach(e => e.NullableGuidArrayProperty);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<Guid?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.NULLABLE_GUID_ARRAY_CRC64, actual);
+            Assert.Equal(Consts.NULLABLE_GUID_ARRAY_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public void UsingAllPropertiesInCalculatorWhenComputeThenReturnCRC64()
+        public void UsingAllPropertiesInCalculatorWhenComputeThenReturnSHA384()
         {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.BoolProperty)
                 .UsingEach(e => e.BoolArrayProperty)
                 .Using(e => e.NullableBoolProperty)
@@ -872,13 +872,13 @@ namespace FluentHashCalculator.Tests
                 .UsingEach(e => e.NullableGuidArrayProperty);
 
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.ENTITY_WITH_ALL_SUPPORTED_TYPES_CRC64, actual);
+            Assert.Equal(Consts.ENTITY_WITH_ALL_SUPPORTED_TYPES_SHA384, actual);
 
             var actual2 = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.ENTITY_WITH_ALL_SUPPORTED_TYPES_CRC64, actual2);
+            Assert.Equal(Consts.ENTITY_WITH_ALL_SUPPORTED_TYPES_SHA384, actual2);
 
 
-            var calculator2 = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            var calculator2 = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator2.Using(e => e.BoolProperty)
                 .UsingEach(e => e.BoolArrayProperty)
                 .Using(e => e.NullableBoolProperty)
@@ -946,7 +946,7 @@ namespace FluentHashCalculator.Tests
                 .UsingEach(e => e.NullableGuidArrayProperty);
 
             var actual3 = calculator2.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_CRC64, actual3);
+            Assert.Equal(Consts.ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_SHA384, actual3);
 
             Assert.NotEqual(actual, actual3);
         }

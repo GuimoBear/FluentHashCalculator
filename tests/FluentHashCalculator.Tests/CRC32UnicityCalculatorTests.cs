@@ -947,6 +947,8 @@ namespace FluentHashCalculator.Tests
 
             var actual3 = calculator2.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_CRC32, actual3);
+
+            Assert.NotEqual(actual, actual3);
         }
     }
 }

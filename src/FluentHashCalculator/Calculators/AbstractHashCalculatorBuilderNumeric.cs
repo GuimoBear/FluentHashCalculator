@@ -8,12 +8,7 @@ namespace FluentHashCalculator
     public abstract partial class AbstractHashCalculatorBuilder<T> : IAbstractHashCalculatorBuilder<T>
         where T : class
     {
-        private readonly List<Func<T, object>> getters
-            = new List<Func<T, object>>();
-
-        public IAbstractHashCalculatorBuilder<T> And => this;
-
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, bool>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, byte>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -24,7 +19,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, bool?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, byte?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -35,7 +30,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, DateTime>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, sbyte>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -46,7 +41,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, DateTime?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, sbyte?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -57,7 +52,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, TimeSpan>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, short>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -68,7 +63,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, TimeSpan?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, short?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -79,7 +74,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, char>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, ushort>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -90,7 +85,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, char?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, ushort?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -101,7 +96,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, string?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, int>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -112,7 +107,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, Guid>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, int?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -123,7 +118,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, Guid?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, uint>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -134,7 +129,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<bool>>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, uint?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -145,7 +140,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<bool?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, long>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -156,7 +151,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<DateTime>>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, long?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -167,7 +162,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<DateTime?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, ulong>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -178,7 +173,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<TimeSpan>>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, ulong?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -189,7 +184,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<TimeSpan?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<byte>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -200,7 +195,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<char>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<byte?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -211,7 +206,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<char?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<sbyte>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -222,7 +217,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<string?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<sbyte?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -233,7 +228,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<Guid>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<short>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -244,7 +239,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<Guid?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<short?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -255,10 +250,114 @@ namespace FluentHashCalculator
             return this;
         }
 
-        protected IEnumerable<object> ValuesFor(T instance)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ushort>>> expression)
         {
-            foreach (var accessor in getters)
-                yield return accessor(instance);
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ushort?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<int>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<int?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<uint>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<uint?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<long>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<long?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ulong>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ulong?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
         }
     }
 }

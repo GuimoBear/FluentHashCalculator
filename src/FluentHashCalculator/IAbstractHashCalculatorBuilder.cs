@@ -6,6 +6,8 @@ namespace FluentHashCalculator
 {
     public interface IAbstractHashCalculatorBuilder<T> where T : class
     {
+        IAbstractHashCalculatorBuilder<T> And { get; }
+
         IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, bool?>> expression);
         IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, bool>> expression);
         IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, byte?>> expression);

@@ -7,6 +7,8 @@ namespace FluentHashCalculator.Internal
 {
     internal static class Bytes
     {
+        public static readonly byte[] Empty = new byte[0];
+
         internal static IEnumerable<byte[]> From(object value, bool supressExpection = false)
         {
             if (value is bool boolValue)

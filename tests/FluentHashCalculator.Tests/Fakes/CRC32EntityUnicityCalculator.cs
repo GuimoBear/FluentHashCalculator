@@ -5,9 +5,9 @@
         public CRC32EntityUnicityCalculator()
         {
             Calculate
-                .Using(e => e.Id)
-                .Using(e => e.Name)
-                .Using(e => e.Birthday)
+                .Using(e => e.Id).And
+                .Using(e => e.Name).And
+                .Using(e => e.Birthday).And
                 .Using(e => e.Age());
         }
     }

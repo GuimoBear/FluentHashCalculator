@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentHashCalculator", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentHashCalculator.Tests", "tests\FluentHashCalculator.Tests\FluentHashCalculator.Tests.csproj", "{C2512039-1A7D-456C-8003-5B5B1618617F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentHashCalculator.Benchmark", "tests\FluentHashCalculator.Benchmark\FluentHashCalculator.Benchmark.csproj", "{6568B248-769E-4607-A940-06CE111BB25F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentHashCalculator.Benchmark", "tests\FluentHashCalculator.Benchmark\FluentHashCalculator.Benchmark.csproj", "{6568B248-769E-4607-A940-06CE111BB25F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analyzer", "Analyzer", "{E7283355-27F0-409D-8614-91EEFA094387}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
