@@ -374,6 +374,369 @@ namespace FluentHashCalculator
             return this;
         }
 
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<bool>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<bool?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<byte>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<byte?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<sbyte>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<sbyte?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<short>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<short?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ushort>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ushort?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<int>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<int?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<uint>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<uint?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<long>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<long?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ulong>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ulong?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<float>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<float?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<double>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<double?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<decimal>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<decimal?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<DateTime>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<DateTime?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<TimeSpan>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<TimeSpan?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<char>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<char?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<string?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<Guid>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
+        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<Guid?>>> expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+            getters.Add(compiled.CoerceToNonGeneric());
+            return this;
+        }
+
         protected IEnumerable<object> ValuesFor(T instance)
         {
             foreach (var accessor in getters)

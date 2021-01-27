@@ -13,7 +13,8 @@ namespace FluentHashCalculator
                     return ushort.MinValue;
                 var crc = ushort.MinValue;
                 foreach (var value in ValuesFor(instance))
-                    crc = Crc16.Compute(Bytes.From(value), crc);
+                    foreach(var item in Bytes.From(value))
+                        crc = Crc16.Compute(item, crc);
 
                 return crc;
             }
