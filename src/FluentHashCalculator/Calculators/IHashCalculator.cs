@@ -1,6 +1,6 @@
 ﻿namespace FluentHashCalculator
 {
-    public interface ICalculator<T, TComputedType>
+    public interface IHashCalculator<T, TComputedType>
         where T: class
     {
         TComputedType Compute(T instance);

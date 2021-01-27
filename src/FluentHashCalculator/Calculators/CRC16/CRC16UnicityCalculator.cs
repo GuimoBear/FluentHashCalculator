@@ -2,10 +2,10 @@
 
 namespace FluentHashCalculator
 {
-    public abstract partial class AbstractCalculatorBuilder<T> : IAbstractCalculatorBuilder<T>
+    public abstract partial class AbstractHashCalculatorBuilder<T> : IAbstractHashCalculatorBuilder<T>
            where T : class
     {
-        public class CRC16 : AbstractCalculatorBuilder<T>, IAbstractCalculator<T, ushort>
+        public class CRC16 : AbstractHashCalculatorBuilder<T>, IAbstractHashCalculator<T, ushort>
         {
             public ushort Compute(T instance)
             {

@@ -5,13 +5,13 @@ using FluentHashCalculator.Internal;
 
 namespace FluentHashCalculator
 {
-    public abstract partial class AbstractCalculatorBuilder<T> : IAbstractCalculatorBuilder<T>
+    public abstract partial class AbstractHashCalculatorBuilder<T> : IAbstractHashCalculatorBuilder<T>
         where T : class
     {
         private readonly List<Func<T, object>> getters
             = new List<Func<T, object>>();
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, bool>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, bool>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -22,7 +22,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, bool?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, bool?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -33,7 +33,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, byte>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, byte>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -44,7 +44,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, byte?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, byte?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -55,7 +55,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, sbyte>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, sbyte>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -66,7 +66,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, sbyte?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, sbyte?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -77,7 +77,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, short>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, short>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -88,7 +88,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, short?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, short?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -99,7 +99,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, ushort>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, ushort>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -110,7 +110,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, ushort?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, ushort?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -121,7 +121,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, int>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, int>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -132,7 +132,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, int?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, int?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -143,7 +143,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, uint>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, uint>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -154,7 +154,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, uint?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, uint?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -165,7 +165,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, long>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, long>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -176,7 +176,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, long?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, long?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -187,7 +187,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, ulong>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, ulong>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -198,7 +198,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, ulong?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, ulong?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -209,7 +209,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, float>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, float>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -220,7 +220,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, float?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, float?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -231,7 +231,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, double>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, double>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -242,7 +242,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, double?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, double?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -253,7 +253,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, decimal>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, decimal>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -264,7 +264,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, decimal?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, decimal?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -275,7 +275,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, DateTime>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, DateTime>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -286,7 +286,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, DateTime?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, DateTime?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -297,7 +297,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, TimeSpan>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, TimeSpan>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -308,7 +308,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, TimeSpan?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, TimeSpan?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -319,7 +319,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, char>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, char>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -330,7 +330,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, char?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, char?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -341,7 +341,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, string?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, string?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -352,7 +352,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, Guid>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, Guid>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -363,7 +363,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> Using(Expression<Func<T, Guid?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, Guid?>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -374,7 +374,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<bool>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<bool>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -385,7 +385,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<bool?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<bool?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -396,7 +396,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<byte>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<byte>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -407,7 +407,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<byte?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<byte?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -418,7 +418,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<sbyte>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<sbyte>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -429,7 +429,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<sbyte?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<sbyte?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -440,7 +440,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<short>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<short>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -451,7 +451,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<short?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<short?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -462,7 +462,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ushort>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ushort>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -473,7 +473,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ushort?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ushort?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -484,7 +484,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<int>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<int>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -495,7 +495,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<int?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<int?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -506,7 +506,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<uint>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<uint>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -517,7 +517,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<uint?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<uint?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -528,7 +528,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<long>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<long>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -539,7 +539,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<long?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<long?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -550,7 +550,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ulong>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ulong>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -561,7 +561,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ulong?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ulong?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -572,7 +572,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<float>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<float>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -583,7 +583,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<float?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<float?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -594,7 +594,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<double>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<double>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -605,7 +605,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<double?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<double?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -616,7 +616,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<decimal>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<decimal>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -627,7 +627,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<decimal?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<decimal?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -638,7 +638,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<DateTime>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<DateTime>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -649,7 +649,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<DateTime?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<DateTime?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -660,7 +660,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<TimeSpan>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<TimeSpan>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -671,7 +671,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<TimeSpan?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<TimeSpan?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -682,7 +682,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<char>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<char>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -693,7 +693,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<char?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<char?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -704,7 +704,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<string?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<string?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -715,7 +715,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<Guid>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<Guid>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -726,7 +726,7 @@ namespace FluentHashCalculator
             return this;
         }
 
-        public IAbstractCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<Guid?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<Guid?>>> expression)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));

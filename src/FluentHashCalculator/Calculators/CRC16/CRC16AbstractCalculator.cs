@@ -1,14 +1,14 @@
 ﻿namespace FluentHashCalculator
 {
-    public abstract partial class AbstractCalculator<T>
+    public abstract partial class AbstractHashCalculator<T>
         where T: class
     {
-        public class CRC16 : AbstractCalculator<T>, ICalculator<T, ushort>
+        public class CRC16 : AbstractHashCalculator<T>, IHashCalculator<T, ushort>
         {
-            protected readonly IAbstractCalculator<T, ushort> Calculator
-                = new AbstractCalculatorBuilder<T>.CRC16();
+            protected readonly IAbstractHashCalculator<T, ushort> Calculator
+                = new AbstractHashCalculatorBuilder<T>.CRC16();
 
-            protected override IAbstractCalculatorBuilder<T> Calculate => Calculator;
+            protected override IAbstractHashCalculatorBuilder<T> Calculate => Calculator;
 
             public ushort Compute(T instance)
             {
