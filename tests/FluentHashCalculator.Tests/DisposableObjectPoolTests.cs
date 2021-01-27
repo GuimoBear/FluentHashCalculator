@@ -15,8 +15,7 @@ namespace FluentHashCalculator.Tests
         [InlineData(4)]
         public void UsingParallelWithNRunnersWhenAcquireThenCountOfInstancesIsTheSameOfParallelRunnersCount(int maxParallelRunners)
         {
-            var moq = Mock.Of<IDisposable>();
-            var sut = new DisposableObjectPool<IDisposable>(() => moq);
+            var sut = new DisposableObjectPool<IDisposable>(() => Mock.Of<IDisposable>());
             var loopResult = Parallel.For(0, 12, new ParallelOptions { MaxDegreeOfParallelism = maxParallelRunners }, _ =>
             {
                 using (sut.Acquire())
