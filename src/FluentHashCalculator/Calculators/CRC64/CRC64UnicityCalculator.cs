@@ -12,8 +12,8 @@ namespace FluentHashCalculator
                 if (instance is null)
                     return ulong.MinValue;
                 ulong crc = 0;
-                foreach (var value in ValuesFor(instance))
-                    foreach (var item in Bytes.From(value))
+                foreach ((var value, var context) in ValuesFor(instance))
+                    foreach (var item in Bytes.From(value, context))
                         crc = Crc64.Compute(item, crc);
 
                 return crc;

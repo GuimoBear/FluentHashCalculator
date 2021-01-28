@@ -12,9 +12,11 @@ namespace FluentHashCalculator
                 if (instance is null)
                     return ushort.MinValue;
                 var crc = ushort.MinValue;
-                foreach (var value in ValuesFor(instance))
-                    foreach(var item in Bytes.From(value))
+                foreach ((var value, var context) in ValuesFor(instance))
+                {
+                    foreach (var item in Bytes.From(value, context))
                         crc = Crc16.Compute(item, crc);
+                }
 
                 return crc;
             }

@@ -1,11 +1,15 @@
-﻿using System;
+﻿using FluentHashCalculator.Contexts;
+using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Text;
 
 namespace FluentHashCalculator
 {
     public interface IAbstractHashCalculatorBuilder<T> where T : class
     {
+        SerializationContext Context { get; }
+
         IAbstractHashCalculatorBuilder<T> And { get; }
 
         IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, bool?>> expression);
@@ -33,6 +37,7 @@ namespace FluentHashCalculator
         IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, short?>> expression);
         IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, short>> expression);
         IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, string>> expression);
+        IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, string>> expression, Encoding encoding);
         IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, TimeSpan?>> expression);
         IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, TimeSpan>> expression);
         IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, uint?>> expression);
@@ -68,6 +73,7 @@ namespace FluentHashCalculator
         IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<short?>>> expression);
         IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<short>>> expression);
         IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<string>>> expression);
+        IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<string>>> expression, Encoding encoding);
         IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<TimeSpan?>>> expression);
         IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<TimeSpan>>> expression);
         IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<uint?>>> expression);

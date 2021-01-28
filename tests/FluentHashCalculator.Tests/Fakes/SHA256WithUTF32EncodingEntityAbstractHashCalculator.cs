@@ -1,9 +1,11 @@
 ﻿namespace FluentHashCalculator.Tests.Fakes
 {
-    public class CRC16EntityUnicityCalculator : AbstractHashCalculator<Entity>.CRC16
+    public class SHA256WithUTF32EncodingEntityAbstractHashCalculator : AbstractHashCalculator<Entity>.SHA256
     {
-        public CRC16EntityUnicityCalculator()
+        public SHA256WithUTF32EncodingEntityAbstractHashCalculator()
         {
+            Encoding = System.Text.Encoding.UTF32;
+
             Calculate
                 .Using(e => e.Id).And
                 .Using(e => e.Name).And

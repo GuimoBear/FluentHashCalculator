@@ -1,8 +1,8 @@
 ﻿namespace FluentHashCalculator.Tests.Fakes
 {
-    public class SHA384EntityUnicityCalculator : AbstractHashCalculator<Entity>.SHA384
+    public class SHA384EntityAbstractHashCalculator : AbstractHashCalculator<Entity>.SHA384
     {
-        public SHA384EntityUnicityCalculator()
+        public SHA384EntityAbstractHashCalculator()
         {
             Calculate
                 .Using(e => e.Id).And

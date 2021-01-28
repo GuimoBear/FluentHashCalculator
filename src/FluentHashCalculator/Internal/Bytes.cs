@@ -1,7 +1,7 @@
-﻿using System;
+﻿using FluentHashCalculator.Contexts;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 
 namespace FluentHashCalculator.Internal
 {
@@ -9,7 +9,7 @@ namespace FluentHashCalculator.Internal
     {
         public static readonly byte[] Empty = new byte[0];
 
-        internal static IEnumerable<byte[]> From(object value, bool supressExpection = false)
+        internal static IEnumerable<byte[]> From(object value, SerializationContext context, bool supressException = false)
         {
             if (value is bool boolValue)
             {
@@ -88,7 +88,7 @@ namespace FluentHashCalculator.Internal
             }
             else if (value is string stringValue)
             { 
-                yield return From(stringValue);
+                yield return From(stringValue, context as IStringSerializationContext);
                 yield break;
             }
             else if (value is Guid GuidValue)
@@ -98,20 +98,20 @@ namespace FluentHashCalculator.Internal
             }
             else if (value is IEnumerable listValue)
             { 
-                foreach (var item in From(listValue))
+                foreach (var item in From(listValue, context))
                     yield return item;
                 yield break;
             }
-            else if (value is null || supressExpection)
+            else if (value is null || supressException)
                 yield break;
             else 
                 throw new TypeNotSupportedException();
         }
 
-        private static IEnumerable<byte[]> From(IEnumerable values)
+        private static IEnumerable<byte[]> From(IEnumerable values, SerializationContext context)
         {
             foreach (var value in values)
-                foreach (var item in From(value, true))
+                foreach (var item in From(value, context, true))
                     yield return item;
         }
 
@@ -160,8 +160,8 @@ namespace FluentHashCalculator.Internal
         private static byte[] From(char value)
             => BitConverter.GetBytes(value);
 
-        private static byte[] From(string? value)
-            => Encoding.UTF8.GetBytes(value ?? string.Empty);
+        private static byte[] From(string? value, IStringSerializationContext context)
+            => context.Encoding.GetBytes(value ?? string.Empty);
 
         private static byte[] From(Guid value)
             => value.ToByteArray();

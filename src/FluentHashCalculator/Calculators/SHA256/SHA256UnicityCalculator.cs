@@ -8,8 +8,8 @@ namespace FluentHashCalculator
     {
         public class SHA256 : AbstractHashCalculatorBuilder<T>, IAbstractHashCalculator<T, byte[]>
         {
-            private static readonly DisposableObjectPool<IncrementalHash> pool
-                = new DisposableObjectPool<IncrementalHash>(() => IncrementalHash.CreateHash(HashAlgorithmName.SHA256));
+            private static readonly ObjectPool<IncrementalHash> pool
+                = new ObjectPool<IncrementalHash>(() => IncrementalHash.CreateHash(HashAlgorithmName.SHA256));
 
             public byte[] Compute(T instance)
             {
@@ -18,8 +18,8 @@ namespace FluentHashCalculator
 
                 using (var container = pool.Acquire())
                 {
-                    foreach (var value in ValuesFor(instance))
-                        foreach (var item in Bytes.From(value))
+                    foreach ((var value, var context) in ValuesFor(instance))
+                        foreach (var item in Bytes.From(value, context))
                             container.Instance.AppendData(item);
                     return container.Instance.GetHashAndReset();
                 }

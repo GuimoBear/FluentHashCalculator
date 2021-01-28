@@ -1,8 +1,8 @@
 ﻿namespace FluentHashCalculator.Tests.Fakes
 {
-    public class CRC32EntityUnicityCalculator : AbstractHashCalculator<Entity>.CRC32
+    public class CRC32EntityAbstractHashCalculator : AbstractHashCalculator<Entity>.CRC32
     {
-        public CRC32EntityUnicityCalculator()
+        public CRC32EntityAbstractHashCalculator()
         {
             Calculate
                 .Using(e => e.Id).And

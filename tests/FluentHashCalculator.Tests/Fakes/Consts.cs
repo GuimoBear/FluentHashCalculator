@@ -74,6 +74,29 @@ namespace FluentHashCalculator.Tests.Fakes
         public static readonly IEnumerable<Guid?> NULLABLE_GUID_ARRAY_DEFAULT_VALUE = new Guid?[] { null, Guid.Empty, Guid.Parse("bf379fa4-b7e6-4dbe-8e75-720857c82a61") };
         #endregion
 
+        #region Valores dos Hash das entidades
+        public const ulong ENTITY_WITH_ALL_SUPPORTED_TYPES_CRC64 = 4500183182751816844;
+        public const ulong ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_CRC64 = 14626739440370024875;
+
+        public const uint ENTITY_WITH_ALL_SUPPORTED_TYPES_CRC32 = 2799024604;
+        public const uint ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_CRC32 = 3449237014;
+
+        public const ushort ENTITY_WITH_ALL_SUPPORTED_TYPES_CRC16 = 7197;
+        public const ushort ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_CRC16 = 2781;
+
+        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPES_SHA1 = new byte[] { 112, 195, 144, 166, 136, 41, 236, 60, 102, 136, 197, 18, 227, 115, 75, 110, 241, 55, 207, 195 };
+        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_SHA1 = new byte[] { 55, 81, 130, 215, 251, 98, 49, 27, 118, 206, 108, 78, 3, 84, 150, 190, 227, 157, 97, 244 };
+
+        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPES_SHA256 = new byte[] { 7, 147, 131, 206, 146, 167, 229, 212, 48, 198, 38, 60, 71, 20, 252, 205, 237, 128, 151, 83, 125, 158, 230, 253, 81, 102, 174, 19, 193, 23, 139, 120 };
+        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_SHA256 = new byte[] { 46, 84, 187, 1, 255, 109, 244, 46, 235, 97, 9, 60, 95, 155, 222, 106, 163, 124, 125, 20, 213, 130, 220, 122, 106, 239, 71, 193, 134, 152, 124, 47 };
+
+        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPES_SHA384 = new byte[] { 155, 82, 232, 7, 7, 144, 103, 201, 37, 145, 73, 116, 99, 146, 174, 12, 95, 144, 210, 31, 28, 201, 3, 251, 196, 227, 198, 251, 99, 200, 217, 89, 250, 101, 223, 142, 202, 190, 187, 188, 83, 67, 150, 255, 128, 150, 3, 116 };
+        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_SHA384 = new byte[] { 182, 174, 60, 197, 157, 158, 67, 13, 182, 154, 57, 145, 17, 69, 61, 177, 17, 163, 212, 11, 70, 61, 109, 177, 184, 145, 46, 144, 203, 171, 40, 246, 213, 36, 232, 180, 73, 221, 99, 30, 191, 185, 187, 107, 231, 214, 247, 113 };
+
+        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPES_SHA512 = new byte[] { 70, 113, 161, 203, 19, 5, 242, 86, 196, 234, 121, 166, 252, 168, 132, 10, 4, 33, 111, 213, 235, 55, 222, 9, 50, 220, 100, 18, 199, 51, 55, 59, 137, 218, 103, 138, 118, 248, 104, 136, 96, 207, 146, 10, 187, 153, 153, 41, 88, 121, 49, 87, 52, 134, 138, 77, 215, 222, 110, 109, 247, 151, 12, 247 };
+        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_SHA512 = new byte[] { 177, 6, 151, 181, 189, 97, 132, 178, 8, 245, 8, 42, 175, 46, 2, 252, 122, 40, 229, 70, 99, 127, 45, 94, 34, 54, 115, 231, 56, 160, 81, 79, 38, 202, 165, 126, 122, 206, 66, 169, 168, 40, 29, 76, 15, 51, 212, 57, 252, 63, 188, 55, 165, 185, 62, 206, 179, 123, 14, 8, 163, 88, 27, 0 };
+        #endregion
+
         #region Valores dos CRC64 dos valores padrão
         public const ulong BOOL_CRC64 = 8851949072701294969;
         public const ulong BOOL_ARRAY_CRC64 = 10289073553201803719;
@@ -135,15 +158,16 @@ namespace FluentHashCalculator.Tests.Fakes
         public const ulong CHAR_ARRAY_CRC64 = 3569635170283952204;
         public const ulong NULLABLE_CHAR_CRC64 = 14895109130451914418;
         public const ulong NULLABLE_CHAR_ARRAY_CRC64 = 4797071594270213685;
-        public const ulong NULLABLE_STRING_CRC64 = 1468224749002807263;
-        public const ulong NULLABLE_STRING_ARRAY_CRC64 = 9444246223838352170;
+        public const ulong NULLABLE_STRING_UTF8_CRC64 = 1468224749002807263;
+        public const ulong NULLABLE_STRING_UNICODE_CRC64 = 6641945691463492507;
+        public const ulong NULLABLE_STRING_UTF32_CRC64 = 4522282071333640505;
+        public const ulong NULLABLE_STRING_ARRAY_UTF8_CRC64 = 9444246223838352170;
+        public const ulong NULLABLE_STRING_ARRAY_UNICODE_CRC64 = 7421446476391041510;
+        public const ulong NULLABLE_STRING_ARRAY_UTF32_CRC64 = 16224920292360082553;
         public const ulong GUID_CRC64 = 5568896784530736226;
         public const ulong GUID_ARRAY_CRC64 = 4912569749243598494;
         public const ulong NULLABLE_GUID_CRC64 = 0;
         public const ulong NULLABLE_GUID_ARRAY_CRC64 = 1516805535810329607;
-
-        public const ulong ENTITY_WITH_ALL_SUPPORTED_TYPES_CRC64 = 4500183182751816844;
-        public const ulong ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_CRC64 = 14626739440370024875;
         #endregion
 
         #region Valores dos CRC32 dos valores padrão
@@ -207,87 +231,89 @@ namespace FluentHashCalculator.Tests.Fakes
         public const uint CHAR_ARRAY_CRC32 = 1173476215;
         public const uint NULLABLE_CHAR_CRC32 = 45282277;
         public const uint NULLABLE_CHAR_ARRAY_CRC32 = 2266287361;
-        public const uint NULLABLE_STRING_CRC32 = 3736583002;
-        public const uint NULLABLE_STRING_ARRAY_CRC32 = 3524670714;
+        public const uint NULLABLE_STRING_UTF8_CRC32 = 3736583002;
+        public const uint NULLABLE_STRING_UNICODE_CRC32 = 9683074;
+        public const uint NULLABLE_STRING_UTF32_CRC32 = 2400129719;
+        public const uint NULLABLE_STRING_ARRAY_UTF8_CRC32 = 3524670714;
+        public const uint NULLABLE_STRING_ARRAY_UNICODE_CRC32 = 360993278;
+        public const uint NULLABLE_STRING_ARRAY_UTF32_CRC32 = 3723095503;
         public const uint GUID_CRC32 = 2134131087;
         public const uint GUID_ARRAY_CRC32 = 1555629991;
         public const uint NULLABLE_GUID_CRC32 = 0;
         public const uint NULLABLE_GUID_ARRAY_CRC32 = 4091540902;
-
-        public const uint ENTITY_WITH_ALL_SUPPORTED_TYPES_CRC32 = 2799024604;
-        public const uint ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_CRC32 = 3449237014;
         #endregion
 
         #region Valores dos CRC16 dos valores padrão
-        public const uint BOOL_CRC16 = 4129;
-        public const uint BOOL_ARRAY_CRC16 = 31363;
-        public const uint NULLABLE_BOOL_CRC16 = 0;
-        public const uint NULLABLE_BOOL_ARRAY_CRC16 = 4129;
-        public const uint BYTE_CRC16 = 52553;
-        public const uint BYTE_ARRAY_CRC16 = 11304;
-        public const uint NULLABLE_BYTE_CRC16 = 52035;
-        public const uint NULLABLE_BYTE_ARRAY_CRC16 = 31298;
-        public const uint SBYTE_CRC16 = 45831;
-        public const uint SBYTE_ARRAY_CRC16 = 49535;
-        public const uint NULLABLE_SBYTE_CRC16 = 15026;
-        public const uint NULLABLE_SBYTE_ARRAY_CRC16 = 41909;
-        public const uint SHORT_CRC16 = 46054;
-        public const uint SHORT_ARRAY_CRC16 = 29204;
-        public const uint NULLABLE_SHORT_CRC16 = 0;
-        public const uint NULLABLE_SHORT_ARRAY_CRC16 = 15562;
-        public const uint USHORT_CRC16 = 52043;
-        public const uint USHORT_ARRAY_CRC16 = 53612;
-        public const uint NULLABLE_USHORT_CRC16 = 61937;
-        public const uint NULLABLE_USHORT_ARRAY_CRC16 = 46369;
-        public const uint INT_CRC16 = 53560;
-        public const uint INT_ARRAY_CRC16 = 39179;
-        public const uint NULLABLE_INT_CRC16 = 7844;
-        public const uint NULLABLE_INT_ARRAY_CRC16 = 22574;
-        public const uint UINT_CRC16 = 20556;
-        public const uint UINT_ARRAY_CRC16 = 10457;
-        public const uint NULLABLE_UINT_CRC16 = 0;
-        public const uint NULLABLE_UINT_ARRAY_CRC16 = 56668;
-        public const uint LONG_CRC16 = 61428;
-        public const uint LONG_ARRAY_CRC16 = 53140;
-        public const uint NULLABLE_LONG_CRC16 = 15975;
-        public const uint NULLABLE_LONG_ARRAY_CRC16 = 4659;
-        public const uint ULONG_CRC16 = 56311;
-        public const uint ULONG_ARRAY_CRC16 = 52529;
-        public const uint NULLABLE_ULONG_CRC16 = 0;
-        public const uint NULLABLE_ULONG_ARRAY_CRC16 = 45313;
-        public const uint FLOAT_CRC16 = 29853;
-        public const uint FLOAT_ARRAY_CRC16 = 52674;
-        public const uint NULLABLE_FLOAT_CRC16 = 37133;
-        public const uint NULLABLE_FLOAT_ARRAY_CRC16 = 53214;
-        public const uint DOUBLE_CRC16 = 36188;
-        public const uint DOUBLE_ARRAY_CRC16 = 17441;
-        public const uint NULLABLE_DOUBLE_CRC16 = 0;
-        public const uint NULLABLE_DOUBLE_ARRAY_CRC16 = 0;
-        public const uint DECIMAL_CRC16 = 45421;
-        public const uint DECIMAL_ARRAY_CRC16 = 18515;
-        public const uint NULLABLE_DECIMAL_CRC16 = 61891;
-        public const uint NULLABLE_DECIMAL_ARRAY_CRC16 = 45407;
-        public const uint DATETIME_CRC16 = 61702;
-        public const uint DATETIME_ARRAY_CRC16 = 30345;
-        public const uint NULLABLE_DATETIME_CRC16 = 0;
-        public const uint NULLABLE_DATETIME_ARRAY_CRC16 = 0;
-        public const uint TIMESPAN_CRC16 = 16935;
-        public const uint TIMESPAN_ARRAY_CRC16 = 9921;
-        public const uint NULLABLE_TIMESPAN_CRC16 = 54628;
-        public const uint NULLABLE_TIMESPAN_ARRAY_CRC16 = 54628;
-        public const uint CHAR_CRC16 = 15977;
-        public const uint CHAR_ARRAY_CRC16 = 19555;
-        public const uint NULLABLE_CHAR_CRC16 = 3092;
-        public const uint NULLABLE_CHAR_ARRAY_CRC16 = 40285;
-        public const uint NULLABLE_STRING_CRC16 = 20178;
-        public const uint NULLABLE_STRING_ARRAY_CRC16 = 20631;
-        public const uint GUID_CRC16 = 42306;
-        public const uint GUID_ARRAY_CRC16 = 19493;
-        public const uint NULLABLE_GUID_CRC16 = 0;
-        public const uint NULLABLE_GUID_ARRAY_CRC16 = 44392;
-
-        public const ushort ENTITY_WITH_ALL_SUPPORTED_TYPES_CRC16 = 7197;
-        public const ushort ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_CRC16 = 2781;
+        public const ushort BOOL_CRC16 = 4129;
+        public const ushort BOOL_ARRAY_CRC16 = 31363;
+        public const ushort NULLABLE_BOOL_CRC16 = 0;
+        public const ushort NULLABLE_BOOL_ARRAY_CRC16 = 4129;
+        public const ushort BYTE_CRC16 = 52553;
+        public const ushort BYTE_ARRAY_CRC16 = 11304;
+        public const ushort NULLABLE_BYTE_CRC16 = 52035;
+        public const ushort NULLABLE_BYTE_ARRAY_CRC16 = 31298;
+        public const ushort SBYTE_CRC16 = 45831;
+        public const ushort SBYTE_ARRAY_CRC16 = 49535;
+        public const ushort NULLABLE_SBYTE_CRC16 = 15026;
+        public const ushort NULLABLE_SBYTE_ARRAY_CRC16 = 41909;
+        public const ushort SHORT_CRC16 = 46054;
+        public const ushort SHORT_ARRAY_CRC16 = 29204;
+        public const ushort NULLABLE_SHORT_CRC16 = 0;
+        public const ushort NULLABLE_SHORT_ARRAY_CRC16 = 15562;
+        public const ushort USHORT_CRC16 = 52043;
+        public const ushort USHORT_ARRAY_CRC16 = 53612;
+        public const ushort NULLABLE_USHORT_CRC16 = 61937;
+        public const ushort NULLABLE_USHORT_ARRAY_CRC16 = 46369;
+        public const ushort INT_CRC16 = 53560;
+        public const ushort INT_ARRAY_CRC16 = 39179;
+        public const ushort NULLABLE_INT_CRC16 = 7844;
+        public const ushort NULLABLE_INT_ARRAY_CRC16 = 22574;
+        public const ushort UINT_CRC16 = 20556;
+        public const ushort UINT_ARRAY_CRC16 = 10457;
+        public const ushort NULLABLE_UINT_CRC16 = 0;
+        public const ushort NULLABLE_UINT_ARRAY_CRC16 = 56668;
+        public const ushort LONG_CRC16 = 61428;
+        public const ushort LONG_ARRAY_CRC16 = 53140;
+        public const ushort NULLABLE_LONG_CRC16 = 15975;
+        public const ushort NULLABLE_LONG_ARRAY_CRC16 = 4659;
+        public const ushort ULONG_CRC16 = 56311;
+        public const ushort ULONG_ARRAY_CRC16 = 52529;
+        public const ushort NULLABLE_ULONG_CRC16 = 0;
+        public const ushort NULLABLE_ULONG_ARRAY_CRC16 = 45313;
+        public const ushort FLOAT_CRC16 = 29853;
+        public const ushort FLOAT_ARRAY_CRC16 = 52674;
+        public const ushort NULLABLE_FLOAT_CRC16 = 37133;
+        public const ushort NULLABLE_FLOAT_ARRAY_CRC16 = 53214;
+        public const ushort DOUBLE_CRC16 = 36188;
+        public const ushort DOUBLE_ARRAY_CRC16 = 17441;
+        public const ushort NULLABLE_DOUBLE_CRC16 = 0;
+        public const ushort NULLABLE_DOUBLE_ARRAY_CRC16 = 0;
+        public const ushort DECIMAL_CRC16 = 45421;
+        public const ushort DECIMAL_ARRAY_CRC16 = 18515;
+        public const ushort NULLABLE_DECIMAL_CRC16 = 61891;
+        public const ushort NULLABLE_DECIMAL_ARRAY_CRC16 = 45407;
+        public const ushort DATETIME_CRC16 = 61702;
+        public const ushort DATETIME_ARRAY_CRC16 = 30345;
+        public const ushort NULLABLE_DATETIME_CRC16 = 0;
+        public const ushort NULLABLE_DATETIME_ARRAY_CRC16 = 0;
+        public const ushort TIMESPAN_CRC16 = 16935;
+        public const ushort TIMESPAN_ARRAY_CRC16 = 9921;
+        public const ushort NULLABLE_TIMESPAN_CRC16 = 54628;
+        public const ushort NULLABLE_TIMESPAN_ARRAY_CRC16 = 54628;
+        public const ushort CHAR_CRC16 = 15977;
+        public const ushort CHAR_ARRAY_CRC16 = 19555;
+        public const ushort NULLABLE_CHAR_CRC16 = 3092;
+        public const ushort NULLABLE_CHAR_ARRAY_CRC16 = 40285;
+        public const ulong NULLABLE_STRING_UTF8_CRC16 = 20178;
+        public const ulong NULLABLE_STRING_UNICODE_CRC16 = 64824;
+        public const ulong NULLABLE_STRING_UTF32_CRC16 = 16024;
+        public const ushort NULLABLE_STRING_ARRAY_UTF8_CRC16 = 20631;
+        public const ushort NULLABLE_STRING_ARRAY_UNICODE_CRC16 = 39805;
+        public const ushort NULLABLE_STRING_ARRAY_UTF32_CRC16 = 49001;
+        public const ushort GUID_CRC16 = 42306;
+        public const ushort GUID_ARRAY_CRC16 = 19493;
+        public const ushort NULLABLE_GUID_CRC16 = 0;
+        public const ushort NULLABLE_GUID_ARRAY_CRC16 = 44392;
         #endregion
 
         #region Valores dos SHA1 dos valores padrão
@@ -351,16 +377,16 @@ namespace FluentHashCalculator.Tests.Fakes
         public static readonly byte[] CHAR_ARRAY_SHA1 = new byte[] { 70, 143, 160, 73, 250, 138, 65, 147, 144, 173, 38, 233, 115, 71, 117, 192, 156, 29, 202, 102 };
         public static readonly byte[] NULLABLE_CHAR_SHA1 = new byte[] { 156, 123, 186, 94, 97, 127, 120, 149, 215, 22, 192, 191, 241, 253, 135, 166, 35, 91, 125, 53 };
         public static readonly byte[] NULLABLE_CHAR_ARRAY_SHA1 = new byte[] { 121, 125, 25, 187, 144, 50, 103, 90, 127, 182, 37, 118, 232, 32, 101, 112, 213, 145, 166, 175 };
-        public static readonly byte[] NULLABLE_STRING_SHA1 = new byte[] { 79, 251, 201, 227, 166, 83, 206, 39, 84, 62, 160, 94, 128, 95, 226, 239, 97, 124, 137, 193 };
-        public static readonly byte[] NULLABLE_STRING_ARRAY_SHA1 = new byte[] { 123, 57, 149, 108, 213, 49, 222, 169, 70, 168, 176, 78, 202, 120, 4, 199, 94, 26, 227, 253 };
+        public static readonly byte[] NULLABLE_STRING_UTF8_SHA1 = new byte[] { 79, 251, 201, 227, 166, 83, 206, 39, 84, 62, 160, 94, 128, 95, 226, 239, 97, 124, 137, 193 };
+        public static readonly byte[] NULLABLE_STRING_UNICODE_SHA1 = new byte[] { 198, 16, 65, 169, 198, 125, 228, 223, 76, 127, 37, 73, 48, 209, 64, 94, 164, 141, 26, 25 };
+        public static readonly byte[] NULLABLE_STRING_UTF32_SHA1 = new byte[] { 129, 87, 101, 8, 157, 138, 32, 21, 85, 169, 225, 135, 111, 139, 143, 80, 15, 52, 201, 147 };
+        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF8_SHA1 = new byte[] { 123, 57, 149, 108, 213, 49, 222, 169, 70, 168, 176, 78, 202, 120, 4, 199, 94, 26, 227, 253 };
+        public static readonly byte[] NULLABLE_STRING_ARRAY_UNICODE_SHA1 = new byte[] { 222, 9, 95, 29, 160, 54, 124, 126, 70, 219, 246, 217, 160, 230, 121, 44, 96, 77, 167, 89 };
+        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF32_SHA1 = new byte[] { 163, 112, 170, 205, 1, 214, 196, 223, 62, 95, 218, 71, 188, 180, 199, 254, 65, 202, 81, 94 };
         public static readonly byte[] GUID_SHA1 = new byte[] { 222, 64, 138, 198, 138, 168, 63, 248, 127, 111, 182, 58, 15, 86, 211, 221, 88, 237, 221, 65 };
         public static readonly byte[] GUID_ARRAY_SHA1 = new byte[] { 246, 21, 234, 70, 63, 201, 89, 100, 200, 185, 140, 180, 164, 39, 108, 40, 147, 113, 230, 87 };
         public static readonly byte[] NULLABLE_GUID_SHA1 = new byte[] { 218, 57, 163, 238, 94, 107, 75, 13, 50, 85, 191, 239, 149, 96, 24, 144, 175, 216, 7, 9 };
         public static readonly byte[] NULLABLE_GUID_ARRAY_SHA1 = new byte[] { 137, 150, 96, 224, 33, 78, 203, 178, 172, 221, 193, 101, 67, 73, 17, 60, 33, 239, 39, 153 };
-
-
-        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPES_SHA1 = new byte[] { 112, 195, 144, 166, 136, 41, 236, 60, 102, 136, 197, 18, 227, 115, 75, 110, 241, 55, 207, 195 };
-        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_SHA1 = new byte[] { 55, 81, 130, 215, 251, 98, 49, 27, 118, 206, 108, 78, 3, 84, 150, 190, 227, 157, 97, 244 };
         #endregion
 
         #region Valores dos SHA256 dos valores padrão
@@ -424,16 +450,16 @@ namespace FluentHashCalculator.Tests.Fakes
         public static readonly byte[] CHAR_ARRAY_SHA256 = new byte[] { 103, 237, 252, 56, 27, 58, 96, 212, 34, 5, 99, 214, 23, 36, 146, 50, 177, 160, 202, 182, 202, 239, 147, 79, 139, 135, 217, 165, 25, 236, 108, 93 };
         public static readonly byte[] NULLABLE_CHAR_SHA256 = new byte[] { 226, 141, 160, 253, 158, 232, 141, 9, 65, 150, 121, 88, 190, 25, 221, 175, 53, 95, 90, 152, 122, 97, 27, 153, 218, 187, 113, 9, 242, 51, 243, 15 };
         public static readonly byte[] NULLABLE_CHAR_ARRAY_SHA256 = new byte[] { 39, 61, 56, 0, 230, 92, 70, 46, 195, 123, 114, 136, 243, 210, 178, 112, 137, 193, 98, 78, 169, 181, 203, 95, 253, 207, 166, 124, 231, 14, 133, 180 };
-        public static readonly byte[] NULLABLE_STRING_SHA256 = new byte[] { 185, 109, 131, 111, 138, 150, 145, 255, 55, 168, 218, 249, 253, 17, 135, 41, 158, 227, 134, 60, 108, 64, 49, 226, 192, 29, 157, 175, 79, 161, 182, 110 };
+        public static readonly byte[] NULLABLE_STRING_UTF8_SHA256 = new byte[] { 185, 109, 131, 111, 138, 150, 145, 255, 55, 168, 218, 249, 253, 17, 135, 41, 158, 227, 134, 60, 108, 64, 49, 226, 192, 29, 157, 175, 79, 161, 182, 110 };
+        public static readonly byte[] NULLABLE_STRING_UNICODE_SHA256 = new byte[] { 27, 139, 34, 149, 15, 32, 90, 159, 127, 203, 128, 27, 50, 81, 46, 152, 129, 92, 238, 204, 231, 52, 174, 221, 217, 253, 52, 217, 232, 168, 114, 231 };
+        public static readonly byte[] NULLABLE_STRING_UTF32_SHA256 = new byte[] { 152, 150, 80, 186, 218, 32, 161, 144, 253, 169, 44, 251, 227, 194, 41, 0, 100, 208, 225, 63, 149, 27, 168, 154, 77, 235, 186, 5, 57, 209, 194, 218 };
         public static readonly byte[] NULLABLE_STRING_ARRAY_SHA256 = new byte[] { 198, 238, 91, 101, 137, 228, 125, 59, 199, 152, 32, 244, 228, 203, 86, 202, 209, 131, 134, 151, 116, 61, 128, 58, 35, 138, 75, 116, 195, 16, 111, 16 };
+        public static readonly byte[] NULLABLE_STRING_ARRAY_UNICODE_SHA256 = new byte[] { 174, 249, 82, 205, 147, 185, 151, 143, 217, 165, 205, 238, 107, 29, 55, 99, 8, 63, 186, 249, 136, 207, 241, 127, 3, 68, 218, 135, 112, 234, 53, 154 };
+        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF32_SHA256 = new byte[] { 25, 80, 131, 206, 35, 211, 238, 95, 45, 17, 223, 182, 68, 188, 246, 34, 117, 94, 8, 50, 10, 171, 255, 194, 96, 239, 233, 77, 151, 195, 57, 200 };
         public static readonly byte[] GUID_SHA256 = new byte[] { 165, 248, 196, 110, 148, 209, 217, 181, 183, 194, 108, 91, 16, 91, 189, 219, 141, 233, 217, 208, 73, 145, 37, 38, 152, 185, 47, 239, 193, 62, 80, 200 };
         public static readonly byte[] GUID_ARRAY_SHA256 = new byte[] { 217, 124, 91, 176, 196, 227, 181, 123, 190, 62, 245, 173, 68, 65, 77, 143, 246, 139, 51, 239, 107, 164, 201, 124, 166, 39, 232, 120, 42, 230, 36, 209 };
         public static readonly byte[] NULLABLE_GUID_SHA256 = new byte[] { 227, 176, 196, 66, 152, 252, 28, 20, 154, 251, 244, 200, 153, 111, 185, 36, 39, 174, 65, 228, 100, 155, 147, 76, 164, 149, 153, 27, 120, 82, 184, 85 };
         public static readonly byte[] NULLABLE_GUID_ARRAY_SHA256 = new byte[] { 46, 222, 95, 153, 109, 218, 143, 168, 170, 215, 195, 83, 122, 159, 117, 198, 31, 157, 108, 150, 203, 144, 48, 4, 164, 8, 241, 189, 30, 32, 250, 233 };
-
-
-        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPES_SHA256 = new byte[] { 7, 147, 131, 206, 146, 167, 229, 212, 48, 198, 38, 60, 71, 20, 252, 205, 237, 128, 151, 83, 125, 158, 230, 253, 81, 102, 174, 19, 193, 23, 139, 120 };
-        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_SHA256 = new byte[] { 46, 84, 187, 1, 255, 109, 244, 46, 235, 97, 9, 60, 95, 155, 222, 106, 163, 124, 125, 20, 213, 130, 220, 122, 106, 239, 71, 193, 134, 152, 124, 47 };
         #endregion
 
         #region Valores dos SHA384 dos valores padrão
@@ -497,16 +523,16 @@ namespace FluentHashCalculator.Tests.Fakes
         public static readonly byte[] CHAR_ARRAY_SHA384 = new byte[] { 234, 237, 181, 157, 248, 80, 42, 109, 254, 86, 38, 166, 166, 111, 147, 109, 221, 125, 114, 109, 140, 235, 42, 217, 57, 184, 130, 53, 227, 4, 12, 27, 110, 204, 214, 239, 156, 135, 164, 220, 76, 148, 247, 93, 188, 182, 128, 154 };
         public static readonly byte[] NULLABLE_CHAR_SHA384 = new byte[] { 145, 8, 155, 48, 125, 53, 116, 22, 145, 39, 174, 58, 178, 217, 110, 38, 119, 58, 61, 169, 10, 246, 248, 6, 41, 106, 98, 106, 205, 18, 15, 44, 219, 11, 21, 106, 233, 94, 226, 175, 67, 102, 171, 125, 76, 188, 198, 161 };
         public static readonly byte[] NULLABLE_CHAR_ARRAY_SHA384 = new byte[] { 221, 206, 36, 202, 207, 173, 99, 31, 191, 81, 146, 49, 245, 31, 220, 22, 161, 191, 255, 98, 92, 31, 126, 217, 244, 172, 28, 35, 64, 208, 214, 12, 211, 1, 177, 52, 98, 46, 72, 203, 41, 212, 0, 104, 107, 44, 105, 133 };
-        public static readonly byte[] NULLABLE_STRING_SHA384 = new byte[] { 225, 165, 208, 247, 219, 50, 152, 63, 111, 235, 237, 18, 104, 186, 93, 63, 119, 250, 155, 206, 64, 199, 61, 196, 202, 189, 7, 74, 143, 117, 251, 54, 186, 153, 49, 98, 101, 147, 87, 141, 187, 199, 165, 31, 60, 148, 99, 224 };
-        public static readonly byte[] NULLABLE_STRING_ARRAY_SHA384 = new byte[] { 236, 33, 41, 41, 203, 151, 82, 221, 191, 18, 62, 84, 157, 181, 214, 187, 105, 158, 106, 123, 145, 23, 249, 193, 187, 99, 92, 34, 200, 26, 204, 121, 33, 253, 16, 131, 10, 238, 129, 224, 245, 255, 11, 13, 47, 85, 28, 42 };
+        public static readonly byte[] NULLABLE_STRING_UTF8_SHA384 = new byte[] { 225, 165, 208, 247, 219, 50, 152, 63, 111, 235, 237, 18, 104, 186, 93, 63, 119, 250, 155, 206, 64, 199, 61, 196, 202, 189, 7, 74, 143, 117, 251, 54, 186, 153, 49, 98, 101, 147, 87, 141, 187, 199, 165, 31, 60, 148, 99, 224 };
+        public static readonly byte[] NULLABLE_STRING_UNICODE_SHA384 = new byte[] { 237, 157, 191, 48, 59, 11, 157, 97, 19, 35, 56, 43, 181, 26, 210, 22, 145, 74, 79, 98, 22, 246, 184, 62, 46, 150, 117, 40, 69, 111, 249, 175, 134, 196, 168, 7, 142, 236, 253, 94, 172, 105, 226, 43, 137, 86, 235, 203 };
+        public static readonly byte[] NULLABLE_STRING_UTF32_SHA384 = new byte[] { 73, 98, 185, 2, 65, 209, 66, 63, 222, 17, 85, 199, 144, 252, 29, 22, 113, 212, 5, 79, 90, 143, 100, 12, 32, 56, 250, 129, 220, 206, 135, 88, 76, 220, 202, 192, 112, 227, 167, 33, 176, 189, 249, 206, 151, 113, 96, 228 };
+        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF8_SHA384 = new byte[] { 236, 33, 41, 41, 203, 151, 82, 221, 191, 18, 62, 84, 157, 181, 214, 187, 105, 158, 106, 123, 145, 23, 249, 193, 187, 99, 92, 34, 200, 26, 204, 121, 33, 253, 16, 131, 10, 238, 129, 224, 245, 255, 11, 13, 47, 85, 28, 42 };
+        public static readonly byte[] NULLABLE_STRING_ARRAY_UNICODE_SHA384 = new byte[] { 129, 37, 88, 225, 136, 201, 225, 8, 222, 88, 101, 89, 233, 37, 31, 63, 167, 185, 231, 178, 60, 182, 182, 87, 20, 192, 98, 141, 150, 132, 146, 0, 36, 190, 67, 59, 119, 42, 212, 238, 141, 216, 197, 33, 255, 30, 130, 140 };
+        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF32_SHA384 = new byte[] { 62, 51, 5, 194, 106, 97, 117, 229, 137, 59, 57, 220, 18, 157, 148, 129, 81, 79, 187, 41, 197, 119, 64, 158, 192, 176, 70, 172, 249, 232, 148, 200, 51, 191, 223, 252, 18, 175, 175, 14, 68, 50, 26, 77, 229, 96, 140, 150 };
         public static readonly byte[] GUID_SHA384 = new byte[] { 253, 238, 5, 131, 232, 175, 84, 190, 174, 210, 195, 190, 253, 49, 107, 31, 229, 105, 97, 80, 104, 244, 52, 80, 62, 197, 155, 55, 3, 72, 27, 201, 194, 164, 245, 59, 219, 60, 75, 241, 85, 13, 253, 77, 201, 151, 5, 211 };
         public static readonly byte[] GUID_ARRAY_SHA384 = new byte[] { 183, 87, 61, 28, 39, 87, 177, 78, 191, 62, 6, 177, 124, 249, 53, 38, 63, 109, 109, 120, 180, 43, 78, 186, 7, 161, 69, 24, 22, 206, 69, 50, 213, 226, 65, 71, 8, 124, 79, 80, 173, 230, 185, 56, 251, 215, 68, 16 };
         public static readonly byte[] NULLABLE_GUID_SHA384 = new byte[] { 56, 176, 96, 167, 81, 172, 150, 56, 76, 217, 50, 126, 177, 177, 227, 106, 33, 253, 183, 17, 20, 190, 7, 67, 76, 12, 199, 191, 99, 246, 225, 218, 39, 78, 222, 191, 231, 111, 101, 251, 213, 26, 210, 241, 72, 152, 185, 91 };
         public static readonly byte[] NULLABLE_GUID_ARRAY_SHA384 = new byte[] { 89, 218, 68, 17, 97, 48, 3, 18, 137, 90, 105, 178, 192, 76, 121, 86, 102, 255, 154, 242, 66, 163, 140, 195, 221, 87, 219, 156, 222, 25, 11, 254, 37, 67, 11, 11, 197, 178, 49, 254, 70, 77, 207, 238, 190, 26, 199, 221 };
-
-
-        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPES_SHA384 = new byte[] { 155, 82, 232, 7, 7, 144, 103, 201, 37, 145, 73, 116, 99, 146, 174, 12, 95, 144, 210, 31, 28, 201, 3, 251, 196, 227, 198, 251, 99, 200, 217, 89, 250, 101, 223, 142, 202, 190, 187, 188, 83, 67, 150, 255, 128, 150, 3, 116 };
-        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_SHA384 = new byte[] { 182, 174, 60, 197, 157, 158, 67, 13, 182, 154, 57, 145, 17, 69, 61, 177, 17, 163, 212, 11, 70, 61, 109, 177, 184, 145, 46, 144, 203, 171, 40, 246, 213, 36, 232, 180, 73, 221, 99, 30, 191, 185, 187, 107, 231, 214, 247, 113 };
         #endregion
 
         #region Valores dos SHA512 dos valores padrão
@@ -570,16 +596,16 @@ namespace FluentHashCalculator.Tests.Fakes
         public static readonly byte[] CHAR_ARRAY_SHA512 = new byte[] { 52, 37, 38, 80, 39, 176, 141, 147, 81, 22, 241, 126, 96, 16, 105, 140, 201, 162, 69, 220, 112, 235, 208, 46, 142, 29, 116, 77, 230, 205, 16, 56, 35, 29, 7, 86, 70, 66, 129, 200, 88, 237, 10, 248, 186, 15, 31, 150, 170, 237, 69, 49, 24, 190, 118, 230, 209, 93, 243, 88, 91, 107, 47, 36 };
         public static readonly byte[] NULLABLE_CHAR_SHA512 = new byte[] { 26, 38, 95, 95, 207, 80, 71, 131, 42, 34, 148, 226, 225, 6, 151, 59, 71, 183, 46, 78, 180, 58, 11, 114, 240, 246, 47, 156, 45, 235, 71, 90, 236, 111, 9, 186, 184, 27, 89, 51, 1, 143, 97, 165, 242, 69, 189, 175, 253, 139, 207, 91, 238, 33, 37, 232, 229, 140, 71, 104, 214, 123, 28, 237 };
         public static readonly byte[] NULLABLE_CHAR_ARRAY_SHA512 = new byte[] { 192, 185, 208, 182, 237, 188, 2, 26, 117, 149, 212, 162, 137, 171, 211, 148, 112, 226, 137, 216, 95, 117, 134, 205, 43, 212, 200, 185, 247, 126, 161, 6, 229, 206, 9, 132, 237, 198, 252, 108, 20, 75, 170, 9, 144, 31, 213, 84, 187, 128, 233, 91, 68, 52, 55, 145, 133, 249, 81, 92, 25, 19, 57, 27 };
-        public static readonly byte[] NULLABLE_STRING_SHA512 = new byte[] { 195, 230, 162, 241, 120, 80, 1, 26, 86, 160, 16, 32, 231, 112, 124, 91, 38, 67, 186, 85, 19, 65, 5, 150, 26, 30, 55, 18, 255, 182, 158, 110, 212, 23, 65, 56, 214, 175, 214, 156, 125, 59, 182, 128, 209, 195, 220, 51, 231, 160, 170, 55, 214, 169, 172, 109, 88, 192, 201, 238, 68, 45, 222, 168 };
-        public static readonly byte[] NULLABLE_STRING_ARRAY_SHA512 = new byte[] { 192, 6, 177, 67, 125, 133, 204, 35, 211, 112, 103, 0, 252, 146, 66, 55, 118, 24, 60, 131, 241, 217, 7, 186, 18, 5, 15, 157, 62, 184, 121, 164, 244, 97, 233, 87, 156, 39, 26, 122, 84, 133, 183, 174, 123, 153, 1, 72, 146, 75, 94, 208, 116, 21, 243, 233, 36, 129, 180, 198, 91, 104, 58, 140 };
+        public static readonly byte[] NULLABLE_STRING_UTF8_SHA512 = new byte[] { 195, 230, 162, 241, 120, 80, 1, 26, 86, 160, 16, 32, 231, 112, 124, 91, 38, 67, 186, 85, 19, 65, 5, 150, 26, 30, 55, 18, 255, 182, 158, 110, 212, 23, 65, 56, 214, 175, 214, 156, 125, 59, 182, 128, 209, 195, 220, 51, 231, 160, 170, 55, 214, 169, 172, 109, 88, 192, 201, 238, 68, 45, 222, 168 };
+        public static readonly byte[] NULLABLE_STRING_UNICODE_SHA512 = new byte[] { 36, 77, 209, 218, 87, 134, 9, 79, 26, 71, 72, 13, 168, 24, 138, 31, 64, 124, 171, 50, 173, 118, 212, 165, 171, 115, 123, 12, 14, 115, 166, 115, 32, 225, 15, 107, 95, 234, 11, 149, 6, 181, 44, 37, 151, 74, 18, 204, 108, 254, 24, 254, 38, 147, 227, 36, 224, 214, 251, 225, 57, 151, 108, 126 };
+        public static readonly byte[] NULLABLE_STRING_UTF32_SHA512 = new byte[] { 208, 49, 31, 67, 75, 182, 2, 162, 163, 184, 86, 62, 210, 37, 76, 96, 237, 89, 226, 122, 155, 122, 247, 128, 12, 229, 231, 28, 17, 75, 249, 49, 254, 212, 85, 175, 36, 28, 16, 193, 159, 12, 49, 63, 68, 179, 34, 82, 149, 240, 249, 54, 16, 78, 83, 86, 26, 165, 189, 150, 62, 127, 152, 19 };
+        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF8_SHA512 = new byte[] { 192, 6, 177, 67, 125, 133, 204, 35, 211, 112, 103, 0, 252, 146, 66, 55, 118, 24, 60, 131, 241, 217, 7, 186, 18, 5, 15, 157, 62, 184, 121, 164, 244, 97, 233, 87, 156, 39, 26, 122, 84, 133, 183, 174, 123, 153, 1, 72, 146, 75, 94, 208, 116, 21, 243, 233, 36, 129, 180, 198, 91, 104, 58, 140 };
+        public static readonly byte[] NULLABLE_STRING_ARRAY_UNICODE_SHA512 = new byte[] { 2, 133, 78, 25, 59, 57, 215, 103, 205, 95, 120, 155, 4, 123, 117, 103, 222, 40, 45, 169, 203, 141, 254, 172, 12, 115, 7, 148, 14, 78, 98, 247, 193, 232, 188, 25, 89, 117, 1, 45, 113, 116, 250, 223, 181, 237, 228, 71, 200, 191, 247, 6, 16, 140, 80, 214, 249, 59, 20, 204, 236, 159, 199, 112 };
+        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF32_SHA512 = new byte[] { 107, 31, 139, 98, 50, 154, 42, 162, 32, 200, 131, 13, 37, 156, 150, 8, 19, 183, 1, 164, 194, 225, 191, 89, 162, 23, 122, 251, 80, 230, 189, 215, 119, 114, 246, 28, 65, 55, 122, 57, 216, 121, 74, 99, 29, 157, 186, 16, 102, 251, 81, 213, 111, 2, 247, 226, 36, 42, 47, 122, 162, 217, 204, 69 };
         public static readonly byte[] GUID_SHA512 = new byte[] { 51, 254, 103, 188, 185, 186, 98, 213, 159, 231, 228, 247, 70, 167, 218, 9, 125, 14, 147, 211, 155, 11, 84, 128, 192, 80, 247, 165, 179, 228, 216, 247, 251, 100, 129, 194, 159, 155, 193, 71, 169, 120, 151, 35, 0, 110, 198, 184, 63, 118, 8, 214, 106, 129, 86, 52, 189, 216, 63, 31, 145, 116, 137, 155 };
         public static readonly byte[] GUID_ARRAY_SHA512 = new byte[] { 71, 183, 123, 142, 237, 36, 184, 5, 151, 121, 201, 31, 248, 94, 26, 247, 235, 177, 182, 147, 104, 247, 113, 227, 196, 149, 158, 228, 252, 114, 89, 31, 84, 143, 130, 39, 117, 143, 48, 255, 240, 116, 180, 101, 178, 165, 22, 128, 254, 147, 164, 194, 245, 175, 194, 254, 18, 164, 190, 116, 107, 212, 153, 63 };
         public static readonly byte[] NULLABLE_GUID_SHA512 = new byte[] { 207, 131, 225, 53, 126, 239, 184, 189, 241, 84, 40, 80, 214, 109, 128, 7, 214, 32, 228, 5, 11, 87, 21, 220, 131, 244, 169, 33, 211, 108, 233, 206, 71, 208, 209, 60, 93, 133, 242, 176, 255, 131, 24, 210, 135, 126, 236, 47, 99, 185, 49, 189, 71, 65, 122, 129, 165, 56, 50, 122, 249, 39, 218, 62 };
         public static readonly byte[] NULLABLE_GUID_ARRAY_SHA512 = new byte[] { 146, 49, 21, 167, 172, 161, 199, 110, 33, 1, 207, 39, 213, 34, 185, 66, 157, 164, 106, 117, 207, 31, 245, 9, 208, 183, 231, 189, 50, 166, 108, 186, 49, 225, 252, 184, 41, 42, 103, 118, 246, 25, 125, 116, 22, 245, 175, 196, 239, 250, 58, 15, 146, 16, 135, 4, 46, 55, 177, 243, 113, 193, 90, 87 };
-
-
-        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPES_SHA512 = new byte[] { 70, 113, 161, 203, 19, 5, 242, 86, 196, 234, 121, 166, 252, 168, 132, 10, 4, 33, 111, 213, 235, 55, 222, 9, 50, 220, 100, 18, 199, 51, 55, 59, 137, 218, 103, 138, 118, 248, 104, 136, 96, 207, 146, 10, 187, 153, 153, 41, 88, 121, 49, 87, 52, 134, 138, 77, 215, 222, 110, 109, 247, 151, 12, 247 };
-        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_SHA512 = new byte[] { 177, 6, 151, 181, 189, 97, 132, 178, 8, 245, 8, 42, 175, 46, 2, 252, 122, 40, 229, 70, 99, 127, 45, 94, 34, 54, 115, 231, 56, 160, 81, 79, 38, 202, 165, 126, 122, 206, 66, 169, 168, 40, 29, 76, 15, 51, 212, 57, 252, 63, 188, 55, 165, 185, 62, 206, 179, 123, 14, 8, 163, 88, 27, 0 };
         #endregion
     }
 }

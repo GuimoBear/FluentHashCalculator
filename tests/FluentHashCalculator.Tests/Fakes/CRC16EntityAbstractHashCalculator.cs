@@ -1,8 +1,8 @@
 ﻿namespace FluentHashCalculator.Tests.Fakes
 {
-    public class SHA512EntityUnicityCalculator : AbstractHashCalculator<Entity>.SHA512
+    public class CRC16EntityAbstractHashCalculator : AbstractHashCalculator<Entity>.CRC16
     {
-        public SHA512EntityUnicityCalculator()
+        public CRC16EntityAbstractHashCalculator()
         {
             Calculate
                 .Using(e => e.Id).And

@@ -7,9 +7,9 @@ namespace FluentHashCalculator.Benchmark
     {
         static void Main(string[] args)
         {
-            /*
             var crc64test = new CRC64FluentHashCalculatorTests();
 
+            Console.WriteLine("        #region Valores dos CRC64 dos valores padrão");
             Console.WriteLine($"        public const ulong BOOL_CRC64 = {crc64test.UsingBoolPropertyInCalculatorWhenComputeThenReturnBoolCRC64()};");
             Console.WriteLine($"        public const ulong BOOL_ARRAY_CRC64 = {crc64test.UsingBoolArrayPropertyInCalculatorWhenComputeThenReturnBoolArrayCRC64()};");
             Console.WriteLine($"        public const ulong NULLABLE_BOOL_CRC64 = {crc64test.UsingNullableBoolPropertyInCalculatorWhenComputeThenReturnNullableBoolCRC64()};");
@@ -70,20 +70,23 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public const ulong CHAR_ARRAY_CRC64 = {crc64test.UsingCharArrayPropertyInCalculatorWhenComputeThenReturnCharArrayCRC64()};");
             Console.WriteLine($"        public const ulong NULLABLE_CHAR_CRC64 = {crc64test.UsingNullableCharPropertyInCalculatorWhenComputeThenReturnNullableCharCRC64()};");
             Console.WriteLine($"        public const ulong NULLABLE_CHAR_ARRAY_CRC64 = {crc64test.UsingNullableCharArrayPropertyInCalculatorWhenComputeThenReturnNullableCharArrayCRC64()};");
-            Console.WriteLine($"        public const ulong NULLABLE_STRING_CRC64 = {crc64test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringCRC64()};");
-            Console.WriteLine($"        public const ulong NULLABLE_STRING_ARRAY_CRC64 = {crc64test.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArrayCRC64()};");
+            Console.WriteLine($"        public const ulong NULLABLE_STRING_UTF8_CRC64 = {crc64test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringCRC64()};");
+            Console.WriteLine($"        public const ulong NULLABLE_STRING_UNICODE_CRC64 = {crc64test.UsingNullableStringPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringCRC64()};");
+            Console.WriteLine($"        public const ulong NULLABLE_STRING_UTF32_CRC64 = {crc64test.UsingNullableStringPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringCRC64()};");
+            Console.WriteLine($"        public const ulong NULLABLE_STRING_ARRAY_UTF8_CRC64 = {crc64test.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArrayCRC64()};");
+            Console.WriteLine($"        public const ulong NULLABLE_STRING_ARRAY_UNICODE_CRC64 = {crc64test.UsingNullableStringArrayPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringArrayCRC64()};");
+            Console.WriteLine($"        public const ulong NULLABLE_STRING_ARRAY_UTF32_CRC64 = {crc64test.UsingNullableStringArrayPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringArrayCRC64()};");
             Console.WriteLine($"        public const ulong GUID_CRC64 = {crc64test.UsingGuidPropertyInCalculatorWhenComputeThenReturnGuidCRC64()};");
             Console.WriteLine($"        public const ulong GUID_ARRAY_CRC64 = {crc64test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArrayCRC64()};");
             Console.WriteLine($"        public const ulong NULLABLE_GUID_CRC64 = {crc64test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidCRC64()};");
             Console.WriteLine($"        public const ulong NULLABLE_GUID_ARRAY_CRC64 = {crc64test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArrayCRC64()};");
+            Console.WriteLine("        #endregion");
 
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
             Console.WriteLine("");
 
             var crc32test = new CRC32FluentHashCalculatorTests();
 
+            Console.WriteLine("        #region Valores dos CRC32 dos valores padrão");
             Console.WriteLine($"        public const uint BOOL_CRC32 = {crc32test.UsingBoolPropertyInCalculatorWhenComputeThenReturnBoolCRC32()};");
             Console.WriteLine($"        public const uint BOOL_ARRAY_CRC32 = {crc32test.UsingBoolArrayPropertyInCalculatorWhenComputeThenReturnBoolArrayCRC32()};");
             Console.WriteLine($"        public const uint NULLABLE_BOOL_CRC32 = {crc32test.UsingNullableBoolPropertyInCalculatorWhenComputeThenReturnNullableBoolCRC32()};");
@@ -144,90 +147,95 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public const uint CHAR_ARRAY_CRC32 = {crc32test.UsingCharArrayPropertyInCalculatorWhenComputeThenReturnCharArrayCRC32()};");
             Console.WriteLine($"        public const uint NULLABLE_CHAR_CRC32 = {crc32test.UsingNullableCharPropertyInCalculatorWhenComputeThenReturnNullableCharCRC32()};");
             Console.WriteLine($"        public const uint NULLABLE_CHAR_ARRAY_CRC32 = {crc32test.UsingNullableCharArrayPropertyInCalculatorWhenComputeThenReturnNullableCharArrayCRC32()};");
-            Console.WriteLine($"        public const uint NULLABLE_STRING_CRC32 = {crc32test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringCRC32()};");
-            Console.WriteLine($"        public const uint NULLABLE_STRING_ARRAY_CRC32 = {crc32test.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArrayCRC32()};");
+            Console.WriteLine($"        public const uint NULLABLE_STRING_UTF8_CRC32 = {crc32test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringCRC32()};");
+            Console.WriteLine($"        public const uint NULLABLE_STRING_UNICODE_CRC32 = {crc32test.UsingNullableStringPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringCRC32()};");
+            Console.WriteLine($"        public const uint NULLABLE_STRING_UTF32_CRC32 = {crc32test.UsingNullableStringPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringCRC32()};");
+            Console.WriteLine($"        public const uint NULLABLE_STRING_ARRAY_UTF8_CRC32 = {crc32test.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArrayCRC32()};");
+            Console.WriteLine($"        public const uint NULLABLE_STRING_ARRAY_UNICODE_CRC32 = {crc32test.UsingNullableStringArrayPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringArrayCRC32()};");
+            Console.WriteLine($"        public const uint NULLABLE_STRING_ARRAY_UTF32_CRC32 = {crc32test.UsingNullableStringArrayPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringArrayCRC32()};");
             Console.WriteLine($"        public const uint GUID_CRC32 = {crc32test.UsingGuidPropertyInCalculatorWhenComputeThenReturnGuidCRC32()};");
             Console.WriteLine($"        public const uint GUID_ARRAY_CRC32 = {crc32test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArrayCRC32()};");
             Console.WriteLine($"        public const uint NULLABLE_GUID_CRC32 = {crc32test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidCRC32()};");
             Console.WriteLine($"        public const uint NULLABLE_GUID_ARRAY_CRC32 = {crc32test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArrayCRC32()};");
+            Console.WriteLine("        #endregion");
 
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
             Console.WriteLine("");
 
             var crc16test = new CRC16FluentHashCalculatorTests();
 
-            Console.WriteLine($"        public const uint BOOL_CRC16 = {crc16test.UsingBoolPropertyInCalculatorWhenComputeThenReturnBoolCRC16()};");
-            Console.WriteLine($"        public const uint BOOL_ARRAY_CRC16 = {crc16test.UsingBoolArrayPropertyInCalculatorWhenComputeThenReturnBoolArrayCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_BOOL_CRC16 = {crc16test.UsingNullableBoolPropertyInCalculatorWhenComputeThenReturnNullableBoolCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_BOOL_ARRAY_CRC16 = {crc16test.UsingNullableBoolArrayPropertyInCalculatorWhenComputeThenReturnNullableBoolArrayCRC16()};");
-            Console.WriteLine($"        public const uint BYTE_CRC16 = {crc16test.UsingBytePropertyInCalculatorWhenComputeThenReturnByteCRC16()};");
-            Console.WriteLine($"        public const uint BYTE_ARRAY_CRC16 = {crc16test.UsingByteArrayPropertyInCalculatorWhenComputeThenReturnByteArrayCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_BYTE_CRC16 = {crc16test.UsingNullableBytePropertyInCalculatorWhenComputeThenReturnNullableByteCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_BYTE_ARRAY_CRC16 = {crc16test.UsingNullableByteArrayPropertyInCalculatorWhenComputeThenReturnNullableByteArrayCRC16()};");
-            Console.WriteLine($"        public const uint SBYTE_CRC16 = {crc16test.UsingSbytePropertyInCalculatorWhenComputeThenReturnSbyteCRC16()};");
-            Console.WriteLine($"        public const uint SBYTE_ARRAY_CRC16 = {crc16test.UsingSbyteArrayPropertyInCalculatorWhenComputeThenReturnSbyteArrayCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_SBYTE_CRC16 = {crc16test.UsingNullableSbytePropertyInCalculatorWhenComputeThenReturnNullableSbyteCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_SBYTE_ARRAY_CRC16 = {crc16test.UsingNullableSbyteArrayPropertyInCalculatorWhenComputeThenReturnNullableSbyteArrayCRC16()};");
-            Console.WriteLine($"        public const uint SHORT_CRC16 = {crc16test.UsingShortPropertyInCalculatorWhenComputeThenReturnShortCRC16()};");
-            Console.WriteLine($"        public const uint SHORT_ARRAY_CRC16 = {crc16test.UsingShortArrayPropertyInCalculatorWhenComputeThenReturnShortArrayCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_SHORT_CRC16 = {crc16test.UsingNullableShortPropertyInCalculatorWhenComputeThenReturnNullableShortCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_SHORT_ARRAY_CRC16 = {crc16test.UsingNullableShortArrayPropertyInCalculatorWhenComputeThenReturnNullableShortArrayCRC16()};");
-            Console.WriteLine($"        public const uint USHORT_CRC16 = {crc16test.UsingUshortPropertyInCalculatorWhenComputeThenReturnUshortCRC16()};");
-            Console.WriteLine($"        public const uint USHORT_ARRAY_CRC16 = {crc16test.UsingUshortArrayPropertyInCalculatorWhenComputeThenReturnUshortArrayCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_USHORT_CRC16 = {crc16test.UsingNullableUshortPropertyInCalculatorWhenComputeThenReturnNullableUshortCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_USHORT_ARRAY_CRC16 = {crc16test.UsingNullableUshortArrayPropertyInCalculatorWhenComputeThenReturnNullableUshortArrayCRC16()};");
-            Console.WriteLine($"        public const uint INT_CRC16 = {crc16test.UsingIntPropertyInCalculatorWhenComputeThenReturnIntCRC16()};");
-            Console.WriteLine($"        public const uint INT_ARRAY_CRC16 = {crc16test.UsingIntArrayPropertyInCalculatorWhenComputeThenReturnIntArrayCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_INT_CRC16 = {crc16test.UsingNullableIntPropertyInCalculatorWhenComputeThenReturnNullableIntCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_INT_ARRAY_CRC16 = {crc16test.UsingNullableIntArrayPropertyInCalculatorWhenComputeThenReturnNullableIntArrayCRC16()};");
-            Console.WriteLine($"        public const uint UINT_CRC16 = {crc16test.UsingUintPropertyInCalculatorWhenComputeThenReturnUintCRC16()};");
-            Console.WriteLine($"        public const uint UINT_ARRAY_CRC16 = {crc16test.UsingUintArrayPropertyInCalculatorWhenComputeThenReturnUintArrayCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_UINT_CRC16 = {crc16test.UsingNullableUintPropertyInCalculatorWhenComputeThenReturnNullableUintCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_UINT_ARRAY_CRC16 = {crc16test.UsingNullableUintArrayPropertyInCalculatorWhenComputeThenReturnNullableUintArrayCRC16()};");
-            Console.WriteLine($"        public const uint LONG_CRC16 = {crc16test.UsingLongPropertyInCalculatorWhenComputeThenReturnLongCRC16()};");
-            Console.WriteLine($"        public const uint LONG_ARRAY_CRC16 = {crc16test.UsingLongArrayPropertyInCalculatorWhenComputeThenReturnLongArrayCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_LONG_CRC16 = {crc16test.UsingNullableLongPropertyInCalculatorWhenComputeThenReturnNullableLongCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_LONG_ARRAY_CRC16 = {crc16test.UsingNullableLongArrayPropertyInCalculatorWhenComputeThenReturnNullableLongArrayCRC16()};");
-            Console.WriteLine($"        public const uint ULONG_CRC16 = {crc16test.UsingUlongPropertyInCalculatorWhenComputeThenReturnUlongCRC16()};");
-            Console.WriteLine($"        public const uint ULONG_ARRAY_CRC16 = {crc16test.UsingUlongArrayPropertyInCalculatorWhenComputeThenReturnUlongArrayCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_ULONG_CRC16 = {crc16test.UsingNullableUlongPropertyInCalculatorWhenComputeThenReturnNullableUlongCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_ULONG_ARRAY_CRC16 = {crc16test.UsingNullableUlongArrayPropertyInCalculatorWhenComputeThenReturnNullableUlongArrayCRC16()};");
-            Console.WriteLine($"        public const uint FLOAT_CRC16 = {crc16test.UsingFloatPropertyInCalculatorWhenComputeThenReturnFloatCRC16()};");
-            Console.WriteLine($"        public const uint FLOAT_ARRAY_CRC16 = {crc16test.UsingFloatArrayPropertyInCalculatorWhenComputeThenReturnFloatArrayCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_FLOAT_CRC16 = {crc16test.UsingNullableFloatPropertyInCalculatorWhenComputeThenReturnNullableFloatCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_FLOAT_ARRAY_CRC16 = {crc16test.UsingNullableFloatArrayPropertyInCalculatorWhenComputeThenReturnNullableFloatArrayCRC16()};");
-            Console.WriteLine($"        public const uint DOUBLE_CRC16 = {crc16test.UsingDoublePropertyInCalculatorWhenComputeThenReturnDoubleCRC16()};");
-            Console.WriteLine($"        public const uint DOUBLE_ARRAY_CRC16 = {crc16test.UsingDoubleArrayPropertyInCalculatorWhenComputeThenReturnDoubleArrayCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_DOUBLE_CRC16 = {crc16test.UsingNullableDoublePropertyInCalculatorWhenComputeThenReturnNullableDoubleCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_DOUBLE_ARRAY_CRC16 = {crc16test.UsingNullableDoubleArrayPropertyInCalculatorWhenComputeThenReturnNullableDoubleArrayCRC16()};");
-            Console.WriteLine($"        public const uint DECIMAL_CRC16 = {crc16test.UsingDecimalPropertyInCalculatorWhenComputeThenReturnDecimalCRC16()};");
-            Console.WriteLine($"        public const uint DECIMAL_ARRAY_CRC16 = {crc16test.UsingDecimalArrayPropertyInCalculatorWhenComputeThenReturnDecimalArrayCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_DECIMAL_CRC16 = {crc16test.UsingNullableDecimalPropertyInCalculatorWhenComputeThenReturnNullableDecimalCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_DECIMAL_ARRAY_CRC16 = {crc16test.UsingNullableDecimalArrayPropertyInCalculatorWhenComputeThenReturnNullableDecimalArrayCRC16()};");
-            Console.WriteLine($"        public const uint DATETIME_CRC16 = {crc16test.UsingDateTimePropertyInCalculatorWhenComputeThenReturnDateTimeCRC16()};");
-            Console.WriteLine($"        public const uint DATETIME_ARRAY_CRC16 = {crc16test.UsingDateTimeArrayPropertyInCalculatorWhenComputeThenReturnDateTimeArrayCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_DATETIME_CRC16 = {crc16test.UsingNullableDateTimePropertyInCalculatorWhenComputeThenReturnNullableDateTimeCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_DATETIME_ARRAY_CRC16 = {crc16test.UsingNullableDateTimeArrayPropertyInCalculatorWhenComputeThenReturnNullableDateTimeArrayCRC16()};");
-            Console.WriteLine($"        public const uint TIMESPAN_CRC16 = {crc16test.UsingTimeSpanPropertyInCalculatorWhenComputeThenReturnTimeSpanCRC16()};");
-            Console.WriteLine($"        public const uint TIMESPAN_ARRAY_CRC16 = {crc16test.UsingTimeSpanArrayPropertyInCalculatorWhenComputeThenReturnTimeSpanArrayCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_TIMESPAN_CRC16 = {crc16test.UsingNullableTimeSpanPropertyInCalculatorWhenComputeThenReturnNullableTimeSpanCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_TIMESPAN_ARRAY_CRC16 = {crc16test.UsingNullableTimeSpanArrayPropertyInCalculatorWhenComputeThenReturnNullableTimeSpanArrayCRC16()};");
-            Console.WriteLine($"        public const uint CHAR_CRC16 = {crc16test.UsingCharPropertyInCalculatorWhenComputeThenReturnCharCRC16()};");
-            Console.WriteLine($"        public const uint CHAR_ARRAY_CRC16 = {crc16test.UsingCharArrayPropertyInCalculatorWhenComputeThenReturnCharArrayCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_CHAR_CRC16 = {crc16test.UsingNullableCharPropertyInCalculatorWhenComputeThenReturnNullableCharCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_CHAR_ARRAY_CRC16 = {crc16test.UsingNullableCharArrayPropertyInCalculatorWhenComputeThenReturnNullableCharArrayCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_STRING_CRC16 = {crc16test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_STRING_ARRAY_CRC16 = {crc16test.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArrayCRC16()};");
-            Console.WriteLine($"        public const uint GUID_CRC16 = {crc16test.UsingGuidPropertyInCalculatorWhenComputeThenReturnGuidCRC16()};");
-            Console.WriteLine($"        public const uint GUID_ARRAY_CRC16 = {crc16test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArrayCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_GUID_CRC16 = {crc16test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidCRC16()};");
-            Console.WriteLine($"        public const uint NULLABLE_GUID_ARRAY_CRC16 = {crc16test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArrayCRC16()};");
+            Console.WriteLine("        #region Valores dos CRC16 dos valores padrão");
+            Console.WriteLine($"        public const ushort BOOL_CRC16 = {crc16test.UsingBoolPropertyInCalculatorWhenComputeThenReturnBoolCRC16()};");
+            Console.WriteLine($"        public const ushort BOOL_ARRAY_CRC16 = {crc16test.UsingBoolArrayPropertyInCalculatorWhenComputeThenReturnBoolArrayCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_BOOL_CRC16 = {crc16test.UsingNullableBoolPropertyInCalculatorWhenComputeThenReturnNullableBoolCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_BOOL_ARRAY_CRC16 = {crc16test.UsingNullableBoolArrayPropertyInCalculatorWhenComputeThenReturnNullableBoolArrayCRC16()};");
+            Console.WriteLine($"        public const ushort BYTE_CRC16 = {crc16test.UsingBytePropertyInCalculatorWhenComputeThenReturnByteCRC16()};");
+            Console.WriteLine($"        public const ushort BYTE_ARRAY_CRC16 = {crc16test.UsingByteArrayPropertyInCalculatorWhenComputeThenReturnByteArrayCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_BYTE_CRC16 = {crc16test.UsingNullableBytePropertyInCalculatorWhenComputeThenReturnNullableByteCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_BYTE_ARRAY_CRC16 = {crc16test.UsingNullableByteArrayPropertyInCalculatorWhenComputeThenReturnNullableByteArrayCRC16()};");
+            Console.WriteLine($"        public const ushort SBYTE_CRC16 = {crc16test.UsingSbytePropertyInCalculatorWhenComputeThenReturnSbyteCRC16()};");
+            Console.WriteLine($"        public const ushort SBYTE_ARRAY_CRC16 = {crc16test.UsingSbyteArrayPropertyInCalculatorWhenComputeThenReturnSbyteArrayCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_SBYTE_CRC16 = {crc16test.UsingNullableSbytePropertyInCalculatorWhenComputeThenReturnNullableSbyteCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_SBYTE_ARRAY_CRC16 = {crc16test.UsingNullableSbyteArrayPropertyInCalculatorWhenComputeThenReturnNullableSbyteArrayCRC16()};");
+            Console.WriteLine($"        public const ushort SHORT_CRC16 = {crc16test.UsingShortPropertyInCalculatorWhenComputeThenReturnShortCRC16()};");
+            Console.WriteLine($"        public const ushort SHORT_ARRAY_CRC16 = {crc16test.UsingShortArrayPropertyInCalculatorWhenComputeThenReturnShortArrayCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_SHORT_CRC16 = {crc16test.UsingNullableShortPropertyInCalculatorWhenComputeThenReturnNullableShortCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_SHORT_ARRAY_CRC16 = {crc16test.UsingNullableShortArrayPropertyInCalculatorWhenComputeThenReturnNullableShortArrayCRC16()};");
+            Console.WriteLine($"        public const ushort USHORT_CRC16 = {crc16test.UsingUshortPropertyInCalculatorWhenComputeThenReturnUshortCRC16()};");
+            Console.WriteLine($"        public const ushort USHORT_ARRAY_CRC16 = {crc16test.UsingUshortArrayPropertyInCalculatorWhenComputeThenReturnUshortArrayCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_USHORT_CRC16 = {crc16test.UsingNullableUshortPropertyInCalculatorWhenComputeThenReturnNullableUshortCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_USHORT_ARRAY_CRC16 = {crc16test.UsingNullableUshortArrayPropertyInCalculatorWhenComputeThenReturnNullableUshortArrayCRC16()};");
+            Console.WriteLine($"        public const ushort INT_CRC16 = {crc16test.UsingIntPropertyInCalculatorWhenComputeThenReturnIntCRC16()};");
+            Console.WriteLine($"        public const ushort INT_ARRAY_CRC16 = {crc16test.UsingIntArrayPropertyInCalculatorWhenComputeThenReturnIntArrayCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_INT_CRC16 = {crc16test.UsingNullableIntPropertyInCalculatorWhenComputeThenReturnNullableIntCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_INT_ARRAY_CRC16 = {crc16test.UsingNullableIntArrayPropertyInCalculatorWhenComputeThenReturnNullableIntArrayCRC16()};");
+            Console.WriteLine($"        public const ushort UINT_CRC16 = {crc16test.UsingUintPropertyInCalculatorWhenComputeThenReturnUintCRC16()};");
+            Console.WriteLine($"        public const ushort UINT_ARRAY_CRC16 = {crc16test.UsingUintArrayPropertyInCalculatorWhenComputeThenReturnUintArrayCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_UINT_CRC16 = {crc16test.UsingNullableUintPropertyInCalculatorWhenComputeThenReturnNullableUintCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_UINT_ARRAY_CRC16 = {crc16test.UsingNullableUintArrayPropertyInCalculatorWhenComputeThenReturnNullableUintArrayCRC16()};");
+            Console.WriteLine($"        public const ushort LONG_CRC16 = {crc16test.UsingLongPropertyInCalculatorWhenComputeThenReturnLongCRC16()};");
+            Console.WriteLine($"        public const ushort LONG_ARRAY_CRC16 = {crc16test.UsingLongArrayPropertyInCalculatorWhenComputeThenReturnLongArrayCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_LONG_CRC16 = {crc16test.UsingNullableLongPropertyInCalculatorWhenComputeThenReturnNullableLongCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_LONG_ARRAY_CRC16 = {crc16test.UsingNullableLongArrayPropertyInCalculatorWhenComputeThenReturnNullableLongArrayCRC16()};");
+            Console.WriteLine($"        public const ushort ULONG_CRC16 = {crc16test.UsingUlongPropertyInCalculatorWhenComputeThenReturnUlongCRC16()};");
+            Console.WriteLine($"        public const ushort ULONG_ARRAY_CRC16 = {crc16test.UsingUlongArrayPropertyInCalculatorWhenComputeThenReturnUlongArrayCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_ULONG_CRC16 = {crc16test.UsingNullableUlongPropertyInCalculatorWhenComputeThenReturnNullableUlongCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_ULONG_ARRAY_CRC16 = {crc16test.UsingNullableUlongArrayPropertyInCalculatorWhenComputeThenReturnNullableUlongArrayCRC16()};");
+            Console.WriteLine($"        public const ushort FLOAT_CRC16 = {crc16test.UsingFloatPropertyInCalculatorWhenComputeThenReturnFloatCRC16()};");
+            Console.WriteLine($"        public const ushort FLOAT_ARRAY_CRC16 = {crc16test.UsingFloatArrayPropertyInCalculatorWhenComputeThenReturnFloatArrayCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_FLOAT_CRC16 = {crc16test.UsingNullableFloatPropertyInCalculatorWhenComputeThenReturnNullableFloatCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_FLOAT_ARRAY_CRC16 = {crc16test.UsingNullableFloatArrayPropertyInCalculatorWhenComputeThenReturnNullableFloatArrayCRC16()};");
+            Console.WriteLine($"        public const ushort DOUBLE_CRC16 = {crc16test.UsingDoublePropertyInCalculatorWhenComputeThenReturnDoubleCRC16()};");
+            Console.WriteLine($"        public const ushort DOUBLE_ARRAY_CRC16 = {crc16test.UsingDoubleArrayPropertyInCalculatorWhenComputeThenReturnDoubleArrayCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_DOUBLE_CRC16 = {crc16test.UsingNullableDoublePropertyInCalculatorWhenComputeThenReturnNullableDoubleCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_DOUBLE_ARRAY_CRC16 = {crc16test.UsingNullableDoubleArrayPropertyInCalculatorWhenComputeThenReturnNullableDoubleArrayCRC16()};");
+            Console.WriteLine($"        public const ushort DECIMAL_CRC16 = {crc16test.UsingDecimalPropertyInCalculatorWhenComputeThenReturnDecimalCRC16()};");
+            Console.WriteLine($"        public const ushort DECIMAL_ARRAY_CRC16 = {crc16test.UsingDecimalArrayPropertyInCalculatorWhenComputeThenReturnDecimalArrayCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_DECIMAL_CRC16 = {crc16test.UsingNullableDecimalPropertyInCalculatorWhenComputeThenReturnNullableDecimalCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_DECIMAL_ARRAY_CRC16 = {crc16test.UsingNullableDecimalArrayPropertyInCalculatorWhenComputeThenReturnNullableDecimalArrayCRC16()};");
+            Console.WriteLine($"        public const ushort DATETIME_CRC16 = {crc16test.UsingDateTimePropertyInCalculatorWhenComputeThenReturnDateTimeCRC16()};");
+            Console.WriteLine($"        public const ushort DATETIME_ARRAY_CRC16 = {crc16test.UsingDateTimeArrayPropertyInCalculatorWhenComputeThenReturnDateTimeArrayCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_DATETIME_CRC16 = {crc16test.UsingNullableDateTimePropertyInCalculatorWhenComputeThenReturnNullableDateTimeCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_DATETIME_ARRAY_CRC16 = {crc16test.UsingNullableDateTimeArrayPropertyInCalculatorWhenComputeThenReturnNullableDateTimeArrayCRC16()};");
+            Console.WriteLine($"        public const ushort TIMESPAN_CRC16 = {crc16test.UsingTimeSpanPropertyInCalculatorWhenComputeThenReturnTimeSpanCRC16()};");
+            Console.WriteLine($"        public const ushort TIMESPAN_ARRAY_CRC16 = {crc16test.UsingTimeSpanArrayPropertyInCalculatorWhenComputeThenReturnTimeSpanArrayCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_TIMESPAN_CRC16 = {crc16test.UsingNullableTimeSpanPropertyInCalculatorWhenComputeThenReturnNullableTimeSpanCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_TIMESPAN_ARRAY_CRC16 = {crc16test.UsingNullableTimeSpanArrayPropertyInCalculatorWhenComputeThenReturnNullableTimeSpanArrayCRC16()};");
+            Console.WriteLine($"        public const ushort CHAR_CRC16 = {crc16test.UsingCharPropertyInCalculatorWhenComputeThenReturnCharCRC16()};");
+            Console.WriteLine($"        public const ushort CHAR_ARRAY_CRC16 = {crc16test.UsingCharArrayPropertyInCalculatorWhenComputeThenReturnCharArrayCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_CHAR_CRC16 = {crc16test.UsingNullableCharPropertyInCalculatorWhenComputeThenReturnNullableCharCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_CHAR_ARRAY_CRC16 = {crc16test.UsingNullableCharArrayPropertyInCalculatorWhenComputeThenReturnNullableCharArrayCRC16()};");
+            Console.WriteLine($"        public const ulong NULLABLE_STRING_UTF8_CRC16 = {crc16test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringCRC16()};");
+            Console.WriteLine($"        public const ulong NULLABLE_STRING_UNICODE_CRC16 = {crc16test.UsingNullableStringPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringCRC16()};");
+            Console.WriteLine($"        public const ulong NULLABLE_STRING_UTF32_CRC16 = {crc16test.UsingNullableStringPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_STRING_ARRAY_UTF8_CRC16 = {crc16test.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArrayCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_STRING_ARRAY_UNICODE_CRC16 = {crc16test.UsingNullableStringArrayPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringArrayCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_STRING_ARRAY_UTF32_CRC16 = {crc16test.UsingNullableStringArrayPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringArrayCRC16()};");
+            Console.WriteLine($"        public const ushort GUID_CRC16 = {crc16test.UsingGuidPropertyInCalculatorWhenComputeThenReturnGuidCRC16()};");
+            Console.WriteLine($"        public const ushort GUID_ARRAY_CRC16 = {crc16test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArrayCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_GUID_CRC16 = {crc16test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_GUID_ARRAY_CRC16 = {crc16test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArrayCRC16()};");
+            Console.WriteLine("        #endregion");
 
-
-            Console.WriteLine("");
-            Console.WriteLine("");
             Console.WriteLine("");
 
             var sha1Test = new SHA1FluentHashCalculatorTests();
@@ -293,15 +301,18 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] CHAR_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingCharArrayPropertyInCalculatorWhenComputeThenReturnCharArraySHA1())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_CHAR_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableCharPropertyInCalculatorWhenComputeThenReturnNullableCharSHA1())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_CHAR_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableCharArrayPropertyInCalculatorWhenComputeThenReturnNullableCharArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UTF8_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UNICODE_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableStringPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UTF32_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableStringPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF8_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UNICODE_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableStringArrayPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF32_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableStringArrayPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringArraySHA1())} }};");
             Console.WriteLine($"        public static readonly byte[] GUID_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingGuidPropertyInCalculatorWhenComputeThenReturnGuidSHA1())} }};");
             Console.WriteLine($"        public static readonly byte[] GUID_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArraySHA1())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidSHA1())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArraySHA1())} }};");
             Console.WriteLine("        #endregion");
 
-            Console.WriteLine("");
             Console.WriteLine("");
 
             var sha256test = new SHA256FluentHashCalculatorTests();
@@ -367,15 +378,18 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] CHAR_ARRAY_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingCharArrayPropertyInCalculatorWhenComputeThenReturnCharArraySHA256())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_CHAR_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableCharPropertyInCalculatorWhenComputeThenReturnNullableCharSHA256())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_CHAR_ARRAY_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableCharArrayPropertyInCalculatorWhenComputeThenReturnNullableCharArraySHA256())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringSHA256())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UTF8_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringSHA256())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UNICODE_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableStringPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringSHA256())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UTF32_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableStringPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringSHA256())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArraySHA256())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UNICODE_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableStringArrayPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringArraySHA256())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF32_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableStringArrayPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringArraySHA256())} }};");
             Console.WriteLine($"        public static readonly byte[] GUID_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingGuidPropertyInCalculatorWhenComputeThenReturnGuidSHA256())} }};");
             Console.WriteLine($"        public static readonly byte[] GUID_ARRAY_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArraySHA256())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidSHA256())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_ARRAY_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArraySHA256())} }};");
             Console.WriteLine("        #endregion");
 
-            Console.WriteLine("");
             Console.WriteLine("");
 
             var sha384test = new SHA384FluentHashCalculatorTests();
@@ -441,15 +455,18 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] CHAR_ARRAY_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingCharArrayPropertyInCalculatorWhenComputeThenReturnCharArraySHA384())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_CHAR_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingNullableCharPropertyInCalculatorWhenComputeThenReturnNullableCharSHA384())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_CHAR_ARRAY_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingNullableCharArrayPropertyInCalculatorWhenComputeThenReturnNullableCharArraySHA384())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringSHA384())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArraySHA384())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UTF8_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringSHA384())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UNICODE_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingNullableStringPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringSHA384())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UTF32_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingNullableStringPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringSHA384())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF8_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArraySHA384())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UNICODE_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingNullableStringArrayPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringArraySHA384())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF32_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingNullableStringArrayPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringArraySHA384())} }};");
             Console.WriteLine($"        public static readonly byte[] GUID_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingGuidPropertyInCalculatorWhenComputeThenReturnGuidSHA384())} }};");
             Console.WriteLine($"        public static readonly byte[] GUID_ARRAY_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArraySHA384())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidSHA384())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_ARRAY_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArraySHA384())} }};");
             Console.WriteLine("        #endregion");
 
-            Console.WriteLine("");
             Console.WriteLine("");
 
             var sha512test = new SHA512FluentHashCalculatorTests();
@@ -515,14 +532,17 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] CHAR_ARRAY_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingCharArrayPropertyInCalculatorWhenComputeThenReturnCharArraySHA512())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_CHAR_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableCharPropertyInCalculatorWhenComputeThenReturnNullableCharSHA512())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_CHAR_ARRAY_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableCharArrayPropertyInCalculatorWhenComputeThenReturnNullableCharArraySHA512())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringSHA512())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArraySHA512())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UTF8_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringSHA512())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UNICODE_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableStringPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringSHA512())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UTF32_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableStringPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringSHA512())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF8_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArraySHA512())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UNICODE_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableStringArrayPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringArraySHA512())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF32_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableStringArrayPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringArraySHA512())} }};");
             Console.WriteLine($"        public static readonly byte[] GUID_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingGuidPropertyInCalculatorWhenComputeThenReturnGuidSHA512())} }};");
             Console.WriteLine($"        public static readonly byte[] GUID_ARRAY_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArraySHA512())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidSHA512())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_ARRAY_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArraySHA512())} }};");
             Console.WriteLine("        #endregion");
-            */
         }
     }
 }

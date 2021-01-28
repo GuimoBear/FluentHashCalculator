@@ -10,13 +10,13 @@ namespace FluentHashCalculator.Tests
         [Fact]
         public void UsingAnNotSupportedTypeAndNotSupressExceptionWhenCallFromMethodThrowTypeNotSupportedException()
         {
-            Assert.Throws<TypeNotSupportedException>(() => Bytes.From(new Entity()).ToList());
+            Assert.Throws<TypeNotSupportedException>(() => Bytes.From(new Entity(), new Contexts.SerializationContext()).ToList());
         }
 
         [Fact]
         public void UsingAnNotSupportedTypeAndSupressExceptionWhenCallFromMethodReturnAnEmptyByteArray()
         {
-            Assert.Empty(Bytes.From(new Entity(), true).ToList());
+            Assert.Empty(Bytes.From(new Entity(), new Contexts.SerializationContext(), true).ToList());
         }
     }
 }

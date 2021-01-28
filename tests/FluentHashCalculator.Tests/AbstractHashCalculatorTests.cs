@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using FluentHashCalculator.Tests.Fakes;
 using System;
+using System.Text;
 using Xunit;
 
 namespace FluentHashCalculator.Tests
@@ -10,7 +11,7 @@ namespace FluentHashCalculator.Tests
         [Fact]
         public void UsingAnValidInstanceWhenCRC64ComputeCallThenNotThrowAnyException()
         {
-            var calculator = new CRC64EntityUnicityCalculator();
+            var calculator = new CRC64EntityAbstractHashCalculator();
 
             var instance = new Entity
             {
@@ -28,7 +29,7 @@ namespace FluentHashCalculator.Tests
         [Fact]
         public void UsingAnValidInstanceWhenCRC32ComputeCallThenNotThrowAnyException()
         {
-            var calculator = new CRC32EntityUnicityCalculator();
+            var calculator = new CRC32EntityAbstractHashCalculator();
 
             var instance = new Entity
             {
@@ -46,7 +47,7 @@ namespace FluentHashCalculator.Tests
         [Fact]
         public void UsingAnValidInstanceWhenCRC16ComputeCallThenNotThrowAnyException()
         {
-            var calculator = new CRC16EntityUnicityCalculator();
+            var calculator = new CRC16EntityAbstractHashCalculator();
 
             var instance = new Entity
             {
@@ -91,7 +92,7 @@ namespace FluentHashCalculator.Tests
         [Fact]
         public void UsingAnValidInstanceWhenSHA256ComputeCallThenNotThrowAnyException()
         {
-            var calculator = new SHA256EntityUnicityCalculator();
+            var calculator = new SHA256WithUTF32EncodingEntityAbstractHashCalculator();
 
             var instance = new Entity
             {
@@ -99,6 +100,9 @@ namespace FluentHashCalculator.Tests
                 Birthday = new DateTime(2000, 11, 3),
                 Name = "Test"
             };
+
+            calculator.Encoding
+                .Should().Be(Encoding.UTF32);
 
             var result = calculator.Compute(instance);
 
@@ -118,7 +122,7 @@ namespace FluentHashCalculator.Tests
         [Fact]
         public void UsingAnValidInstanceWhenSHA384ComputeCallThenNotThrowAnyException()
         {
-            var calculator = new SHA384EntityUnicityCalculator();
+            var calculator = new SHA384EntityAbstractHashCalculator();
 
             var instance = new Entity
             {
@@ -145,7 +149,7 @@ namespace FluentHashCalculator.Tests
         [Fact]
         public void UsingAnValidInstanceWhenSHA512ComputeCallThenNotThrowAnyException()
         {
-            var calculator = new SHA512EntityUnicityCalculator();
+            var calculator = new SHA512EntityAbstractHashCalculator();
 
             var instance = new Entity
             {

@@ -3,19 +3,18 @@ using System.Collections.Concurrent;
 
 namespace FluentHashCalculator.Internal
 {
-    internal class DisposableObjectPool<T>
-        where T: IDisposable
+    internal class ObjectPool<T>
     {
         internal readonly ConcurrentBag<T> _objects;
         private readonly Func<T> _objectGenerator;
 
-        public DisposableObjectPool(Func<T> objectGenerator)
+        public ObjectPool(Func<T> objectGenerator)
         {
             _objectGenerator = objectGenerator ?? throw new ArgumentNullException(nameof(objectGenerator));
             _objects = new ConcurrentBag<T>();
         }
-
-        ~DisposableObjectPool()
+        /*
+        ~ObjectPool()
         {
             try
             {
@@ -23,7 +22,8 @@ namespace FluentHashCalculator.Internal
                 {
                     try
                     {
-                        instance.Dispose();
+                        if (instance is IDisposable disposable)
+                            disposable.Dispose();
                     }
                     catch
                     {
@@ -36,6 +36,7 @@ namespace FluentHashCalculator.Internal
 
             }
         }
+        */
 
         public Container<T> Acquire()
             => new Container<T>(this);
@@ -48,13 +49,12 @@ namespace FluentHashCalculator.Internal
         private void Return(T item) => _objects.Add(item);
 
         internal class Container<T> : IDisposable
-            where T : IDisposable
         {
-            private readonly DisposableObjectPool<T> pool;
+            private readonly ObjectPool<T> pool;
 
             public readonly T Instance;
 
-            public Container(DisposableObjectPool<T> pool)
+            public Container(ObjectPool<T> pool)
             {
                 this.pool = pool;
                 Instance = pool.Get();
