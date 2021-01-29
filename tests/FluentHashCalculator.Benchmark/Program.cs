@@ -1,10 +1,18 @@
-﻿namespace FluentHashCalculator.Benchmark
+﻿using BenchmarkDotNet.Running;
+
+namespace FluentHashCalculator.Benchmark
 {
     class Program
     {
         static void Main(string[] args)
         {
-
+            BenchmarkRunner.Run<CRC16FluentHashCalculatorBenchmark>();
+            BenchmarkRunner.Run<CRC32FluentHashCalculatorBenchmark>();
+            BenchmarkRunner.Run<CRC64FluentHashCalculatorBenchmark>();
+            BenchmarkRunner.Run<SHA1FluentHashCalculatorBenchmark>();
+            BenchmarkRunner.Run<SHA256FluentHashCalculatorBenchmark>();
+            BenchmarkRunner.Run<SHA384FluentHashCalculatorBenchmark>();
+            BenchmarkRunner.Run<SHA512FluentHashCalculatorBenchmark>();
         }
 
         private static void PrintResults()

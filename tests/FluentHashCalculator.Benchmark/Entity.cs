@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FluentHashCalculator.Tests.Fakes
+namespace FluentHashCalculator.Benchmark
 {
-    public class EntityWithAllSupportedTypes
+    public class Entity
     {
         public bool BoolProperty { get; } = Consts.BOOL_DEFAULT_VALUE;
         public bool[] BoolArrayProperty { get; } = Consts.BOOL_ARRAY_DEFAULT_VALUE;
@@ -30,9 +30,9 @@ namespace FluentHashCalculator.Tests.Fakes
         public int? NullableIntProperty { get; } = Consts.NULLABLE_INT_DEFAULT_VALUE;
         public IReadOnlyList<int?> NullableIntArrayProperty { get; } = Consts.NULLABLE_INT_ARRAY_DEFAULT_VALUE;
         public uint UintProperty { get; } = Consts.UINT_DEFAULT_VALUE;
-        public IReadOnlySet<uint> UintArrayProperty { get; } = Consts.UINT_ARRAY_DEFAULT_VALUE;
+        public IEnumerable<uint> UintArrayProperty { get; } = Consts.UINT_ARRAY_DEFAULT_VALUE;
         public uint? NullableUintProperty { get; } = Consts.NULLABLE_UINT_DEFAULT_VALUE;
-        public IReadOnlySet<uint?> NullableUintArrayProperty { get; } = Consts.NULLABLE_UINT_ARRAY_DEFAULT_VALUE;
+        public IEnumerable<uint?> NullableUintArrayProperty { get; } = Consts.NULLABLE_UINT_ARRAY_DEFAULT_VALUE;
         public long LongProperty { get; } = Consts.LONG_DEFAULT_VALUE;
         public IEnumerable<long> LongArrayProperty { get; } = Consts.LONG_ARRAY_DEFAULT_VALUE;
         public long? NullableLongProperty { get; } = Consts.NULLABLE_LONG_DEFAULT_VALUE;

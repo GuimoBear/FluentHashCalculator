@@ -27,7 +27,7 @@ namespace FluentHashCalculator.Internal
         [DebuggerDisplay("{Value,nq}")]
         private struct Element
         {
-            internal T? Value;
+            internal T Value;
         }
 
         /// <remarks>
@@ -38,7 +38,7 @@ namespace FluentHashCalculator.Internal
 
         // Storage for the pool objects. The first item is stored in a dedicated field because we
         // expect to be able to satisfy most requests from it.
-        private T? _firstItem;
+        private T _firstItem;
         private readonly Element[] _items;
 
         // factory is stored for the lifetime of the pool. We will call this only when pool needs to
@@ -54,13 +54,6 @@ namespace FluentHashCalculator.Internal
         {
             Debug.Assert(size >= 1);
             _factory = factory;
-            _items = new Element[size - 1];
-        }
-
-        internal ObjectPool(Func<ObjectPool<T>, T> factory, int size)
-        {
-            Debug.Assert(size >= 1);
-            _factory = () => factory(this);
             _items = new Element[size - 1];
         }
 

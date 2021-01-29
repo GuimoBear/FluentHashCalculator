@@ -2,12 +2,15 @@
 using FluentHashCalculator.Tests.Fakes;
 using System;
 using System.Text;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace FluentHashCalculator.Tests
 {
     public class AbstractHashCalculatorTests
     {
+        private int PARALLEL_TO_EXCLUSIVE = 10;
+
         [Fact]
         public void UsingAnValidInstanceWhenCRC64ComputeCallThenNotThrowAnyException()
         {
@@ -116,15 +119,18 @@ namespace FluentHashCalculator.Tests
                 Name = "Test"
             };
 
-            var result = calculator.Compute(instance);
+            Parallel.For(0, PARALLEL_TO_EXCLUSIVE, _ =>
+            {
+                var result = calculator.Compute(instance);
 
-            result
-                .Should().NotBeNull().And.NotBeEmpty();
+                result
+                    .Should().NotBeNull().And.NotBeEmpty();
 
-            var expected = Convert.ToBase64String(result);
+                var expected = Convert.ToBase64String(result);
 
-            expected
-                .Should().BeEquivalentTo(calculator.Base64(instance));
+                expected
+                    .Should().BeEquivalentTo(calculator.Base64(instance));
+            });
 
             calculator.Compute(null)
                 .Should().BeEmpty();
@@ -168,15 +174,18 @@ namespace FluentHashCalculator.Tests
             calculator.IgnoreErrors
                 .Should().BeTrue();
 
-            var result = calculator.Compute(instance);
+            Parallel.For(0, PARALLEL_TO_EXCLUSIVE, _ =>
+            {
+                var result = calculator.Compute(instance);
 
-            result
-                .Should().NotBeNull().And.NotBeEmpty();
+                result
+                    .Should().NotBeNull().And.NotBeEmpty();
 
-            var expected = Convert.ToBase64String(result);
+                var expected = Convert.ToBase64String(result);
 
-            expected
-                .Should().BeEquivalentTo(calculator.Base64(instance));
+                expected
+                    .Should().BeEquivalentTo(calculator.Base64(instance));
+            });
 
             calculator.Compute(null)
                 .Should().BeEmpty();
@@ -217,15 +226,18 @@ namespace FluentHashCalculator.Tests
                 Name = "Test"
             };
 
-            var result = calculator.Compute(instance);
+            Parallel.For(0, PARALLEL_TO_EXCLUSIVE, _ =>
+            {
+                var result = calculator.Compute(instance);
 
-            result
-                .Should().NotBeNull().And.NotBeEmpty();
+                result
+                    .Should().NotBeNull().And.NotBeEmpty();
 
-            var expected = Convert.ToBase64String(result);
+                var expected = Convert.ToBase64String(result);
 
-            expected
-                .Should().BeEquivalentTo(calculator.Base64(instance));
+                expected
+                    .Should().BeEquivalentTo(calculator.Base64(instance));
+            });
 
             calculator.Compute(null)
                 .Should().BeEmpty();
@@ -263,15 +275,18 @@ namespace FluentHashCalculator.Tests
                 Name = "Test"
             };
 
-            var result = calculator.Compute(instance);
+            Parallel.For(0, PARALLEL_TO_EXCLUSIVE, _ =>
+            {
+                var result = calculator.Compute(instance);
 
-            result
-                .Should().NotBeNull().And.NotBeEmpty();
+                result
+                    .Should().NotBeNull().And.NotBeEmpty();
 
-            var expected = Convert.ToBase64String(result);
+                var expected = Convert.ToBase64String(result);
 
-            expected
-                .Should().BeEquivalentTo(calculator.Base64(instance));
+                expected
+                    .Should().BeEquivalentTo(calculator.Base64(instance));
+            });
 
             calculator.Compute(null)
                 .Should().BeEmpty();
