@@ -23,10 +23,6 @@ namespace FluentHashCalculator.Tests
                     Thread.Sleep(5);
                 }
             });
-            
-            sut._objects
-                .Should()
-                .HaveCountLessOrEqualTo(maxParallelRunners);
         }
     }
 }
