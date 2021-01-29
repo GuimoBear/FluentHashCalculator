@@ -57,13 +57,6 @@ namespace FluentHashCalculator.Internal
             _items = new Element[size - 1];
         }
 
-        internal ObjectPool(Func<ObjectPool<T>, T> factory, int size)
-        {
-            Debug.Assert(size >= 1);
-            _factory = () => factory(this);
-            _items = new Element[size - 1];
-        }
-
         private T CreateInstance()
         {
             var inst = _factory();
@@ -115,13 +108,8 @@ namespace FluentHashCalculator.Internal
                 // We will interlock only when we have a candidate. in a worst case we may miss some
                 // recently returned objects. Not a big deal.
                 var inst = items[i].Value;
-                if (inst != null)
-                {
-                    if (inst == Interlocked.CompareExchange(ref items[i].Value, null, inst))
-                    {
-                        return inst;
-                    }
-                }
+                if (inst != null && inst == Interlocked.CompareExchange(ref items[i].Value, null, inst))
+                    return inst;
             }
 
             return CreateInstance();
