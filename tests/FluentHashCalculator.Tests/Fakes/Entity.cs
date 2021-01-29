@@ -11,13 +11,14 @@ namespace FluentHashCalculator.Tests.Fakes
 
         public AnotherEntity Another { get; set; }
 
-        public int Age()
-        {
-            var now = DateTime.Now;
+        public NullEntity Null { get; set; }
 
-            if (now.DayOfYear >= Birthday.DayOfYear)
-                return now.Year - Birthday.Year;
-            return now.Year - Birthday.Year - 1;
-        }
+        public int Age()
+            => 1;
+    }
+
+    public class NullEntity
+    {
+        public string Name { get; set; }
     }
 }

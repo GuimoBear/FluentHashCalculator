@@ -750,6 +750,19 @@ namespace FluentHashCalculator.Tests
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression, Encoding.Unicode));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_UNICODE_SHA512, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA512();
+            calculator.Context.Encoding = Encoding.Unicode;
+            calculator.Using(e => e.NullableStringProperty, Encoding.UTF8);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_UTF8_SHA512, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA512();
+            calculator.Context.Encoding = Encoding.Unicode;
+            calculator.Using(e => e.NullableStringProperty);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_UNICODE_SHA512, actual);
+
             return actual;
         }
 
@@ -762,6 +775,19 @@ namespace FluentHashCalculator.Tests
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression, Encoding.UTF32));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_UTF32_SHA512, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA512();
+            calculator.Context.Encoding = Encoding.UTF32;
+            calculator.Using(e => e.NullableStringProperty, Encoding.UTF8);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_UTF8_SHA512, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA512();
+            calculator.Context.Encoding = Encoding.UTF32;
+            calculator.Using(e => e.NullableStringProperty);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_UTF32_SHA512, actual);
+
             return actual;
         }
 
@@ -786,6 +812,19 @@ namespace FluentHashCalculator.Tests
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression, Encoding.Unicode));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UNICODE_SHA512, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA512();
+            calculator.Context.Encoding = Encoding.Unicode;
+            calculator.UsingEach(e => e.NullableStringArrayProperty, Encoding.UTF8);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UTF8_SHA512, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA512();
+            calculator.Context.Encoding = Encoding.Unicode;
+            calculator.UsingEach(e => e.NullableStringArrayProperty);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UNICODE_SHA512, actual);
+
             return actual;
         }
 
@@ -798,6 +837,19 @@ namespace FluentHashCalculator.Tests
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression, Encoding.Unicode));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UTF32_SHA512, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA512();
+            calculator.Context.Encoding = Encoding.UTF32;
+            calculator.UsingEach(e => e.NullableStringArrayProperty, Encoding.UTF8);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UTF8_SHA512, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA512();
+            calculator.Context.Encoding = Encoding.UTF32;
+            calculator.UsingEach(e => e.NullableStringArrayProperty);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UTF32_SHA512, actual);
+
             return actual;
         }
 

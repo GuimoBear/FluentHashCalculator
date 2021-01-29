@@ -14,7 +14,18 @@ namespace FluentHashCalculator
         public Encoding Encoding
         {
             get => Calculate.Context.Encoding;
-            set => Calculate.Context.Encoding = value;
+            protected set => Calculate.Context.Encoding = value;
+        }
+
+        /// <summary>
+        /// Indicates whether errors that occurred when capturing the values reported in Using and UsingEach will be ignore<br /><br />
+        /// If the value is <strong>false</strong>, the exception will be thrown<br /><br />
+        /// Default value is <strong>GlobalSettings.IgnoreErrors</strong>
+        /// </summary>
+        public bool IgnoreErrors
+        {
+            get => Calculate.Context.IgnoreErrors;
+            protected set => Calculate.Context.IgnoreErrors = value;
         }
     }
 }

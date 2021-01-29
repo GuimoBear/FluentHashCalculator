@@ -54,7 +54,7 @@ namespace FluentHashCalculator.Tests.Fakes
         public static readonly IEnumerable<decimal> DECIMAL_ARRAY_DEFAULT_VALUE = new decimal[] { 3366874157741.84154m, -16876753575.5754m };
         public static readonly decimal? NULLABLE_DECIMAL_DEFAULT_VALUE = 65415674.245721m;
         public static readonly IEnumerable<decimal?> NULLABLE_DECIMAL_ARRAY_DEFAULT_VALUE = new decimal?[] { 65415674.245721m, null, -33547889 };
-        public static readonly DateTime DATETIME_DEFAULT_VALUE = new DateTime(2001, 5, 8, 12, 15, 30, 554);
+        public static readonly DateTime DATETIME_DEFAULT_VALUE = new(2001, 5, 8, 12, 15, 30, 554);
         public static readonly IEnumerable<DateTime> DATETIME_ARRAY_DEFAULT_VALUE = new DateTime[] { new DateTime(2001, 5, 8, 12, 15, 30, 554), new DateTime(1977, 8, 3, 7, 1, 39, 447) };
         public static readonly DateTime? NULLABLE_DATETIME_DEFAULT_VALUE = null;
         public static readonly IEnumerable<DateTime?> NULLABLE_DATETIME_ARRAY_DEFAULT_VALUE = null;
@@ -66,8 +66,8 @@ namespace FluentHashCalculator.Tests.Fakes
         public static readonly IEnumerable<char> CHAR_ARRAY_DEFAULT_VALUE = new char[] { 'x', ' ', '¬' };
         public static readonly char? NULLABLE_CHAR_DEFAULT_VALUE = '¬';
         public static readonly IEnumerable<char?> NULLABLE_CHAR_ARRAY_DEFAULT_VALUE = new char?[] { '¬', null, '´' };
-        public static readonly string? NULLABLE_STRING_DEFAULT_VALUE = "zkjsdfghkhjKHGHSGDFHJSGDHJGJHfgjhfgjhgdsjkfhijstnyh G4144545 5457";
-        public static readonly IEnumerable<string?> NULLABLE_STRING_ARRAY_DEFAULT_VALUE = new List<string?> { "sdkl.jgfuwehfioefw6ef4w564f5we745f7w 6sd8486dm7468.74l8k7ç687lk687.kççklçk", "adsklfyhli4lk4lj3h5345454fd5s4 5 4f5g4 f5dg454f5g ", null };
+        public static readonly string NULLABLE_STRING_DEFAULT_VALUE = "zkjsdfghkhjKHGHSGDFHJSGDHJGJHfgjhfgjhgdsjkfhijstnyh G4144545 5457";
+        public static readonly IEnumerable<string> NULLABLE_STRING_ARRAY_DEFAULT_VALUE = new List<string> { "sdkl.jgfuwehfioefw6ef4w564f5we745f7w 6sd8486dm7468.74l8k7ç687lk687.kççklçk", "adsklfyhli4lk4lj3h5345454fd5s4 5 4f5g4 f5dg454f5g ", null };
         public static readonly Guid GUID_DEFAULT_VALUE = Guid.Parse("a6334475-7984-402a-85a8-fe7c33274756");
         public static readonly IEnumerable<Guid> GUID_ARRAY_DEFAULT_VALUE = new Guid[] { Guid.Parse("a6334475-7984-402a-85a8-fe7c33274756"), Guid.Empty, Guid.Parse("c0bcefe4-367e-49b6-aceb-e08be2c90c07") };
         public static readonly Guid? NULLABLE_GUID_DEFAULT_VALUE = null;
@@ -453,7 +453,7 @@ namespace FluentHashCalculator.Tests.Fakes
         public static readonly byte[] NULLABLE_STRING_UTF8_SHA256 = new byte[] { 185, 109, 131, 111, 138, 150, 145, 255, 55, 168, 218, 249, 253, 17, 135, 41, 158, 227, 134, 60, 108, 64, 49, 226, 192, 29, 157, 175, 79, 161, 182, 110 };
         public static readonly byte[] NULLABLE_STRING_UNICODE_SHA256 = new byte[] { 27, 139, 34, 149, 15, 32, 90, 159, 127, 203, 128, 27, 50, 81, 46, 152, 129, 92, 238, 204, 231, 52, 174, 221, 217, 253, 52, 217, 232, 168, 114, 231 };
         public static readonly byte[] NULLABLE_STRING_UTF32_SHA256 = new byte[] { 152, 150, 80, 186, 218, 32, 161, 144, 253, 169, 44, 251, 227, 194, 41, 0, 100, 208, 225, 63, 149, 27, 168, 154, 77, 235, 186, 5, 57, 209, 194, 218 };
-        public static readonly byte[] NULLABLE_STRING_ARRAY_SHA256 = new byte[] { 198, 238, 91, 101, 137, 228, 125, 59, 199, 152, 32, 244, 228, 203, 86, 202, 209, 131, 134, 151, 116, 61, 128, 58, 35, 138, 75, 116, 195, 16, 111, 16 };
+        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF8_SHA256 = new byte[] { 198, 238, 91, 101, 137, 228, 125, 59, 199, 152, 32, 244, 228, 203, 86, 202, 209, 131, 134, 151, 116, 61, 128, 58, 35, 138, 75, 116, 195, 16, 111, 16 };
         public static readonly byte[] NULLABLE_STRING_ARRAY_UNICODE_SHA256 = new byte[] { 174, 249, 82, 205, 147, 185, 151, 143, 217, 165, 205, 238, 107, 29, 55, 99, 8, 63, 186, 249, 136, 207, 241, 127, 3, 68, 218, 135, 112, 234, 53, 154 };
         public static readonly byte[] NULLABLE_STRING_ARRAY_UTF32_SHA256 = new byte[] { 25, 80, 131, 206, 35, 211, 238, 95, 45, 17, 223, 182, 68, 188, 246, 34, 117, 94, 8, 50, 10, 171, 255, 194, 96, 239, 233, 77, 151, 195, 57, 200 };
         public static readonly byte[] GUID_SHA256 = new byte[] { 165, 248, 196, 110, 148, 209, 217, 181, 183, 194, 108, 91, 16, 91, 189, 219, 141, 233, 217, 208, 73, 145, 37, 38, 152, 185, 47, 239, 193, 62, 80, 200 };

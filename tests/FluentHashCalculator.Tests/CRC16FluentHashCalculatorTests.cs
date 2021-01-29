@@ -734,7 +734,7 @@ namespace FluentHashCalculator.Tests
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC16();
             calculator.Using(e => e.NullableStringProperty);
-            Expression<Func<EntityWithAllSupportedTypes, string?>> nullExpression = null;
+            Expression<Func<EntityWithAllSupportedTypes, string>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_UTF8_CRC16, actual);
@@ -746,10 +746,23 @@ namespace FluentHashCalculator.Tests
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC16();
             calculator.Using(e => e.NullableStringProperty, Encoding.Unicode);
-            Expression<Func<EntityWithAllSupportedTypes, string?>> nullExpression = null;
+            Expression<Func<EntityWithAllSupportedTypes, string>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression, Encoding.Unicode));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_UNICODE_CRC16, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC16();
+            calculator.Context.Encoding = Encoding.Unicode;
+            calculator.Using(e => e.NullableStringProperty, Encoding.UTF8);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_UTF8_CRC16, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC16();
+            calculator.Context.Encoding = Encoding.Unicode;
+            calculator.Using(e => e.NullableStringProperty);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_UNICODE_CRC16, actual);
+
             return actual;
         }
 
@@ -758,10 +771,23 @@ namespace FluentHashCalculator.Tests
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC16();
             calculator.Using(e => e.NullableStringProperty, Encoding.UTF32);
-            Expression<Func<EntityWithAllSupportedTypes, string?>> nullExpression = null;
+            Expression<Func<EntityWithAllSupportedTypes, string>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression, Encoding.UTF32));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_UTF32_CRC16, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC16();
+            calculator.Context.Encoding = Encoding.UTF32;
+            calculator.Using(e => e.NullableStringProperty, Encoding.UTF8);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_UTF8_CRC16, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC16();
+            calculator.Context.Encoding = Encoding.UTF32;
+            calculator.Using(e => e.NullableStringProperty);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_UTF32_CRC16, actual);
+
             return actual;
         }
 
@@ -770,7 +796,7 @@ namespace FluentHashCalculator.Tests
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC16();
             calculator.UsingEach(e => e.NullableStringArrayProperty);
-            Expression<Func<EntityWithAllSupportedTypes, IEnumerable<string?>>> nullExpression = null;
+            Expression<Func<EntityWithAllSupportedTypes, IEnumerable<string>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UTF8_CRC16, actual);
@@ -782,10 +808,23 @@ namespace FluentHashCalculator.Tests
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC16();
             calculator.UsingEach(e => e.NullableStringArrayProperty, Encoding.Unicode);
-            Expression<Func<EntityWithAllSupportedTypes, IEnumerable<string?>>> nullExpression = null;
+            Expression<Func<EntityWithAllSupportedTypes, IEnumerable<string>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression, Encoding.Unicode));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UNICODE_CRC16, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC16();
+            calculator.Context.Encoding = Encoding.Unicode;
+            calculator.UsingEach(e => e.NullableStringArrayProperty, Encoding.UTF8);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UTF8_CRC16, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC16();
+            calculator.Context.Encoding = Encoding.Unicode;
+            calculator.UsingEach(e => e.NullableStringArrayProperty);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UNICODE_CRC16, actual);
+
             return actual;
         }
 
@@ -794,10 +833,23 @@ namespace FluentHashCalculator.Tests
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC16();
             calculator.UsingEach(e => e.NullableStringArrayProperty, Encoding.UTF32);
-            Expression<Func<EntityWithAllSupportedTypes, IEnumerable<string?>>> nullExpression = null;
+            Expression<Func<EntityWithAllSupportedTypes, IEnumerable<string>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression, Encoding.UTF32));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UTF32_CRC16, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC16();
+            calculator.Context.Encoding = Encoding.UTF32;
+            calculator.UsingEach(e => e.NullableStringArrayProperty, Encoding.UTF8);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UTF8_CRC16, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC16();
+            calculator.Context.Encoding = Encoding.UTF32;
+            calculator.UsingEach(e => e.NullableStringArrayProperty);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UTF32_CRC16, actual);
+
             return actual;
         }
 

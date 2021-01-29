@@ -9,12 +9,6 @@ namespace FluentHashCalculator.Tests.Fakes
         public DateTime Birthday { get; set; }
 
         public int Age()
-        {
-            var now = DateTime.Now;
-
-            if (now.DayOfYear >= Birthday.DayOfYear)
-                return now.Year - Birthday.Year;
-            return now.Year - Birthday.Year - 1;
-        }
+            => 1;
     }
 }

@@ -24,6 +24,20 @@ namespace FluentHashCalculator.Tests
 
             calculator.Compute(null)
                 .Should().Be(ulong.MinValue);
+
+            calculator = new CRC64EntityAbstractHashCalculator(ignoreErrors: false);
+
+            Assert.Throws<NullReferenceException>(() => calculator.Compute(instance));
+
+            instance = new Entity
+            {
+                Id = 2,
+                Birthday = new DateTime(2000, 11, 3),
+                Name = "Test", 
+                Another = new AnotherEntity()
+            };
+
+            calculator.Compute(instance);
         }
 
         [Fact]
@@ -42,6 +56,20 @@ namespace FluentHashCalculator.Tests
 
             calculator.Compute(null)
                 .Should().Be(uint.MinValue);
+
+            calculator = new CRC32EntityAbstractHashCalculator(ignoreErrors: false);
+
+            Assert.Throws<NullReferenceException>(() => calculator.Compute(instance));
+
+            instance = new Entity
+            {
+                Id = 2,
+                Birthday = new DateTime(2000, 11, 3),
+                Name = "Test",
+                Another = new AnotherEntity()
+            };
+
+            calculator.Compute(instance);
         }
 
         [Fact]
@@ -60,12 +88,26 @@ namespace FluentHashCalculator.Tests
 
             calculator.Compute(null)
                 .Should().Be(ushort.MinValue);
+
+            calculator = new CRC16EntityAbstractHashCalculator(ignoreErrors: false);
+
+            Assert.Throws<NullReferenceException>(() => calculator.Compute(instance));
+
+            instance = new Entity
+            {
+                Id = 2,
+                Birthday = new DateTime(2000, 11, 3),
+                Name = "Test",
+                Another = new AnotherEntity()
+            };
+
+            calculator.Compute(instance);
         }
 
         [Fact]
         public void UsingAnValidInstanceWhenSHA1ComputeCallThenNotThrowAnyException()
         {
-            var calculator = new SHA1EntityUnicityCalculator();
+            var calculator = new SHA1EntityAbstractHashCalculator();
 
             var instance = new Entity
             {
@@ -79,7 +121,9 @@ namespace FluentHashCalculator.Tests
             result
                 .Should().NotBeNull().And.NotBeEmpty();
 
-            Convert.ToBase64String(result)
+            var expected = Convert.ToBase64String(result);
+
+            expected
                 .Should().BeEquivalentTo(calculator.Base64(instance));
 
             calculator.Compute(null)
@@ -87,6 +131,23 @@ namespace FluentHashCalculator.Tests
 
             calculator.Base64(null)
                 .Should().BeNullOrEmpty();
+
+            calculator = new SHA1EntityAbstractHashCalculator(ignoreErrors: false);
+
+            Assert.Throws<NullReferenceException>(() => calculator.Compute(instance));
+
+            Assert.Throws<NullReferenceException>(() => calculator.Base64(instance));
+
+            instance = new Entity
+            {
+                Id = 2,
+                Birthday = new DateTime(2000, 11, 3),
+                Name = "Test",
+                Another = new AnotherEntity()
+            };
+
+            calculator.Compute(instance);
+            calculator.Base64(instance);
         }
 
         [Fact]
@@ -104,12 +165,17 @@ namespace FluentHashCalculator.Tests
             calculator.Encoding
                 .Should().Be(Encoding.UTF32);
 
+            calculator.IgnoreErrors
+                .Should().BeTrue();
+
             var result = calculator.Compute(instance);
 
             result
                 .Should().NotBeNull().And.NotBeEmpty();
 
-            Convert.ToBase64String(result)
+            var expected = Convert.ToBase64String(result);
+
+            expected
                 .Should().BeEquivalentTo(calculator.Base64(instance));
 
             calculator.Compute(null)
@@ -117,6 +183,26 @@ namespace FluentHashCalculator.Tests
 
             calculator.Base64(null)
                 .Should().BeNullOrEmpty();
+
+            calculator = new SHA256WithUTF32EncodingEntityAbstractHashCalculator(ignoreErrors: false);
+
+            calculator.IgnoreErrors
+                .Should().BeFalse();
+
+            Assert.Throws<NullReferenceException>(() => calculator.Compute(instance));
+
+            Assert.Throws<NullReferenceException>(() => calculator.Base64(instance));
+
+            instance = new Entity
+            {
+                Id = 2,
+                Birthday = new DateTime(2000, 11, 3),
+                Name = "Test",
+                Another = new AnotherEntity()
+            };
+
+            calculator.Compute(instance);
+            calculator.Base64(instance);
         }
 
         [Fact]
@@ -136,7 +222,9 @@ namespace FluentHashCalculator.Tests
             result
                 .Should().NotBeNull().And.NotBeEmpty();
 
-            Convert.ToBase64String(result)
+            var expected = Convert.ToBase64String(result);
+
+            expected
                 .Should().BeEquivalentTo(calculator.Base64(instance));
 
             calculator.Compute(null)
@@ -144,6 +232,23 @@ namespace FluentHashCalculator.Tests
 
             calculator.Base64(null)
                 .Should().BeNullOrEmpty();
+
+            calculator = new SHA384EntityAbstractHashCalculator(ignoreErrors: false);
+
+            Assert.Throws<NullReferenceException>(() => calculator.Compute(instance));
+
+            Assert.Throws<NullReferenceException>(() => calculator.Base64(instance));
+
+            instance = new Entity
+            {
+                Id = 2,
+                Birthday = new DateTime(2000, 11, 3),
+                Name = "Test",
+                Another = new AnotherEntity()
+            };
+
+            calculator.Compute(instance);
+            calculator.Base64(instance);
         }
 
         [Fact]
@@ -163,7 +268,9 @@ namespace FluentHashCalculator.Tests
             result
                 .Should().NotBeNull().And.NotBeEmpty();
 
-            Convert.ToBase64String(result)
+            var expected = Convert.ToBase64String(result);
+
+            expected
                 .Should().BeEquivalentTo(calculator.Base64(instance));
 
             calculator.Compute(null)
@@ -171,6 +278,23 @@ namespace FluentHashCalculator.Tests
 
             calculator.Base64(null)
                 .Should().BeNullOrEmpty();
+
+            calculator = new SHA512EntityAbstractHashCalculator(ignoreErrors: false);
+
+            Assert.Throws<NullReferenceException>(() => calculator.Compute(instance));
+
+            Assert.Throws<NullReferenceException>(() => calculator.Base64(instance));
+
+            instance = new Entity
+            {
+                Id = 2,
+                Birthday = new DateTime(2000, 11, 3),
+                Name = "Test",
+                Another = new AnotherEntity()
+            };
+
+            calculator.Compute(instance);
+            calculator.Base64(instance);
         }
     }
 }

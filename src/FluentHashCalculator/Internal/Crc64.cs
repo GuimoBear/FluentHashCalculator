@@ -4,7 +4,7 @@ namespace FluentHashCalculator.Internal
 {
     internal class Crc64
     {
-        private static readonly ulong[] Table = {
+        private static readonly ReadOnlyMemory<ulong> Table = new ulong[] {
             0x0000000000000000, 0x7ad870c830358979,
             0xf5b0e190606b12f2, 0x8f689158505e9b8b,
             0xc038e5739841b68f, 0xbae095bba8743ff6,
@@ -141,7 +141,7 @@ namespace FluentHashCalculator.Internal
                 return crc;
             for (int j = 0; j < s.Length; j++)
             {
-                crc = Table[(byte)(crc ^ s[j])] ^ (crc >> 8);
+                crc = Table.Span[(byte)(crc ^ s[j])] ^ (crc >> 8);
             }
 
             return crc;

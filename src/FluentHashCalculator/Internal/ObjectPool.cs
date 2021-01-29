@@ -14,6 +14,7 @@ namespace FluentHashCalculator.Internal
             _objects = new ConcurrentBag<T>();
         }
         /*
+         * 
         ~ObjectPool()
         {
             try

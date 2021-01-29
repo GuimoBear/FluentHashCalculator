@@ -1,0 +1,4582 @@
+{
+  "FluentHashCalculator.dll": {
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\AbstractHashCalculator.cs": {
+      "FluentHashCalculator.AbstractHashCalculator`1": {
+        "System.Text.Encoding FluentHashCalculator.AbstractHashCalculator`1::get_Encoding()": {
+          "Lines": {
+            "16": 1
+          },
+          "Branches": []
+        },
+        "System.Void FluentHashCalculator.AbstractHashCalculator`1::set_Encoding(System.Text.Encoding)": {
+          "Lines": {
+            "17": 2
+          },
+          "Branches": []
+        },
+        "System.Boolean FluentHashCalculator.AbstractHashCalculator`1::get_IgnoreErrors()": {
+          "Lines": {
+            "27": 2
+          },
+          "Branches": []
+        },
+        "System.Void FluentHashCalculator.AbstractHashCalculator`1::set_IgnoreErrors(System.Boolean)": {
+          "Lines": {
+            "28": 14
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\CRC16\\CRC16AbstractCalculator.cs": {
+      "FluentHashCalculator.AbstractHashCalculator`1/CRC16": {
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculator`1/CRC16::get_Calculate()": {
+          "Lines": {
+            "11": 4
+          },
+          "Branches": []
+        },
+        "System.UInt16 FluentHashCalculator.AbstractHashCalculator`1/CRC16::Compute(T)": {
+          "Lines": {
+            "14": 4,
+            "15": 4,
+            "16": 3
+          },
+          "Branches": []
+        },
+        "System.Void FluentHashCalculator.AbstractHashCalculator`1/CRC16::.ctor()": {
+          "Lines": {
+            "8": 2,
+            "9": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\CRC32\\CRC32AbstractCalculator.cs": {
+      "FluentHashCalculator.AbstractHashCalculator`1/CRC32": {
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculator`1/CRC32::get_Calculate()": {
+          "Lines": {
+            "11": 4
+          },
+          "Branches": []
+        },
+        "System.UInt32 FluentHashCalculator.AbstractHashCalculator`1/CRC32::Compute(T)": {
+          "Lines": {
+            "14": 4,
+            "15": 4,
+            "16": 3
+          },
+          "Branches": []
+        },
+        "System.Void FluentHashCalculator.AbstractHashCalculator`1/CRC32::.ctor()": {
+          "Lines": {
+            "8": 2,
+            "9": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\CRC64\\CRC64AbstractCalculator.cs": {
+      "FluentHashCalculator.AbstractHashCalculator`1/CRC64": {
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculator`1/CRC64::get_Calculate()": {
+          "Lines": {
+            "11": 4
+          },
+          "Branches": []
+        },
+        "System.UInt64 FluentHashCalculator.AbstractHashCalculator`1/CRC64::Compute(T)": {
+          "Lines": {
+            "14": 4,
+            "15": 4,
+            "16": 3
+          },
+          "Branches": []
+        },
+        "System.Void FluentHashCalculator.AbstractHashCalculator`1/CRC64::.ctor()": {
+          "Lines": {
+            "8": 2,
+            "9": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\SHA1\\SHA1AbstractCalculator.cs": {
+      "FluentHashCalculator.AbstractHashCalculator`1/SHA1": {
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculator`1/SHA1::get_Calculate()": {
+          "Lines": {
+            "13": 4
+          },
+          "Branches": []
+        },
+        "System.String FluentHashCalculator.AbstractHashCalculator`1/SHA1::Base64(T)": {
+          "Lines": {
+            "16": 4
+          },
+          "Branches": []
+        },
+        "System.Byte[] FluentHashCalculator.AbstractHashCalculator`1/SHA1::Compute(T)": {
+          "Lines": {
+            "19": 8,
+            "20": 8,
+            "21": 6
+          },
+          "Branches": []
+        },
+        "System.Void FluentHashCalculator.AbstractHashCalculator`1/SHA1::.ctor()": {
+          "Lines": {
+            "10": 2,
+            "11": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\SHA256\\SHA256AbstractCalculator.cs": {
+      "FluentHashCalculator.AbstractHashCalculator`1/SHA256": {
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculator`1/SHA256::get_Calculate()": {
+          "Lines": {
+            "13": 9
+          },
+          "Branches": []
+        },
+        "System.String FluentHashCalculator.AbstractHashCalculator`1/SHA256::Base64(T)": {
+          "Lines": {
+            "16": 4
+          },
+          "Branches": []
+        },
+        "System.Byte[] FluentHashCalculator.AbstractHashCalculator`1/SHA256::Compute(T)": {
+          "Lines": {
+            "19": 8,
+            "20": 8,
+            "21": 6
+          },
+          "Branches": []
+        },
+        "System.Void FluentHashCalculator.AbstractHashCalculator`1/SHA256::.ctor()": {
+          "Lines": {
+            "10": 2,
+            "11": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\SHA384\\SHA384AbstractCalculator.cs": {
+      "FluentHashCalculator.AbstractHashCalculator`1/SHA384": {
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculator`1/SHA384::get_Calculate()": {
+          "Lines": {
+            "13": 4
+          },
+          "Branches": []
+        },
+        "System.String FluentHashCalculator.AbstractHashCalculator`1/SHA384::Base64(T)": {
+          "Lines": {
+            "16": 4
+          },
+          "Branches": []
+        },
+        "System.Byte[] FluentHashCalculator.AbstractHashCalculator`1/SHA384::Compute(T)": {
+          "Lines": {
+            "19": 8,
+            "20": 8,
+            "21": 6
+          },
+          "Branches": []
+        },
+        "System.Void FluentHashCalculator.AbstractHashCalculator`1/SHA384::.ctor()": {
+          "Lines": {
+            "10": 2,
+            "11": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\SHA512\\SHA512AbstractCalculator.cs": {
+      "FluentHashCalculator.AbstractHashCalculator`1/SHA512": {
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculator`1/SHA512::get_Calculate()": {
+          "Lines": {
+            "13": 4
+          },
+          "Branches": []
+        },
+        "System.String FluentHashCalculator.AbstractHashCalculator`1/SHA512::Base64(T)": {
+          "Lines": {
+            "16": 4
+          },
+          "Branches": []
+        },
+        "System.Byte[] FluentHashCalculator.AbstractHashCalculator`1/SHA512::Compute(T)": {
+          "Lines": {
+            "19": 8,
+            "20": 8,
+            "21": 6
+          },
+          "Branches": []
+        },
+        "System.Void FluentHashCalculator.AbstractHashCalculator`1/SHA512::.ctor()": {
+          "Lines": {
+            "10": 2,
+            "11": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\AbstractHashCalculatorBuilder.cs": {
+      "FluentHashCalculator.AbstractHashCalculatorBuilder`1": {
+        "FluentHashCalculator.Contexts.SerializationContext FluentHashCalculator.AbstractHashCalculatorBuilder`1::get_Context()": {
+          "Lines": {
+            "18": 2750
+          },
+          "Branches": []
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::get_And()": {
+          "Lines": {
+            "20": 98
+          },
+          "Branches": []
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Boolean>>)": {
+          "Lines": {
+            "23": 29,
+            "24": 29,
+            "25": 7,
+            "27": 22,
+            "28": 22,
+            "29": 22,
+            "30": 22,
+            "31": 22
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 24,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 22
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Nullable`1<System.Boolean>>>)": {
+          "Lines": {
+            "34": 28,
+            "35": 28,
+            "36": 7,
+            "38": 21,
+            "39": 21,
+            "40": 21,
+            "41": 21,
+            "42": 21
+          },
+          "Branches": [
+            {
+              "Line": 35,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 35,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.DateTime>>)": {
+          "Lines": {
+            "45": 56,
+            "46": 56,
+            "47": 7,
+            "49": 49,
+            "50": 49,
+            "51": 49,
+            "52": 49,
+            "53": 49
+          },
+          "Branches": [
+            {
+              "Line": 46,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 46,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 49
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Nullable`1<System.DateTime>>>)": {
+          "Lines": {
+            "56": 28,
+            "57": 28,
+            "58": 7,
+            "60": 21,
+            "61": 21,
+            "62": 21,
+            "63": 21,
+            "64": 21
+          },
+          "Branches": [
+            {
+              "Line": 57,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 57,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.TimeSpan>>)": {
+          "Lines": {
+            "67": 28,
+            "68": 28,
+            "69": 7,
+            "71": 21,
+            "72": 21,
+            "73": 21,
+            "74": 21,
+            "75": 21
+          },
+          "Branches": [
+            {
+              "Line": 68,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 68,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Nullable`1<System.TimeSpan>>>)": {
+          "Lines": {
+            "78": 28,
+            "79": 28,
+            "80": 7,
+            "82": 21,
+            "83": 21,
+            "84": 21,
+            "85": 21,
+            "86": 21
+          },
+          "Branches": [
+            {
+              "Line": 79,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 79,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Char>>)": {
+          "Lines": {
+            "89": 28,
+            "90": 28,
+            "91": 7,
+            "93": 21,
+            "94": 21,
+            "95": 21,
+            "96": 21,
+            "97": 21
+          },
+          "Branches": [
+            {
+              "Line": 90,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 90,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Nullable`1<System.Char>>>)": {
+          "Lines": {
+            "100": 28,
+            "101": 28,
+            "102": 7,
+            "104": 21,
+            "105": 21,
+            "106": 21,
+            "107": 21,
+            "108": 21
+          },
+          "Branches": [
+            {
+              "Line": 101,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 101,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.String>>)": {
+          "Lines": {
+            "111": 84,
+            "112": 84,
+            "113": 7,
+            "115": 77,
+            "116": 77,
+            "117": 77,
+            "118": 77,
+            "119": 77
+          },
+          "Branches": [
+            {
+              "Line": 112,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 112,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 77
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.String>>,System.Text.Encoding)": {
+          "Lines": {
+            "122": 42,
+            "123": 42,
+            "124": 14,
+            "126": 28,
+            "127": 28,
+            "128": 28,
+            "129": 28,
+            "130": 28,
+            "131": 28
+          },
+          "Branches": [
+            {
+              "Line": 123,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 14
+            },
+            {
+              "Line": 123,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 28
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Guid>>)": {
+          "Lines": {
+            "134": 28,
+            "135": 28,
+            "136": 7,
+            "138": 21,
+            "139": 21,
+            "140": 21,
+            "141": 21,
+            "142": 21
+          },
+          "Branches": [
+            {
+              "Line": 135,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 135,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Nullable`1<System.Guid>>>)": {
+          "Lines": {
+            "145": 28,
+            "146": 28,
+            "147": 7,
+            "149": 21,
+            "150": 21,
+            "151": 21,
+            "152": 21,
+            "153": 21
+          },
+          "Branches": [
+            {
+              "Line": 146,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 146,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Boolean>>>)": {
+          "Lines": {
+            "156": 28,
+            "157": 28,
+            "158": 7,
+            "160": 21,
+            "161": 21,
+            "162": 21,
+            "163": 21,
+            "164": 21
+          },
+          "Branches": [
+            {
+              "Line": 157,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 157,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Nullable`1<System.Boolean>>>>)": {
+          "Lines": {
+            "167": 28,
+            "168": 28,
+            "169": 7,
+            "171": 21,
+            "172": 21,
+            "173": 21,
+            "174": 21,
+            "175": 21
+          },
+          "Branches": [
+            {
+              "Line": 168,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 168,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.DateTime>>>)": {
+          "Lines": {
+            "178": 28,
+            "179": 28,
+            "180": 7,
+            "182": 21,
+            "183": 21,
+            "184": 21,
+            "185": 21,
+            "186": 21
+          },
+          "Branches": [
+            {
+              "Line": 179,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 179,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Nullable`1<System.DateTime>>>>)": {
+          "Lines": {
+            "189": 28,
+            "190": 28,
+            "191": 7,
+            "193": 21,
+            "194": 21,
+            "195": 21,
+            "196": 21,
+            "197": 21
+          },
+          "Branches": [
+            {
+              "Line": 190,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 190,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.TimeSpan>>>)": {
+          "Lines": {
+            "200": 28,
+            "201": 28,
+            "202": 7,
+            "204": 21,
+            "205": 21,
+            "206": 21,
+            "207": 21,
+            "208": 21
+          },
+          "Branches": [
+            {
+              "Line": 201,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 201,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Nullable`1<System.TimeSpan>>>>)": {
+          "Lines": {
+            "211": 28,
+            "212": 28,
+            "213": 7,
+            "215": 21,
+            "216": 21,
+            "217": 21,
+            "218": 21,
+            "219": 21
+          },
+          "Branches": [
+            {
+              "Line": 212,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 212,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Char>>>)": {
+          "Lines": {
+            "222": 28,
+            "223": 28,
+            "224": 7,
+            "226": 21,
+            "227": 21,
+            "228": 21,
+            "229": 21,
+            "230": 21
+          },
+          "Branches": [
+            {
+              "Line": 223,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 223,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Nullable`1<System.Char>>>>)": {
+          "Lines": {
+            "233": 28,
+            "234": 28,
+            "235": 7,
+            "237": 21,
+            "238": 21,
+            "239": 21,
+            "240": 21,
+            "241": 21
+          },
+          "Branches": [
+            {
+              "Line": 234,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 234,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.String>>>)": {
+          "Lines": {
+            "244": 42,
+            "245": 42,
+            "246": 7,
+            "248": 35,
+            "249": 35,
+            "250": 35,
+            "251": 35,
+            "252": 35
+          },
+          "Branches": [
+            {
+              "Line": 245,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 245,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 35
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.String>>>,System.Text.Encoding)": {
+          "Lines": {
+            "255": 42,
+            "256": 42,
+            "257": 14,
+            "259": 28,
+            "260": 28,
+            "261": 28,
+            "262": 28,
+            "263": 28,
+            "264": 28
+          },
+          "Branches": [
+            {
+              "Line": 256,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 14
+            },
+            {
+              "Line": 256,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 28
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Guid>>>)": {
+          "Lines": {
+            "267": 28,
+            "268": 28,
+            "269": 7,
+            "271": 21,
+            "272": 21,
+            "273": 21,
+            "274": 21,
+            "275": 21
+          },
+          "Branches": [
+            {
+              "Line": 268,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 268,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Nullable`1<System.Guid>>>>)": {
+          "Lines": {
+            "278": 28,
+            "279": 28,
+            "280": 7,
+            "282": 21,
+            "283": 21,
+            "284": 21,
+            "285": 21,
+            "286": 21
+          },
+          "Branches": [
+            {
+              "Line": 279,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 279,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "System.Void FluentHashCalculator.AbstractHashCalculatorBuilder`1::.ctor()": {
+          "Lines": {
+            "13": 575,
+            "14": 575,
+            "15": 575,
+            "16": 575
+          },
+          "Branches": []
+        }
+      },
+      "FluentHashCalculator.AbstractHashCalculatorBuilder`1/<ValuesFor>d__31": {
+        "System.Boolean FluentHashCalculator.AbstractHashCalculatorBuilder`1/<ValuesFor>d__31::MoveNext()": {
+          "Lines": {
+            "289": 600,
+            "290": 600,
+            "291": 6101,
+            "292": 2156,
+            "293": 2156,
+            "294": 2156,
+            "295": 2156,
+            "296": 2013,
+            "297": 6105,
+            "298": 2013,
+            "300": 143,
+            "301": 143,
+            "302": 132,
+            "303": 2145,
+            "304": 2145,
+            "305": 589
+          },
+          "Branches": [
+            {
+              "Line": 291,
+              "Offset": 332,
+              "EndOffset": 83,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2156
+            },
+            {
+              "Line": 293,
+              "Offset": 141,
+              "EndOffset": 143,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2100
+            },
+            {
+              "Line": 293,
+              "Offset": 141,
+              "EndOffset": 156,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 56
+            },
+            {
+              "Line": 295,
+              "Offset": 187,
+              "EndOffset": 189,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2013
+            },
+            {
+              "Line": 295,
+              "Offset": 187,
+              "EndOffset": 225,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 143
+            },
+            {
+              "Line": 291,
+              "Offset": 332,
+              "EndOffset": 337,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 589
+            }
+          ]
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\AbstractHashCalculatorBuilderFloatingPointNumbers.cs": {
+      "FluentHashCalculator.AbstractHashCalculatorBuilder`1": {
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Single>>)": {
+          "Lines": {
+            "12": 28,
+            "13": 28,
+            "14": 7,
+            "16": 21,
+            "17": 21,
+            "18": 21,
+            "19": 21,
+            "20": 21
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 13,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Nullable`1<System.Single>>>)": {
+          "Lines": {
+            "23": 28,
+            "24": 28,
+            "25": 7,
+            "27": 21,
+            "28": 21,
+            "29": 21,
+            "30": 21,
+            "31": 21
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 24,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Double>>)": {
+          "Lines": {
+            "34": 28,
+            "35": 28,
+            "36": 7,
+            "38": 21,
+            "39": 21,
+            "40": 21,
+            "41": 21,
+            "42": 21
+          },
+          "Branches": [
+            {
+              "Line": 35,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 35,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Nullable`1<System.Double>>>)": {
+          "Lines": {
+            "45": 28,
+            "46": 28,
+            "47": 7,
+            "49": 21,
+            "50": 21,
+            "51": 21,
+            "52": 21,
+            "53": 21
+          },
+          "Branches": [
+            {
+              "Line": 46,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 46,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Decimal>>)": {
+          "Lines": {
+            "56": 28,
+            "57": 28,
+            "58": 7,
+            "60": 21,
+            "61": 21,
+            "62": 21,
+            "63": 21,
+            "64": 21
+          },
+          "Branches": [
+            {
+              "Line": 57,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 57,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Nullable`1<System.Decimal>>>)": {
+          "Lines": {
+            "67": 28,
+            "68": 28,
+            "69": 7,
+            "71": 21,
+            "72": 21,
+            "73": 21,
+            "74": 21,
+            "75": 21
+          },
+          "Branches": [
+            {
+              "Line": 68,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 68,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Single>>>)": {
+          "Lines": {
+            "78": 28,
+            "79": 28,
+            "80": 7,
+            "82": 21,
+            "83": 21,
+            "84": 21,
+            "85": 21,
+            "86": 21
+          },
+          "Branches": [
+            {
+              "Line": 79,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 79,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Nullable`1<System.Single>>>>)": {
+          "Lines": {
+            "89": 28,
+            "90": 28,
+            "91": 7,
+            "93": 21,
+            "94": 21,
+            "95": 21,
+            "96": 21,
+            "97": 21
+          },
+          "Branches": [
+            {
+              "Line": 90,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 90,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Double>>>)": {
+          "Lines": {
+            "100": 28,
+            "101": 28,
+            "102": 7,
+            "104": 21,
+            "105": 21,
+            "106": 21,
+            "107": 21,
+            "108": 21
+          },
+          "Branches": [
+            {
+              "Line": 101,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 101,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Nullable`1<System.Double>>>>)": {
+          "Lines": {
+            "111": 28,
+            "112": 28,
+            "113": 7,
+            "115": 21,
+            "116": 21,
+            "117": 21,
+            "118": 21,
+            "119": 21
+          },
+          "Branches": [
+            {
+              "Line": 112,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 112,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Decimal>>>)": {
+          "Lines": {
+            "122": 28,
+            "123": 28,
+            "124": 7,
+            "126": 21,
+            "127": 21,
+            "128": 21,
+            "129": 21,
+            "130": 21
+          },
+          "Branches": [
+            {
+              "Line": 123,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 123,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Nullable`1<System.Decimal>>>>)": {
+          "Lines": {
+            "133": 28,
+            "134": 28,
+            "135": 7,
+            "137": 21,
+            "138": 21,
+            "139": 21,
+            "140": 21,
+            "141": 21
+          },
+          "Branches": [
+            {
+              "Line": 134,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 134,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\AbstractHashCalculatorBuilderNumeric.cs": {
+      "FluentHashCalculator.AbstractHashCalculatorBuilder`1": {
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Byte>>)": {
+          "Lines": {
+            "12": 28,
+            "13": 28,
+            "14": 7,
+            "16": 21,
+            "17": 21,
+            "18": 21,
+            "19": 21,
+            "20": 21
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 13,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Nullable`1<System.Byte>>>)": {
+          "Lines": {
+            "23": 28,
+            "24": 28,
+            "25": 7,
+            "27": 21,
+            "28": 21,
+            "29": 21,
+            "30": 21,
+            "31": 21
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 24,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.SByte>>)": {
+          "Lines": {
+            "34": 28,
+            "35": 28,
+            "36": 7,
+            "38": 21,
+            "39": 21,
+            "40": 21,
+            "41": 21,
+            "42": 21
+          },
+          "Branches": [
+            {
+              "Line": 35,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 35,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Nullable`1<System.SByte>>>)": {
+          "Lines": {
+            "45": 28,
+            "46": 28,
+            "47": 7,
+            "49": 21,
+            "50": 21,
+            "51": 21,
+            "52": 21,
+            "53": 21
+          },
+          "Branches": [
+            {
+              "Line": 46,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 46,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Int16>>)": {
+          "Lines": {
+            "56": 28,
+            "57": 28,
+            "58": 7,
+            "60": 21,
+            "61": 21,
+            "62": 21,
+            "63": 21,
+            "64": 21
+          },
+          "Branches": [
+            {
+              "Line": 57,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 57,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Nullable`1<System.Int16>>>)": {
+          "Lines": {
+            "67": 28,
+            "68": 28,
+            "69": 7,
+            "71": 21,
+            "72": 21,
+            "73": 21,
+            "74": 21,
+            "75": 21
+          },
+          "Branches": [
+            {
+              "Line": 68,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 68,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.UInt16>>)": {
+          "Lines": {
+            "78": 22,
+            "79": 22,
+            "80": 1,
+            "82": 21,
+            "83": 21,
+            "84": 21,
+            "85": 21,
+            "86": 21
+          },
+          "Branches": [
+            {
+              "Line": 79,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 79,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Nullable`1<System.UInt16>>>)": {
+          "Lines": {
+            "89": 22,
+            "90": 22,
+            "91": 1,
+            "93": 21,
+            "94": 21,
+            "95": 21,
+            "96": 21,
+            "97": 21
+          },
+          "Branches": [
+            {
+              "Line": 90,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 90,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Int32>>)": {
+          "Lines": {
+            "100": 70,
+            "101": 70,
+            "102": 7,
+            "104": 63,
+            "105": 63,
+            "106": 63,
+            "107": 63,
+            "108": 63
+          },
+          "Branches": [
+            {
+              "Line": 101,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 101,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 63
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Nullable`1<System.Int32>>>)": {
+          "Lines": {
+            "111": 28,
+            "112": 28,
+            "113": 7,
+            "115": 21,
+            "116": 21,
+            "117": 21,
+            "118": 21,
+            "119": 21
+          },
+          "Branches": [
+            {
+              "Line": 112,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 112,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.UInt32>>)": {
+          "Lines": {
+            "122": 17,
+            "123": 17,
+            "124": 3,
+            "126": 14,
+            "127": 14,
+            "128": 14,
+            "129": 14,
+            "130": 14
+          },
+          "Branches": [
+            {
+              "Line": 123,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 123,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 14
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Nullable`1<System.UInt32>>>)": {
+          "Lines": {
+            "133": 24,
+            "134": 24,
+            "135": 3,
+            "137": 21,
+            "138": 21,
+            "139": 21,
+            "140": 21,
+            "141": 21
+          },
+          "Branches": [
+            {
+              "Line": 134,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 134,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Int64>>)": {
+          "Lines": {
+            "144": 28,
+            "145": 28,
+            "146": 7,
+            "148": 21,
+            "149": 21,
+            "150": 21,
+            "151": 21,
+            "152": 21
+          },
+          "Branches": [
+            {
+              "Line": 145,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 145,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Nullable`1<System.Int64>>>)": {
+          "Lines": {
+            "155": 28,
+            "156": 28,
+            "157": 7,
+            "159": 21,
+            "160": 21,
+            "161": 21,
+            "162": 21,
+            "163": 21
+          },
+          "Branches": [
+            {
+              "Line": 156,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 156,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.UInt64>>)": {
+          "Lines": {
+            "166": 38,
+            "167": 38,
+            "168": 17,
+            "170": 21,
+            "171": 21,
+            "172": 21,
+            "173": 21,
+            "174": 21
+          },
+          "Branches": [
+            {
+              "Line": 167,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 17
+            },
+            {
+              "Line": 167,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::Using(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Nullable`1<System.UInt64>>>)": {
+          "Lines": {
+            "177": 38,
+            "178": 38,
+            "179": 17,
+            "181": 21,
+            "182": 21,
+            "183": 21,
+            "184": 21,
+            "185": 21
+          },
+          "Branches": [
+            {
+              "Line": 178,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 17
+            },
+            {
+              "Line": 178,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Byte>>>)": {
+          "Lines": {
+            "188": 28,
+            "189": 28,
+            "190": 7,
+            "192": 21,
+            "193": 21,
+            "194": 21,
+            "195": 21,
+            "196": 21
+          },
+          "Branches": [
+            {
+              "Line": 189,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 189,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Nullable`1<System.Byte>>>>)": {
+          "Lines": {
+            "199": 28,
+            "200": 28,
+            "201": 7,
+            "203": 21,
+            "204": 21,
+            "205": 21,
+            "206": 21,
+            "207": 21
+          },
+          "Branches": [
+            {
+              "Line": 200,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 200,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.SByte>>>)": {
+          "Lines": {
+            "210": 28,
+            "211": 28,
+            "212": 7,
+            "214": 21,
+            "215": 21,
+            "216": 21,
+            "217": 21,
+            "218": 21
+          },
+          "Branches": [
+            {
+              "Line": 211,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 211,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Nullable`1<System.SByte>>>>)": {
+          "Lines": {
+            "221": 28,
+            "222": 28,
+            "223": 7,
+            "225": 21,
+            "226": 21,
+            "227": 21,
+            "228": 21,
+            "229": 21
+          },
+          "Branches": [
+            {
+              "Line": 222,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 222,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Int16>>>)": {
+          "Lines": {
+            "232": 28,
+            "233": 28,
+            "234": 7,
+            "236": 21,
+            "237": 21,
+            "238": 21,
+            "239": 21,
+            "240": 21
+          },
+          "Branches": [
+            {
+              "Line": 233,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 233,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Nullable`1<System.Int16>>>>)": {
+          "Lines": {
+            "243": 28,
+            "244": 28,
+            "245": 7,
+            "247": 21,
+            "248": 21,
+            "249": 21,
+            "250": 21,
+            "251": 21
+          },
+          "Branches": [
+            {
+              "Line": 244,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 244,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.UInt16>>>)": {
+          "Lines": {
+            "254": 22,
+            "255": 22,
+            "256": 1,
+            "258": 21,
+            "259": 21,
+            "260": 21,
+            "261": 21,
+            "262": 21
+          },
+          "Branches": [
+            {
+              "Line": 255,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 255,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Nullable`1<System.UInt16>>>>)": {
+          "Lines": {
+            "265": 22,
+            "266": 22,
+            "267": 1,
+            "269": 21,
+            "270": 21,
+            "271": 21,
+            "272": 21,
+            "273": 21
+          },
+          "Branches": [
+            {
+              "Line": 266,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 266,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Int32>>>)": {
+          "Lines": {
+            "276": 28,
+            "277": 28,
+            "278": 7,
+            "280": 21,
+            "281": 21,
+            "282": 21,
+            "283": 21,
+            "284": 21
+          },
+          "Branches": [
+            {
+              "Line": 277,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 277,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Nullable`1<System.Int32>>>>)": {
+          "Lines": {
+            "287": 28,
+            "288": 28,
+            "289": 7,
+            "291": 21,
+            "292": 21,
+            "293": 21,
+            "294": 21,
+            "295": 21
+          },
+          "Branches": [
+            {
+              "Line": 288,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 288,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.UInt32>>>)": {
+          "Lines": {
+            "298": 24,
+            "299": 24,
+            "300": 3,
+            "302": 21,
+            "303": 21,
+            "304": 21,
+            "305": 21,
+            "306": 21
+          },
+          "Branches": [
+            {
+              "Line": 299,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 299,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Nullable`1<System.UInt32>>>>)": {
+          "Lines": {
+            "309": 24,
+            "310": 24,
+            "311": 3,
+            "313": 21,
+            "314": 21,
+            "315": 21,
+            "316": 21,
+            "317": 21
+          },
+          "Branches": [
+            {
+              "Line": 310,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 310,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Int64>>>)": {
+          "Lines": {
+            "320": 28,
+            "321": 28,
+            "322": 7,
+            "324": 21,
+            "325": 21,
+            "326": 21,
+            "327": 21,
+            "328": 21
+          },
+          "Branches": [
+            {
+              "Line": 321,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 321,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Nullable`1<System.Int64>>>>)": {
+          "Lines": {
+            "331": 28,
+            "332": 28,
+            "333": 7,
+            "335": 21,
+            "336": 21,
+            "337": 21,
+            "338": 21,
+            "339": 21
+          },
+          "Branches": [
+            {
+              "Line": 332,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 332,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.UInt64>>>)": {
+          "Lines": {
+            "342": 38,
+            "343": 38,
+            "344": 17,
+            "346": 21,
+            "347": 21,
+            "348": 21,
+            "349": 21,
+            "350": 21
+          },
+          "Branches": [
+            {
+              "Line": 343,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 17
+            },
+            {
+              "Line": 343,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "FluentHashCalculator.IAbstractHashCalculatorBuilder`1<T> FluentHashCalculator.AbstractHashCalculatorBuilder`1::UsingEach(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Collections.Generic.IEnumerable`1<System.Nullable`1<System.UInt64>>>>)": {
+          "Lines": {
+            "353": 38,
+            "354": 38,
+            "355": 17,
+            "357": 21,
+            "358": 21,
+            "359": 21,
+            "360": 21,
+            "361": 21
+          },
+          "Branches": [
+            {
+              "Line": 354,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 17
+            },
+            {
+              "Line": 354,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\CRC16\\CRC16UnicityCalculator.cs": {
+      "FluentHashCalculator.AbstractHashCalculatorBuilder`1/CRC16": {
+        "System.UInt16 FluentHashCalculator.AbstractHashCalculatorBuilder`1/CRC16::Compute(T)": {
+          "Lines": {
+            "11": 86,
+            "12": 86,
+            "13": 2,
+            "14": 84,
+            "15": 842,
+            "16": 295,
+            "17": 1833,
+            "18": 474,
+            "19": 295,
+            "21": 83,
+            "22": 85
+          },
+          "Branches": [
+            {
+              "Line": 12,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 12,
+              "Offset": 12,
+              "EndOffset": 21,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 84
+            },
+            {
+              "Line": 15,
+              "Offset": 135,
+              "EndOffset": 39,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 295
+            },
+            {
+              "Line": 17,
+              "Offset": 111,
+              "EndOffset": 81,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 474
+            },
+            {
+              "Line": 17,
+              "Offset": 111,
+              "EndOffset": 113,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 295
+            },
+            {
+              "Line": 15,
+              "Offset": 135,
+              "EndOffset": 137,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 83
+            }
+          ]
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\CRC32\\CRC32UnicityCalculator.cs": {
+      "FluentHashCalculator.AbstractHashCalculatorBuilder`1/CRC32": {
+        "System.UInt32 FluentHashCalculator.AbstractHashCalculatorBuilder`1/CRC32::Compute(T)": {
+          "Lines": {
+            "11": 85,
+            "12": 85,
+            "13": 1,
+            "14": 84,
+            "15": 842,
+            "16": 1833,
+            "17": 474,
+            "19": 83,
+            "20": 84
+          },
+          "Branches": [
+            {
+              "Line": 12,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 12,
+              "Offset": 12,
+              "EndOffset": 21,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 84
+            },
+            {
+              "Line": 15,
+              "Offset": 133,
+              "EndOffset": 39,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 295
+            },
+            {
+              "Line": 16,
+              "Offset": 110,
+              "EndOffset": 80,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 474
+            },
+            {
+              "Line": 16,
+              "Offset": 110,
+              "EndOffset": 112,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 295
+            },
+            {
+              "Line": 15,
+              "Offset": 133,
+              "EndOffset": 135,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 83
+            }
+          ]
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\CRC64\\CRC64UnicityCalculator.cs": {
+      "FluentHashCalculator.AbstractHashCalculatorBuilder`1/CRC64": {
+        "System.UInt64 FluentHashCalculator.AbstractHashCalculatorBuilder`1/CRC64::Compute(T)": {
+          "Lines": {
+            "11": 85,
+            "12": 85,
+            "13": 1,
+            "14": 84,
+            "15": 842,
+            "16": 1833,
+            "17": 474,
+            "19": 83,
+            "20": 84
+          },
+          "Branches": [
+            {
+              "Line": 12,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 12,
+              "Offset": 12,
+              "EndOffset": 22,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 84
+            },
+            {
+              "Line": 15,
+              "Offset": 135,
+              "EndOffset": 41,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 295
+            },
+            {
+              "Line": 16,
+              "Offset": 112,
+              "EndOffset": 82,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 474
+            },
+            {
+              "Line": 16,
+              "Offset": 112,
+              "EndOffset": 114,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 295
+            },
+            {
+              "Line": 15,
+              "Offset": 135,
+              "EndOffset": 137,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 83
+            }
+          ]
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\SHA1\\SHA1UnicityCalculator.cs": {
+      "FluentHashCalculator.AbstractHashCalculatorBuilder`1/SHA1": {
+        "System.Byte[] FluentHashCalculator.AbstractHashCalculatorBuilder`1/SHA1::Compute(T)": {
+          "Lines": {
+            "15": 89,
+            "16": 89,
+            "17": 2,
+            "19": 87,
+            "20": 87,
+            "21": 891,
+            "22": 1919,
+            "23": 487,
+            "24": 85,
+            "26": 87
+          },
+          "Branches": [
+            {
+              "Line": 16,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 16,
+              "Offset": 12,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 87
+            },
+            {
+              "Line": 21,
+              "Offset": 147,
+              "EndOffset": 53,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 315
+            },
+            {
+              "Line": 22,
+              "Offset": 124,
+              "EndOffset": 94,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 487
+            },
+            {
+              "Line": 22,
+              "Offset": 124,
+              "EndOffset": 126,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 315
+            },
+            {
+              "Line": 21,
+              "Offset": 147,
+              "EndOffset": 149,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 85
+            }
+          ]
+        },
+        "System.Void FluentHashCalculator.AbstractHashCalculatorBuilder`1/SHA1::.cctor()": {
+          "Lines": {
+            "11": 2,
+            "12": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\SHA256\\SHA256UnicityCalculator.cs": {
+      "FluentHashCalculator.AbstractHashCalculatorBuilder`1/SHA256": {
+        "System.Byte[] FluentHashCalculator.AbstractHashCalculatorBuilder`1/SHA256::Compute(T)": {
+          "Lines": {
+            "15": 89,
+            "16": 89,
+            "17": 2,
+            "19": 87,
+            "20": 87,
+            "21": 891,
+            "22": 1919,
+            "23": 487,
+            "24": 85,
+            "26": 87
+          },
+          "Branches": [
+            {
+              "Line": 16,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 16,
+              "Offset": 12,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 87
+            },
+            {
+              "Line": 21,
+              "Offset": 147,
+              "EndOffset": 53,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 315
+            },
+            {
+              "Line": 22,
+              "Offset": 124,
+              "EndOffset": 94,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 487
+            },
+            {
+              "Line": 22,
+              "Offset": 124,
+              "EndOffset": 126,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 315
+            },
+            {
+              "Line": 21,
+              "Offset": 147,
+              "EndOffset": 149,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 85
+            }
+          ]
+        },
+        "System.Void FluentHashCalculator.AbstractHashCalculatorBuilder`1/SHA256::.cctor()": {
+          "Lines": {
+            "11": 2,
+            "12": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\SHA384\\SHA384UnicityCalculator.cs": {
+      "FluentHashCalculator.AbstractHashCalculatorBuilder`1/SHA384": {
+        "System.Byte[] FluentHashCalculator.AbstractHashCalculatorBuilder`1/SHA384::Compute(T)": {
+          "Lines": {
+            "15": 89,
+            "16": 89,
+            "17": 2,
+            "19": 87,
+            "20": 87,
+            "21": 891,
+            "22": 1919,
+            "23": 487,
+            "24": 85,
+            "26": 87
+          },
+          "Branches": [
+            {
+              "Line": 16,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 16,
+              "Offset": 12,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 87
+            },
+            {
+              "Line": 21,
+              "Offset": 147,
+              "EndOffset": 53,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 315
+            },
+            {
+              "Line": 22,
+              "Offset": 124,
+              "EndOffset": 94,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 487
+            },
+            {
+              "Line": 22,
+              "Offset": 124,
+              "EndOffset": 126,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 315
+            },
+            {
+              "Line": 21,
+              "Offset": 147,
+              "EndOffset": 149,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 85
+            }
+          ]
+        },
+        "System.Void FluentHashCalculator.AbstractHashCalculatorBuilder`1/SHA384::.cctor()": {
+          "Lines": {
+            "11": 2,
+            "12": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\SHA512\\SHA512UnicityCalculator.cs": {
+      "FluentHashCalculator.AbstractHashCalculatorBuilder`1/SHA512": {
+        "System.Byte[] FluentHashCalculator.AbstractHashCalculatorBuilder`1/SHA512::Compute(T)": {
+          "Lines": {
+            "15": 89,
+            "16": 89,
+            "17": 2,
+            "19": 87,
+            "20": 87,
+            "21": 891,
+            "22": 1919,
+            "23": 487,
+            "24": 85,
+            "26": 87
+          },
+          "Branches": [
+            {
+              "Line": 16,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 16,
+              "Offset": 12,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 87
+            },
+            {
+              "Line": 21,
+              "Offset": 147,
+              "EndOffset": 53,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 315
+            },
+            {
+              "Line": 22,
+              "Offset": 124,
+              "EndOffset": 94,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 487
+            },
+            {
+              "Line": 22,
+              "Offset": 124,
+              "EndOffset": 126,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 315
+            },
+            {
+              "Line": 21,
+              "Offset": 147,
+              "EndOffset": 149,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 85
+            }
+          ]
+        },
+        "System.Void FluentHashCalculator.AbstractHashCalculatorBuilder`1/SHA512::.cctor()": {
+          "Lines": {
+            "11": 2,
+            "12": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\CrcException.cs": {
+      "FluentHashCalculator.CrcException": {
+        "System.Void FluentHashCalculator.CrcException::.ctor(System.String,System.FormatException)": {
+          "Lines": {
+            "8": 1,
+            "9": 1,
+            "11": 1
+          },
+          "Branches": []
+        },
+        "System.Void FluentHashCalculator.CrcException::.ctor(System.String,System.InvalidCastException)": {
+          "Lines": {
+            "14": 1,
+            "15": 1,
+            "17": 1
+          },
+          "Branches": []
+        },
+        "System.Void FluentHashCalculator.CrcException::.ctor(System.String,System.OverflowException)": {
+          "Lines": {
+            "19": 1,
+            "20": 1,
+            "22": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Calculators\\TypeNotSupportedException.cs": {
+      "FluentHashCalculator.TypeNotSupportedException": {
+        "System.Void FluentHashCalculator.TypeNotSupportedException::.ctor()": {
+          "Lines": {
+            "10": 1,
+            "11": 1,
+            "13": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\GlobalSettings.cs": {
+      "FluentHashCalculator.GlobalSettings": {
+        "System.Boolean FluentHashCalculator.GlobalSettings::get_IgnoreErrors()": {
+          "Lines": {
+            "12": 635
+          },
+          "Branches": []
+        }
+      },
+      "FluentHashCalculator.GlobalSettings/StringSettings": {
+        "System.Text.Encoding FluentHashCalculator.GlobalSettings/StringSettings::get_Encoding()": {
+          "Lines": {
+            "20": 635
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Internal\\AccessorCache.cs": {
+      "FluentHashCalculator.Internal.AccessorCache`1": {
+        "System.Func`2<T,TProperty> FluentHashCalculator.Internal.AccessorCache`1::GetCachedAccessor(System.Reflection.MemberInfo,System.Linq.Expressions.Expression`1<System.Func`2<T,TProperty>>)": {
+          "Lines": {
+            "25": 1583,
+            "26": 1583,
+            "27": 16,
+            "28": 16,
+            "31": 1567,
+            "32": 1649,
+            "33": 1583
+          },
+          "Branches": [
+            {
+              "Line": 26,
+              "Offset": 23,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 16
+            },
+            {
+              "Line": 26,
+              "Offset": 23,
+              "EndOffset": 40,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1567
+            }
+          ]
+        },
+        "System.Void FluentHashCalculator.Internal.AccessorCache`1::.cctor()": {
+          "Lines": {
+            "14": 4
+          },
+          "Branches": []
+        }
+      },
+      "FluentHashCalculator.Internal.AccessorCache`1/Key": {
+        "System.Boolean FluentHashCalculator.Internal.AccessorCache`1/Key::Equals(FluentHashCalculator.Internal.AccessorCache`1/Key<T>)": {
+          "Lines": {
+            "47": 1492,
+            "48": 1492,
+            "49": 1492
+          },
+          "Branches": [
+            {
+              "Line": 48,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1492
+            },
+            {
+              "Line": 48,
+              "Offset": 18,
+              "EndOffset": 39,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Boolean FluentHashCalculator.Internal.AccessorCache`1/Key::Equals(System.Object)": {
+          "Lines": {
+            "52": 1495,
+            "53": 1496,
+            "54": 1495,
+            "55": 1494,
+            "56": 1492,
+            "57": 1495
+          },
+          "Branches": [
+            {
+              "Line": 53,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 53,
+              "Offset": 7,
+              "EndOffset": 13,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1494
+            },
+            {
+              "Line": 54,
+              "Offset": 19,
+              "EndOffset": 21,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 54,
+              "Offset": 19,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1493
+            },
+            {
+              "Line": 55,
+              "Offset": 44,
+              "EndOffset": 46,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 55,
+              "Offset": 44,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1492
+            }
+          ]
+        },
+        "System.Int32 FluentHashCalculator.Internal.AccessorCache`1/Key::GetHashCode()": {
+          "Lines": {
+            "60": 1567,
+            "62": 1567,
+            "63": 1567,
+            "65": 1567
+          },
+          "Branches": [
+            {
+              "Line": 63,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 63,
+              "Offset": 14,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1567
+            },
+            {
+              "Line": 63,
+              "Offset": 42,
+              "EndOffset": 44,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 63,
+              "Offset": 42,
+              "EndOffset": 47,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1567
+            }
+          ]
+        },
+        "System.Void FluentHashCalculator.Internal.AccessorCache`1/Key::.ctor(System.Reflection.MemberInfo,System.Linq.Expressions.Expression)": {
+          "Lines": {
+            "40": 1569,
+            "41": 1569,
+            "42": 1569,
+            "43": 1569,
+            "44": 1569
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Internal\\Bytes.cs": {
+      "FluentHashCalculator.Internal.Bytes": {
+        "System.Byte[] FluentHashCalculator.Internal.Bytes::From(System.Boolean)": {
+          "Lines": {
+            "119": 168
+          },
+          "Branches": []
+        },
+        "System.Byte[] FluentHashCalculator.Internal.Bytes::From(System.Byte)": {
+          "Lines": {
+            "122": 252
+          },
+          "Branches": []
+        },
+        "System.Byte[] FluentHashCalculator.Internal.Bytes::From(System.SByte)": {
+          "Lines": {
+            "125": 280
+          },
+          "Branches": []
+        },
+        "System.Byte[] FluentHashCalculator.Internal.Bytes::From(System.Int16)": {
+          "Lines": {
+            "128": 224
+          },
+          "Branches": []
+        },
+        "System.Byte[] FluentHashCalculator.Internal.Bytes::From(System.UInt16)": {
+          "Lines": {
+            "131": 252
+          },
+          "Branches": []
+        },
+        "System.Byte[] FluentHashCalculator.Internal.Bytes::From(System.Int32)": {
+          "Lines": {
+            "134": 346
+          },
+          "Branches": []
+        },
+        "System.Byte[] FluentHashCalculator.Internal.Bytes::From(System.UInt32)": {
+          "Lines": {
+            "137": 133
+          },
+          "Branches": []
+        },
+        "System.Byte[] FluentHashCalculator.Internal.Bytes::From(System.Int64)": {
+          "Lines": {
+            "140": 224
+          },
+          "Branches": []
+        },
+        "System.Byte[] FluentHashCalculator.Internal.Bytes::From(System.UInt64)": {
+          "Lines": {
+            "143": 140
+          },
+          "Branches": []
+        },
+        "System.Byte[] FluentHashCalculator.Internal.Bytes::From(System.Single)": {
+          "Lines": {
+            "146": 224
+          },
+          "Branches": []
+        },
+        "System.Byte[] FluentHashCalculator.Internal.Bytes::From(System.Double)": {
+          "Lines": {
+            "149": 84
+          },
+          "Branches": []
+        },
+        "System.Byte[] FluentHashCalculator.Internal.Bytes::From(System.Decimal)": {
+          "Lines": {
+            "152": 168
+          },
+          "Branches": []
+        },
+        "System.Byte[] FluentHashCalculator.Internal.Bytes::From(System.DateTime)": {
+          "Lines": {
+            "155": 128
+          },
+          "Branches": []
+        },
+        "System.Byte[] FluentHashCalculator.Internal.Bytes::From(System.TimeSpan)": {
+          "Lines": {
+            "158": 140
+          },
+          "Branches": []
+        },
+        "System.Byte[] FluentHashCalculator.Internal.Bytes::From(System.Char)": {
+          "Lines": {
+            "161": 196
+          },
+          "Branches": []
+        },
+        "System.Byte[] FluentHashCalculator.Internal.Bytes::From(System.String,FluentHashCalculator.Contexts.IStringSerializationContext)": {
+          "Lines": {
+            "164": 243
+          },
+          "Branches": [
+            {
+              "Line": 164,
+              "Offset": 8,
+              "EndOffset": 10,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 164,
+              "Offset": 8,
+              "EndOffset": 16,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 243
+            }
+          ]
+        },
+        "System.Byte[] FluentHashCalculator.Internal.Bytes::From(System.Guid)": {
+          "Lines": {
+            "167": 168
+          },
+          "Branches": []
+        },
+        "System.Void FluentHashCalculator.Internal.Bytes::.cctor()": {
+          "Lines": {
+            "10": 1
+          },
+          "Branches": []
+        }
+      },
+      "FluentHashCalculator.Internal.Bytes/<From>d__1": {
+        "System.Boolean FluentHashCalculator.Internal.Bytes/<From>d__1::MoveNext()": {
+          "Lines": {
+            "13": 5101,
+            "14": 5101,
+            "15": 168,
+            "16": 168,
+            "17": 168,
+            "19": 4933,
+            "20": 252,
+            "21": 252,
+            "22": 252,
+            "24": 4681,
+            "25": 280,
+            "26": 280,
+            "27": 280,
+            "29": 4401,
+            "30": 224,
+            "31": 224,
+            "32": 224,
+            "34": 4177,
+            "35": 252,
+            "36": 252,
+            "37": 252,
+            "39": 3925,
+            "40": 346,
+            "41": 346,
+            "42": 346,
+            "44": 3579,
+            "45": 133,
+            "46": 133,
+            "47": 133,
+            "49": 3446,
+            "50": 224,
+            "51": 224,
+            "52": 224,
+            "54": 3222,
+            "55": 140,
+            "56": 140,
+            "57": 140,
+            "59": 3082,
+            "60": 224,
+            "61": 224,
+            "62": 224,
+            "64": 2858,
+            "65": 84,
+            "66": 84,
+            "67": 84,
+            "69": 2774,
+            "70": 168,
+            "71": 168,
+            "72": 168,
+            "74": 2606,
+            "75": 128,
+            "76": 128,
+            "77": 128,
+            "79": 2478,
+            "80": 140,
+            "81": 140,
+            "82": 140,
+            "84": 2338,
+            "85": 196,
+            "86": 196,
+            "87": 196,
+            "89": 2142,
+            "90": 243,
+            "91": 243,
+            "92": 243,
+            "94": 1899,
+            "95": 168,
+            "96": 168,
+            "97": 168,
+            "99": 1731,
+            "100": 938,
+            "101": 7742,
+            "102": 2464,
+            "103": 938,
+            "105": 793,
+            "106": 792,
+            "108": 1
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 209,
+              "EndOffset": 211,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 168
+            },
+            {
+              "Line": 14,
+              "Offset": 209,
+              "EndOffset": 231,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4933
+            },
+            {
+              "Line": 14,
+              "Offset": 234,
+              "EndOffset": 236,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 168
+            },
+            {
+              "Line": 14,
+              "Offset": 234,
+              "EndOffset": 282,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 4933
+            },
+            {
+              "Line": 19,
+              "Offset": 293,
+              "EndOffset": 295,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 252
+            },
+            {
+              "Line": 19,
+              "Offset": 293,
+              "EndOffset": 315,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 4681
+            },
+            {
+              "Line": 19,
+              "Offset": 318,
+              "EndOffset": 320,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 252
+            },
+            {
+              "Line": 19,
+              "Offset": 318,
+              "EndOffset": 366,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 4681
+            },
+            {
+              "Line": 24,
+              "Offset": 377,
+              "EndOffset": 379,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 280
+            },
+            {
+              "Line": 24,
+              "Offset": 377,
+              "EndOffset": 399,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 4401
+            },
+            {
+              "Line": 24,
+              "Offset": 404,
+              "EndOffset": 406,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 280
+            },
+            {
+              "Line": 24,
+              "Offset": 404,
+              "EndOffset": 452,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 4401
+            },
+            {
+              "Line": 29,
+              "Offset": 463,
+              "EndOffset": 465,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 224
+            },
+            {
+              "Line": 29,
+              "Offset": 463,
+              "EndOffset": 485,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 4177
+            },
+            {
+              "Line": 29,
+              "Offset": 490,
+              "EndOffset": 492,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 224
+            },
+            {
+              "Line": 29,
+              "Offset": 490,
+              "EndOffset": 538,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 4177
+            },
+            {
+              "Line": 34,
+              "Offset": 549,
+              "EndOffset": 551,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 252
+            },
+            {
+              "Line": 34,
+              "Offset": 549,
+              "EndOffset": 571,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 3925
+            },
+            {
+              "Line": 34,
+              "Offset": 576,
+              "EndOffset": 578,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 252
+            },
+            {
+              "Line": 34,
+              "Offset": 576,
+              "EndOffset": 624,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 3925
+            },
+            {
+              "Line": 39,
+              "Offset": 635,
+              "EndOffset": 637,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 346
+            },
+            {
+              "Line": 39,
+              "Offset": 635,
+              "EndOffset": 657,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 3579
+            },
+            {
+              "Line": 39,
+              "Offset": 662,
+              "EndOffset": 664,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 346
+            },
+            {
+              "Line": 39,
+              "Offset": 662,
+              "EndOffset": 710,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 3579
+            },
+            {
+              "Line": 44,
+              "Offset": 721,
+              "EndOffset": 723,
+              "Path": 0,
+              "Ordinal": 24,
+              "Hits": 133
+            },
+            {
+              "Line": 44,
+              "Offset": 721,
+              "EndOffset": 743,
+              "Path": 1,
+              "Ordinal": 25,
+              "Hits": 3446
+            },
+            {
+              "Line": 44,
+              "Offset": 748,
+              "EndOffset": 750,
+              "Path": 0,
+              "Ordinal": 26,
+              "Hits": 133
+            },
+            {
+              "Line": 44,
+              "Offset": 748,
+              "EndOffset": 796,
+              "Path": 1,
+              "Ordinal": 27,
+              "Hits": 3446
+            },
+            {
+              "Line": 49,
+              "Offset": 807,
+              "EndOffset": 809,
+              "Path": 0,
+              "Ordinal": 28,
+              "Hits": 224
+            },
+            {
+              "Line": 49,
+              "Offset": 807,
+              "EndOffset": 829,
+              "Path": 1,
+              "Ordinal": 29,
+              "Hits": 3222
+            },
+            {
+              "Line": 49,
+              "Offset": 834,
+              "EndOffset": 836,
+              "Path": 0,
+              "Ordinal": 30,
+              "Hits": 224
+            },
+            {
+              "Line": 49,
+              "Offset": 834,
+              "EndOffset": 882,
+              "Path": 1,
+              "Ordinal": 31,
+              "Hits": 3222
+            },
+            {
+              "Line": 54,
+              "Offset": 893,
+              "EndOffset": 895,
+              "Path": 0,
+              "Ordinal": 32,
+              "Hits": 140
+            },
+            {
+              "Line": 54,
+              "Offset": 893,
+              "EndOffset": 915,
+              "Path": 1,
+              "Ordinal": 33,
+              "Hits": 3082
+            },
+            {
+              "Line": 54,
+              "Offset": 920,
+              "EndOffset": 922,
+              "Path": 0,
+              "Ordinal": 34,
+              "Hits": 140
+            },
+            {
+              "Line": 54,
+              "Offset": 920,
+              "EndOffset": 969,
+              "Path": 1,
+              "Ordinal": 35,
+              "Hits": 3082
+            },
+            {
+              "Line": 59,
+              "Offset": 980,
+              "EndOffset": 982,
+              "Path": 0,
+              "Ordinal": 36,
+              "Hits": 224
+            },
+            {
+              "Line": 59,
+              "Offset": 980,
+              "EndOffset": 1002,
+              "Path": 1,
+              "Ordinal": 37,
+              "Hits": 2858
+            },
+            {
+              "Line": 59,
+              "Offset": 1007,
+              "EndOffset": 1009,
+              "Path": 0,
+              "Ordinal": 38,
+              "Hits": 224
+            },
+            {
+              "Line": 59,
+              "Offset": 1007,
+              "EndOffset": 1056,
+              "Path": 1,
+              "Ordinal": 39,
+              "Hits": 2858
+            },
+            {
+              "Line": 64,
+              "Offset": 1067,
+              "EndOffset": 1069,
+              "Path": 0,
+              "Ordinal": 40,
+              "Hits": 84
+            },
+            {
+              "Line": 64,
+              "Offset": 1067,
+              "EndOffset": 1089,
+              "Path": 1,
+              "Ordinal": 41,
+              "Hits": 2774
+            },
+            {
+              "Line": 64,
+              "Offset": 1094,
+              "EndOffset": 1096,
+              "Path": 0,
+              "Ordinal": 42,
+              "Hits": 84
+            },
+            {
+              "Line": 64,
+              "Offset": 1094,
+              "EndOffset": 1143,
+              "Path": 1,
+              "Ordinal": 43,
+              "Hits": 2774
+            },
+            {
+              "Line": 69,
+              "Offset": 1154,
+              "EndOffset": 1156,
+              "Path": 0,
+              "Ordinal": 44,
+              "Hits": 168
+            },
+            {
+              "Line": 69,
+              "Offset": 1154,
+              "EndOffset": 1176,
+              "Path": 1,
+              "Ordinal": 45,
+              "Hits": 2606
+            },
+            {
+              "Line": 69,
+              "Offset": 1181,
+              "EndOffset": 1183,
+              "Path": 0,
+              "Ordinal": 46,
+              "Hits": 168
+            },
+            {
+              "Line": 69,
+              "Offset": 1181,
+              "EndOffset": 1230,
+              "Path": 1,
+              "Ordinal": 47,
+              "Hits": 2606
+            },
+            {
+              "Line": 74,
+              "Offset": 1241,
+              "EndOffset": 1243,
+              "Path": 0,
+              "Ordinal": 48,
+              "Hits": 128
+            },
+            {
+              "Line": 74,
+              "Offset": 1241,
+              "EndOffset": 1263,
+              "Path": 1,
+              "Ordinal": 49,
+              "Hits": 2478
+            },
+            {
+              "Line": 74,
+              "Offset": 1268,
+              "EndOffset": 1270,
+              "Path": 0,
+              "Ordinal": 50,
+              "Hits": 128
+            },
+            {
+              "Line": 74,
+              "Offset": 1268,
+              "EndOffset": 1317,
+              "Path": 1,
+              "Ordinal": 51,
+              "Hits": 2478
+            },
+            {
+              "Line": 79,
+              "Offset": 1328,
+              "EndOffset": 1330,
+              "Path": 0,
+              "Ordinal": 52,
+              "Hits": 140
+            },
+            {
+              "Line": 79,
+              "Offset": 1328,
+              "EndOffset": 1350,
+              "Path": 1,
+              "Ordinal": 53,
+              "Hits": 2338
+            },
+            {
+              "Line": 79,
+              "Offset": 1355,
+              "EndOffset": 1357,
+              "Path": 0,
+              "Ordinal": 54,
+              "Hits": 140
+            },
+            {
+              "Line": 79,
+              "Offset": 1355,
+              "EndOffset": 1404,
+              "Path": 1,
+              "Ordinal": 55,
+              "Hits": 2338
+            },
+            {
+              "Line": 84,
+              "Offset": 1415,
+              "EndOffset": 1417,
+              "Path": 0,
+              "Ordinal": 56,
+              "Hits": 196
+            },
+            {
+              "Line": 84,
+              "Offset": 1415,
+              "EndOffset": 1437,
+              "Path": 1,
+              "Ordinal": 57,
+              "Hits": 2142
+            },
+            {
+              "Line": 84,
+              "Offset": 1442,
+              "EndOffset": 1444,
+              "Path": 0,
+              "Ordinal": 58,
+              "Hits": 196
+            },
+            {
+              "Line": 84,
+              "Offset": 1442,
+              "EndOffset": 1491,
+              "Path": 1,
+              "Ordinal": 59,
+              "Hits": 2142
+            },
+            {
+              "Line": 89,
+              "Offset": 1521,
+              "EndOffset": 1523,
+              "Path": 0,
+              "Ordinal": 60,
+              "Hits": 243
+            },
+            {
+              "Line": 89,
+              "Offset": 1521,
+              "EndOffset": 1576,
+              "Path": 1,
+              "Ordinal": 61,
+              "Hits": 1899
+            },
+            {
+              "Line": 94,
+              "Offset": 1587,
+              "EndOffset": 1589,
+              "Path": 0,
+              "Ordinal": 62,
+              "Hits": 168
+            },
+            {
+              "Line": 94,
+              "Offset": 1587,
+              "EndOffset": 1609,
+              "Path": 1,
+              "Ordinal": 63,
+              "Hits": 1731
+            },
+            {
+              "Line": 94,
+              "Offset": 1614,
+              "EndOffset": 1616,
+              "Path": 0,
+              "Ordinal": 64,
+              "Hits": 168
+            },
+            {
+              "Line": 94,
+              "Offset": 1614,
+              "EndOffset": 1663,
+              "Path": 1,
+              "Ordinal": 65,
+              "Hits": 1731
+            },
+            {
+              "Line": 99,
+              "Offset": 1693,
+              "EndOffset": 1695,
+              "Path": 0,
+              "Ordinal": 66,
+              "Hits": 938
+            },
+            {
+              "Line": 101,
+              "Offset": 1802,
+              "EndOffset": 1735,
+              "Path": 1,
+              "Ordinal": 69,
+              "Hits": 2464
+            },
+            {
+              "Line": 101,
+              "Offset": 1802,
+              "EndOffset": 1804,
+              "Path": 0,
+              "Ordinal": 68,
+              "Hits": 938
+            },
+            {
+              "Line": 99,
+              "Offset": 1693,
+              "EndOffset": 1822,
+              "Path": 1,
+              "Ordinal": 67,
+              "Hits": 793
+            },
+            {
+              "Line": 105,
+              "Offset": 1842,
+              "EndOffset": 1844,
+              "Path": 0,
+              "Ordinal": 70,
+              "Hits": 792
+            },
+            {
+              "Line": 105,
+              "Offset": 1842,
+              "EndOffset": 1848,
+              "Path": 1,
+              "Ordinal": 71,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "FluentHashCalculator.Internal.Bytes/<From>d__2": {
+        "System.Boolean FluentHashCalculator.Internal.Bytes/<From>d__2::MoveNext()": {
+          "Lines": {
+            "112": 938,
+            "113": 8722,
+            "114": 13790,
+            "115": 2464,
+            "116": 938
+          },
+          "Branches": [
+            {
+              "Line": 113,
+              "Offset": 228,
+              "EndOffset": 71,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2954
+            },
+            {
+              "Line": 114,
+              "Offset": 194,
+              "EndOffset": 128,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2464
+            },
+            {
+              "Line": 114,
+              "Offset": 194,
+              "EndOffset": 196,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2954
+            },
+            {
+              "Line": 113,
+              "Offset": 228,
+              "EndOffset": 233,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 938
+            }
+          ]
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Internal\\Crc16.cs": {
+      "FluentHashCalculator.Internal.Crc16": {
+        "System.UInt16 FluentHashCalculator.Internal.Crc16::Compute(System.ReadOnlySpan`1<System.Byte>,System.UInt16)": {
+          "Lines": {
+            "43": 479,
+            "44": 479,
+            "45": 4,
+            "46": 12092,
+            "47": 5571,
+            "48": 5571,
+            "49": 5571,
+            "50": 5571,
+            "52": 475,
+            "53": 479
+          },
+          "Branches": [
+            {
+              "Line": 44,
+              "Offset": 13,
+              "EndOffset": 15,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 4
+            },
+            {
+              "Line": 44,
+              "Offset": 13,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 475
+            },
+            {
+              "Line": 46,
+              "Offset": 84,
+              "EndOffset": 23,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 5571
+            },
+            {
+              "Line": 46,
+              "Offset": 84,
+              "EndOffset": 86,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 475
+            }
+          ]
+        },
+        "System.Void FluentHashCalculator.Internal.Crc16::.cctor()": {
+          "Lines": {
+            "7": 1,
+            "8": 1,
+            "9": 1,
+            "10": 1,
+            "11": 1,
+            "12": 1,
+            "13": 1,
+            "14": 1,
+            "15": 1,
+            "16": 1,
+            "17": 1,
+            "18": 1,
+            "19": 1,
+            "20": 1,
+            "21": 1,
+            "22": 1,
+            "23": 1,
+            "24": 1,
+            "25": 1,
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "38": 1,
+            "39": 1,
+            "40": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Internal\\Crc32.cs": {
+      "FluentHashCalculator.Internal.Crc32": {
+        "System.UInt32 FluentHashCalculator.Internal.Crc32::Compute(System.ReadOnlySpan`1<System.Byte>,System.UInt32)": {
+          "Lines": {
+            "54": 479,
+            "55": 479,
+            "56": 4,
+            "57": 12092,
+            "58": 5571,
+            "59": 5571,
+            "60": 5571,
+            "61": 5571,
+            "63": 475,
+            "64": 479
+          },
+          "Branches": [
+            {
+              "Line": 55,
+              "Offset": 13,
+              "EndOffset": 15,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 4
+            },
+            {
+              "Line": 55,
+              "Offset": 13,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 475
+            },
+            {
+              "Line": 57,
+              "Offset": 89,
+              "EndOffset": 23,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 5571
+            },
+            {
+              "Line": 57,
+              "Offset": 89,
+              "EndOffset": 91,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 475
+            }
+          ]
+        },
+        "System.Void FluentHashCalculator.Internal.Crc32::.cctor()": {
+          "Lines": {
+            "7": 1,
+            "8": 1,
+            "9": 1,
+            "10": 1,
+            "11": 1,
+            "12": 1,
+            "13": 1,
+            "14": 1,
+            "15": 1,
+            "16": 1,
+            "17": 1,
+            "18": 1,
+            "19": 1,
+            "20": 1,
+            "21": 1,
+            "22": 1,
+            "23": 1,
+            "24": 1,
+            "25": 1,
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "42": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1,
+            "46": 1,
+            "47": 1,
+            "48": 1,
+            "49": 1,
+            "50": 1,
+            "51": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Internal\\Crc64.cs": {
+      "FluentHashCalculator.Internal.Crc64": {
+        "System.UInt64 FluentHashCalculator.Internal.Crc64::Compute(System.ReadOnlySpan`1<System.Byte>,System.UInt64)": {
+          "Lines": {
+            "139": 479,
+            "140": 479,
+            "141": 4,
+            "142": 12092,
+            "143": 5571,
+            "144": 5571,
+            "145": 5571,
+            "147": 475,
+            "148": 479
+          },
+          "Branches": [
+            {
+              "Line": 140,
+              "Offset": 13,
+              "EndOffset": 15,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 4
+            },
+            {
+              "Line": 140,
+              "Offset": 13,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 475
+            },
+            {
+              "Line": 142,
+              "Offset": 81,
+              "EndOffset": 23,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 5571
+            },
+            {
+              "Line": 142,
+              "Offset": 81,
+              "EndOffset": 83,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 475
+            }
+          ]
+        },
+        "System.Void FluentHashCalculator.Internal.Crc64::.cctor()": {
+          "Lines": {
+            "7": 1,
+            "8": 1,
+            "9": 1,
+            "10": 1,
+            "11": 1,
+            "12": 1,
+            "13": 1,
+            "14": 1,
+            "15": 1,
+            "16": 1,
+            "17": 1,
+            "18": 1,
+            "19": 1,
+            "20": 1,
+            "21": 1,
+            "22": 1,
+            "23": 1,
+            "24": 1,
+            "25": 1,
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "42": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1,
+            "46": 1,
+            "47": 1,
+            "48": 1,
+            "49": 1,
+            "50": 1,
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 1,
+            "66": 1,
+            "67": 1,
+            "68": 1,
+            "69": 1,
+            "70": 1,
+            "71": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "78": 1,
+            "79": 1,
+            "80": 1,
+            "81": 1,
+            "82": 1,
+            "83": 1,
+            "84": 1,
+            "85": 1,
+            "86": 1,
+            "87": 1,
+            "88": 1,
+            "89": 1,
+            "90": 1,
+            "91": 1,
+            "92": 1,
+            "93": 1,
+            "94": 1,
+            "95": 1,
+            "96": 1,
+            "97": 1,
+            "98": 1,
+            "99": 1,
+            "100": 1,
+            "101": 1,
+            "102": 1,
+            "103": 1,
+            "104": 1,
+            "105": 1,
+            "106": 1,
+            "107": 1,
+            "108": 1,
+            "109": 1,
+            "110": 1,
+            "111": 1,
+            "112": 1,
+            "113": 1,
+            "114": 1,
+            "115": 1,
+            "116": 1,
+            "117": 1,
+            "118": 1,
+            "119": 1,
+            "120": 1,
+            "121": 1,
+            "122": 1,
+            "123": 1,
+            "124": 1,
+            "125": 1,
+            "126": 1,
+            "127": 1,
+            "128": 1,
+            "129": 1,
+            "130": 1,
+            "131": 1,
+            "132": 1,
+            "133": 1,
+            "134": 1,
+            "135": 1,
+            "136": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Internal\\Extensions.cs": {
+      "FluentHashCalculator.Internal.Extensions": {
+        "System.Reflection.MemberInfo FluentHashCalculator.Internal.Extensions::GetMember(System.Linq.Expressions.Expression`1<System.Func`2<T,TProperty>>)": {
+          "Lines": {
+            "16": 1593,
+            "17": 1593,
+            "19": 1593,
+            "20": 17,
+            "21": 17,
+            "24": 1576,
+            "27": 1619,
+            "28": 1619,
+            "29": 1619,
+            "31": 1619,
+            "32": 43,
+            "33": 43,
+            "34": 43,
+            "36": 1576,
+            "37": 1576,
+            "39": 43,
+            "41": 1576,
+            "42": 1,
+            "43": 1,
+            "46": 1575,
+            "47": 1593
+          },
+          "Branches": [
+            {
+              "Line": 19,
+              "Offset": 24,
+              "EndOffset": 26,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 17
+            },
+            {
+              "Line": 19,
+              "Offset": 24,
+              "EndOffset": 31,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1576
+            },
+            {
+              "Line": 31,
+              "Offset": 49,
+              "EndOffset": 51,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1619
+            },
+            {
+              "Line": 31,
+              "Offset": 49,
+              "EndOffset": 63,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 31,
+              "Offset": 68,
+              "EndOffset": 70,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 43
+            },
+            {
+              "Line": 31,
+              "Offset": 68,
+              "EndOffset": 86,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1576
+            },
+            {
+              "Line": 41,
+              "Offset": 96,
+              "EndOffset": 98,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1576
+            },
+            {
+              "Line": 41,
+              "Offset": 96,
+              "EndOffset": 113,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 41,
+              "Offset": 118,
+              "EndOffset": 120,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 1
+            },
+            {
+              "Line": 41,
+              "Offset": 118,
+              "EndOffset": 125,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1575
+            }
+          ]
+        },
+        "System.Linq.Expressions.Expression FluentHashCalculator.Internal.Extensions::RemoveUnary(System.Linq.Expressions.Expression)": {
+          "Lines": {
+            "50": 3212,
+            "51": 3212,
+            "52": 1,
+            "53": 1,
+            "56": 3211,
+            "57": 3212
+          },
+          "Branches": [
+            {
+              "Line": 51,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 51,
+              "Offset": 12,
+              "EndOffset": 29,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3211
+            }
+          ]
+        },
+        "System.Func`2<System.Object,System.Object> FluentHashCalculator.Internal.Extensions::CoerceToNonGeneric(System.Func`2<T,TProperty>)": {
+          "Lines": {
+            "61": 1576,
+            "62": 3732,
+            "63": 1576
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Internal\\ObjectPool.cs": {
+      "FluentHashCalculator.Internal.ObjectPool`1": {
+        "FluentHashCalculator.Internal.ObjectPool`1/Container`1<T,T> FluentHashCalculator.Internal.ObjectPool`1::Acquire()": {
+          "Lines": {
+            "43": 372
+          },
+          "Branches": []
+        },
+        "T FluentHashCalculator.Internal.ObjectPool`1::Get()": {
+          "Lines": {
+            "46": 372,
+            "47": 372,
+            "48": 372
+          },
+          "Branches": [
+            {
+              "Line": 47,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 14
+            },
+            {
+              "Line": 47,
+              "Offset": 14,
+              "EndOffset": 29,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 358
+            }
+          ]
+        },
+        "System.Void FluentHashCalculator.Internal.ObjectPool`1::Return(T)": {
+          "Lines": {
+            "50": 372
+          },
+          "Branches": []
+        },
+        "System.Void FluentHashCalculator.Internal.ObjectPool`1::.ctor(System.Func`1<T>)": {
+          "Lines": {
+            "11": 10,
+            "12": 10,
+            "13": 10,
+            "14": 10,
+            "15": 10
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 13,
+              "Offset": 11,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 10
+            }
+          ]
+        }
+      },
+      "FluentHashCalculator.Internal.ObjectPool`1/Container`1": {
+        "System.Void FluentHashCalculator.Internal.ObjectPool`1/Container`1::Dispose()": {
+          "Lines": {
+            "65": 372,
+            "66": 372,
+            "67": 372
+          },
+          "Branches": []
+        },
+        "System.Void FluentHashCalculator.Internal.ObjectPool`1/Container`1::.ctor(FluentHashCalculator.Internal.ObjectPool`1<T>)": {
+          "Lines": {
+            "58": 372,
+            "59": 372,
+            "60": 372,
+            "61": 372,
+            "62": 372
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\projetos\\.NET\\FluentHashCalculator\\src\\FluentHashCalculator\\Contexts\\SerializationContext.cs": {
+      "FluentHashCalculator.Contexts.SerializationContext": {
+        "System.Text.Encoding FluentHashCalculator.Contexts.SerializationContext::get_Encoding()": {
+          "Lines": {
+            "11": 991
+          },
+          "Branches": []
+        },
+        "System.Boolean FluentHashCalculator.Contexts.SerializationContext::get_IgnoreErrors()": {
+          "Lines": {
+            "18": 2805
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}

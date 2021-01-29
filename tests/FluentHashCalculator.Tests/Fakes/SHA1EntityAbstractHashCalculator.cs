@@ -1,8 +1,8 @@
 ﻿namespace FluentHashCalculator.Tests.Fakes
 {
-    public class CRC16EntityAbstractHashCalculator : AbstractHashCalculator<Entity>.CRC16
+    public class SHA1EntityAbstractHashCalculator : AbstractHashCalculator<Entity>.SHA1
     {
-        public CRC16EntityAbstractHashCalculator(bool ignoreErrors = true)
+        public SHA1EntityAbstractHashCalculator(bool ignoreErrors = true)
         {
             IgnoreErrors = ignoreErrors;
 

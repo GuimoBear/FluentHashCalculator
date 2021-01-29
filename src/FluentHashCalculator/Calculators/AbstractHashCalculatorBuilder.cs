@@ -11,15 +11,15 @@ namespace FluentHashCalculator
         where T : class
     {
         private readonly List<Func<T, object>> getters
-            = new List<Func<T, object>>();
-        private readonly IDictionary<int, SerializationContext> contexts
-            = new Dictionary<int, SerializationContext>();
+            = new();
+        private readonly Dictionary<int, SerializationContext> contexts
+            = new();
 
         public SerializationContext Context { get; } = new SerializationContext();
 
         public IAbstractHashCalculatorBuilder<T> And => this;
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, bool>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, bool>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -27,10 +27,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, bool?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, bool?>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -38,10 +40,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, DateTime>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, DateTime>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -49,10 +53,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, DateTime?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, DateTime?>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -60,10 +66,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, TimeSpan>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, TimeSpan>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -71,10 +79,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, TimeSpan?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, TimeSpan?>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -82,10 +92,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, char>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, char>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -93,10 +105,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, char?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, char?>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -104,10 +118,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, string?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, string?>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -115,10 +131,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value, Encoding = Context.Encoding });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, string?>> expression, Encoding encoding)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, string?>> expression, Encoding encoding, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -126,11 +144,14 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
-            contexts.Add(getters.Count - 1, new SerializationContext { Encoding = encoding });
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value, Encoding = encoding });
+            else
+                contexts.Add(getters.Count - 1, new SerializationContext { Encoding = encoding });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, Guid>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, Guid>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -138,10 +159,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, Guid?>> expression)
+        public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, Guid?>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -149,10 +172,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<bool>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<bool>>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -160,10 +185,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<bool?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<bool?>>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -171,10 +198,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<DateTime>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<DateTime>>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -182,10 +211,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<DateTime?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<DateTime?>>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -193,10 +224,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<TimeSpan>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<TimeSpan>>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -204,10 +237,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<TimeSpan?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<TimeSpan?>>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -215,10 +250,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<char>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<char>>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -226,10 +263,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<char?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<char?>>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -237,10 +276,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<string?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<string?>>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -248,10 +289,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value, Encoding = Context.Encoding });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<string?>>> expression, Encoding encoding)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<string?>>> expression, Encoding encoding, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -259,11 +302,14 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
-            contexts.Add(getters.Count - 1, new SerializationContext { Encoding = encoding });
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value, Encoding = encoding });
+            else
+                contexts.Add(getters.Count - 1, new SerializationContext { Encoding = encoding });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<Guid>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<Guid>>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -271,10 +317,12 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
-        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<Guid?>>> expression)
+        public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<Guid?>>> expression, bool? ignoreError = null)
         {
             if (expression is null)
                 throw new ArgumentNullException(nameof(expression));
@@ -282,6 +330,8 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
             getters.Add(compiled.CoerceToNonGeneric());
+            if (ignoreError.HasValue)
+                contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
         }
 
@@ -289,11 +339,19 @@ namespace FluentHashCalculator
         {
             int index = 0;
             foreach (var accessor in getters)
-                yield return 
-                (
-                    accessor(instance), 
-                    contexts.TryGetValue(index++, out var context) ? context : Context
-                );
+            {
+                var context = contexts.TryGetValue(index++, out var ctx) ? ctx : Context;
+                object value = null;
+                if (context.IgnoreErrors)
+                {
+                    try { value = accessor(instance); } catch { }
+                }
+                else
+                {
+                    value = accessor(instance);
+                }
+                yield return (value, context);
+            }
         }
     }
 }

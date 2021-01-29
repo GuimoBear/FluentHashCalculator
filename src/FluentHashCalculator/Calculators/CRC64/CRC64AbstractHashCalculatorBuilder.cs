@@ -2,7 +2,7 @@
 
 namespace FluentHashCalculator
 {
-    public abstract partial class AbstractHashCalculatorBuilder<T> : IAbstractHashCalculatorBuilder<T>
+    public abstract partial class AbstractHashCalculatorBuilder<T>
            where T : class
     {
         public class CRC64 : AbstractHashCalculatorBuilder<T>, IAbstractHashCalculator<T, ulong>

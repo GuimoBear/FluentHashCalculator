@@ -3,13 +3,13 @@ using System.Security.Cryptography;
 
 namespace FluentHashCalculator
 {
-    public abstract partial class AbstractHashCalculatorBuilder<T> : IAbstractHashCalculatorBuilder<T>
+    public abstract partial class AbstractHashCalculatorBuilder<T>
            where T : class
     {
-        public class SHA512 : AbstractHashCalculatorBuilder<T>, IAbstractHashCalculator<T, byte[]>
+        public class SHA256 : AbstractHashCalculatorBuilder<T>, IAbstractHashCalculator<T, byte[]>
         {
             private static readonly ObjectPool<IncrementalHash> pool
-                = new ObjectPool<IncrementalHash>(() => IncrementalHash.CreateHash(HashAlgorithmName.SHA512));
+                = new ObjectPool<IncrementalHash>(() => IncrementalHash.CreateHash(HashAlgorithmName.SHA256));
 
             public byte[] Compute(T instance)
             {
@@ -26,4 +26,6 @@ namespace FluentHashCalculator
             }
         }
     }
+
+    
 }

@@ -13,7 +13,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingBoolPropertyInCalculatorWhenComputeThenReturnBoolCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.BoolProperty);
+            calculator.Using(e => e.BoolProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, bool>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -25,7 +25,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingBoolArrayPropertyInCalculatorWhenComputeThenReturnBoolArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.BoolArrayProperty);
+            calculator.UsingEach(e => e.BoolArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<bool>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -37,7 +37,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableBoolPropertyInCalculatorWhenComputeThenReturnNullableBoolCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.NullableBoolProperty);
+            calculator.Using(e => e.NullableBoolProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, bool?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -49,7 +49,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableBoolArrayPropertyInCalculatorWhenComputeThenReturnNullableBoolArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.NullableBoolArrayProperty);
+            calculator.UsingEach(e => e.NullableBoolArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<bool?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -61,7 +61,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingBytePropertyInCalculatorWhenComputeThenReturnByteCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.ByteProperty);
+            calculator.Using(e => e.ByteProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, byte>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -73,7 +73,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingByteArrayPropertyInCalculatorWhenComputeThenReturnByteArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.ByteArrayProperty);
+            calculator.UsingEach(e => e.ByteArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<byte>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -85,7 +85,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableBytePropertyInCalculatorWhenComputeThenReturnNullableByteCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.NullableByteProperty);
+            calculator.Using(e => e.NullableByteProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, byte?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -97,7 +97,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableByteArrayPropertyInCalculatorWhenComputeThenReturnNullableByteArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.NullableByteArrayProperty);
+            calculator.UsingEach(e => e.NullableByteArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<byte?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -109,7 +109,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingSbytePropertyInCalculatorWhenComputeThenReturnSbyteCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.SbyteProperty);
+            calculator.Using(e => e.SbyteProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, sbyte>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -121,7 +121,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingSbyteArrayPropertyInCalculatorWhenComputeThenReturnSbyteArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.SbyteArrayProperty);
+            calculator.UsingEach(e => e.SbyteArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<sbyte>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -133,7 +133,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableSbytePropertyInCalculatorWhenComputeThenReturnNullableSbyteCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.NullableSbyteProperty);
+            calculator.Using(e => e.NullableSbyteProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, sbyte?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -145,7 +145,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableSbyteArrayPropertyInCalculatorWhenComputeThenReturnNullableSbyteArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.NullableSbyteArrayProperty);
+            calculator.UsingEach(e => e.NullableSbyteArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<sbyte?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -157,7 +157,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingShortPropertyInCalculatorWhenComputeThenReturnShortCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.ShortProperty);
+            calculator.Using(e => e.ShortProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, short>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -169,7 +169,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingShortArrayPropertyInCalculatorWhenComputeThenReturnShortArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.ShortArrayProperty);
+            calculator.UsingEach(e => e.ShortArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<short>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -181,7 +181,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableShortPropertyInCalculatorWhenComputeThenReturnNullableShortCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.NullableShortProperty);
+            calculator.Using(e => e.NullableShortProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, short?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -193,7 +193,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableShortArrayPropertyInCalculatorWhenComputeThenReturnNullableShortArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.NullableShortArrayProperty);
+            calculator.UsingEach(e => e.NullableShortArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<short?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -205,7 +205,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingUshortPropertyInCalculatorWhenComputeThenReturnUshortCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.UshortProperty);
+            calculator.Using(e => e.UshortProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, uint>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -217,7 +217,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingUshortArrayPropertyInCalculatorWhenComputeThenReturnUshortArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.UshortArrayProperty);
+            calculator.UsingEach(e => e.UshortArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<uint>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -229,7 +229,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableUshortPropertyInCalculatorWhenComputeThenReturnNullableUshortCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.NullableUshortProperty);
+            calculator.Using(e => e.NullableUshortProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, uint?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -241,7 +241,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableUshortArrayPropertyInCalculatorWhenComputeThenReturnNullableUshortArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.NullableUshortArrayProperty);
+            calculator.UsingEach(e => e.NullableUshortArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<uint?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -253,7 +253,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingIntPropertyInCalculatorWhenComputeThenReturnIntCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.IntProperty);
+            calculator.Using(e => e.IntProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, int>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -265,7 +265,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingIntArrayPropertyInCalculatorWhenComputeThenReturnIntArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.IntArrayProperty);
+            calculator.UsingEach(e => e.IntArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<int>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -277,7 +277,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableIntPropertyInCalculatorWhenComputeThenReturnNullableIntCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.NullableIntProperty);
+            calculator.Using(e => e.NullableIntProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, int?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -289,7 +289,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableIntArrayPropertyInCalculatorWhenComputeThenReturnNullableIntArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.NullableIntArrayProperty);
+            calculator.UsingEach(e => e.NullableIntArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<int?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -301,7 +301,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingUintPropertyInCalculatorWhenComputeThenReturnUintCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.UintProperty);
+            calculator.Using(e => e.UintProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, uint>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -313,7 +313,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingUintArrayPropertyInCalculatorWhenComputeThenReturnUintArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.UintArrayProperty);
+            calculator.UsingEach(e => e.UintArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<uint>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -325,7 +325,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableUintPropertyInCalculatorWhenComputeThenReturnNullableUintCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.NullableUintProperty);
+            calculator.Using(e => e.NullableUintProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, uint?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -337,7 +337,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableUintArrayPropertyInCalculatorWhenComputeThenReturnNullableUintArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.NullableUintArrayProperty);
+            calculator.UsingEach(e => e.NullableUintArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<uint?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -349,7 +349,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingLongPropertyInCalculatorWhenComputeThenReturnLongCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.LongProperty);
+            calculator.Using(e => e.LongProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, long>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -361,7 +361,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingLongArrayPropertyInCalculatorWhenComputeThenReturnLongArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.LongArrayProperty);
+            calculator.UsingEach(e => e.LongArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<long>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -373,7 +373,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableLongPropertyInCalculatorWhenComputeThenReturnNullableLongCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.NullableLongProperty);
+            calculator.Using(e => e.NullableLongProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, long?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -385,7 +385,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableLongArrayPropertyInCalculatorWhenComputeThenReturnNullableLongArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.NullableLongArrayProperty);
+            calculator.UsingEach(e => e.NullableLongArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<long?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -397,7 +397,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingUlongPropertyInCalculatorWhenComputeThenReturnUlongCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.UlongProperty);
+            calculator.Using(e => e.UlongProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, ulong>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -409,7 +409,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingUlongArrayPropertyInCalculatorWhenComputeThenReturnUlongArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.UlongArrayProperty);
+            calculator.UsingEach(e => e.UlongArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<ulong>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -421,7 +421,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableUlongPropertyInCalculatorWhenComputeThenReturnNullableUlongCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.NullableUlongProperty);
+            calculator.Using(e => e.NullableUlongProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, ulong?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -433,7 +433,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableUlongArrayPropertyInCalculatorWhenComputeThenReturnNullableUlongArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.NullableUlongArrayProperty);
+            calculator.UsingEach(e => e.NullableUlongArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<ulong?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -445,7 +445,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingFloatPropertyInCalculatorWhenComputeThenReturnFloatCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.FloatProperty);
+            calculator.Using(e => e.FloatProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, float>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -457,7 +457,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingFloatArrayPropertyInCalculatorWhenComputeThenReturnFloatArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.FloatArrayProperty);
+            calculator.UsingEach(e => e.FloatArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<float>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -469,7 +469,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableFloatPropertyInCalculatorWhenComputeThenReturnNullableFloatCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.NullableFloatProperty);
+            calculator.Using(e => e.NullableFloatProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, float?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -481,7 +481,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableFloatArrayPropertyInCalculatorWhenComputeThenReturnNullableFloatArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.NullableFloatArrayProperty);
+            calculator.UsingEach(e => e.NullableFloatArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<float?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -493,7 +493,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingDoublePropertyInCalculatorWhenComputeThenReturnDoubleCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.DoubleProperty);
+            calculator.Using(e => e.DoubleProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, double>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -505,7 +505,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingDoubleArrayPropertyInCalculatorWhenComputeThenReturnDoubleArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.DoubleArrayProperty);
+            calculator.UsingEach(e => e.DoubleArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<double>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -517,7 +517,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableDoublePropertyInCalculatorWhenComputeThenReturnNullableDoubleCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.NullableDoubleProperty);
+            calculator.Using(e => e.NullableDoubleProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, double?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -529,7 +529,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableDoubleArrayPropertyInCalculatorWhenComputeThenReturnNullableDoubleArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.NullableDoubleArrayProperty);
+            calculator.UsingEach(e => e.NullableDoubleArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<double?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -541,7 +541,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingDecimalPropertyInCalculatorWhenComputeThenReturnDecimalCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.DecimalProperty);
+            calculator.Using(e => e.DecimalProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, decimal>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -553,7 +553,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingDecimalArrayPropertyInCalculatorWhenComputeThenReturnDecimalArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.DecimalArrayProperty);
+            calculator.UsingEach(e => e.DecimalArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<decimal>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -565,7 +565,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableDecimalPropertyInCalculatorWhenComputeThenReturnNullableDecimalCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.NullableDecimalProperty);
+            calculator.Using(e => e.NullableDecimalProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, decimal?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -577,7 +577,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableDecimalArrayPropertyInCalculatorWhenComputeThenReturnNullableDecimalArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.NullableDecimalArrayProperty);
+            calculator.UsingEach(e => e.NullableDecimalArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<decimal?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -589,7 +589,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingDateTimePropertyInCalculatorWhenComputeThenReturnDateTimeCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.DateTimeProperty);
+            calculator.Using(e => e.DateTimeProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, DateTime>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -601,7 +601,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingDateTimeArrayPropertyInCalculatorWhenComputeThenReturnDateTimeArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.DateTimeArrayProperty);
+            calculator.UsingEach(e => e.DateTimeArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<DateTime>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -613,7 +613,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableDateTimePropertyInCalculatorWhenComputeThenReturnNullableDateTimeCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.NullableDateTimeProperty);
+            calculator.Using(e => e.NullableDateTimeProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, DateTime?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -625,7 +625,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableDateTimeArrayPropertyInCalculatorWhenComputeThenReturnNullableDateTimeArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.NullableDateTimeArrayProperty);
+            calculator.UsingEach(e => e.NullableDateTimeArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<DateTime?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -637,7 +637,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingTimeSpanPropertyInCalculatorWhenComputeThenReturnTimeSpanCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.TimeSpanProperty);
+            calculator.Using(e => e.TimeSpanProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, TimeSpan>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -649,7 +649,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingTimeSpanArrayPropertyInCalculatorWhenComputeThenReturnTimeSpanArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.TimeSpanArrayProperty);
+            calculator.UsingEach(e => e.TimeSpanArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<TimeSpan>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -661,7 +661,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableTimeSpanPropertyInCalculatorWhenComputeThenReturnNullableTimeSpanCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.NullableTimeSpanProperty);
+            calculator.Using(e => e.NullableTimeSpanProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, TimeSpan?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -673,7 +673,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableTimeSpanArrayPropertyInCalculatorWhenComputeThenReturnNullableTimeSpanArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.NullableTimeSpanArrayProperty);
+            calculator.UsingEach(e => e.NullableTimeSpanArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<TimeSpan?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -685,7 +685,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingCharPropertyInCalculatorWhenComputeThenReturnCharCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.CharProperty);
+            calculator.Using(e => e.CharProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, char>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -697,7 +697,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingCharArrayPropertyInCalculatorWhenComputeThenReturnCharArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.CharArrayProperty);
+            calculator.UsingEach(e => e.CharArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<char>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -709,7 +709,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableCharPropertyInCalculatorWhenComputeThenReturnNullableCharCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.NullableCharProperty);
+            calculator.Using(e => e.NullableCharProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, char?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -721,7 +721,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableCharArrayPropertyInCalculatorWhenComputeThenReturnNullableCharArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.NullableCharArrayProperty);
+            calculator.UsingEach(e => e.NullableCharArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<char?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -733,8 +733,8 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.NullableStringProperty);
-            Expression<Func<EntityWithAllSupportedTypes, string?>> nullExpression = null;
+            calculator.Using(e => e.NullableStringProperty, ignoreError: true);
+            Expression<Func<EntityWithAllSupportedTypes, string>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_UTF8_CRC32, actual);
@@ -745,11 +745,24 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableStringPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.NullableStringProperty, Encoding.Unicode);
-            Expression<Func<EntityWithAllSupportedTypes, string?>> nullExpression = null;
+            calculator.Using(e => e.NullableStringProperty, Encoding.Unicode, ignoreError: true);
+            Expression<Func<EntityWithAllSupportedTypes, string>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression, Encoding.Unicode));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_UNICODE_CRC32, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
+            calculator.Context.Encoding = Encoding.Unicode;
+            calculator.Using(e => e.NullableStringProperty, Encoding.UTF8, ignoreError: true);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_UTF8_CRC32, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
+            calculator.Context.Encoding = Encoding.Unicode;
+            calculator.Using(e => e.NullableStringProperty, ignoreError: true);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_UNICODE_CRC32, actual);
+
             return actual;
         }
 
@@ -757,11 +770,24 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableStringPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.NullableStringProperty, Encoding.UTF32);
-            Expression<Func<EntityWithAllSupportedTypes, string?>> nullExpression = null;
+            calculator.Using(e => e.NullableStringProperty, Encoding.UTF32, ignoreError: true);
+            Expression<Func<EntityWithAllSupportedTypes, string>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression, Encoding.UTF32));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_UTF32_CRC32, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
+            calculator.Context.Encoding = Encoding.UTF32;
+            calculator.Using(e => e.NullableStringProperty, Encoding.UTF8, ignoreError: true);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_UTF8_CRC32, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
+            calculator.Context.Encoding = Encoding.UTF32;
+            calculator.Using(e => e.NullableStringProperty, ignoreError: true);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_UTF32_CRC32, actual);
+
             return actual;
         }
 
@@ -769,8 +795,8 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.NullableStringArrayProperty);
-            Expression<Func<EntityWithAllSupportedTypes, IEnumerable<string?>>> nullExpression = null;
+            calculator.UsingEach(e => e.NullableStringArrayProperty, ignoreError: true);
+            Expression<Func<EntityWithAllSupportedTypes, IEnumerable<string>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UTF8_CRC32, actual);
@@ -781,11 +807,24 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableStringArrayPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.NullableStringArrayProperty, Encoding.Unicode);
-            Expression<Func<EntityWithAllSupportedTypes, IEnumerable<string?>>> nullExpression = null;
+            calculator.UsingEach(e => e.NullableStringArrayProperty, Encoding.Unicode, ignoreError: true);
+            Expression<Func<EntityWithAllSupportedTypes, IEnumerable<string>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression, Encoding.Unicode));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UNICODE_CRC32, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
+            calculator.Context.Encoding = Encoding.Unicode;
+            calculator.UsingEach(e => e.NullableStringArrayProperty, Encoding.UTF8, ignoreError: true);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UTF8_CRC32, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
+            calculator.Context.Encoding = Encoding.Unicode;
+            calculator.UsingEach(e => e.NullableStringArrayProperty, ignoreError: true);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UNICODE_CRC32, actual);
+
             return actual;
         }
 
@@ -793,11 +832,24 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableStringArrayPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.NullableStringArrayProperty, Encoding.UTF32);
-            Expression<Func<EntityWithAllSupportedTypes, IEnumerable<string?>>> nullExpression = null;
+            calculator.UsingEach(e => e.NullableStringArrayProperty, Encoding.UTF32, ignoreError: true);
+            Expression<Func<EntityWithAllSupportedTypes, IEnumerable<string>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression, Encoding.UTF32));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UTF32_CRC32, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
+            calculator.Context.Encoding = Encoding.UTF32;
+            calculator.UsingEach(e => e.NullableStringArrayProperty, Encoding.UTF8, ignoreError: true);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UTF8_CRC32, actual);
+
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
+            calculator.Context.Encoding = Encoding.UTF32;
+            calculator.UsingEach(e => e.NullableStringArrayProperty, ignoreError: true);
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UTF32_CRC32, actual);
+
             return actual;
         }
 
@@ -805,7 +857,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingGuidPropertyInCalculatorWhenComputeThenReturnGuidCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.GuidProperty);
+            calculator.Using(e => e.GuidProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, Guid>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -817,7 +869,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.GuidArrayProperty);
+            calculator.UsingEach(e => e.GuidArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<Guid>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -829,7 +881,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.NullableGuidProperty);
+            calculator.Using(e => e.NullableGuidProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, Guid?>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -841,7 +893,7 @@ namespace FluentHashCalculator.Tests
         public uint UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArrayCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.UsingEach(e => e.NullableGuidArrayProperty);
+            calculator.UsingEach(e => e.NullableGuidArrayProperty, ignoreError: true);
             Expression<Func<EntityWithAllSupportedTypes, IEnumerable<Guid?>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
@@ -853,72 +905,72 @@ namespace FluentHashCalculator.Tests
         public void UsingAllPropertiesInCalculatorWhenComputeThenReturnCRC32()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator.Using(e => e.BoolProperty)
-                .UsingEach(e => e.BoolArrayProperty)
-                .Using(e => e.NullableBoolProperty)
-                .UsingEach(e => e.NullableBoolArrayProperty)
-                .Using(e => e.ByteProperty)
-                .UsingEach(e => e.ByteArrayProperty)
-                .Using(e => e.NullableByteProperty)
-                .UsingEach(e => e.NullableByteArrayProperty)
-                .Using(e => e.SbyteProperty)
-                .UsingEach(e => e.SbyteArrayProperty)
-                .Using(e => e.NullableSbyteProperty)
-                .UsingEach(e => e.NullableSbyteArrayProperty)
-                .Using(e => e.ShortProperty)
-                .UsingEach(e => e.ShortArrayProperty)
-                .Using(e => e.NullableShortProperty)
-                .UsingEach(e => e.NullableShortArrayProperty)
-                .Using(e => e.UshortProperty)
-                .UsingEach(e => e.UshortArrayProperty)
-                .Using(e => e.NullableUshortProperty)
-                .UsingEach(e => e.NullableUshortArrayProperty)
-                .Using(e => e.IntProperty)
-                .UsingEach(e => e.IntArrayProperty)
-                .Using(e => e.NullableIntProperty)
-                .UsingEach(e => e.NullableIntArrayProperty)
-                .Using(e => e.UintProperty)
-                .UsingEach(e => e.UintArrayProperty)
-                .Using(e => e.NullableUintProperty)
-                .UsingEach(e => e.NullableUintArrayProperty)
-                .Using(e => e.LongProperty)
-                .UsingEach(e => e.LongArrayProperty)
-                .Using(e => e.NullableLongProperty)
-                .UsingEach(e => e.NullableLongArrayProperty)
-                .Using(e => e.UlongProperty)
-                .UsingEach(e => e.UlongArrayProperty)
-                .Using(e => e.NullableUlongProperty)
-                .UsingEach(e => e.NullableUlongArrayProperty)
-                .Using(e => e.FloatProperty)
-                .UsingEach(e => e.FloatArrayProperty)
-                .Using(e => e.NullableFloatProperty)
-                .UsingEach(e => e.NullableFloatArrayProperty)
-                .Using(e => e.DoubleProperty)
-                .UsingEach(e => e.DoubleArrayProperty)
-                .Using(e => e.NullableDoubleProperty)
-                .UsingEach(e => e.NullableDoubleArrayProperty)
-                .Using(e => e.DecimalProperty)
-                .UsingEach(e => e.DecimalArrayProperty)
-                .Using(e => e.NullableDecimalProperty)
-                .UsingEach(e => e.NullableDecimalArrayProperty)
-                .Using(e => e.DateTimeProperty)
-                .UsingEach(e => e.DateTimeArrayProperty)
-                .Using(e => e.NullableDateTimeProperty)
-                .UsingEach(e => e.NullableDateTimeArrayProperty)
-                .Using(e => e.TimeSpanProperty)
-                .UsingEach(e => e.TimeSpanArrayProperty)
-                .Using(e => e.NullableTimeSpanProperty)
-                .UsingEach(e => e.NullableTimeSpanArrayProperty)
-                .Using(e => e.CharProperty)
-                .UsingEach(e => e.CharArrayProperty)
-                .Using(e => e.NullableCharProperty)
-                .UsingEach(e => e.NullableCharArrayProperty)
-                .Using(e => e.NullableStringProperty)
-                .UsingEach(e => e.NullableStringArrayProperty)
-                .Using(e => e.GuidProperty)
-                .UsingEach(e => e.GuidArrayProperty)
-                .Using(e => e.NullableGuidProperty)
-                .UsingEach(e => e.NullableGuidArrayProperty);
+            calculator.Using(e => e.BoolProperty, ignoreError: true)
+                .UsingEach(e => e.BoolArrayProperty, ignoreError: true)
+                .Using(e => e.NullableBoolProperty, ignoreError: true)
+                .UsingEach(e => e.NullableBoolArrayProperty, ignoreError: true)
+                .Using(e => e.ByteProperty, ignoreError: true)
+                .UsingEach(e => e.ByteArrayProperty, ignoreError: true)
+                .Using(e => e.NullableByteProperty, ignoreError: true)
+                .UsingEach(e => e.NullableByteArrayProperty, ignoreError: true)
+                .Using(e => e.SbyteProperty, ignoreError: true)
+                .UsingEach(e => e.SbyteArrayProperty, ignoreError: true)
+                .Using(e => e.NullableSbyteProperty, ignoreError: true)
+                .UsingEach(e => e.NullableSbyteArrayProperty, ignoreError: true)
+                .Using(e => e.ShortProperty, ignoreError: true)
+                .UsingEach(e => e.ShortArrayProperty, ignoreError: true)
+                .Using(e => e.NullableShortProperty, ignoreError: true)
+                .UsingEach(e => e.NullableShortArrayProperty, ignoreError: true)
+                .Using(e => e.UshortProperty, ignoreError: true)
+                .UsingEach(e => e.UshortArrayProperty, ignoreError: true)
+                .Using(e => e.NullableUshortProperty, ignoreError: true)
+                .UsingEach(e => e.NullableUshortArrayProperty, ignoreError: true)
+                .Using(e => e.IntProperty, ignoreError: true)
+                .UsingEach(e => e.IntArrayProperty, ignoreError: true)
+                .Using(e => e.NullableIntProperty, ignoreError: true)
+                .UsingEach(e => e.NullableIntArrayProperty, ignoreError: true)
+                .Using(e => e.UintProperty, ignoreError: true)
+                .UsingEach(e => e.UintArrayProperty, ignoreError: true)
+                .Using(e => e.NullableUintProperty, ignoreError: true)
+                .UsingEach(e => e.NullableUintArrayProperty, ignoreError: true)
+                .Using(e => e.LongProperty, ignoreError: true)
+                .UsingEach(e => e.LongArrayProperty, ignoreError: true)
+                .Using(e => e.NullableLongProperty, ignoreError: true)
+                .UsingEach(e => e.NullableLongArrayProperty, ignoreError: true)
+                .Using(e => e.UlongProperty, ignoreError: true)
+                .UsingEach(e => e.UlongArrayProperty, ignoreError: true)
+                .Using(e => e.NullableUlongProperty, ignoreError: true)
+                .UsingEach(e => e.NullableUlongArrayProperty, ignoreError: true)
+                .Using(e => e.FloatProperty, ignoreError: true)
+                .UsingEach(e => e.FloatArrayProperty, ignoreError: true)
+                .Using(e => e.NullableFloatProperty, ignoreError: true)
+                .UsingEach(e => e.NullableFloatArrayProperty, ignoreError: true)
+                .Using(e => e.DoubleProperty, ignoreError: true)
+                .UsingEach(e => e.DoubleArrayProperty, ignoreError: true)
+                .Using(e => e.NullableDoubleProperty, ignoreError: true)
+                .UsingEach(e => e.NullableDoubleArrayProperty, ignoreError: true)
+                .Using(e => e.DecimalProperty, ignoreError: true)
+                .UsingEach(e => e.DecimalArrayProperty, ignoreError: true)
+                .Using(e => e.NullableDecimalProperty, ignoreError: true)
+                .UsingEach(e => e.NullableDecimalArrayProperty, ignoreError: true)
+                .Using(e => e.DateTimeProperty, ignoreError: true)
+                .UsingEach(e => e.DateTimeArrayProperty, ignoreError: true)
+                .Using(e => e.NullableDateTimeProperty, ignoreError: true)
+                .UsingEach(e => e.NullableDateTimeArrayProperty, ignoreError: true)
+                .Using(e => e.TimeSpanProperty, ignoreError: true)
+                .UsingEach(e => e.TimeSpanArrayProperty, ignoreError: true)
+                .Using(e => e.NullableTimeSpanProperty, ignoreError: true)
+                .UsingEach(e => e.NullableTimeSpanArrayProperty, ignoreError: true)
+                .Using(e => e.CharProperty, ignoreError: true)
+                .UsingEach(e => e.CharArrayProperty, ignoreError: true)
+                .Using(e => e.NullableCharProperty, ignoreError: true)
+                .UsingEach(e => e.NullableCharArrayProperty, ignoreError: true)
+                .Using(e => e.NullableStringProperty, ignoreError: true)
+                .UsingEach(e => e.NullableStringArrayProperty, ignoreError: true)
+                .Using(e => e.GuidProperty, ignoreError: true)
+                .UsingEach(e => e.GuidArrayProperty, ignoreError: true)
+                .Using(e => e.NullableGuidProperty, ignoreError: true)
+                .UsingEach(e => e.NullableGuidArrayProperty, ignoreError: true);
 
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.ENTITY_WITH_ALL_SUPPORTED_TYPES_CRC32, actual);
@@ -928,71 +980,71 @@ namespace FluentHashCalculator.Tests
 
 
             var calculator2 = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
-            calculator2.Using(e => e.BoolProperty)
-                .UsingEach(e => e.BoolArrayProperty)
-                .Using(e => e.NullableBoolProperty)
-                .UsingEach(e => e.NullableBoolArrayProperty)
-                .Using(e => e.ByteProperty)
-                .UsingEach(e => e.ByteArrayProperty)
-                .Using(e => e.NullableByteProperty)
-                .UsingEach(e => e.NullableByteArrayProperty)
-                .Using(e => e.SbyteProperty)
-                .UsingEach(e => e.SbyteArrayProperty)
-                .Using(e => e.NullableSbyteProperty)
-                .UsingEach(e => e.NullableSbyteArrayProperty)
-                .Using(e => e.ShortProperty)
-                .UsingEach(e => e.ShortArrayProperty)
-                .Using(e => e.NullableShortProperty)
-                .UsingEach(e => e.NullableShortArrayProperty)
-                .Using(e => e.UshortProperty)
-                .UsingEach(e => e.UshortArrayProperty)
-                .Using(e => e.NullableUshortProperty)
-                .UsingEach(e => e.NullableUshortArrayProperty)
-                .Using(e => e.IntProperty)
-                .UsingEach(e => e.IntArrayProperty)
-                .Using(e => e.NullableIntProperty)
-                .UsingEach(e => e.NullableIntArrayProperty)
-                .UsingEach(e => e.UintArrayProperty)
-                .Using(e => e.NullableUintProperty)
-                .UsingEach(e => e.NullableUintArrayProperty)
-                .Using(e => e.LongProperty)
-                .UsingEach(e => e.LongArrayProperty)
-                .Using(e => e.NullableLongProperty)
-                .UsingEach(e => e.NullableLongArrayProperty)
-                .Using(e => e.UlongProperty)
-                .UsingEach(e => e.UlongArrayProperty)
-                .Using(e => e.NullableUlongProperty)
-                .UsingEach(e => e.NullableUlongArrayProperty)
-                .Using(e => e.FloatProperty)
-                .UsingEach(e => e.FloatArrayProperty)
-                .Using(e => e.NullableFloatProperty)
-                .UsingEach(e => e.NullableFloatArrayProperty)
-                .Using(e => e.DoubleProperty)
-                .UsingEach(e => e.DoubleArrayProperty)
-                .Using(e => e.NullableDoubleProperty)
-                .UsingEach(e => e.NullableDoubleArrayProperty)
-                .Using(e => e.DecimalProperty)
-                .UsingEach(e => e.DecimalArrayProperty)
-                .Using(e => e.NullableDecimalProperty)
-                .UsingEach(e => e.NullableDecimalArrayProperty)
-                .Using(e => e.DateTimeProperty)
-                .UsingEach(e => e.DateTimeArrayProperty)
-                .Using(e => e.NullableDateTimeProperty)
-                .UsingEach(e => e.NullableDateTimeArrayProperty)
-                .Using(e => e.TimeSpanProperty)
-                .UsingEach(e => e.TimeSpanArrayProperty)
-                .Using(e => e.NullableTimeSpanProperty)
-                .UsingEach(e => e.NullableTimeSpanArrayProperty)
-                .Using(e => e.CharProperty)
-                .UsingEach(e => e.CharArrayProperty)
-                .Using(e => e.NullableCharProperty)
-                .UsingEach(e => e.NullableCharArrayProperty)
-                .Using(e => e.NullableStringProperty)
-                .UsingEach(e => e.NullableStringArrayProperty)
-                .Using(e => e.GuidProperty)
-                .UsingEach(e => e.GuidArrayProperty)
-                .Using(e => e.NullableGuidProperty)
-                .UsingEach(e => e.NullableGuidArrayProperty);
+            calculator2.Using(e => e.BoolProperty, ignoreError: true)
+                .UsingEach(e => e.BoolArrayProperty, ignoreError: true)
+                .Using(e => e.NullableBoolProperty, ignoreError: true)
+                .UsingEach(e => e.NullableBoolArrayProperty, ignoreError: true)
+                .Using(e => e.ByteProperty, ignoreError: true)
+                .UsingEach(e => e.ByteArrayProperty, ignoreError: true)
+                .Using(e => e.NullableByteProperty, ignoreError: true)
+                .UsingEach(e => e.NullableByteArrayProperty, ignoreError: true)
+                .Using(e => e.SbyteProperty, ignoreError: true)
+                .UsingEach(e => e.SbyteArrayProperty, ignoreError: true)
+                .Using(e => e.NullableSbyteProperty, ignoreError: true)
+                .UsingEach(e => e.NullableSbyteArrayProperty, ignoreError: true)
+                .Using(e => e.ShortProperty, ignoreError: true)
+                .UsingEach(e => e.ShortArrayProperty, ignoreError: true)
+                .Using(e => e.NullableShortProperty, ignoreError: true)
+                .UsingEach(e => e.NullableShortArrayProperty, ignoreError: true)
+                .Using(e => e.UshortProperty, ignoreError: true)
+                .UsingEach(e => e.UshortArrayProperty, ignoreError: true)
+                .Using(e => e.NullableUshortProperty, ignoreError: true)
+                .UsingEach(e => e.NullableUshortArrayProperty, ignoreError: true)
+                .Using(e => e.IntProperty, ignoreError: true)
+                .UsingEach(e => e.IntArrayProperty, ignoreError: true)
+                .Using(e => e.NullableIntProperty, ignoreError: true)
+                .UsingEach(e => e.NullableIntArrayProperty, ignoreError: true)
+                .UsingEach(e => e.UintArrayProperty, ignoreError: true)
+                .Using(e => e.NullableUintProperty, ignoreError: true)
+                .UsingEach(e => e.NullableUintArrayProperty, ignoreError: true)
+                .Using(e => e.LongProperty, ignoreError: true)
+                .UsingEach(e => e.LongArrayProperty, ignoreError: true)
+                .Using(e => e.NullableLongProperty, ignoreError: true)
+                .UsingEach(e => e.NullableLongArrayProperty, ignoreError: true)
+                .Using(e => e.UlongProperty, ignoreError: true)
+                .UsingEach(e => e.UlongArrayProperty, ignoreError: true)
+                .Using(e => e.NullableUlongProperty, ignoreError: true)
+                .UsingEach(e => e.NullableUlongArrayProperty, ignoreError: true)
+                .Using(e => e.FloatProperty, ignoreError: true)
+                .UsingEach(e => e.FloatArrayProperty, ignoreError: true)
+                .Using(e => e.NullableFloatProperty, ignoreError: true)
+                .UsingEach(e => e.NullableFloatArrayProperty, ignoreError: true)
+                .Using(e => e.DoubleProperty, ignoreError: true)
+                .UsingEach(e => e.DoubleArrayProperty, ignoreError: true)
+                .Using(e => e.NullableDoubleProperty, ignoreError: true)
+                .UsingEach(e => e.NullableDoubleArrayProperty, ignoreError: true)
+                .Using(e => e.DecimalProperty, ignoreError: true)
+                .UsingEach(e => e.DecimalArrayProperty, ignoreError: true)
+                .Using(e => e.NullableDecimalProperty, ignoreError: true)
+                .UsingEach(e => e.NullableDecimalArrayProperty, ignoreError: true)
+                .Using(e => e.DateTimeProperty, ignoreError: true)
+                .UsingEach(e => e.DateTimeArrayProperty, ignoreError: true)
+                .Using(e => e.NullableDateTimeProperty, ignoreError: true)
+                .UsingEach(e => e.NullableDateTimeArrayProperty, ignoreError: true)
+                .Using(e => e.TimeSpanProperty, ignoreError: true)
+                .UsingEach(e => e.TimeSpanArrayProperty, ignoreError: true)
+                .Using(e => e.NullableTimeSpanProperty, ignoreError: true)
+                .UsingEach(e => e.NullableTimeSpanArrayProperty, ignoreError: true)
+                .Using(e => e.CharProperty, ignoreError: true)
+                .UsingEach(e => e.CharArrayProperty, ignoreError: true)
+                .Using(e => e.NullableCharProperty, ignoreError: true)
+                .UsingEach(e => e.NullableCharArrayProperty, ignoreError: true)
+                .Using(e => e.NullableStringProperty, ignoreError: true)
+                .UsingEach(e => e.NullableStringArrayProperty, ignoreError: true)
+                .Using(e => e.GuidProperty, ignoreError: true)
+                .UsingEach(e => e.GuidArrayProperty, ignoreError: true)
+                .Using(e => e.NullableGuidProperty, ignoreError: true)
+                .UsingEach(e => e.NullableGuidArrayProperty, ignoreError: true);
 
             var actual3 = calculator2.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_CRC32, actual3);

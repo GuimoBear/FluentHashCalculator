@@ -1,12 +1,15 @@
-﻿using FluentHashCalculator.Tests;
-using System;
-
-namespace FluentHashCalculator.Benchmark
+﻿namespace FluentHashCalculator.Benchmark
 {
     class Program
     {
         static void Main(string[] args)
         {
+
+        }
+
+        private static void PrintResults()
+        {
+            /*
             var crc64test = new CRC64FluentHashCalculatorTests();
 
             Console.WriteLine("        #region Valores dos CRC64 dos valores padrão");
@@ -543,6 +546,7 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidSHA512())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_ARRAY_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArraySHA512())} }};");
             Console.WriteLine("        #endregion");
+            */
         }
     }
 }
