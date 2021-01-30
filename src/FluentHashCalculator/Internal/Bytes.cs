@@ -160,7 +160,7 @@ namespace FluentHashCalculator.Internal
         private static byte[] From(char value)
             => BitConverter.GetBytes(value);
 
-        private static byte[] From(string? value, IStringSerializationContext context)
+        private static byte[] From(string value, IStringSerializationContext context)
             => context.Encoding.GetBytes(value ?? string.Empty);
 
         private static byte[] From(Guid value)

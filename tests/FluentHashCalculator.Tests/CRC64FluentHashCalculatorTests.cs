@@ -734,7 +734,7 @@ namespace FluentHashCalculator.Tests
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
             calculator.Using(e => e.NullableStringProperty);
-            Expression<Func<EntityWithAllSupportedTypes, string?>> nullExpression = null;
+            Expression<Func<EntityWithAllSupportedTypes, string>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_UTF8_CRC64, actual);
@@ -746,7 +746,7 @@ namespace FluentHashCalculator.Tests
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
             calculator.Using(e => e.NullableStringProperty, Encoding.Unicode);
-            Expression<Func<EntityWithAllSupportedTypes, string?>> nullExpression = null;
+            Expression<Func<EntityWithAllSupportedTypes, string>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression, Encoding.Unicode));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_UNICODE_CRC64, actual);
@@ -771,7 +771,7 @@ namespace FluentHashCalculator.Tests
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
             calculator.Using(e => e.NullableStringProperty, Encoding.UTF32);
-            Expression<Func<EntityWithAllSupportedTypes, string?>> nullExpression = null;
+            Expression<Func<EntityWithAllSupportedTypes, string>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression, Encoding.UTF32));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_UTF32_CRC64, actual);
@@ -796,7 +796,7 @@ namespace FluentHashCalculator.Tests
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
             calculator.UsingEach(e => e.NullableStringArrayProperty);
-            Expression<Func<EntityWithAllSupportedTypes, IEnumerable<string?>>> nullExpression = null;
+            Expression<Func<EntityWithAllSupportedTypes, IEnumerable<string>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UTF8_CRC64, actual);
@@ -808,7 +808,7 @@ namespace FluentHashCalculator.Tests
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
             calculator.UsingEach(e => e.NullableStringArrayProperty, Encoding.Unicode);
-            Expression<Func<EntityWithAllSupportedTypes, IEnumerable<string?>>> nullExpression = null;
+            Expression<Func<EntityWithAllSupportedTypes, IEnumerable<string>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression, Encoding.Unicode));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UNICODE_CRC64, actual);
@@ -833,7 +833,7 @@ namespace FluentHashCalculator.Tests
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
             calculator.UsingEach(e => e.NullableStringArrayProperty, Encoding.UTF32);
-            Expression<Func<EntityWithAllSupportedTypes, IEnumerable<string?>>> nullExpression = null;
+            Expression<Func<EntityWithAllSupportedTypes, IEnumerable<string>>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression, Encoding.UTF32));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UTF32_CRC64, actual);
