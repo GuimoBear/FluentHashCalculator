@@ -6,9 +6,9 @@ namespace FluentHashCalculator.Benchmark
     {
         static void Main(string[] args)
         {
-            //BenchmarkRunner.Run<CRC16FluentHashCalculatorBenchmark>();
-            //BenchmarkRunner.Run<CRC32FluentHashCalculatorBenchmark>();
-            //BenchmarkRunner.Run<CRC64FluentHashCalculatorBenchmark>();
+            // BenchmarkRunner.Run<CRC16FluentHashCalculatorBenchmark>();
+            // BenchmarkRunner.Run<CRC32FluentHashCalculatorBenchmark>();
+            // BenchmarkRunner.Run<CRC64FluentHashCalculatorBenchmark>();
             BenchmarkRunner.Run<SHA1FluentHashCalculatorBenchmark>();
             BenchmarkRunner.Run<SHA1FluentHashCalculatorWithoutPoolBenchmark>();
             BenchmarkRunner.Run<SHA1FluentHashCalculatorWithoutPoolAndAppendDataBenchmark>();
@@ -21,6 +21,7 @@ namespace FluentHashCalculator.Benchmark
             BenchmarkRunner.Run<SHA512FluentHashCalculatorBenchmark>();
             BenchmarkRunner.Run<SHA512FluentHashCalculatorWithoutPoolBenchmark>();
             BenchmarkRunner.Run<SHA512FluentHashCalculatorWithoutPoolAndAppendDataBenchmark>();
+            //PrintResults();
         }
 
         private static void PrintResults()
@@ -561,6 +562,83 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] GUID_ARRAY_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArraySHA512())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidSHA512())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_ARRAY_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArraySHA512())} }};");
+            Console.WriteLine("        #endregion");
+
+            Console.WriteLine("");
+
+            var md5test = new MD5FluentHashCalculatorTests();
+
+            Console.WriteLine("        #region Valores dos MD5 dos valores padrão");
+            Console.WriteLine($"        public static readonly byte[] BOOL_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingBoolPropertyInCalculatorWhenComputeThenReturnBoolMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] BOOL_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingBoolArrayPropertyInCalculatorWhenComputeThenReturnBoolArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_BOOL_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableBoolPropertyInCalculatorWhenComputeThenReturnNullableBoolMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_BOOL_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableBoolArrayPropertyInCalculatorWhenComputeThenReturnNullableBoolArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] BYTE_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingBytePropertyInCalculatorWhenComputeThenReturnByteMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] BYTE_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingByteArrayPropertyInCalculatorWhenComputeThenReturnByteArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_BYTE_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableBytePropertyInCalculatorWhenComputeThenReturnNullableByteMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_BYTE_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableByteArrayPropertyInCalculatorWhenComputeThenReturnNullableByteArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] SBYTE_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingSbytePropertyInCalculatorWhenComputeThenReturnSbyteMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] SBYTE_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingSbyteArrayPropertyInCalculatorWhenComputeThenReturnSbyteArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_SBYTE_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableSbytePropertyInCalculatorWhenComputeThenReturnNullableSbyteMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_SBYTE_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableSbyteArrayPropertyInCalculatorWhenComputeThenReturnNullableSbyteArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] SHORT_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingShortPropertyInCalculatorWhenComputeThenReturnShortMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] SHORT_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingShortArrayPropertyInCalculatorWhenComputeThenReturnShortArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_SHORT_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableShortPropertyInCalculatorWhenComputeThenReturnNullableShortMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_SHORT_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableShortArrayPropertyInCalculatorWhenComputeThenReturnNullableShortArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] USHORT_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingUshortPropertyInCalculatorWhenComputeThenReturnUshortMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] USHORT_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingUshortArrayPropertyInCalculatorWhenComputeThenReturnUshortArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_USHORT_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableUshortPropertyInCalculatorWhenComputeThenReturnNullableUshortMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_USHORT_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableUshortArrayPropertyInCalculatorWhenComputeThenReturnNullableUshortArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] INT_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingIntPropertyInCalculatorWhenComputeThenReturnIntMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] INT_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingIntArrayPropertyInCalculatorWhenComputeThenReturnIntArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_INT_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableIntPropertyInCalculatorWhenComputeThenReturnNullableIntMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_INT_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableIntArrayPropertyInCalculatorWhenComputeThenReturnNullableIntArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] UINT_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingUintPropertyInCalculatorWhenComputeThenReturnUintMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] UINT_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingUintArrayPropertyInCalculatorWhenComputeThenReturnUintArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_UINT_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableUintPropertyInCalculatorWhenComputeThenReturnNullableUintMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_UINT_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableUintArrayPropertyInCalculatorWhenComputeThenReturnNullableUintArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] LONG_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingLongPropertyInCalculatorWhenComputeThenReturnLongMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] LONG_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingLongArrayPropertyInCalculatorWhenComputeThenReturnLongArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_LONG_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableLongPropertyInCalculatorWhenComputeThenReturnNullableLongMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_LONG_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableLongArrayPropertyInCalculatorWhenComputeThenReturnNullableLongArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] ULONG_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingUlongPropertyInCalculatorWhenComputeThenReturnUlongMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] ULONG_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingUlongArrayPropertyInCalculatorWhenComputeThenReturnUlongArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_ULONG_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableUlongPropertyInCalculatorWhenComputeThenReturnNullableUlongMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_ULONG_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableUlongArrayPropertyInCalculatorWhenComputeThenReturnNullableUlongArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] FLOAT_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingFloatPropertyInCalculatorWhenComputeThenReturnFloatMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] FLOAT_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingFloatArrayPropertyInCalculatorWhenComputeThenReturnFloatArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_FLOAT_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableFloatPropertyInCalculatorWhenComputeThenReturnNullableFloatMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_FLOAT_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableFloatArrayPropertyInCalculatorWhenComputeThenReturnNullableFloatArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] DOUBLE_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingDoublePropertyInCalculatorWhenComputeThenReturnDoubleMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] DOUBLE_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingDoubleArrayPropertyInCalculatorWhenComputeThenReturnDoubleArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_DOUBLE_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableDoublePropertyInCalculatorWhenComputeThenReturnNullableDoubleMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_DOUBLE_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableDoubleArrayPropertyInCalculatorWhenComputeThenReturnNullableDoubleArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] DECIMAL_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingDecimalPropertyInCalculatorWhenComputeThenReturnDecimalMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] DECIMAL_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingDecimalArrayPropertyInCalculatorWhenComputeThenReturnDecimalArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_DECIMAL_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableDecimalPropertyInCalculatorWhenComputeThenReturnNullableDecimalMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_DECIMAL_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableDecimalArrayPropertyInCalculatorWhenComputeThenReturnNullableDecimalArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] DATETIME_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingDateTimePropertyInCalculatorWhenComputeThenReturnDateTimeMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] DATETIME_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingDateTimeArrayPropertyInCalculatorWhenComputeThenReturnDateTimeArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_DATETIME_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableDateTimePropertyInCalculatorWhenComputeThenReturnNullableDateTimeMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_DATETIME_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableDateTimeArrayPropertyInCalculatorWhenComputeThenReturnNullableDateTimeArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] TIMESPAN_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingTimeSpanPropertyInCalculatorWhenComputeThenReturnTimeSpanMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] TIMESPAN_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingTimeSpanArrayPropertyInCalculatorWhenComputeThenReturnTimeSpanArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_TIMESPAN_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableTimeSpanPropertyInCalculatorWhenComputeThenReturnNullableTimeSpanMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_TIMESPAN_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableTimeSpanArrayPropertyInCalculatorWhenComputeThenReturnNullableTimeSpanArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] CHAR_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingCharPropertyInCalculatorWhenComputeThenReturnCharMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] CHAR_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingCharArrayPropertyInCalculatorWhenComputeThenReturnCharArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_CHAR_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableCharPropertyInCalculatorWhenComputeThenReturnNullableCharMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_CHAR_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableCharArrayPropertyInCalculatorWhenComputeThenReturnNullableCharArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UTF8_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UNICODE_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableStringPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UTF32_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableStringPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF8_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UNICODE_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableStringArrayPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF32_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableStringArrayPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] GUID_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingGuidPropertyInCalculatorWhenComputeThenReturnGuidMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] GUID_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArrayMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArrayMD5())} }};");
             Console.WriteLine("        #endregion");
             */
         }

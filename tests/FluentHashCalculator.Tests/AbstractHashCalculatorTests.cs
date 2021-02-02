@@ -311,5 +311,54 @@ namespace FluentHashCalculator.Tests
             calculator.Compute(instance);
             calculator.Base64(instance);
         }
+
+        [Fact]
+        public void UsingAnValidInstanceWhenMD5ComputeCallThenNotThrowAnyException()
+        {
+            var calculator = new MD5EntityAbstractHashCalculator();
+
+            var instance = new Entity
+            {
+                Id = 2,
+                Birthday = new DateTime(2000, 11, 3),
+                Name = "Test"
+            };
+
+            Parallel.For(0, PARALLEL_TO_EXCLUSIVE, _ =>
+            {
+                var result = calculator.Compute(instance);
+
+                result
+                    .Should().NotBeNull().And.NotBeEmpty();
+
+                var expected = Convert.ToBase64String(result);
+
+                expected
+                    .Should().BeEquivalentTo(calculator.Base64(instance));
+            });
+
+            calculator.Compute(null)
+                .Should().BeEmpty();
+
+            calculator.Base64(null)
+                .Should().BeNullOrEmpty();
+
+            calculator = new MD5EntityAbstractHashCalculator(ignoreErrors: false);
+
+            Assert.Throws<NullReferenceException>(() => calculator.Compute(instance));
+
+            Assert.Throws<NullReferenceException>(() => calculator.Base64(instance));
+
+            instance = new Entity
+            {
+                Id = 2,
+                Birthday = new DateTime(2000, 11, 3),
+                Name = "Test",
+                Another = new AnotherEntity()
+            };
+
+            calculator.Compute(instance);
+            calculator.Base64(instance);
+        }
     }
 }

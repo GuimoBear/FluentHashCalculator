@@ -95,6 +95,9 @@ namespace FluentHashCalculator.Tests.Fakes
 
         public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPES_SHA512 = new byte[] { 70, 113, 161, 203, 19, 5, 242, 86, 196, 234, 121, 166, 252, 168, 132, 10, 4, 33, 111, 213, 235, 55, 222, 9, 50, 220, 100, 18, 199, 51, 55, 59, 137, 218, 103, 138, 118, 248, 104, 136, 96, 207, 146, 10, 187, 153, 153, 41, 88, 121, 49, 87, 52, 134, 138, 77, 215, 222, 110, 109, 247, 151, 12, 247 };
         public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_SHA512 = new byte[] { 177, 6, 151, 181, 189, 97, 132, 178, 8, 245, 8, 42, 175, 46, 2, 252, 122, 40, 229, 70, 99, 127, 45, 94, 34, 54, 115, 231, 56, 160, 81, 79, 38, 202, 165, 126, 122, 206, 66, 169, 168, 40, 29, 76, 15, 51, 212, 57, 252, 63, 188, 55, 165, 185, 62, 206, 179, 123, 14, 8, 163, 88, 27, 0 };
+
+        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPES_MD5 = new byte[] { 90, 88, 122, 56, 122, 67, 216, 40, 239, 205, 207, 222, 163, 151, 27, 197 };
+        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_MD5 = new byte[] { 100, 180, 231, 144, 95, 78, 228, 27, 243, 218, 193, 131, 147, 92, 137, 169 };
         #endregion
 
         #region Valores dos CRC64 dos valores padrão
@@ -606,6 +609,79 @@ namespace FluentHashCalculator.Tests.Fakes
         public static readonly byte[] GUID_ARRAY_SHA512 = new byte[] { 71, 183, 123, 142, 237, 36, 184, 5, 151, 121, 201, 31, 248, 94, 26, 247, 235, 177, 182, 147, 104, 247, 113, 227, 196, 149, 158, 228, 252, 114, 89, 31, 84, 143, 130, 39, 117, 143, 48, 255, 240, 116, 180, 101, 178, 165, 22, 128, 254, 147, 164, 194, 245, 175, 194, 254, 18, 164, 190, 116, 107, 212, 153, 63 };
         public static readonly byte[] NULLABLE_GUID_SHA512 = new byte[] { 207, 131, 225, 53, 126, 239, 184, 189, 241, 84, 40, 80, 214, 109, 128, 7, 214, 32, 228, 5, 11, 87, 21, 220, 131, 244, 169, 33, 211, 108, 233, 206, 71, 208, 209, 60, 93, 133, 242, 176, 255, 131, 24, 210, 135, 126, 236, 47, 99, 185, 49, 189, 71, 65, 122, 129, 165, 56, 50, 122, 249, 39, 218, 62 };
         public static readonly byte[] NULLABLE_GUID_ARRAY_SHA512 = new byte[] { 146, 49, 21, 167, 172, 161, 199, 110, 33, 1, 207, 39, 213, 34, 185, 66, 157, 164, 106, 117, 207, 31, 245, 9, 208, 183, 231, 189, 50, 166, 108, 186, 49, 225, 252, 184, 41, 42, 103, 118, 246, 25, 125, 116, 22, 245, 175, 196, 239, 250, 58, 15, 146, 16, 135, 4, 46, 55, 177, 243, 113, 193, 90, 87 };
+        #endregion
+
+        #region Valores dos MD5 dos valores padrão
+        public static readonly byte[] BOOL_MD5 = new byte[] { 85, 165, 64, 8, 173, 27, 165, 137, 170, 33, 13, 38, 41, 193, 223, 65 };
+        public static readonly byte[] BOOL_ARRAY_MD5 = new byte[] { 1, 233, 128, 47, 217, 6, 52, 26, 43, 118, 145, 37, 197, 98, 217, 92 };
+        public static readonly byte[] NULLABLE_BOOL_MD5 = new byte[] { 212, 29, 140, 217, 143, 0, 178, 4, 233, 128, 9, 152, 236, 248, 66, 126 };
+        public static readonly byte[] NULLABLE_BOOL_ARRAY_MD5 = new byte[] { 68, 16, 119, 204, 158, 87, 85, 77, 212, 118, 189, 251, 139, 139, 129, 2 };
+        public static readonly byte[] BYTE_MD5 = new byte[] { 233, 249, 98, 35, 53, 149, 248, 169, 234, 206, 182, 229, 212, 144, 161, 92 };
+        public static readonly byte[] BYTE_ARRAY_MD5 = new byte[] { 97, 8, 117, 165, 105, 235, 160, 90, 61, 149, 164, 110, 58, 172, 54, 72 };
+        public static readonly byte[] NULLABLE_BYTE_MD5 = new byte[] { 238, 222, 3, 237, 108, 176, 5, 9, 35, 34, 193, 26, 24, 29, 6, 25 };
+        public static readonly byte[] NULLABLE_BYTE_ARRAY_MD5 = new byte[] { 48, 43, 15, 87, 226, 22, 157, 3, 65, 234, 195, 194, 66, 151, 209, 17 };
+        public static readonly byte[] SBYTE_MD5 = new byte[] { 56, 90, 51, 20, 85, 187, 138, 37, 121, 226, 175, 210, 184, 45, 32, 52 };
+        public static readonly byte[] SBYTE_ARRAY_MD5 = new byte[] { 192, 84, 180, 122, 8, 172, 89, 31, 36, 58, 6, 186, 165, 245, 195, 55 };
+        public static readonly byte[] NULLABLE_SBYTE_MD5 = new byte[] { 201, 224, 132, 54, 187, 124, 68, 253, 28, 10, 66, 223, 70, 7, 179, 187 };
+        public static readonly byte[] NULLABLE_SBYTE_ARRAY_MD5 = new byte[] { 78, 79, 41, 216, 36, 53, 252, 105, 200, 212, 129, 235, 149, 141, 50, 196 };
+        public static readonly byte[] SHORT_MD5 = new byte[] { 64, 237, 239, 239, 138, 143, 133, 14, 244, 135, 232, 10, 70, 20, 0, 219 };
+        public static readonly byte[] SHORT_ARRAY_MD5 = new byte[] { 141, 19, 40, 79, 69, 223, 194, 66, 250, 20, 253, 237, 214, 212, 248, 146 };
+        public static readonly byte[] NULLABLE_SHORT_MD5 = new byte[] { 212, 29, 140, 217, 143, 0, 178, 4, 233, 128, 9, 152, 236, 248, 66, 126 };
+        public static readonly byte[] NULLABLE_SHORT_ARRAY_MD5 = new byte[] { 66, 64, 149, 16, 85, 11, 151, 236, 196, 133, 107, 7, 200, 199, 227, 193 };
+        public static readonly byte[] USHORT_MD5 = new byte[] { 75, 240, 209, 154, 62, 89, 51, 62, 2, 205, 79, 206, 142, 121, 2, 237 };
+        public static readonly byte[] USHORT_ARRAY_MD5 = new byte[] { 115, 69, 151, 131, 40, 155, 107, 58, 147, 206, 123, 114, 240, 237, 143, 165 };
+        public static readonly byte[] NULLABLE_USHORT_MD5 = new byte[] { 171, 42, 13, 40, 222, 107, 119, 255, 221, 108, 114, 175, 234, 208, 153, 171 };
+        public static readonly byte[] NULLABLE_USHORT_ARRAY_MD5 = new byte[] { 21, 7, 232, 192, 209, 39, 100, 38, 1, 42, 167, 194, 5, 116, 206, 14 };
+        public static readonly byte[] INT_MD5 = new byte[] { 21, 143, 158, 124, 120, 222, 122, 198, 214, 116, 96, 222, 142, 40, 69, 84 };
+        public static readonly byte[] INT_ARRAY_MD5 = new byte[] { 94, 15, 176, 217, 226, 38, 176, 243, 12, 238, 180, 182, 52, 191, 150, 3 };
+        public static readonly byte[] NULLABLE_INT_MD5 = new byte[] { 200, 55, 229, 82, 37, 88, 37, 80, 45, 90, 193, 72, 123, 104, 82, 192 };
+        public static readonly byte[] NULLABLE_INT_ARRAY_MD5 = new byte[] { 170, 38, 200, 24, 230, 22, 1, 88, 214, 163, 116, 134, 208, 211, 17, 131 };
+        public static readonly byte[] UINT_MD5 = new byte[] { 219, 246, 151, 132, 80, 144, 89, 64, 79, 43, 217, 116, 163, 64, 47, 211 };
+        public static readonly byte[] UINT_ARRAY_MD5 = new byte[] { 92, 167, 121, 213, 62, 170, 193, 220, 163, 95, 227, 98, 201, 229, 147, 226 };
+        public static readonly byte[] NULLABLE_UINT_MD5 = new byte[] { 212, 29, 140, 217, 143, 0, 178, 4, 233, 128, 9, 152, 236, 248, 66, 126 };
+        public static readonly byte[] NULLABLE_UINT_ARRAY_MD5 = new byte[] { 200, 182, 24, 95, 225, 106, 205, 196, 30, 147, 140, 140, 154, 173, 241, 29 };
+        public static readonly byte[] LONG_MD5 = new byte[] { 187, 93, 1, 226, 50, 144, 132, 52, 60, 190, 55, 56, 212, 0, 208, 15 };
+        public static readonly byte[] LONG_ARRAY_MD5 = new byte[] { 247, 166, 102, 213, 79, 112, 77, 238, 116, 226, 241, 177, 177, 198, 219, 11 };
+        public static readonly byte[] NULLABLE_LONG_MD5 = new byte[] { 97, 8, 182, 78, 248, 37, 12, 99, 187, 30, 46, 136, 108, 240, 135, 111 };
+        public static readonly byte[] NULLABLE_LONG_ARRAY_MD5 = new byte[] { 202, 30, 8, 67, 124, 231, 196, 210, 163, 154, 24, 197, 4, 103, 107, 231 };
+        public static readonly byte[] ULONG_MD5 = new byte[] { 209, 202, 222, 174, 10, 154, 246, 179, 4, 169, 197, 124, 171, 223, 84, 232 };
+        public static readonly byte[] ULONG_ARRAY_MD5 = new byte[] { 244, 98, 239, 160, 25, 80, 165, 83, 39, 124, 173, 16, 112, 77, 24, 61 };
+        public static readonly byte[] NULLABLE_ULONG_MD5 = new byte[] { 212, 29, 140, 217, 143, 0, 178, 4, 233, 128, 9, 152, 236, 248, 66, 126 };
+        public static readonly byte[] NULLABLE_ULONG_ARRAY_MD5 = new byte[] { 95, 127, 224, 113, 108, 248, 254, 166, 126, 29, 10, 106, 45, 181, 127, 224 };
+        public static readonly byte[] FLOAT_MD5 = new byte[] { 244, 143, 3, 178, 112, 218, 67, 205, 84, 58, 26, 165, 1, 110, 233, 189 };
+        public static readonly byte[] FLOAT_ARRAY_MD5 = new byte[] { 91, 191, 124, 47, 10, 158, 194, 69, 40, 13, 82, 43, 167, 24, 157, 167 };
+        public static readonly byte[] NULLABLE_FLOAT_MD5 = new byte[] { 14, 180, 86, 38, 215, 166, 125, 14, 61, 137, 243, 158, 82, 53, 229, 45 };
+        public static readonly byte[] NULLABLE_FLOAT_ARRAY_MD5 = new byte[] { 231, 230, 70, 245, 201, 232, 112, 229, 20, 87, 81, 61, 193, 42, 253, 63 };
+        public static readonly byte[] DOUBLE_MD5 = new byte[] { 115, 197, 80, 89, 17, 64, 35, 160, 245, 135, 120, 203, 59, 191, 13, 54 };
+        public static readonly byte[] DOUBLE_ARRAY_MD5 = new byte[] { 93, 211, 89, 173, 47, 83, 236, 47, 250, 46, 173, 167, 123, 151, 146, 121 };
+        public static readonly byte[] NULLABLE_DOUBLE_MD5 = new byte[] { 212, 29, 140, 217, 143, 0, 178, 4, 233, 128, 9, 152, 236, 248, 66, 126 };
+        public static readonly byte[] NULLABLE_DOUBLE_ARRAY_MD5 = new byte[] { 212, 29, 140, 217, 143, 0, 178, 4, 233, 128, 9, 152, 236, 248, 66, 126 };
+        public static readonly byte[] DECIMAL_MD5 = new byte[] { 232, 51, 194, 242, 128, 10, 29, 194, 78, 29, 133, 90, 147, 202, 15, 141 };
+        public static readonly byte[] DECIMAL_ARRAY_MD5 = new byte[] { 240, 179, 167, 209, 23, 54, 227, 171, 132, 120, 145, 139, 120, 27, 36, 84 };
+        public static readonly byte[] NULLABLE_DECIMAL_MD5 = new byte[] { 109, 116, 187, 73, 151, 85, 31, 96, 60, 148, 12, 226, 141, 193, 240, 46 };
+        public static readonly byte[] NULLABLE_DECIMAL_ARRAY_MD5 = new byte[] { 23, 225, 11, 121, 110, 89, 138, 93, 138, 45, 181, 80, 81, 195, 104, 144 };
+        public static readonly byte[] DATETIME_MD5 = new byte[] { 26, 247, 117, 174, 45, 150, 177, 60, 134, 164, 141, 225, 56, 229, 190, 61 };
+        public static readonly byte[] DATETIME_ARRAY_MD5 = new byte[] { 178, 107, 56, 30, 43, 167, 145, 235, 59, 3, 114, 105, 140, 109, 85, 220 };
+        public static readonly byte[] NULLABLE_DATETIME_MD5 = new byte[] { 212, 29, 140, 217, 143, 0, 178, 4, 233, 128, 9, 152, 236, 248, 66, 126 };
+        public static readonly byte[] NULLABLE_DATETIME_ARRAY_MD5 = new byte[] { 212, 29, 140, 217, 143, 0, 178, 4, 233, 128, 9, 152, 236, 248, 66, 126 };
+        public static readonly byte[] TIMESPAN_MD5 = new byte[] { 6, 229, 202, 129, 162, 190, 246, 173, 137, 200, 61, 143, 142, 27, 36, 70 };
+        public static readonly byte[] TIMESPAN_ARRAY_MD5 = new byte[] { 245, 31, 168, 75, 188, 85, 50, 202, 174, 50, 122, 12, 98, 152, 62, 67 };
+        public static readonly byte[] NULLABLE_TIMESPAN_MD5 = new byte[] { 202, 209, 63, 165, 95, 122, 150, 250, 9, 168, 123, 124, 241, 104, 158, 39 };
+        public static readonly byte[] NULLABLE_TIMESPAN_ARRAY_MD5 = new byte[] { 202, 209, 63, 165, 95, 122, 150, 250, 9, 168, 123, 124, 241, 104, 158, 39 };
+        public static readonly byte[] CHAR_MD5 = new byte[] { 213, 156, 116, 64, 211, 104, 250, 237, 83, 47, 111, 182, 205, 221, 134, 95 };
+        public static readonly byte[] CHAR_ARRAY_MD5 = new byte[] { 143, 199, 17, 112, 205, 33, 28, 5, 7, 125, 97, 7, 205, 8, 10, 167 };
+        public static readonly byte[] NULLABLE_CHAR_MD5 = new byte[] { 214, 5, 123, 56, 71, 127, 208, 180, 89, 233, 100, 231, 204, 73, 198, 38 };
+        public static readonly byte[] NULLABLE_CHAR_ARRAY_MD5 = new byte[] { 94, 184, 75, 143, 232, 15, 12, 21, 242, 44, 37, 208, 92, 84, 221, 70 };
+        public static readonly byte[] NULLABLE_STRING_UTF8_MD5 = new byte[] { 70, 32, 124, 224, 119, 161, 52, 110, 116, 53, 42, 28, 221, 35, 225, 123 };
+        public static readonly byte[] NULLABLE_STRING_UNICODE_MD5 = new byte[] { 195, 202, 66, 16, 137, 189, 253, 156, 232, 67, 89, 128, 137, 126, 142, 60 };
+        public static readonly byte[] NULLABLE_STRING_UTF32_MD5 = new byte[] { 123, 68, 40, 77, 57, 155, 204, 2, 87, 152, 85, 54, 148, 81, 37, 100 };
+        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF8_MD5 = new byte[] { 143, 44, 26, 18, 237, 9, 98, 210, 155, 179, 45, 140, 230, 62, 84, 180 };
+        public static readonly byte[] NULLABLE_STRING_ARRAY_UNICODE_MD5 = new byte[] { 109, 112, 143, 82, 211, 195, 236, 212, 190, 55, 70, 247, 89, 162, 125, 151 };
+        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF32_MD5 = new byte[] { 25, 62, 166, 184, 20, 130, 235, 202, 200, 141, 196, 111, 220, 254, 254, 247 };
+        public static readonly byte[] GUID_MD5 = new byte[] { 107, 54, 247, 126, 161, 229, 39, 51, 183, 222, 200, 132, 115, 172, 14, 128 };
+        public static readonly byte[] GUID_ARRAY_MD5 = new byte[] { 43, 74, 54, 242, 83, 199, 231, 254, 37, 121, 91, 19, 243, 50, 253, 230 };
+        public static readonly byte[] NULLABLE_GUID_MD5 = new byte[] { 212, 29, 140, 217, 143, 0, 178, 4, 233, 128, 9, 152, 236, 248, 66, 126 };
+        public static readonly byte[] NULLABLE_GUID_ARRAY_MD5 = new byte[] { 81, 85, 170, 107, 195, 86, 75, 81, 72, 247, 150, 119, 238, 178, 107, 109 };
         #endregion
     }
 }
