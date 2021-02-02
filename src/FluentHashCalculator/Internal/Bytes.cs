@@ -2,12 +2,24 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace FluentHashCalculator.Internal
 {
     internal static class Bytes
     {
         public static readonly byte[] Empty = new byte[0];
+
+        internal static void XOR(ReadOnlySpan<byte> source, Span<byte> destination)
+        {
+            var length = GetLength(source, destination);
+            for (int i = 0; i < length; i++)
+                destination[i] = (byte)(source[i] ^ destination[i]);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static int GetLength(ReadOnlySpan<byte> left, ReadOnlySpan<byte> right)
+            => left.Length > right.Length ? right.Length : left.Length;
 
         internal static IEnumerable<byte[]> From(object value, SerializationContext context, bool supressException = false)
         {
@@ -115,54 +127,71 @@ namespace FluentHashCalculator.Internal
                     yield return item;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static byte[] From(bool value)
             => BitConverter.GetBytes(value);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static byte[] From(byte value)
             => BitConverter.GetBytes(value);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static byte[] From(sbyte value)
             => BitConverter.GetBytes(value);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static byte[] From(short value)
             => BitConverter.GetBytes(value);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static byte[] From(ushort value)
             => BitConverter.GetBytes(value);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static byte[] From(int value)
             => BitConverter.GetBytes(value);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static byte[] From(uint value)
             => BitConverter.GetBytes(value);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static byte[] From(long value)
             => BitConverter.GetBytes(value);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static byte[] From(ulong value)
             => BitConverter.GetBytes(value);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static byte[] From(float value)
             => BitConverter.GetBytes(value);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static byte[] From(double value)
             => BitConverter.GetBytes(value);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static byte[] From(decimal value)
             => BitConverter.GetBytes(Convert.ToDouble(value));
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static byte[] From(DateTime value)
             => BitConverter.GetBytes(value.Ticks);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static byte[] From(TimeSpan value)
             => BitConverter.GetBytes(value.Ticks);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static byte[] From(char value)
             => BitConverter.GetBytes(value);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static byte[] From(string value, IStringSerializationContext context)
             => context.Encoding.GetBytes(value ?? string.Empty);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static byte[] From(Guid value)
             => value.ToByteArray();
     }

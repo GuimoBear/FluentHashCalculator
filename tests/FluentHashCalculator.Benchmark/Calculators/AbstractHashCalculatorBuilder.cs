@@ -1,8 +1,10 @@
 ﻿using FluentHashCalculator.Contexts;
 using FluentHashCalculator.Internal;
+using Microsoft.IO;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace FluentHashCalculator.Benchmark.Calculators
@@ -10,6 +12,8 @@ namespace FluentHashCalculator.Benchmark.Calculators
     public abstract partial class AbstractHashCalculatorBuilder<T> : IAbstractHashCalculatorBuilder<T>
         where T : class
     {
+        protected static readonly RecyclableMemoryStreamManager manager = new RecyclableMemoryStreamManager();
+
         private readonly List<Func<T, object>> getters
             = new List<Func<T, object>>();
         private readonly Dictionary<int, SerializationContext> contexts
@@ -340,7 +344,7 @@ namespace FluentHashCalculator.Benchmark.Calculators
             int index = 0;
             foreach (var accessor in getters)
             {
-                var context = contexts.TryGetValue(index++, out var ctx) ? ctx : Context;
+                var context = getContext(index++);
                 object value = null;
                 if (context.IgnoreErrors)
                 {
@@ -353,5 +357,10 @@ namespace FluentHashCalculator.Benchmark.Calculators
                 yield return (value, context);
             }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private SerializationContext getContext(int index)
+            => contexts.TryGetValue(index, out var ctx) ? ctx : Context;
+
     }
 }

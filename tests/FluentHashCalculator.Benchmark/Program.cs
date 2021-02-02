@@ -6,13 +6,21 @@ namespace FluentHashCalculator.Benchmark
     {
         static void Main(string[] args)
         {
-            BenchmarkRunner.Run<CRC16FluentHashCalculatorBenchmark>();
-            BenchmarkRunner.Run<CRC32FluentHashCalculatorBenchmark>();
-            BenchmarkRunner.Run<CRC64FluentHashCalculatorBenchmark>();
+            //BenchmarkRunner.Run<CRC16FluentHashCalculatorBenchmark>();
+            //BenchmarkRunner.Run<CRC32FluentHashCalculatorBenchmark>();
+            //BenchmarkRunner.Run<CRC64FluentHashCalculatorBenchmark>();
             BenchmarkRunner.Run<SHA1FluentHashCalculatorBenchmark>();
+            BenchmarkRunner.Run<SHA1FluentHashCalculatorWithoutPoolBenchmark>();
+            BenchmarkRunner.Run<SHA1FluentHashCalculatorWithoutPoolAndAppendDataBenchmark>();
             BenchmarkRunner.Run<SHA256FluentHashCalculatorBenchmark>();
+            BenchmarkRunner.Run<SHA256FluentHashCalculatorWithoutPoolBenchmark>();
+            BenchmarkRunner.Run<SHA256FluentHashCalculatorWithoutPoolAndAppendDataBenchmark>();
             BenchmarkRunner.Run<SHA384FluentHashCalculatorBenchmark>();
+            BenchmarkRunner.Run<SHA384FluentHashCalculatorWithoutPoolBenchmark>();
+            BenchmarkRunner.Run<SHA384FluentHashCalculatorWithoutPoolAndAppendDataBenchmark>();
             BenchmarkRunner.Run<SHA512FluentHashCalculatorBenchmark>();
+            BenchmarkRunner.Run<SHA512FluentHashCalculatorWithoutPoolBenchmark>();
+            BenchmarkRunner.Run<SHA512FluentHashCalculatorWithoutPoolAndAppendDataBenchmark>();
         }
 
         private static void PrintResults()

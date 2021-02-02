@@ -8,16 +8,19 @@ namespace FluentHashCalculator.Benchmark.Calculators
     {
         public class SHA1 : AbstractHashCalculatorBuilder<T>, IAbstractHashCalculator<T, byte[]>
         {
+            private static readonly HashAlgorithm algorithm
+                = System.Security.Cryptography.SHA1.Create();
+
             public byte[] Compute(T instance)
             {
                 if (instance is null)
                     return Bytes.Empty;
-                using (var incrementalHash = IncrementalHash.CreateHash(HashAlgorithmName.SHA1))
+                using (var hash = HashAggregatorPool.CreateReusable(HashAlgorithmName.SHA1))
                 {
                     foreach ((var value, var context) in ValuesFor(instance))
                         foreach (var item in Bytes.From(value, context))
-                            incrementalHash.AppendData(item);
-                    return incrementalHash.GetHashAndReset();
+                            hash.Append(item);
+                    return hash.GetAndReset();
                 }
             }
         }

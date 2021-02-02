@@ -130,8 +130,6 @@ namespace FluentHashCalculator.Internal
         /// </remarks>
         private void Free(T obj)
         {
-            Validate(obj);
-
             if (_firstItem == null)
             {
                 // Intentionally not using interlocked here. 
@@ -156,28 +154,8 @@ namespace FluentHashCalculator.Internal
                     // In a worst case scenario two objects may be stored into same slot.
                     // It is very unlikely to happen and will only mean that one of the objects will get collected.
                     items[i].Value = obj;
-                    break;
-                }
-            }
-        }
-
-        [Conditional("DEBUG")]
-        private void Validate(object obj)
-        {
-            Debug.Assert(obj != null, "freeing null?");
-
-            Debug.Assert(_firstItem != obj, "freeing twice?");
-
-            var items = _items;
-            for (var i = 0; i < items.Length; i++)
-            {
-                var value = items[i].Value;
-                if (value == null)
-                {
                     return;
                 }
-
-                Debug.Assert(value != obj, "freeing twice?");
             }
         }
 

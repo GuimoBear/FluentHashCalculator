@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentHashCalculator.Tests"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentHashCalculator.Benchmark", "tests\FluentHashCalculator.Benchmark\FluentHashCalculator.Benchmark.csproj", "{6568B248-769E-4607-A940-06CE111BB25F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analyzer", "Analyzer", "{E7283355-27F0-409D-8614-91EEFA094387}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
