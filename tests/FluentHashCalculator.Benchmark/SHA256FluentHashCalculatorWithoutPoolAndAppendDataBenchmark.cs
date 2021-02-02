@@ -8,7 +8,7 @@ namespace FluentHashCalculator.Benchmark
     [SimpleJob(RuntimeMoniker.Net48)]
     [MarkdownExporter]
     [MemoryDiagnoser]
-    public class SHA512FluentHashCalculatorBenchmark
+    public class SHA256FluentHashCalculatorWithoutPoolAndAppendDataBenchmark
     {
         private Entity entity;
         private IAbstractHashCalculator<Entity, byte[]> calculator;
@@ -35,7 +35,7 @@ namespace FluentHashCalculator.Benchmark
 
         private IAbstractHashCalculator<Entity, byte[]> create()
         {
-            var calculator = new AbstractHashCalculatorBuilder<Entity>.SHA512();
+            var calculator = new Calculators.AbstractHashCalculatorBuilder<Entity>.SHA256WithoutAppendData();
             calculator.Using(e => e.BoolProperty)
                 .UsingEach(e => e.BoolArrayProperty)
                 .Using(e => e.NullableBoolProperty)

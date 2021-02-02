@@ -4,6 +4,8 @@ using BenchmarkDotNet.Jobs;
 namespace FluentHashCalculator.Benchmark
 {
     [SimpleJob(RuntimeMoniker.Net50)]
+    [SimpleJob(RuntimeMoniker.NetCoreApp31)]
+    [SimpleJob(RuntimeMoniker.Net48)]
     [MarkdownExporter]
     [MemoryDiagnoser]
     public class CRC32FluentHashCalculatorBenchmark
@@ -13,6 +15,24 @@ namespace FluentHashCalculator.Benchmark
 
         [GlobalSetup]
         public void GlobalSetup()
+        {
+            this.calculator = create();
+            entity = new Entity();
+        }
+
+        [Benchmark]
+        public uint Compute()
+            => calculator.Compute(entity);
+        /*
+        [Benchmark]
+        public uint CreateAndCompute()
+        {
+            var calc = create();
+            return calc.Compute(entity);
+        }
+        */
+
+        private IAbstractHashCalculator<Entity, uint> create()
         {
             var calculator = new AbstractHashCalculatorBuilder<Entity>.CRC32();
             calculator.Using(e => e.BoolProperty)
@@ -82,13 +102,7 @@ namespace FluentHashCalculator.Benchmark
                 .Using(e => e.NullableGuidProperty)
                 .UsingEach(e => e.NullableGuidArrayProperty);
 
-            this.calculator = calculator;
-
-            entity = new Entity();
+            return calculator;
         }
-
-        [Benchmark]
-        public uint Compute()
-            => calculator.Compute(entity);
     }
 }

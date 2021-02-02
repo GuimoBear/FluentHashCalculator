@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace FluentHashCalculator.Internal
 {
@@ -51,5 +52,5 @@ namespace FluentHashCalculator.Internal
 
 			return crc;
 		}
-	}
+    }
 }
