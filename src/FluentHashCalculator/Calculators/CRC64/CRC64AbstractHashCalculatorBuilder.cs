@@ -13,8 +13,11 @@ namespace FluentHashCalculator
                     return ulong.MinValue;
                 ulong crc = 0;
                 foreach ((var value, var context) in ValuesFor(instance))
-                    foreach (var item in Bytes.From(value, context))
-                        crc = Crc64.Compute(item, crc);
+                    if (value is byte[] bytes)
+                        crc = Crc64.Compute(bytes, crc);
+                    else
+                        foreach (var item in Bytes.From(value, context))
+                            crc = Crc64.Compute(item, crc);
 
                 return crc;
             }

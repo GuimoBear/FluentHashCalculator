@@ -927,12 +927,12 @@ namespace FluentHashCalculator.Tests
             Assert.Equal(Consts.DEFAULT_SHA384, actual);
             calculator.UsingEach(e => e.ChildList).WithSHA384(calc => calc.Using(e => e.Id));
             actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.CHILD_ENTITY_ID_SHA384, actual);
+            Assert.Equal(Consts.CHILDLIST_ENTITY_ID_SHA384, actual);
             return actual;
         }
 
         [Fact]
-        public void UsingAllPropertiesInCalculatorWhenComputeThenReturnSHA384()
+        public (byte[], byte[]) UsingAllPropertiesInCalculatorWhenComputeThenReturnSHA384()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
             calculator.Using(e => e.BoolProperty)
@@ -1080,6 +1080,8 @@ namespace FluentHashCalculator.Tests
             Assert.Equal(Consts.ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_SHA384, actual3);
 
             Assert.NotEqual(actual, actual3);
+
+            return (actual, actual3);
         }
     }
 }

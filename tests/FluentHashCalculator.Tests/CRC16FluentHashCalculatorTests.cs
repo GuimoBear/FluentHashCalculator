@@ -943,7 +943,7 @@ namespace FluentHashCalculator.Tests
         }
 
         [Fact]
-        public void UsingAllPropertiesInCalculatorWhenComputeThenReturnCRC16()
+        public (ushort, ushort) UsingAllPropertiesInCalculatorWhenComputeThenReturnCRC16()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC16();
             calculator.Using(e => e.BoolProperty)
@@ -1091,6 +1091,8 @@ namespace FluentHashCalculator.Tests
             Assert.Equal(Consts.ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_CRC16, actual3);
 
             Assert.NotEqual(actual, actual3);
+
+            return (actual, actual3);
         }
     }
 }

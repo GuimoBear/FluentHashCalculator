@@ -837,18 +837,6 @@ namespace FluentHashCalculator.Tests
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression, Encoding.UTF32));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UTF32_SHA256, actual);
-            return actual;
-        }
-
-        [Fact]
-        public byte[] UsingGuidPropertyInCalculatorWhenComputeThenReturnGuidSHA256()
-        {
-            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA256();
-            calculator.Using(e => e.GuidProperty);
-            Expression<Func<EntityWithAllSupportedTypes, Guid>> nullExpression = null;
-            Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
-            var actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.GUID_SHA256, actual);
 
             calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA256();
             calculator.Context.Encoding = Encoding.UTF32;
@@ -861,7 +849,18 @@ namespace FluentHashCalculator.Tests
             calculator.UsingEach(e => e.NullableStringArrayProperty);
             actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_STRING_ARRAY_UTF32_SHA256, actual);
+            return actual;
+        }
 
+        [Fact]
+        public byte[] UsingGuidPropertyInCalculatorWhenComputeThenReturnGuidSHA256()
+        {
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA256();
+            calculator.Using(e => e.GuidProperty);
+            Expression<Func<EntityWithAllSupportedTypes, Guid>> nullExpression = null;
+            Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
+            var actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.GUID_SHA256, actual);
             return actual;
         }
 
@@ -927,12 +926,12 @@ namespace FluentHashCalculator.Tests
             Assert.Equal(Consts.DEFAULT_SHA256, actual);
             calculator.UsingEach(e => e.ChildList).WithSHA256(calc => calc.Using(e => e.Id));
             actual = calculator.Compute(new EntityWithAllSupportedTypes());
-            Assert.Equal(Consts.CHILD_ENTITY_ID_SHA256, actual);
+            Assert.Equal(Consts.CHILDLIST_ENTITY_ID_SHA256, actual);
             return actual;
         }
 
         [Fact]
-        public void UsingAllPropertiesInCalculatorWhenComputeThenReturnSHA256()
+        public (byte[], byte[]) UsingAllPropertiesInCalculatorWhenComputeThenReturnSHA256()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA256();
             calculator.Using(e => e.BoolProperty)
@@ -1080,6 +1079,8 @@ namespace FluentHashCalculator.Tests
             Assert.Equal(Consts.ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_SHA256, actual3);
 
             Assert.NotEqual(actual, actual3);
+
+            return (actual, actual3);
         }
     }
 }

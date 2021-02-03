@@ -67,7 +67,49 @@ namespace FluentHashCalculator.Benchmark
         private static void PrintResults()
         {
             var crc64test = new CRC64FluentHashCalculatorTests();
+            var crc32test = new CRC32FluentHashCalculatorTests();
+            var crc16test = new CRC16FluentHashCalculatorTests();
+            var sha1test = new SHA1FluentHashCalculatorTests();
+            var sha256test = new SHA256FluentHashCalculatorTests();
+            var sha384test = new SHA384FluentHashCalculatorTests();
+            var sha512test = new SHA512FluentHashCalculatorTests();
+            var md5test = new MD5FluentHashCalculatorTests();
 
+            var (crc64With, crc64Without) = crc64test.UsingAllPropertiesInCalculatorWhenComputeThenReturnCRC64();
+            var (crc32With, crc32Without) = crc32test.UsingAllPropertiesInCalculatorWhenComputeThenReturnCRC32();
+            var (crc16With, crc16Without) = crc16test.UsingAllPropertiesInCalculatorWhenComputeThenReturnCRC16();
+            var (sha1With, sha1Without) = sha1test.UsingAllPropertiesInCalculatorWhenComputeThenReturnSHA1();
+            var (sha256With, sha256Without) = sha256test.UsingAllPropertiesInCalculatorWhenComputeThenReturnSHA256();
+            var (sha384With, sha384Without) = sha384test.UsingAllPropertiesInCalculatorWhenComputeThenReturnSHA384();
+            var (sha512With, sha512Without) = sha512test.UsingAllPropertiesInCalculatorWhenComputeThenReturnSHA512();
+            var (md5With, md5Without) = md5test.UsingAllPropertiesInCalculatorWhenComputeThenReturnMD5();
+
+            Console.WriteLine("        #region Valores dos Hash das entidades");
+            Console.WriteLine($"        public const ulong ENTITY_WITH_ALL_SUPPORTED_TYPES_CRC64 = {crc64With};");
+            Console.WriteLine($"        public const ulong ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_CRC64 = {crc64Without};");
+            Console.WriteLine($"");
+            Console.WriteLine($"        public const uint ENTITY_WITH_ALL_SUPPORTED_TYPES_CRC32 = {crc32With};");
+            Console.WriteLine($"        public const uint ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_CRC32 = {crc32Without};");
+            Console.WriteLine($"");
+            Console.WriteLine($"        public const ushort ENTITY_WITH_ALL_SUPPORTED_TYPES_CRC16 = {crc16With};");
+            Console.WriteLine($"        public const ushort ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_CRC16 = {crc16Without};");
+            Console.WriteLine($"");
+            Console.WriteLine($"        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPES_SHA1 = new byte[] {{ {string.Join(", ", sha1With)} }};");
+            Console.WriteLine($"        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_SHA1 = new byte[] {{ {string.Join(", ", sha1Without)} }};");
+            Console.WriteLine($"");
+            Console.WriteLine($"        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPES_SHA256 = new byte[] {{ {string.Join(", ", sha256With)} }};");
+            Console.WriteLine($"        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_SHA256 = new byte[] {{ {string.Join(", ", sha256Without)} }};");
+            Console.WriteLine($"");
+            Console.WriteLine($"        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPES_SHA384 = new byte[] {{ {string.Join(", ", sha384With)} }};");
+            Console.WriteLine($"        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_SHA384 = new byte[] {{ {string.Join(", ", sha384Without)} }};");
+            Console.WriteLine($"");
+            Console.WriteLine($"        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPES_SHA512 = new byte[] {{ {string.Join(", ", sha512With)} }};");
+            Console.WriteLine($"        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_SHA512 = new byte[] {{ {string.Join(", ", sha512Without)} }};");
+            Console.WriteLine($"");
+            Console.WriteLine($"        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPES_MD5 = new byte[] {{ {string.Join(", ", md5With)} }};");
+            Console.WriteLine($"        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_MD5 = new byte[] {{ {string.Join(", ", md5Without)} }};");
+            Console.WriteLine("        #endregion");
+            Console.WriteLine("");
             Console.WriteLine("        #region Valores dos CRC64 dos valores padrão");
             Console.WriteLine($"        public const ulong BOOL_CRC64 = {crc64test.UsingBoolPropertyInCalculatorWhenComputeThenReturnBoolCRC64()};");
             Console.WriteLine($"        public const ulong BOOL_ARRAY_CRC64 = {crc64test.UsingBoolArrayPropertyInCalculatorWhenComputeThenReturnBoolArrayCRC64()};");
@@ -141,11 +183,10 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public const ulong NULLABLE_GUID_ARRAY_CRC64 = {crc64test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArrayCRC64()};");
             Console.WriteLine($"");
             Console.WriteLine($"        public const ulong CHILD_ENTITY_ID_CRC64 = {crc64test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdCRC64()};");
+            Console.WriteLine($"        public const ulong CHILDLIST_ENTITY_ID_CRC64 = {crc64test.UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdCRC64()};");
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
-
-            var crc32test = new CRC32FluentHashCalculatorTests();
 
             Console.WriteLine("        #region Valores dos CRC32 dos valores padrão");
             Console.WriteLine($"        public const uint BOOL_CRC32 = {crc32test.UsingBoolPropertyInCalculatorWhenComputeThenReturnBoolCRC32()};");
@@ -220,11 +261,10 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public const uint NULLABLE_GUID_ARRAY_CRC32 = {crc32test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArrayCRC32()};");
             Console.WriteLine($"");
             Console.WriteLine($"        public const uint CHILD_ENTITY_ID_CRC32 = {crc32test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdCRC32()};");
+            Console.WriteLine($"        public const uint CHILDLIST_ENTITY_ID_CRC32 = {crc32test.UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdCRC32()};");
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
-
-            var crc16test = new CRC16FluentHashCalculatorTests();
 
             Console.WriteLine("        #region Valores dos CRC16 dos valores padrão");
             Console.WriteLine($"        public const ushort BOOL_CRC16 = {crc16test.UsingBoolPropertyInCalculatorWhenComputeThenReturnBoolCRC16()};");
@@ -299,91 +339,89 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public const ushort NULLABLE_GUID_ARRAY_CRC16 = {crc16test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArrayCRC16()};");
             Console.WriteLine($"");
             Console.WriteLine($"        public const ushort CHILD_ENTITY_ID_CRC16 = {crc16test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdCRC16()};");
+            Console.WriteLine($"        public const ushort CHILDLIST_ENTITY_ID_CRC16 = {crc16test.UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdCRC16()};");
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
-
-            var sha1Test = new SHA1FluentHashCalculatorTests();
 
             Console.WriteLine("        #region Valores dos SHA1 dos valores padrão");
-            Console.WriteLine($"        public static readonly byte[] BOOL_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingBoolPropertyInCalculatorWhenComputeThenReturnBoolSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] BOOL_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingBoolArrayPropertyInCalculatorWhenComputeThenReturnBoolArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_BOOL_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableBoolPropertyInCalculatorWhenComputeThenReturnNullableBoolSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_BOOL_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableBoolArrayPropertyInCalculatorWhenComputeThenReturnNullableBoolArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] BYTE_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingBytePropertyInCalculatorWhenComputeThenReturnByteSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] BYTE_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingByteArrayPropertyInCalculatorWhenComputeThenReturnByteArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_BYTE_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableBytePropertyInCalculatorWhenComputeThenReturnNullableByteSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_BYTE_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableByteArrayPropertyInCalculatorWhenComputeThenReturnNullableByteArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] SBYTE_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingSbytePropertyInCalculatorWhenComputeThenReturnSbyteSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] SBYTE_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingSbyteArrayPropertyInCalculatorWhenComputeThenReturnSbyteArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_SBYTE_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableSbytePropertyInCalculatorWhenComputeThenReturnNullableSbyteSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_SBYTE_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableSbyteArrayPropertyInCalculatorWhenComputeThenReturnNullableSbyteArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] SHORT_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingShortPropertyInCalculatorWhenComputeThenReturnShortSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] SHORT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingShortArrayPropertyInCalculatorWhenComputeThenReturnShortArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_SHORT_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableShortPropertyInCalculatorWhenComputeThenReturnNullableShortSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_SHORT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableShortArrayPropertyInCalculatorWhenComputeThenReturnNullableShortArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] USHORT_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingUshortPropertyInCalculatorWhenComputeThenReturnUshortSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] USHORT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingUshortArrayPropertyInCalculatorWhenComputeThenReturnUshortArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_USHORT_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableUshortPropertyInCalculatorWhenComputeThenReturnNullableUshortSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_USHORT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableUshortArrayPropertyInCalculatorWhenComputeThenReturnNullableUshortArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] INT_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingIntPropertyInCalculatorWhenComputeThenReturnIntSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] INT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingIntArrayPropertyInCalculatorWhenComputeThenReturnIntArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_INT_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableIntPropertyInCalculatorWhenComputeThenReturnNullableIntSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_INT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableIntArrayPropertyInCalculatorWhenComputeThenReturnNullableIntArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] UINT_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingUintPropertyInCalculatorWhenComputeThenReturnUintSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] UINT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingUintArrayPropertyInCalculatorWhenComputeThenReturnUintArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_UINT_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableUintPropertyInCalculatorWhenComputeThenReturnNullableUintSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_UINT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableUintArrayPropertyInCalculatorWhenComputeThenReturnNullableUintArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] LONG_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingLongPropertyInCalculatorWhenComputeThenReturnLongSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] LONG_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingLongArrayPropertyInCalculatorWhenComputeThenReturnLongArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_LONG_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableLongPropertyInCalculatorWhenComputeThenReturnNullableLongSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_LONG_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableLongArrayPropertyInCalculatorWhenComputeThenReturnNullableLongArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] ULONG_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingUlongPropertyInCalculatorWhenComputeThenReturnUlongSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] ULONG_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingUlongArrayPropertyInCalculatorWhenComputeThenReturnUlongArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_ULONG_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableUlongPropertyInCalculatorWhenComputeThenReturnNullableUlongSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_ULONG_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableUlongArrayPropertyInCalculatorWhenComputeThenReturnNullableUlongArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] FLOAT_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingFloatPropertyInCalculatorWhenComputeThenReturnFloatSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] FLOAT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingFloatArrayPropertyInCalculatorWhenComputeThenReturnFloatArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_FLOAT_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableFloatPropertyInCalculatorWhenComputeThenReturnNullableFloatSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_FLOAT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableFloatArrayPropertyInCalculatorWhenComputeThenReturnNullableFloatArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] DOUBLE_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingDoublePropertyInCalculatorWhenComputeThenReturnDoubleSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] DOUBLE_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingDoubleArrayPropertyInCalculatorWhenComputeThenReturnDoubleArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_DOUBLE_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableDoublePropertyInCalculatorWhenComputeThenReturnNullableDoubleSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_DOUBLE_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableDoubleArrayPropertyInCalculatorWhenComputeThenReturnNullableDoubleArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] DECIMAL_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingDecimalPropertyInCalculatorWhenComputeThenReturnDecimalSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] DECIMAL_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingDecimalArrayPropertyInCalculatorWhenComputeThenReturnDecimalArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_DECIMAL_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableDecimalPropertyInCalculatorWhenComputeThenReturnNullableDecimalSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_DECIMAL_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableDecimalArrayPropertyInCalculatorWhenComputeThenReturnNullableDecimalArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] DATETIME_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingDateTimePropertyInCalculatorWhenComputeThenReturnDateTimeSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] DATETIME_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingDateTimeArrayPropertyInCalculatorWhenComputeThenReturnDateTimeArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_DATETIME_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableDateTimePropertyInCalculatorWhenComputeThenReturnNullableDateTimeSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_DATETIME_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableDateTimeArrayPropertyInCalculatorWhenComputeThenReturnNullableDateTimeArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] TIMESPAN_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingTimeSpanPropertyInCalculatorWhenComputeThenReturnTimeSpanSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] TIMESPAN_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingTimeSpanArrayPropertyInCalculatorWhenComputeThenReturnTimeSpanArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_TIMESPAN_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableTimeSpanPropertyInCalculatorWhenComputeThenReturnNullableTimeSpanSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_TIMESPAN_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableTimeSpanArrayPropertyInCalculatorWhenComputeThenReturnNullableTimeSpanArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] CHAR_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingCharPropertyInCalculatorWhenComputeThenReturnCharSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] CHAR_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingCharArrayPropertyInCalculatorWhenComputeThenReturnCharArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_CHAR_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableCharPropertyInCalculatorWhenComputeThenReturnNullableCharSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_CHAR_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableCharArrayPropertyInCalculatorWhenComputeThenReturnNullableCharArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UTF8_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UNICODE_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableStringPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UTF32_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableStringPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF8_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UNICODE_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableStringArrayPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF32_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableStringArrayPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] GUID_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingGuidPropertyInCalculatorWhenComputeThenReturnGuidSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] GUID_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArraySHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidSHA1())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] BOOL_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingBoolPropertyInCalculatorWhenComputeThenReturnBoolSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] BOOL_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingBoolArrayPropertyInCalculatorWhenComputeThenReturnBoolArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_BOOL_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableBoolPropertyInCalculatorWhenComputeThenReturnNullableBoolSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_BOOL_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableBoolArrayPropertyInCalculatorWhenComputeThenReturnNullableBoolArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] BYTE_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingBytePropertyInCalculatorWhenComputeThenReturnByteSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] BYTE_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingByteArrayPropertyInCalculatorWhenComputeThenReturnByteArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_BYTE_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableBytePropertyInCalculatorWhenComputeThenReturnNullableByteSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_BYTE_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableByteArrayPropertyInCalculatorWhenComputeThenReturnNullableByteArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] SBYTE_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingSbytePropertyInCalculatorWhenComputeThenReturnSbyteSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] SBYTE_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingSbyteArrayPropertyInCalculatorWhenComputeThenReturnSbyteArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_SBYTE_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableSbytePropertyInCalculatorWhenComputeThenReturnNullableSbyteSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_SBYTE_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableSbyteArrayPropertyInCalculatorWhenComputeThenReturnNullableSbyteArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] SHORT_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingShortPropertyInCalculatorWhenComputeThenReturnShortSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] SHORT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingShortArrayPropertyInCalculatorWhenComputeThenReturnShortArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_SHORT_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableShortPropertyInCalculatorWhenComputeThenReturnNullableShortSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_SHORT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableShortArrayPropertyInCalculatorWhenComputeThenReturnNullableShortArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] USHORT_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingUshortPropertyInCalculatorWhenComputeThenReturnUshortSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] USHORT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingUshortArrayPropertyInCalculatorWhenComputeThenReturnUshortArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_USHORT_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableUshortPropertyInCalculatorWhenComputeThenReturnNullableUshortSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_USHORT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableUshortArrayPropertyInCalculatorWhenComputeThenReturnNullableUshortArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] INT_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingIntPropertyInCalculatorWhenComputeThenReturnIntSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] INT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingIntArrayPropertyInCalculatorWhenComputeThenReturnIntArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_INT_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableIntPropertyInCalculatorWhenComputeThenReturnNullableIntSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_INT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableIntArrayPropertyInCalculatorWhenComputeThenReturnNullableIntArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] UINT_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingUintPropertyInCalculatorWhenComputeThenReturnUintSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] UINT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingUintArrayPropertyInCalculatorWhenComputeThenReturnUintArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_UINT_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableUintPropertyInCalculatorWhenComputeThenReturnNullableUintSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_UINT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableUintArrayPropertyInCalculatorWhenComputeThenReturnNullableUintArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] LONG_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingLongPropertyInCalculatorWhenComputeThenReturnLongSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] LONG_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingLongArrayPropertyInCalculatorWhenComputeThenReturnLongArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_LONG_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableLongPropertyInCalculatorWhenComputeThenReturnNullableLongSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_LONG_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableLongArrayPropertyInCalculatorWhenComputeThenReturnNullableLongArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] ULONG_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingUlongPropertyInCalculatorWhenComputeThenReturnUlongSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] ULONG_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingUlongArrayPropertyInCalculatorWhenComputeThenReturnUlongArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_ULONG_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableUlongPropertyInCalculatorWhenComputeThenReturnNullableUlongSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_ULONG_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableUlongArrayPropertyInCalculatorWhenComputeThenReturnNullableUlongArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] FLOAT_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingFloatPropertyInCalculatorWhenComputeThenReturnFloatSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] FLOAT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingFloatArrayPropertyInCalculatorWhenComputeThenReturnFloatArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_FLOAT_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableFloatPropertyInCalculatorWhenComputeThenReturnNullableFloatSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_FLOAT_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableFloatArrayPropertyInCalculatorWhenComputeThenReturnNullableFloatArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] DOUBLE_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingDoublePropertyInCalculatorWhenComputeThenReturnDoubleSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] DOUBLE_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingDoubleArrayPropertyInCalculatorWhenComputeThenReturnDoubleArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_DOUBLE_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableDoublePropertyInCalculatorWhenComputeThenReturnNullableDoubleSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_DOUBLE_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableDoubleArrayPropertyInCalculatorWhenComputeThenReturnNullableDoubleArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] DECIMAL_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingDecimalPropertyInCalculatorWhenComputeThenReturnDecimalSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] DECIMAL_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingDecimalArrayPropertyInCalculatorWhenComputeThenReturnDecimalArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_DECIMAL_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableDecimalPropertyInCalculatorWhenComputeThenReturnNullableDecimalSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_DECIMAL_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableDecimalArrayPropertyInCalculatorWhenComputeThenReturnNullableDecimalArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] DATETIME_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingDateTimePropertyInCalculatorWhenComputeThenReturnDateTimeSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] DATETIME_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingDateTimeArrayPropertyInCalculatorWhenComputeThenReturnDateTimeArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_DATETIME_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableDateTimePropertyInCalculatorWhenComputeThenReturnNullableDateTimeSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_DATETIME_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableDateTimeArrayPropertyInCalculatorWhenComputeThenReturnNullableDateTimeArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] TIMESPAN_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingTimeSpanPropertyInCalculatorWhenComputeThenReturnTimeSpanSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] TIMESPAN_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingTimeSpanArrayPropertyInCalculatorWhenComputeThenReturnTimeSpanArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_TIMESPAN_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableTimeSpanPropertyInCalculatorWhenComputeThenReturnNullableTimeSpanSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_TIMESPAN_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableTimeSpanArrayPropertyInCalculatorWhenComputeThenReturnNullableTimeSpanArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] CHAR_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingCharPropertyInCalculatorWhenComputeThenReturnCharSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] CHAR_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingCharArrayPropertyInCalculatorWhenComputeThenReturnCharArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_CHAR_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableCharPropertyInCalculatorWhenComputeThenReturnNullableCharSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_CHAR_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableCharArrayPropertyInCalculatorWhenComputeThenReturnNullableCharArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UTF8_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UNICODE_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableStringPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UTF32_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableStringPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF8_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UNICODE_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableStringArrayPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF32_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableStringArrayPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] GUID_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingGuidPropertyInCalculatorWhenComputeThenReturnGuidSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] GUID_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArraySHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArraySHA1())} }};");
             Console.WriteLine($"");
             Console.WriteLine($"        public static readonly byte[] DEFAULT_SHA1 = IncrementalHash.CreateHash(HashAlgorithmName.SHA1).GetHashAndReset();");
-            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA1())} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_ID_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdSHA1())} }};");
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
-
-            var sha256test = new SHA256FluentHashCalculatorTests();
 
             Console.WriteLine("        #region Valores dos SHA256 dos valores padrão");
             Console.WriteLine($"        public static readonly byte[] BOOL_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingBoolPropertyInCalculatorWhenComputeThenReturnBoolSHA256())} }};");
@@ -459,11 +497,10 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"");
             Console.WriteLine($"        public static readonly byte[] DEFAULT_SHA256 = IncrementalHash.CreateHash(HashAlgorithmName.SHA256).GetHashAndReset();");
             Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA256())} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_ID_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdSHA256())} }};");
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
-
-            var sha384test = new SHA384FluentHashCalculatorTests();
 
             Console.WriteLine("        #region Valores dos SHA384 dos valores padrão");
             Console.WriteLine($"        public static readonly byte[] BOOL_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingBoolPropertyInCalculatorWhenComputeThenReturnBoolSHA384())} }};");
@@ -539,11 +576,10 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"");
             Console.WriteLine($"        public static readonly byte[] DEFAULT_SHA384 = IncrementalHash.CreateHash(HashAlgorithmName.SHA384).GetHashAndReset();");
             Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA384())} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_ID_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdSHA384())} }};");
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
-
-            var sha512test = new SHA512FluentHashCalculatorTests();
 
             Console.WriteLine("        #region Valores dos SHA512 dos valores padrão");
             Console.WriteLine($"        public static readonly byte[] BOOL_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingBoolPropertyInCalculatorWhenComputeThenReturnBoolSHA512())} }};");
@@ -619,11 +655,10 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"");
             Console.WriteLine($"        public static readonly byte[] DEFAULT_SHA512 = IncrementalHash.CreateHash(HashAlgorithmName.SHA512).GetHashAndReset();");
             Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA512())} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_ID_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdSHA512())} }};");
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
-
-            var md5test = new MD5FluentHashCalculatorTests();
 
             Console.WriteLine("        #region Valores dos MD5 dos valores padrão");
             Console.WriteLine($"        public static readonly byte[] BOOL_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingBoolPropertyInCalculatorWhenComputeThenReturnBoolMD5())} }};");
@@ -699,6 +734,7 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"");
             Console.WriteLine($"        public static readonly byte[] DEFAULT_MD5 = IncrementalHash.CreateHash(HashAlgorithmName.MD5).GetHashAndReset();");
             Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdMD5())} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_ID_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdMD5())} }};");
             Console.WriteLine("        #endregion");
         }
     }

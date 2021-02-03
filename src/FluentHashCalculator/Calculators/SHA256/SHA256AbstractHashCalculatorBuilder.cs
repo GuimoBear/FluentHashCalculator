@@ -18,8 +18,11 @@ namespace FluentHashCalculator
                 using (var container = pool.Acquire())
                 {
                     foreach ((var value, var context) in ValuesFor(instance))
-                        foreach (var item in Bytes.From(value, context))
-                            container.Instance.AppendData(item);
+                        if (value is byte[] bytes)
+                            container.Instance.AppendData(bytes);
+                        else
+                            foreach (var item in Bytes.From(value, context))
+                                container.Instance.AppendData(item);
                     return container.Instance.GetHashAndReset();
                 }
                 /*
