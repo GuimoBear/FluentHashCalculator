@@ -71,5 +71,8 @@ namespace FluentHashCalculator.Tests.Fakes
         public IEnumerable<Guid> GuidArrayProperty { get; } = Consts.GUID_ARRAY_DEFAULT_VALUE;
         public Guid? NullableGuidProperty { get; } = Consts.NULLABLE_GUID_DEFAULT_VALUE;
         public IEnumerable<Guid?> NullableGuidArrayProperty { get; } = Consts.NULLABLE_GUID_ARRAY_DEFAULT_VALUE;
+
+        public Entity Child { get; } = new Entity() { Id = Consts.INT_DEFAULT_VALUE };
+        public IEnumerable<Entity> ChildList { get; } = new List<Entity> { new Entity() { Id = Consts.INT_DEFAULT_VALUE } };
     }
 }

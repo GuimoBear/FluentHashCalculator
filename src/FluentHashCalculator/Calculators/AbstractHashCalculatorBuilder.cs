@@ -216,6 +216,18 @@ namespace FluentHashCalculator
             return this;
         }
 
+        public IAbstractHashCalculatorBuilderComplexType<T, TComplex> Using<TComplex>(Expression<Func<T, TComplex>> expression, bool? ignoreError = null)
+            where TComplex : class
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+
+            return new AbstractHashCalculatorBuilderComplexType<T, TComplex>(this, compiled.CoerceToNonGeneric(), ignoreError);
+        }
+
         public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<DateTime?>>> expression, bool? ignoreError = null)
         {
             if (expression is null)
@@ -333,6 +345,18 @@ namespace FluentHashCalculator
             if (ignoreError.HasValue)
                 contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
+        }
+
+        public IAbstractHashCalculatorBuilderComplexType<T, TComplex> UsingEach<TComplex>(Expression<Func<T, IEnumerable<TComplex>>> expression, bool? ignoreError = null)
+            where TComplex : class
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+
+            return new AbstractHashCalculatorBuilderComplexTypeList<T, TComplex>(this, compiled.CoerceToNonGeneric(), ignoreError);
         }
 
         protected IEnumerable<(object, SerializationContext)> ValuesFor(T instance)

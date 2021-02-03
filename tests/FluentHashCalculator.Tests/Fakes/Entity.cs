@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FluentHashCalculator.Tests.Fakes
 {
@@ -10,6 +11,8 @@ namespace FluentHashCalculator.Tests.Fakes
         public DateTime Birthday { get; set; }
 
         public AnotherEntity Another { get; set; }
+
+        public IEnumerable<AnotherEntity> AnotherList { get; set; }
 
         public NullEntity Null { get; set; }
 

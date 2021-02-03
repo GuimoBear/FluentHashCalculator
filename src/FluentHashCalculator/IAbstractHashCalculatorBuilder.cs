@@ -10,8 +10,6 @@ namespace FluentHashCalculator
     {
         SerializationContext Context { get; }
 
-        IAbstractHashCalculatorBuilder<T> And { get; }
-
         IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, bool?>> expression, bool? ignoreError = null);
         IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, bool>> expression, bool? ignoreError = null);
         IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, byte?>> expression, bool? ignoreError = null);
@@ -46,6 +44,8 @@ namespace FluentHashCalculator
         IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, ulong>> expression, bool? ignoreError = null);
         IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, ushort?>> expression, bool? ignoreError = null);
         IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, ushort>> expression, bool? ignoreError = null);
+        IAbstractHashCalculatorBuilderComplexType<T, TComplex> Using<TComplex>(Expression<Func<T, TComplex>> expression, bool? ignoreError = null)
+            where TComplex: class;
 
         IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<bool?>>> expression, bool? ignoreError = null);
         IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<bool>>> expression, bool? ignoreError = null);
@@ -81,5 +81,20 @@ namespace FluentHashCalculator
         IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ulong>>> expression, bool? ignoreError = null);
         IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ushort?>>> expression, bool? ignoreError = null);
         IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ushort>>> expression, bool? ignoreError = null);
+        IAbstractHashCalculatorBuilderComplexType<T, TComplex> UsingEach<TComplex>(Expression<Func<T, IEnumerable<TComplex>>> expression, bool? ignoreError = null)
+            where TComplex : class;
+    }
+    public interface IAbstractHashCalculatorBuilderComplexType<T, TComplex>
+        where T : class
+        where TComplex : class
+    {
+        IAbstractHashCalculatorBuilder<T> WithCRC16(Action<IAbstractHashCalculatorBuilder<TComplex>> configurer);
+        IAbstractHashCalculatorBuilder<T> WithCRC32(Action<IAbstractHashCalculatorBuilder<TComplex>> configurer);
+        IAbstractHashCalculatorBuilder<T> WithCRC64(Action<IAbstractHashCalculatorBuilder<TComplex>> configurer);
+        IAbstractHashCalculatorBuilder<T> WithSHA1(Action<IAbstractHashCalculatorBuilder<TComplex>> configurer);
+        IAbstractHashCalculatorBuilder<T> WithSHA256(Action<IAbstractHashCalculatorBuilder<TComplex>> configurer);
+        IAbstractHashCalculatorBuilder<T> WithSHA384(Action<IAbstractHashCalculatorBuilder<TComplex>> configurer);
+        IAbstractHashCalculatorBuilder<T> WithSHA512(Action<IAbstractHashCalculatorBuilder<TComplex>> configurer);
+        IAbstractHashCalculatorBuilder<T> WithMD5(Action<IAbstractHashCalculatorBuilder<TComplex>> configurer);
     }
 }

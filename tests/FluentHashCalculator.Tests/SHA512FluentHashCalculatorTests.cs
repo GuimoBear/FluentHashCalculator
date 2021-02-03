@@ -902,6 +902,30 @@ namespace FluentHashCalculator.Tests
         }
 
         [Fact]
+        public byte[] UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA512()
+        {
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA512();
+            calculator.Using(e => e.Child).WithSHA512(calc => calc.Using(e => e.Id));
+            Expression<Func<EntityWithAllSupportedTypes, Entity>> nullExpression = null;
+            Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
+            var actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_ID_SHA512, actual);
+            return actual;
+        }
+
+        [Fact]
+        public byte[] UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdSHA512()
+        {
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA512();
+            calculator.UsingEach(e => e.ChildList).WithSHA512(calc => calc.Using(e => e.Id));
+            Expression<Func<EntityWithAllSupportedTypes, Entity>> nullExpression = null;
+            Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
+            var actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_ID_SHA512, actual);
+            return actual;
+        }
+
+        [Fact]
         public void UsingAllPropertiesInCalculatorWhenComputeThenReturnSHA512()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA512();

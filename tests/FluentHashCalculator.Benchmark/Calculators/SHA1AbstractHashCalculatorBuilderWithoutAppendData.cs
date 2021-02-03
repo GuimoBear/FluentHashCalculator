@@ -6,7 +6,7 @@ namespace FluentHashCalculator.Benchmark.Calculators
     public abstract partial class AbstractHashCalculatorBuilder<T>
            where T : class
     {
-        public class SHA1WithoutAppendData : AbstractHashCalculatorBuilder<T>, IAbstractHashCalculator<T, byte[]>
+        public class SHA1WithoutAppendData : FluentHashCalculator.AbstractHashCalculatorBuilder<T>, IAbstractHashCalculator<T, byte[]>
         {
             private static readonly System.Security.Cryptography.SHA1 hash
                 = System.Security.Cryptography.SHA1.Create();

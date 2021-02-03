@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\FluentHashCalculator\FluentHashCalculator.csproj" />
+    <ProjectReference Include="..\FluentHashCalculator.Tests\FluentHashCalculator.Tests.csproj" />
   </ItemGroup>
 
 </Project>

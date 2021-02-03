@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using FluentHashCalculator.Tests.Fakes;
 using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
@@ -37,7 +38,8 @@ namespace FluentHashCalculator.Tests
                 Id = 2,
                 Birthday = new DateTime(2000, 11, 3),
                 Name = "Test", 
-                Another = new AnotherEntity()
+                Another = new AnotherEntity(),
+                AnotherList = new List<AnotherEntity> { new AnotherEntity() }
             };
 
             calculator.Compute(instance);
@@ -69,7 +71,8 @@ namespace FluentHashCalculator.Tests
                 Id = 2,
                 Birthday = new DateTime(2000, 11, 3),
                 Name = "Test",
-                Another = new AnotherEntity()
+                Another = new AnotherEntity(),
+                AnotherList = new List<AnotherEntity> { new AnotherEntity() }
             };
 
             calculator.Compute(instance);
@@ -101,7 +104,8 @@ namespace FluentHashCalculator.Tests
                 Id = 2,
                 Birthday = new DateTime(2000, 11, 3),
                 Name = "Test",
-                Another = new AnotherEntity()
+                Another = new AnotherEntity(),
+                AnotherList = new List<AnotherEntity> { new AnotherEntity() }
             };
 
             calculator.Compute(instance);
@@ -119,7 +123,7 @@ namespace FluentHashCalculator.Tests
                 Name = "Test"
             };
 
-            Parallel.For(0, PARALLEL_TO_EXCLUSIVE, _ =>
+            Parallel.For(0, 1, _ =>
             {
                 var result = calculator.Compute(instance);
 
@@ -149,7 +153,8 @@ namespace FluentHashCalculator.Tests
                 Id = 2,
                 Birthday = new DateTime(2000, 11, 3),
                 Name = "Test",
-                Another = new AnotherEntity()
+                Another = new AnotherEntity(), 
+                AnotherList = new List<AnotherEntity> { new AnotherEntity() }
             };
 
             calculator.Compute(instance);
@@ -207,7 +212,8 @@ namespace FluentHashCalculator.Tests
                 Id = 2,
                 Birthday = new DateTime(2000, 11, 3),
                 Name = "Test",
-                Another = new AnotherEntity()
+                Another = new AnotherEntity(),
+                AnotherList = new List<AnotherEntity> { new AnotherEntity() }
             };
 
             calculator.Compute(instance);
@@ -256,7 +262,8 @@ namespace FluentHashCalculator.Tests
                 Id = 2,
                 Birthday = new DateTime(2000, 11, 3),
                 Name = "Test",
-                Another = new AnotherEntity()
+                Another = new AnotherEntity(),
+                AnotherList = new List<AnotherEntity> { new AnotherEntity() }
             };
 
             calculator.Compute(instance);
@@ -305,7 +312,8 @@ namespace FluentHashCalculator.Tests
                 Id = 2,
                 Birthday = new DateTime(2000, 11, 3),
                 Name = "Test",
-                Another = new AnotherEntity()
+                Another = new AnotherEntity(),
+                AnotherList = new List<AnotherEntity> { new AnotherEntity() }
             };
 
             calculator.Compute(instance);
@@ -354,7 +362,8 @@ namespace FluentHashCalculator.Tests
                 Id = 2,
                 Birthday = new DateTime(2000, 11, 3),
                 Name = "Test",
-                Another = new AnotherEntity()
+                Another = new AnotherEntity(),
+                AnotherList = new List<AnotherEntity> { new AnotherEntity() }
             };
 
             calculator.Compute(instance);

@@ -6,7 +6,7 @@ namespace FluentHashCalculator.Benchmark.Calculators
     public abstract partial class AbstractHashCalculatorBuilder<T>
            where T : class
     {
-        public class SHA384 : AbstractHashCalculatorBuilder<T>, IAbstractHashCalculator<T, byte[]>
+        public class SHA384 : FluentHashCalculator.AbstractHashCalculatorBuilder<T>, IAbstractHashCalculator<T, byte[]>
         {
             private static readonly HashAlgorithm algorithm
                 = System.Security.Cryptography.SHA384.Create();

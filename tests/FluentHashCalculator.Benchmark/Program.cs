@@ -1,11 +1,49 @@
 ﻿using BenchmarkDotNet.Running;
+using FluentHashCalculator.Tests;
+using System;
 
 namespace FluentHashCalculator.Benchmark
 {
     class Program
     {
+        public class Person
+        {
+            public string Name { get; set; }
+            public DateTime Birthday { get; set; }
+        }
+
+        public class PersonHashCalculator : AbstractHashCalculator<Person>.CRC32
+        {
+            public PersonHashCalculator()
+            {
+                IgnoreErrors = false;
+
+                GlobalSettings.StringSettings.Encoding = System.Text.Encoding.Latin1;
+
+                Calculate
+                    .Using(p => p.Name, encoding: System.Text.Encoding.Latin1)
+                    .Using(e => e.Birthday);
+            }
+        }
+
         static void Main(string[] args)
         {
+            /*
+            var crc32Calculator = new PersonHashCalculator();
+
+            var person = new Person
+            {
+                Name = "John Krasinski", 
+                Birthday = new DateTime(1979, 10, 20)
+            };
+
+            var crc32 = crc32Calculator.Compute(person);
+
+            // Print 1158920806
+            Console.WriteLine(crc32);
+            */
+
+            /*
             // BenchmarkRunner.Run<CRC16FluentHashCalculatorBenchmark>();
             // BenchmarkRunner.Run<CRC32FluentHashCalculatorBenchmark>();
             // BenchmarkRunner.Run<CRC64FluentHashCalculatorBenchmark>();
@@ -21,12 +59,12 @@ namespace FluentHashCalculator.Benchmark
             BenchmarkRunner.Run<SHA512FluentHashCalculatorBenchmark>();
             BenchmarkRunner.Run<SHA512FluentHashCalculatorWithoutPoolBenchmark>();
             BenchmarkRunner.Run<SHA512FluentHashCalculatorWithoutPoolAndAppendDataBenchmark>();
-            //PrintResults();
+            */
+            PrintResults();
         }
 
         private static void PrintResults()
         {
-            /*
             var crc64test = new CRC64FluentHashCalculatorTests();
 
             Console.WriteLine("        #region Valores dos CRC64 dos valores padrão");
@@ -100,6 +138,8 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public const ulong GUID_ARRAY_CRC64 = {crc64test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArrayCRC64()};");
             Console.WriteLine($"        public const ulong NULLABLE_GUID_CRC64 = {crc64test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidCRC64()};");
             Console.WriteLine($"        public const ulong NULLABLE_GUID_ARRAY_CRC64 = {crc64test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArrayCRC64()};");
+            Console.WriteLine($"");
+            Console.WriteLine($"        public const ulong CHILD_ENTITY_ID_CRC64 = {crc64test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdCRC64()};");
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
@@ -177,6 +217,8 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public const uint GUID_ARRAY_CRC32 = {crc32test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArrayCRC32()};");
             Console.WriteLine($"        public const uint NULLABLE_GUID_CRC32 = {crc32test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidCRC32()};");
             Console.WriteLine($"        public const uint NULLABLE_GUID_ARRAY_CRC32 = {crc32test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArrayCRC32()};");
+            Console.WriteLine($"");
+            Console.WriteLine($"        public const uint CHILD_ENTITY_ID_CRC32 = {crc32test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdCRC32()};");
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
@@ -244,9 +286,9 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public const ushort CHAR_ARRAY_CRC16 = {crc16test.UsingCharArrayPropertyInCalculatorWhenComputeThenReturnCharArrayCRC16()};");
             Console.WriteLine($"        public const ushort NULLABLE_CHAR_CRC16 = {crc16test.UsingNullableCharPropertyInCalculatorWhenComputeThenReturnNullableCharCRC16()};");
             Console.WriteLine($"        public const ushort NULLABLE_CHAR_ARRAY_CRC16 = {crc16test.UsingNullableCharArrayPropertyInCalculatorWhenComputeThenReturnNullableCharArrayCRC16()};");
-            Console.WriteLine($"        public const ulong NULLABLE_STRING_UTF8_CRC16 = {crc16test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringCRC16()};");
-            Console.WriteLine($"        public const ulong NULLABLE_STRING_UNICODE_CRC16 = {crc16test.UsingNullableStringPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringCRC16()};");
-            Console.WriteLine($"        public const ulong NULLABLE_STRING_UTF32_CRC16 = {crc16test.UsingNullableStringPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_STRING_UTF8_CRC16 = {crc16test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_STRING_UNICODE_CRC16 = {crc16test.UsingNullableStringPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringCRC16()};");
+            Console.WriteLine($"        public const ushort NULLABLE_STRING_UTF32_CRC16 = {crc16test.UsingNullableStringPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringCRC16()};");
             Console.WriteLine($"        public const ushort NULLABLE_STRING_ARRAY_UTF8_CRC16 = {crc16test.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArrayCRC16()};");
             Console.WriteLine($"        public const ushort NULLABLE_STRING_ARRAY_UNICODE_CRC16 = {crc16test.UsingNullableStringArrayPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringArrayCRC16()};");
             Console.WriteLine($"        public const ushort NULLABLE_STRING_ARRAY_UTF32_CRC16 = {crc16test.UsingNullableStringArrayPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringArrayCRC16()};");
@@ -254,6 +296,8 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public const ushort GUID_ARRAY_CRC16 = {crc16test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArrayCRC16()};");
             Console.WriteLine($"        public const ushort NULLABLE_GUID_CRC16 = {crc16test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidCRC16()};");
             Console.WriteLine($"        public const ushort NULLABLE_GUID_ARRAY_CRC16 = {crc16test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArrayCRC16()};");
+            Console.WriteLine($"");
+            Console.WriteLine($"        public const ushort CHILD_ENTITY_ID_CRC16 = {crc16test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdCRC16()};");
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
@@ -331,6 +375,8 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] GUID_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArraySHA1())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidSHA1())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArraySHA1())} }};");
+            Console.WriteLine($"");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA1())} }};");
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
@@ -401,13 +447,15 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UTF8_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringSHA256())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UNICODE_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableStringPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringSHA256())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_UTF32_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableStringPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringSHA256())} }};");
-            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArraySHA256())} }};");
+            Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF8_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArraySHA256())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UNICODE_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableStringArrayPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringArraySHA256())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF32_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableStringArrayPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringArraySHA256())} }};");
             Console.WriteLine($"        public static readonly byte[] GUID_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingGuidPropertyInCalculatorWhenComputeThenReturnGuidSHA256())} }};");
             Console.WriteLine($"        public static readonly byte[] GUID_ARRAY_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArraySHA256())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidSHA256())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_ARRAY_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArraySHA256())} }};");
+            Console.WriteLine($"");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA256())} }};");
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
@@ -485,6 +533,8 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] GUID_ARRAY_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArraySHA384())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidSHA384())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_ARRAY_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArraySHA384())} }};");
+            Console.WriteLine($"");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA384())} }};");
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
@@ -562,6 +612,8 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] GUID_ARRAY_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArraySHA512())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidSHA512())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_ARRAY_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArraySHA512())} }};");
+            Console.WriteLine($"");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA512())} }};");
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
@@ -639,8 +691,9 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] GUID_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArrayMD5())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidMD5())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArrayMD5())} }};");
+            Console.WriteLine($"");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdMD5())} }};");
             Console.WriteLine("        #endregion");
-            */
         }
     }
 }

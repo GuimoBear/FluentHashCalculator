@@ -7,14 +7,13 @@
             IgnoreErrors = ignoreErrors;
 
             Calculate
-                .Using(e => e.Id).And
-                .Using(e => e.Name).And
-                .Using(e => e.LastName).And
-                .Using(e => e.Birthday).And
-                .Using(e => e.Another.Id).And
-                .Using(e => e.Another.Name).And
-                .Using(e => e.Another.Birthday).And
-                .Using(e => e.Null.Name, ignoreError: true).And
+                .Using(e => e.Id)
+                .Using(e => e.Name)
+                .Using(e => e.LastName)
+                .Using(e => e.Birthday)
+                .Using(e => e.Another).WithSHA384(calc => calc.Using(p => p.Id).Using(p => p.Name).Using(p => p.Birthday))
+                .UsingEach(e => e.AnotherList).WithSHA384(calc => calc.Using(p => p.Id))
+                .Using(e => e.Null.Name, ignoreError: true)
                 .Using(e => e.Age());
         }
     }

@@ -913,6 +913,36 @@ namespace FluentHashCalculator.Tests
         }
 
         [Fact]
+        public ushort UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdCRC16()
+        {
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC16();
+            calculator.Using(e => e.Child);
+            Expression<Func<EntityWithAllSupportedTypes, Entity>> nullExpression = null;
+            Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
+            var actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(0, actual);
+            calculator.Using(e => e.Child).WithCRC16(calc => calc.Using(e => e.Id));
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_ID_CRC16, actual);
+            return actual;
+        }
+
+        [Fact]
+        public ushort UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdCRC16()
+        {
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC16();
+            calculator.UsingEach(e => e.ChildList);
+            Expression<Func<EntityWithAllSupportedTypes, Entity>> nullExpression = null;
+            Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
+            var actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(0, actual);
+            calculator.UsingEach(e => e.ChildList).WithCRC16(calc => calc.Using(e => e.Id));
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_ID_CRC16, actual);
+            return actual;
+        }
+
+        [Fact]
         public void UsingAllPropertiesInCalculatorWhenComputeThenReturnCRC16()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC16();

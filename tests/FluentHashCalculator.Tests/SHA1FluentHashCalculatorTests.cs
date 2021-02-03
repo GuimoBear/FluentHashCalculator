@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
+using FluentHashCalculator.Internal;
 using FluentHashCalculator.Tests.Fakes;
 using Xunit;
 
@@ -898,6 +899,30 @@ namespace FluentHashCalculator.Tests
             Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.NULLABLE_GUID_ARRAY_SHA1, actual);
+            return actual;
+        }
+
+        [Fact]
+        public byte[] UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA1()
+        {
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA1();
+            calculator.Using(e => e.Child).WithSHA1(calc => calc.Using(e => e.Id));
+            Expression<Func<EntityWithAllSupportedTypes, Entity>> nullExpression = null;
+            Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
+            var actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_ID_SHA1, actual);
+            return actual;
+        }
+
+        [Fact]
+        public byte[] UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdSHA1()
+        {
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA1();
+            calculator.UsingEach(e => e.ChildList).WithSHA1(calc => calc.Using(e => e.Id));
+            Expression<Func<EntityWithAllSupportedTypes, Entity>> nullExpression = null;
+            Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
+            var actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_ID_SHA1, actual);
             return actual;
         }
 

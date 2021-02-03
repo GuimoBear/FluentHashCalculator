@@ -3,7 +3,7 @@
     public abstract partial class AbstractHashCalculator<T>
         where T: class
     {
-        public class CRC64 : AbstractHashCalculator<T>, IHashCalculator<T, ulong>
+        public class CRC64 : AbstractHashCalculator<T>, ICRC64Calculator<T>
         {
             protected readonly IAbstractHashCalculator<T, ulong> Calculator
                 = new AbstractHashCalculatorBuilder<T>.CRC64();

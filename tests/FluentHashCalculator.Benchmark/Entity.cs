@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace FluentHashCalculator.Benchmark
 {
@@ -71,5 +72,8 @@ namespace FluentHashCalculator.Benchmark
         public IEnumerable<Guid> GuidArrayProperty { get; } = Consts.GUID_ARRAY_DEFAULT_VALUE;
         public Guid? NullableGuidProperty { get; } = Consts.NULLABLE_GUID_DEFAULT_VALUE;
         public IEnumerable<Guid?> NullableGuidArrayProperty { get; } = Consts.NULLABLE_GUID_ARRAY_DEFAULT_VALUE;
+
+        public Entity Child { get; } = new Entity();
+        public IEnumerable<Entity> ChildList { get; } = new List<Entity> { new Entity() };
     }
 }

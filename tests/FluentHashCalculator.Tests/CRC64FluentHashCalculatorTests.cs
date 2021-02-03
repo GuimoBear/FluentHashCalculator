@@ -902,6 +902,36 @@ namespace FluentHashCalculator.Tests
         }
 
         [Fact]
+        public ulong UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdCRC64()
+        {
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.Using(e => e.Child);
+            Expression<Func<EntityWithAllSupportedTypes, Entity>> nullExpression = null;
+            Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
+            var actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(ulong.MinValue, actual);
+            calculator.Using(e => e.Child).WithCRC64(calc => calc.Using(e => e.Id));
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_ID_CRC64, actual);
+            return actual;
+        }
+
+        [Fact]
+        public ulong UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdCRC64()
+        {
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();
+            calculator.UsingEach(e => e.ChildList);
+            Expression<Func<EntityWithAllSupportedTypes, Entity>> nullExpression = null;
+            Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
+            var actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(ulong.MinValue, actual);
+            calculator.UsingEach(e => e.ChildList).WithCRC64(calc => calc.Using(e => e.Id));
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_ID_CRC64, actual);
+            return actual;
+        }
+
+        [Fact]
         public void UsingAllPropertiesInCalculatorWhenComputeThenReturnCRC64()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC64();

@@ -7,7 +7,7 @@ namespace FluentHashCalculator.Benchmark.Calculators
     public abstract partial class AbstractHashCalculatorBuilder<T>
            where T : class
     {
-        public class SHA512WithoutAppendData : AbstractHashCalculatorBuilder<T>, IAbstractHashCalculator<T, byte[]>
+        public class SHA512WithoutAppendData : FluentHashCalculator.AbstractHashCalculatorBuilder<T>, IAbstractHashCalculator<T, byte[]>
         {
             private static readonly HashAlgorithm hash
                 = System.Security.Cryptography.SHA512.Create();

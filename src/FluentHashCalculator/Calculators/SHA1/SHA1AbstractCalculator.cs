@@ -5,7 +5,7 @@ namespace FluentHashCalculator
     public abstract partial class AbstractHashCalculator<T>
         where T: class
     {
-        public class SHA1 : AbstractHashCalculator<T>, IHashCalculator<T, byte[]>, IBase64Representation<T>
+        public class SHA1 : AbstractHashCalculator<T>, ISHA1Calculator<T>
         {
             protected readonly IAbstractHashCalculator<T, byte[]> Calculator
                 = new AbstractHashCalculatorBuilder<T>.SHA1();
