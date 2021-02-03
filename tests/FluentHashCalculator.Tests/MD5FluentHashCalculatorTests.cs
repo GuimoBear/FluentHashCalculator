@@ -905,10 +905,13 @@ namespace FluentHashCalculator.Tests
         public byte[] UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdMD5()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.MD5();
-            calculator.Using(e => e.Child).WithMD5(calc => calc.Using(e => e.Id));
+            calculator.Using(e => e.Child);
             Expression<Func<EntityWithAllSupportedTypes, Entity>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.DEFAULT_MD5, actual);
+            calculator.Using(e => e.Child).WithMD5(calc => calc.Using(e => e.Id));
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.CHILD_ENTITY_ID_MD5, actual);
             return actual;
         }
@@ -917,10 +920,13 @@ namespace FluentHashCalculator.Tests
         public byte[] UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdMD5()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.MD5();
-            calculator.UsingEach(e => e.ChildList).WithMD5(calc => calc.Using(e => e.Id));
+            calculator.UsingEach(e => e.ChildList);
             Expression<Func<EntityWithAllSupportedTypes, Entity>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.DEFAULT_MD5, actual);
+            calculator.UsingEach(e => e.ChildList).WithMD5(calc => calc.Using(e => e.Id));
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.CHILD_ENTITY_ID_MD5, actual);
             return actual;
         }

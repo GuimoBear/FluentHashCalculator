@@ -1,6 +1,7 @@
 ﻿using BenchmarkDotNet.Running;
 using FluentHashCalculator.Tests;
 using System;
+using System.Security.Cryptography;
 
 namespace FluentHashCalculator.Benchmark
 {
@@ -376,6 +377,7 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidSHA1())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_ARRAY_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArraySHA1())} }};");
             Console.WriteLine($"");
+            Console.WriteLine($"        public static readonly byte[] DEFAULT_SHA1 = IncrementalHash.CreateHash(HashAlgorithmName.SHA1).GetHashAndReset();");
             Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_SHA1 = new byte[] {{ {string.Join(", ", sha1Test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA1())} }};");
             Console.WriteLine("        #endregion");
 
@@ -455,6 +457,7 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidSHA256())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_ARRAY_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArraySHA256())} }};");
             Console.WriteLine($"");
+            Console.WriteLine($"        public static readonly byte[] DEFAULT_SHA256 = IncrementalHash.CreateHash(HashAlgorithmName.SHA256).GetHashAndReset();");
             Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA256())} }};");
             Console.WriteLine("        #endregion");
 
@@ -534,6 +537,7 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidSHA384())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_ARRAY_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArraySHA384())} }};");
             Console.WriteLine($"");
+            Console.WriteLine($"        public static readonly byte[] DEFAULT_SHA384 = IncrementalHash.CreateHash(HashAlgorithmName.SHA384).GetHashAndReset();");
             Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA384())} }};");
             Console.WriteLine("        #endregion");
 
@@ -613,6 +617,7 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidSHA512())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_ARRAY_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArraySHA512())} }};");
             Console.WriteLine($"");
+            Console.WriteLine($"        public static readonly byte[] DEFAULT_SHA512 = IncrementalHash.CreateHash(HashAlgorithmName.SHA512).GetHashAndReset();");
             Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA512())} }};");
             Console.WriteLine("        #endregion");
 
@@ -692,6 +697,7 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidMD5())} }};");
             Console.WriteLine($"        public static readonly byte[] NULLABLE_GUID_ARRAY_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArrayMD5())} }};");
             Console.WriteLine($"");
+            Console.WriteLine($"        public static readonly byte[] DEFAULT_MD5 = IncrementalHash.CreateHash(HashAlgorithmName.MD5).GetHashAndReset();");
             Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdMD5())} }};");
             Console.WriteLine("        #endregion");
         }

@@ -905,10 +905,13 @@ namespace FluentHashCalculator.Tests
         public byte[] UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA384()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
-            calculator.Using(e => e.Child).WithSHA384(calc => calc.Using(e => e.Id));
+            calculator.Using(e => e.Child);
             Expression<Func<EntityWithAllSupportedTypes, Entity>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.DEFAULT_SHA384, actual);
+            calculator.Using(e => e.Child).WithSHA384(calc => calc.Using(e => e.Id));
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.CHILD_ENTITY_ID_SHA384, actual);
             return actual;
         }
@@ -917,10 +920,13 @@ namespace FluentHashCalculator.Tests
         public byte[] UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdSHA384()
         {
             var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.SHA384();
-            calculator.UsingEach(e => e.ChildList).WithSHA384(calc => calc.Using(e => e.Id));
+            calculator.UsingEach(e => e.ChildList);
             Expression<Func<EntityWithAllSupportedTypes, Entity>> nullExpression = null;
             Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression));
             var actual = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.DEFAULT_SHA384, actual);
+            calculator.UsingEach(e => e.ChildList).WithSHA384(calc => calc.Using(e => e.Id));
+            actual = calculator.Compute(new EntityWithAllSupportedTypes());
             Assert.Equal(Consts.CHILD_ENTITY_ID_SHA384, actual);
             return actual;
         }
