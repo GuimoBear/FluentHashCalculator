@@ -25,18 +25,7 @@ namespace FluentHashCalculator
                                 container.Instance.AppendData(item);
                     return container.Instance.GetHashAndReset();
                 }
-                /*
-                using (var incrementalHash = IncrementalHash.CreateHash(HashAlgorithmName.SHA384))
-                {
-                    foreach ((var value, var context) in ValuesFor(instance))
-                        foreach (var item in Bytes.From(value, context))
-                            incrementalHash.AppendData(item);
-                    return incrementalHash.GetHashAndReset();
-                }
-                */
             }
         }
     }
-
-    
 }

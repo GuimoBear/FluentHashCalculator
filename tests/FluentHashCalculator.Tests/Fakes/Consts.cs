@@ -175,6 +175,13 @@ namespace FluentHashCalculator.Tests.Fakes
 
         public const ulong CHILD_ENTITY_ID_CRC64 = 4165359870939882157;
         public const ulong CHILDLIST_ENTITY_ID_CRC64 = 14145989689320423253;
+
+        public const ulong CHILD_ENTITY_STRING_UTF8_CRC64 = 12919848681411786185;
+        public const ulong CHILD_ENTITY_STRING_UNICODE_CRC64 = 8293156623191417026;
+        public const ulong CHILD_ENTITY_STRING_UTF32_CRC64 = 3984559128021024253;
+        public const ulong CHILDLIST_ENTITY_STRING_UTF8_CRC64 = 17565333476011066614;
+        public const ulong CHILDLIST_ENTITY_STRING_UNICODE_CRC64 = 17392275844230995464;
+        public const ulong CHILDLIST_ENTITY_STRING_UTF32_CRC64 = 2204899878477903587;
         #endregion
 
         #region Valores dos CRC32 dos valores padrão
@@ -251,6 +258,13 @@ namespace FluentHashCalculator.Tests.Fakes
 
         public const uint CHILD_ENTITY_ID_CRC32 = 3640141803;
         public const uint CHILDLIST_ENTITY_ID_CRC32 = 87103490;
+
+        public const uint CHILD_ENTITY_STRING_UTF8_CRC32 = 2807314843;
+        public const uint CHILD_ENTITY_STRING_UNICODE_CRC32 = 2358456617;
+        public const uint CHILD_ENTITY_STRING_UTF32_CRC32 = 1704493891;
+        public const uint CHILDLIST_ENTITY_STRING_UTF8_CRC32 = 737513994;
+        public const uint CHILDLIST_ENTITY_STRING_UNICODE_CRC32 = 2936263257;
+        public const uint CHILDLIST_ENTITY_STRING_UTF32_CRC32 = 1985341692;
         #endregion
 
         #region Valores dos CRC16 dos valores padrão
@@ -327,6 +341,13 @@ namespace FluentHashCalculator.Tests.Fakes
 
         public const ushort CHILD_ENTITY_ID_CRC16 = 12405;
         public const ushort CHILDLIST_ENTITY_ID_CRC16 = 12029;
+
+        public const ushort CHILD_ENTITY_STRING_UTF8_CRC16 = 28253;
+        public const ushort CHILD_ENTITY_STRING_UNICODE_CRC16 = 54683;
+        public const ushort CHILD_ENTITY_STRING_UTF32_CRC16 = 24677;
+        public const ushort CHILDLIST_ENTITY_STRING_UTF8_CRC16 = 14865;
+        public const ushort CHILDLIST_ENTITY_STRING_UNICODE_CRC16 = 13048;
+        public const ushort CHILDLIST_ENTITY_STRING_UTF32_CRC16 = 59207;
         #endregion
 
         #region Valores dos SHA1 dos valores padrão
@@ -404,6 +425,13 @@ namespace FluentHashCalculator.Tests.Fakes
         public static readonly byte[] DEFAULT_SHA1 = IncrementalHash.CreateHash(HashAlgorithmName.SHA1).GetHashAndReset();
         public static readonly byte[] CHILD_ENTITY_ID_SHA1 = new byte[] { 99, 200, 70, 42, 161, 140, 50, 34, 106, 138, 136, 246, 9, 43, 148, 124, 158, 238, 243, 127 };
         public static readonly byte[] CHILDLIST_ENTITY_ID_SHA1 = new byte[] { 33, 229, 28, 124, 133, 159, 245, 172, 93, 185, 212, 11, 243, 203, 169, 144, 254, 244, 37, 225 };
+
+        public static readonly byte[] CHILD_ENTITY_STRING_UTF8_SHA1 = new byte[] { 169, 83, 29, 39, 16, 242, 66, 134, 253, 149, 28, 40, 38, 177, 139, 116, 33, 133, 253, 247 };
+        public static readonly byte[] CHILD_ENTITY_STRING_UNICODE_SHA1 = new byte[] { 94, 144, 123, 46, 249, 183, 251, 121, 179, 229, 9, 61, 63, 172, 202, 89, 93, 3, 172, 225 };
+        public static readonly byte[] CHILD_ENTITY_STRING_UTF32_SHA1 = new byte[] { 27, 202, 214, 126, 118, 230, 19, 131, 97, 201, 201, 107, 253, 1, 133, 146, 230, 39, 248, 210 };
+        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF8_SHA1 = new byte[] { 253, 247, 70, 65, 76, 172, 47, 41, 171, 155, 175, 92, 71, 87, 201, 192, 208, 131, 108, 9 };
+        public static readonly byte[] CHILDLIST_ENTITY_STRING_UNICODE_SHA1 = new byte[] { 196, 142, 90, 56, 177, 208, 79, 176, 184, 94, 75, 177, 61, 196, 87, 38, 14, 162, 35, 147 };
+        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF32_SHA1 = new byte[] { 227, 62, 111, 173, 251, 82, 44, 224, 235, 254, 219, 145, 196, 162, 241, 159, 10, 245, 10, 24 };
         #endregion
 
         #region Valores dos SHA256 dos valores padrão
@@ -471,8 +499,7 @@ namespace FluentHashCalculator.Tests.Fakes
         public static readonly byte[] NULLABLE_STRING_UNICODE_SHA256 = new byte[] { 27, 139, 34, 149, 15, 32, 90, 159, 127, 203, 128, 27, 50, 81, 46, 152, 129, 92, 238, 204, 231, 52, 174, 221, 217, 253, 52, 217, 232, 168, 114, 231 };
         public static readonly byte[] NULLABLE_STRING_UTF32_SHA256 = new byte[] { 152, 150, 80, 186, 218, 32, 161, 144, 253, 169, 44, 251, 227, 194, 41, 0, 100, 208, 225, 63, 149, 27, 168, 154, 77, 235, 186, 5, 57, 209, 194, 218 };
         public static readonly byte[] NULLABLE_STRING_ARRAY_UTF8_SHA256 = new byte[] { 198, 238, 91, 101, 137, 228, 125, 59, 199, 152, 32, 244, 228, 203, 86, 202, 209, 131, 134, 151, 116, 61, 128, 58, 35, 138, 75, 116, 195, 16, 111, 16 };
-        public static readonly byte[] NULLABLE_STRING_ARRAY_UNICODE_SHA256 = new byte[] { 174, 249, 82, 205, 147, 185, 151, 143, 217, 165, 205, 238, 107, 29, 55, 99, 8, 63, 186, 249, 136, 207, 241, 127, 3, 68, 218, 135, 112, 234, 53, 154 };
-        public static readonly byte[] NULLABLE_STRING_ARRAY_UTF32_SHA256 = new byte[] { 25, 80, 131, 206, 35, 211, 238, 95, 45, 17, 223, 182, 68, 188, 246, 34, 117, 94, 8, 50, 10, 171, 255, 194, 96, 239, 233, 77, 151, 195, 57, 200 };
+        public static readonly byte[] NULLABLE_STRING_ARRAY_UNICODE_SHA256 = new byte[] { 174, 249, 82, 205, 147, 185, 151, 143, 217, 165, 205, 238, 107, 29, 55, 99, 8, 63, 186, 249, 136, 207, 241, 127, 3, 68, 218, 135, 112, 234, 53, 154 }; public static readonly byte[] NULLABLE_STRING_ARRAY_UTF32_SHA256 = new byte[] { 25, 80, 131, 206, 35, 211, 238, 95, 45, 17, 223, 182, 68, 188, 246, 34, 117, 94, 8, 50, 10, 171, 255, 194, 96, 239, 233, 77, 151, 195, 57, 200 };
         public static readonly byte[] GUID_SHA256 = new byte[] { 165, 248, 196, 110, 148, 209, 217, 181, 183, 194, 108, 91, 16, 91, 189, 219, 141, 233, 217, 208, 73, 145, 37, 38, 152, 185, 47, 239, 193, 62, 80, 200 };
         public static readonly byte[] GUID_ARRAY_SHA256 = new byte[] { 217, 124, 91, 176, 196, 227, 181, 123, 190, 62, 245, 173, 68, 65, 77, 143, 246, 139, 51, 239, 107, 164, 201, 124, 166, 39, 232, 120, 42, 230, 36, 209 };
         public static readonly byte[] NULLABLE_GUID_SHA256 = new byte[] { 227, 176, 196, 66, 152, 252, 28, 20, 154, 251, 244, 200, 153, 111, 185, 36, 39, 174, 65, 228, 100, 155, 147, 76, 164, 149, 153, 27, 120, 82, 184, 85 };
@@ -481,6 +508,13 @@ namespace FluentHashCalculator.Tests.Fakes
         public static readonly byte[] DEFAULT_SHA256 = IncrementalHash.CreateHash(HashAlgorithmName.SHA256).GetHashAndReset();
         public static readonly byte[] CHILD_ENTITY_ID_SHA256 = new byte[] { 202, 243, 94, 82, 36, 222, 22, 239, 163, 204, 175, 65, 7, 15, 110, 123, 148, 50, 182, 247, 149, 81, 230, 41, 252, 169, 209, 192, 59, 67, 188, 82 };
         public static readonly byte[] CHILDLIST_ENTITY_ID_SHA256 = new byte[] { 197, 150, 135, 108, 37, 100, 110, 158, 4, 21, 211, 160, 191, 157, 154, 52, 38, 66, 221, 33, 223, 198, 26, 20, 159, 211, 200, 202, 169, 68, 54, 1 };
+
+        public static readonly byte[] CHILD_ENTITY_STRING_UTF8_SHA256 = new byte[] { 219, 48, 81, 234, 198, 59, 207, 86, 80, 80, 184, 196, 145, 150, 12, 153, 102, 96, 93, 101, 76, 70, 241, 38, 98, 229, 152, 140, 48, 143, 90, 129 };
+        public static readonly byte[] CHILD_ENTITY_STRING_UNICODE_SHA256 = new byte[] { 16, 35, 94, 4, 83, 64, 193, 183, 59, 249, 25, 10, 127, 221, 5, 77, 139, 189, 230, 102, 97, 223, 152, 135, 132, 19, 193, 71, 59, 113, 74, 114 };
+        public static readonly byte[] CHILD_ENTITY_STRING_UTF32_SHA256 = new byte[] { 44, 70, 165, 230, 46, 8, 79, 227, 101, 200, 143, 19, 71, 17, 175, 120, 5, 162, 188, 111, 16, 220, 66, 77, 54, 92, 56, 24, 141, 229, 175, 85 };
+        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF8_SHA256 = new byte[] { 149, 66, 191, 221, 9, 70, 72, 157, 159, 230, 45, 16, 91, 64, 73, 235, 11, 177, 7, 105, 189, 86, 70, 86, 104, 90, 26, 14, 46, 149, 40, 192 };
+        public static readonly byte[] CHILDLIST_ENTITY_STRING_UNICODE_SHA256 = new byte[] { 59, 252, 142, 247, 14, 233, 18, 197, 104, 238, 182, 186, 240, 115, 183, 112, 214, 184, 91, 46, 70, 65, 79, 69, 228, 213, 248, 104, 184, 16, 220, 107 };
+        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF32_SHA256 = new byte[] { 133, 247, 162, 31, 194, 168, 221, 235, 65, 189, 222, 35, 230, 134, 170, 189, 177, 46, 219, 159, 106, 39, 53, 27, 179, 186, 51, 111, 35, 194, 231, 86 };
         #endregion
 
         #region Valores dos SHA384 dos valores padrão
@@ -558,11 +592,17 @@ namespace FluentHashCalculator.Tests.Fakes
         public static readonly byte[] DEFAULT_SHA384 = IncrementalHash.CreateHash(HashAlgorithmName.SHA384).GetHashAndReset();
         public static readonly byte[] CHILD_ENTITY_ID_SHA384 = new byte[] { 119, 120, 93, 110, 11, 248, 156, 229, 164, 25, 78, 134, 241, 171, 219, 195, 167, 227, 157, 198, 195, 125, 138, 219, 64, 51, 78, 71, 229, 84, 54, 206, 177, 106, 146, 63, 86, 178, 162, 245, 184, 70, 254, 43, 44, 109, 91, 31 };
         public static readonly byte[] CHILDLIST_ENTITY_ID_SHA384 = new byte[] { 248, 107, 116, 146, 225, 82, 33, 235, 106, 208, 232, 46, 5, 51, 74, 106, 187, 192, 92, 150, 190, 244, 81, 91, 72, 34, 220, 181, 79, 78, 169, 250, 91, 169, 184, 179, 150, 130, 140, 207, 78, 207, 240, 68, 99, 152, 47, 225 };
+
+        public static readonly byte[] CHILD_ENTITY_STRING_UTF8_SHA384 = new byte[] { 118, 65, 151, 112, 22, 159, 127, 234, 63, 179, 25, 110, 13, 236, 188, 188, 112, 59, 229, 78, 61, 250, 50, 38, 25, 95, 46, 227, 141, 16, 128, 69, 180, 113, 31, 70, 0, 141, 232, 63, 212, 186, 58, 144, 157, 89, 233, 122 };
+        public static readonly byte[] CHILD_ENTITY_STRING_UNICODE_SHA384 = new byte[] { 228, 166, 48, 70, 161, 229, 136, 37, 56, 81, 29, 108, 184, 179, 16, 92, 155, 59, 27, 211, 10, 108, 66, 95, 32, 225, 85, 250, 71, 157, 35, 186, 162, 84, 167, 30, 161, 248, 233, 38, 94, 101, 189, 147, 17, 50, 94, 77 };
+        public static readonly byte[] CHILD_ENTITY_STRING_UTF32_SHA384 = new byte[] { 85, 217, 94, 72, 48, 232, 129, 87, 180, 133, 183, 247, 72, 60, 113, 238, 45, 252, 176, 253, 88, 99, 129, 214, 35, 146, 170, 226, 202, 111, 35, 161, 233, 233, 97, 223, 59, 189, 25, 1, 183, 112, 158, 34, 201, 120, 75, 89 };
+        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF8_SHA384 = new byte[] { 178, 80, 85, 247, 139, 173, 157, 6, 48, 173, 167, 214, 38, 168, 54, 170, 21, 242, 108, 202, 159, 155, 245, 191, 111, 192, 171, 37, 77, 204, 73, 122, 166, 239, 169, 53, 35, 64, 38, 194, 178, 34, 61, 29, 135, 187, 30, 145 };
+        public static readonly byte[] CHILDLIST_ENTITY_STRING_UNICODE_SHA384 = new byte[] { 219, 25, 175, 74, 159, 124, 130, 129, 86, 88, 113, 143, 81, 81, 152, 67, 12, 167, 66, 135, 89, 194, 168, 96, 134, 133, 36, 20, 158, 118, 154, 98, 114, 34, 189, 111, 84, 96, 235, 62, 34, 241, 177, 41, 227, 102, 175, 56 };
+        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF32_SHA384 = new byte[] { 127, 110, 6, 147, 232, 67, 154, 152, 60, 146, 248, 177, 159, 215, 109, 53, 84, 104, 235, 12, 0, 116, 15, 212, 239, 238, 197, 30, 0, 192, 173, 231, 192, 142, 98, 33, 140, 248, 158, 115, 110, 172, 157, 240, 54, 87, 237, 217 };
         #endregion
 
         #region Valores dos SHA512 dos valores padrão
-        public static readonly byte[] BOOL_SHA512 = new byte[] { 123, 84, 182, 104, 54, 193, 251, 221, 19, 210, 68, 29, 158, 20, 52, 220, 98, 202, 103, 127, 182, 143, 95, 230, 106, 70, 75, 170, 222, 205, 189, 0, 87, 111, 141, 107, 90, 195, 188, 200, 8, 68, 183, 213, 11, 28, 198, 96, 52, 68, 187, 231, 207, 207, 143, 192, 170, 30, 227, 198, 54, 217, 227, 57 };
-        public static readonly byte[] BOOL_ARRAY_SHA512 = new byte[] { 57, 254, 43, 237, 77, 113, 74, 74, 252, 54, 177, 158, 81, 244, 50, 228, 112, 100, 139, 90, 179, 130, 200, 42, 183, 11, 12, 219, 47, 164, 236, 30, 165, 44, 138, 214, 45, 217, 147, 47, 17, 46, 117, 247, 96, 111, 185, 196, 5, 176, 222, 53, 84, 28, 87, 112, 101, 202, 117, 106, 64, 71, 143, 59 };
+        public static readonly byte[] BOOL_SHA512 = new byte[] { 123, 84, 182, 104, 54, 193, 251, 221, 19, 210, 68, 29, 158, 20, 52, 220, 98, 202, 103, 127, 182, 143, 95, 230, 106, 70, 75, 170, 222, 205, 189, 0, 87, 111, 141, 107, 90, 195, 188, 200, 8, 68, 183, 213, 11, 28, 198, 96, 52, 68, 187, 231, 207, 207, 143, 192, 170, 30, 227, 198, 54, 217, 227, 57 }; public static readonly byte[] BOOL_ARRAY_SHA512 = new byte[] { 57, 254, 43, 237, 77, 113, 74, 74, 252, 54, 177, 158, 81, 244, 50, 228, 112, 100, 139, 90, 179, 130, 200, 42, 183, 11, 12, 219, 47, 164, 236, 30, 165, 44, 138, 214, 45, 217, 147, 47, 17, 46, 117, 247, 96, 111, 185, 196, 5, 176, 222, 53, 84, 28, 87, 112, 101, 202, 117, 106, 64, 71, 143, 59 };
         public static readonly byte[] NULLABLE_BOOL_SHA512 = new byte[] { 207, 131, 225, 53, 126, 239, 184, 189, 241, 84, 40, 80, 214, 109, 128, 7, 214, 32, 228, 5, 11, 87, 21, 220, 131, 244, 169, 33, 211, 108, 233, 206, 71, 208, 209, 60, 93, 133, 242, 176, 255, 131, 24, 210, 135, 126, 236, 47, 99, 185, 49, 189, 71, 65, 122, 129, 165, 56, 50, 122, 249, 39, 218, 62 };
         public static readonly byte[] NULLABLE_BOOL_ARRAY_SHA512 = new byte[] { 128, 83, 108, 97, 112, 221, 134, 38, 220, 8, 26, 241, 72, 211, 158, 194, 253, 93, 9, 12, 197, 120, 167, 102, 71, 231, 144, 63, 211, 75, 208, 46, 67, 51, 236, 229, 123, 14, 36, 255, 17, 111, 67, 66, 155, 111, 245, 65, 131, 75, 212, 14, 240, 200, 211, 86, 58, 206, 245, 237, 15, 210, 84, 184 };
         public static readonly byte[] BYTE_SHA512 = new byte[] { 200, 252, 123, 48, 76, 234, 249, 169, 18, 231, 148, 33, 241, 227, 1, 62, 170, 197, 219, 159, 78, 158, 187, 76, 130, 22, 49, 156, 165, 189, 172, 67, 66, 68, 159, 200, 159, 88, 107, 77, 166, 45, 234, 8, 213, 241, 44, 230, 140, 159, 111, 117, 54, 207, 202, 1, 162, 6, 143, 24, 207, 61, 248, 150 };
@@ -615,10 +655,8 @@ namespace FluentHashCalculator.Tests.Fakes
         public static readonly byte[] NULLABLE_DATETIME_ARRAY_SHA512 = new byte[] { 207, 131, 225, 53, 126, 239, 184, 189, 241, 84, 40, 80, 214, 109, 128, 7, 214, 32, 228, 5, 11, 87, 21, 220, 131, 244, 169, 33, 211, 108, 233, 206, 71, 208, 209, 60, 93, 133, 242, 176, 255, 131, 24, 210, 135, 126, 236, 47, 99, 185, 49, 189, 71, 65, 122, 129, 165, 56, 50, 122, 249, 39, 218, 62 };
         public static readonly byte[] TIMESPAN_SHA512 = new byte[] { 183, 0, 132, 95, 118, 126, 158, 227, 110, 241, 146, 236, 232, 206, 159, 233, 42, 236, 212, 159, 188, 175, 86, 3, 134, 139, 79, 63, 163, 134, 147, 172, 133, 140, 141, 179, 170, 185, 144, 115, 150, 174, 102, 110, 58, 64, 78, 98, 127, 28, 240, 95, 91, 170, 109, 100, 135, 156, 161, 132, 20, 38, 237, 201 };
         public static readonly byte[] TIMESPAN_ARRAY_SHA512 = new byte[] { 3, 219, 8, 68, 137, 158, 129, 145, 93, 34, 76, 215, 222, 55, 80, 135, 246, 190, 235, 249, 84, 68, 19, 80, 146, 157, 195, 159, 75, 208, 230, 109, 129, 161, 247, 255, 93, 248, 136, 76, 85, 78, 84, 143, 252, 163, 128, 153, 26, 113, 235, 210, 169, 20, 96, 26, 0, 10, 107, 161, 245, 232, 128, 182 };
-        public static readonly byte[] NULLABLE_TIMESPAN_SHA512 = new byte[] { 52, 89, 204, 9, 118, 7, 74, 173, 107, 79, 7, 45, 118, 106, 48, 172, 233, 134, 193, 70, 59, 200, 15, 88, 144, 8, 183, 6, 61, 46, 148, 133, 40, 38, 89, 52, 48, 235, 59, 93, 79, 224, 89, 136, 91, 155, 176, 53, 36, 140, 250, 213, 6, 31, 199, 125, 146, 182, 11, 76, 165, 238, 220, 234 };
-        public static readonly byte[] NULLABLE_TIMESPAN_ARRAY_SHA512 = new byte[] { 52, 89, 204, 9, 118, 7, 74, 173, 107, 79, 7, 45, 118, 106, 48, 172, 233, 134, 193, 70, 59, 200, 15, 88, 144, 8, 183, 6, 61, 46, 148, 133, 40, 38, 89, 52, 48, 235, 59, 93, 79, 224, 89, 136, 91, 155, 176, 53, 36, 140, 250, 213, 6, 31, 199, 125, 146, 182, 11, 76, 165, 238, 220, 234 };
-        public static readonly byte[] CHAR_SHA512 = new byte[] { 141, 99, 91, 188, 190, 146, 161, 3, 25, 189, 251, 208, 221, 32, 49, 27, 243, 72, 102, 219, 181, 108, 166, 237, 3, 252, 122, 113, 113, 104, 96, 236, 72, 142, 88, 38, 31, 38, 154, 97, 149, 169, 231, 238, 107, 217, 76, 177, 218, 146, 88, 232, 134, 244, 19, 172, 244, 3, 200, 54, 89, 206, 175, 45 };
-        public static readonly byte[] CHAR_ARRAY_SHA512 = new byte[] { 52, 37, 38, 80, 39, 176, 141, 147, 81, 22, 241, 126, 96, 16, 105, 140, 201, 162, 69, 220, 112, 235, 208, 46, 142, 29, 116, 77, 230, 205, 16, 56, 35, 29, 7, 86, 70, 66, 129, 200, 88, 237, 10, 248, 186, 15, 31, 150, 170, 237, 69, 49, 24, 190, 118, 230, 209, 93, 243, 88, 91, 107, 47, 36 };
+        public static readonly byte[] NULLABLE_TIMESPAN_SHA512 = new byte[] { 52, 89, 204, 9, 118, 7, 74, 173, 107, 79, 7, 45, 118, 106, 48, 172, 233, 134, 193, 70, 59, 200, 15, 88, 144, 8, 183, 6, 61, 46, 148, 133, 40, 38, 89, 52, 48, 235, 59, 93, 79, 224, 89, 136, 91, 155, 176, 53, 36, 140, 250, 213, 6, 31, 199, 125, 146, 182, 11, 76, 165, 238, 220, 234 }; public static readonly byte[] NULLABLE_TIMESPAN_ARRAY_SHA512 = new byte[] { 52, 89, 204, 9, 118, 7, 74, 173, 107, 79, 7, 45, 118, 106, 48, 172, 233, 134, 193, 70, 59, 200, 15, 88, 144, 8, 183, 6, 61, 46, 148, 133, 40, 38, 89, 52, 48, 235, 59, 93, 79, 224, 89, 136, 91, 155, 176, 53, 36, 140, 250, 213, 6, 31, 199, 125, 146, 182, 11, 76, 165, 238, 220, 234 };
+        public static readonly byte[] CHAR_SHA512 = new byte[] { 141, 99, 91, 188, 190, 146, 161, 3, 25, 189, 251, 208, 221, 32, 49, 27, 243, 72, 102, 219, 181, 108, 166, 237, 3, 252, 122, 113, 113, 104, 96, 236, 72, 142, 88, 38, 31, 38, 154, 97, 149, 169, 231, 238, 107, 217, 76, 177, 218, 146, 88, 232, 134, 244, 19, 172, 244, 3, 200, 54, 89, 206, 175, 45 }; public static readonly byte[] CHAR_ARRAY_SHA512 = new byte[] { 52, 37, 38, 80, 39, 176, 141, 147, 81, 22, 241, 126, 96, 16, 105, 140, 201, 162, 69, 220, 112, 235, 208, 46, 142, 29, 116, 77, 230, 205, 16, 56, 35, 29, 7, 86, 70, 66, 129, 200, 88, 237, 10, 248, 186, 15, 31, 150, 170, 237, 69, 49, 24, 190, 118, 230, 209, 93, 243, 88, 91, 107, 47, 36 };
         public static readonly byte[] NULLABLE_CHAR_SHA512 = new byte[] { 26, 38, 95, 95, 207, 80, 71, 131, 42, 34, 148, 226, 225, 6, 151, 59, 71, 183, 46, 78, 180, 58, 11, 114, 240, 246, 47, 156, 45, 235, 71, 90, 236, 111, 9, 186, 184, 27, 89, 51, 1, 143, 97, 165, 242, 69, 189, 175, 253, 139, 207, 91, 238, 33, 37, 232, 229, 140, 71, 104, 214, 123, 28, 237 };
         public static readonly byte[] NULLABLE_CHAR_ARRAY_SHA512 = new byte[] { 192, 185, 208, 182, 237, 188, 2, 26, 117, 149, 212, 162, 137, 171, 211, 148, 112, 226, 137, 216, 95, 117, 134, 205, 43, 212, 200, 185, 247, 126, 161, 6, 229, 206, 9, 132, 237, 198, 252, 108, 20, 75, 170, 9, 144, 31, 213, 84, 187, 128, 233, 91, 68, 52, 55, 145, 133, 249, 81, 92, 25, 19, 57, 27 };
         public static readonly byte[] NULLABLE_STRING_UTF8_SHA512 = new byte[] { 195, 230, 162, 241, 120, 80, 1, 26, 86, 160, 16, 32, 231, 112, 124, 91, 38, 67, 186, 85, 19, 65, 5, 150, 26, 30, 55, 18, 255, 182, 158, 110, 212, 23, 65, 56, 214, 175, 214, 156, 125, 59, 182, 128, 209, 195, 220, 51, 231, 160, 170, 55, 214, 169, 172, 109, 88, 192, 201, 238, 68, 45, 222, 168 };
@@ -635,6 +673,13 @@ namespace FluentHashCalculator.Tests.Fakes
         public static readonly byte[] DEFAULT_SHA512 = IncrementalHash.CreateHash(HashAlgorithmName.SHA512).GetHashAndReset();
         public static readonly byte[] CHILD_ENTITY_ID_SHA512 = new byte[] { 119, 155, 153, 202, 99, 180, 150, 157, 10, 82, 26, 112, 56, 36, 26, 208, 218, 224, 220, 242, 151, 46, 100, 181, 152, 141, 145, 160, 241, 69, 99, 105, 13, 187, 108, 218, 11, 216, 50, 220, 228, 185, 87, 227, 46, 212, 105, 11, 199, 44, 21, 133, 84, 4, 189, 52, 43, 248, 95, 89, 143, 71, 12, 84 };
         public static readonly byte[] CHILDLIST_ENTITY_ID_SHA512 = new byte[] { 213, 118, 14, 244, 127, 133, 109, 31, 113, 236, 57, 235, 15, 181, 214, 243, 137, 219, 77, 83, 69, 69, 22, 32, 82, 35, 4, 209, 134, 107, 133, 247, 165, 154, 9, 14, 43, 167, 165, 202, 175, 186, 219, 203, 4, 211, 130, 232, 45, 20, 238, 179, 217, 148, 40, 74, 80, 241, 60, 14, 124, 244, 208, 68 };
+
+        public static readonly byte[] CHILD_ENTITY_STRING_UTF8_SHA512 = new byte[] { 184, 184, 212, 97, 237, 90, 74, 205, 0, 205, 249, 83, 103, 216, 98, 173, 80, 144, 187, 35, 223, 63, 63, 231, 128, 188, 171, 66, 165, 40, 161, 162, 226, 56, 163, 193, 192, 245, 236, 102, 102, 192, 74, 221, 151, 206, 30, 85, 29, 223, 119, 196, 1, 223, 30, 82, 118, 39, 71, 173, 218, 6, 93, 11 };
+        public static readonly byte[] CHILD_ENTITY_STRING_UNICODE_SHA512 = new byte[] { 171, 167, 149, 154, 180, 227, 137, 66, 7, 2, 39, 79, 37, 21, 117, 219, 68, 229, 49, 183, 5, 51, 39, 0, 222, 130, 162, 133, 93, 55, 24, 40, 186, 73, 149, 230, 137, 174, 153, 180, 219, 36, 231, 1, 5, 87, 137, 158, 8, 15, 248, 249, 161, 169, 10, 197, 130, 135, 9, 91, 39, 82, 72, 25 };
+        public static readonly byte[] CHILD_ENTITY_STRING_UTF32_SHA512 = new byte[] { 93, 87, 188, 125, 0, 78, 245, 243, 115, 30, 118, 147, 189, 184, 167, 218, 96, 107, 241, 160, 69, 121, 143, 108, 242, 179, 170, 119, 122, 78, 169, 164, 172, 170, 75, 135, 147, 42, 176, 236, 230, 192, 82, 106, 145, 18, 71, 225, 100, 137, 183, 86, 211, 61, 10, 105, 246, 152, 14, 204, 213, 171, 22, 254 };
+        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF8_SHA512 = new byte[] { 212, 221, 210, 2, 40, 62, 80, 246, 219, 187, 113, 36, 11, 4, 2, 121, 252, 98, 16, 236, 112, 4, 115, 183, 120, 85, 99, 252, 189, 29, 105, 5, 103, 88, 222, 97, 69, 168, 11, 225, 163, 156, 176, 187, 107, 34, 182, 81, 198, 208, 185, 189, 10, 230, 25, 127, 145, 135, 200, 51, 104, 181, 8, 86 };
+        public static readonly byte[] CHILDLIST_ENTITY_STRING_UNICODE_SHA512 = new byte[] { 249, 194, 233, 129, 47, 182, 109, 126, 149, 46, 80, 166, 185, 119, 77, 229, 105, 105, 84, 189, 233, 56, 176, 204, 153, 236, 11, 10, 64, 120, 219, 208, 228, 215, 139, 67, 137, 212, 146, 134, 152, 196, 57, 123, 62, 159, 185, 101, 91, 209, 248, 45, 0, 60, 93, 161, 163, 220, 11, 57, 151, 84, 183, 113 };
+        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF32_SHA512 = new byte[] { 80, 170, 87, 136, 57, 204, 174, 150, 84, 212, 50, 241, 23, 179, 219, 121, 165, 236, 160, 235, 235, 16, 228, 201, 114, 88, 203, 3, 97, 194, 99, 123, 218, 204, 113, 246, 171, 3, 157, 42, 211, 24, 121, 176, 215, 200, 174, 32, 48, 60, 8, 7, 25, 104, 109, 204, 167, 224, 58, 235, 42, 242, 20, 94 };
         #endregion
 
         #region Valores dos MD5 dos valores padrão
@@ -709,9 +754,15 @@ namespace FluentHashCalculator.Tests.Fakes
         public static readonly byte[] NULLABLE_GUID_MD5 = new byte[] { 212, 29, 140, 217, 143, 0, 178, 4, 233, 128, 9, 152, 236, 248, 66, 126 };
         public static readonly byte[] NULLABLE_GUID_ARRAY_MD5 = new byte[] { 81, 85, 170, 107, 195, 86, 75, 81, 72, 247, 150, 119, 238, 178, 107, 109 };
 
-        public static readonly byte[] DEFAULT_MD5 = IncrementalHash.CreateHash(HashAlgorithmName.MD5).GetHashAndReset();
-        public static readonly byte[] CHILD_ENTITY_ID_MD5 = new byte[] { 169, 140, 0, 241, 46, 65, 89, 55, 224, 64, 21, 234, 85, 238, 190, 136 };
+        public static readonly byte[] DEFAULT_MD5 = IncrementalHash.CreateHash(HashAlgorithmName.MD5).GetHashAndReset(); public static readonly byte[] CHILD_ENTITY_ID_MD5 = new byte[] { 169, 140, 0, 241, 46, 65, 89, 55, 224, 64, 21, 234, 85, 238, 190, 136 };
         public static readonly byte[] CHILDLIST_ENTITY_ID_MD5 = new byte[] { 191, 50, 206, 234, 252, 216, 215, 104, 99, 145, 196, 191, 39, 180, 146, 211 };
+
+        public static readonly byte[] CHILD_ENTITY_STRING_UTF8_MD5 = new byte[] { 20, 184, 25, 38, 47, 1, 15, 112, 248, 134, 0, 180, 128, 128, 143, 14 };
+        public static readonly byte[] CHILD_ENTITY_STRING_UNICODE_MD5 = new byte[] { 127, 116, 130, 63, 119, 94, 218, 54, 250, 250, 106, 68, 77, 19, 162, 220 };
+        public static readonly byte[] CHILD_ENTITY_STRING_UTF32_MD5 = new byte[] { 51, 149, 56, 94, 144, 223, 123, 54, 154, 147, 37, 192, 40, 222, 39, 148 };
+        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF8_MD5 = new byte[] { 209, 114, 53, 194, 94, 118, 28, 29, 39, 115, 196, 212, 249, 128, 159, 14 };
+        public static readonly byte[] CHILDLIST_ENTITY_STRING_UNICODE_MD5 = new byte[] { 148, 159, 140, 95, 89, 150, 71, 161, 156, 104, 23, 63, 83, 208, 26, 125 };
+        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF32_MD5 = new byte[] { 118, 233, 102, 144, 159, 174, 62, 223, 96, 38, 70, 81, 101, 59, 3, 47 };
         #endregion
     }
 }

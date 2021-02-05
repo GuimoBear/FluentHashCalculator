@@ -149,7 +149,7 @@ namespace FluentHashCalculator.Internal
                     // In a worst case scenario two objects may be stored into same slot.
                     // It is very unlikely to happen and will only mean that one of the objects will get collected.
                     items[i].Value = obj;
-                    return;
+                    break;
                 }
             }
         }

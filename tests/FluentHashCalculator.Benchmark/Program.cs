@@ -184,6 +184,19 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"");
             Console.WriteLine($"        public const ulong CHILD_ENTITY_ID_CRC64 = {crc64test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdCRC64()};");
             Console.WriteLine($"        public const ulong CHILDLIST_ENTITY_ID_CRC64 = {crc64test.UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdCRC64()};");
+
+            var (utf8CRC64, unicodeCRC64, utf32CRC64) = crc64test.UsingComplexPropertyWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorCRC64();
+            Console.WriteLine("");
+            Console.WriteLine($"        public const ulong CHILD_ENTITY_STRING_UTF8_CRC64 = {utf8CRC64};");
+            Console.WriteLine($"        public const ulong CHILD_ENTITY_STRING_UNICODE_CRC64 = {unicodeCRC64};");
+            Console.WriteLine($"        public const ulong CHILD_ENTITY_STRING_UTF32_CRC64 = {utf32CRC64};");
+
+            (utf8CRC64, unicodeCRC64, utf32CRC64) = crc64test.UsingComplexPropertyListWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorCRC64();
+
+            Console.WriteLine($"        public const ulong CHILDLIST_ENTITY_STRING_UTF8_CRC64 = {utf8CRC64};");
+            Console.WriteLine($"        public const ulong CHILDLIST_ENTITY_STRING_UNICODE_CRC64 = {unicodeCRC64};");
+            Console.WriteLine($"        public const ulong CHILDLIST_ENTITY_STRING_UTF32_CRC64 = {utf32CRC64};");
+
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
@@ -262,6 +275,19 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"");
             Console.WriteLine($"        public const uint CHILD_ENTITY_ID_CRC32 = {crc32test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdCRC32()};");
             Console.WriteLine($"        public const uint CHILDLIST_ENTITY_ID_CRC32 = {crc32test.UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdCRC32()};");
+
+            var (utf8CRC32, unicodeCRC32, utf32CRC32) = crc32test.UsingComplexPropertyWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorCRC32();
+            Console.WriteLine("");
+            Console.WriteLine($"        public const uint CHILD_ENTITY_STRING_UTF8_CRC32 = {utf8CRC32};");
+            Console.WriteLine($"        public const uint CHILD_ENTITY_STRING_UNICODE_CRC32 = {unicodeCRC32};");
+            Console.WriteLine($"        public const uint CHILD_ENTITY_STRING_UTF32_CRC32 = {utf32CRC32};");
+
+            (utf8CRC32, unicodeCRC32, utf32CRC32) = crc32test.UsingComplexPropertyListWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorCRC32();
+
+            Console.WriteLine($"        public const uint CHILDLIST_ENTITY_STRING_UTF8_CRC32 = {utf8CRC32};");
+            Console.WriteLine($"        public const uint CHILDLIST_ENTITY_STRING_UNICODE_CRC32 = {unicodeCRC32};");
+            Console.WriteLine($"        public const uint CHILDLIST_ENTITY_STRING_UTF32_CRC32 = {utf32CRC32};");
+
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
@@ -340,6 +366,19 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"");
             Console.WriteLine($"        public const ushort CHILD_ENTITY_ID_CRC16 = {crc16test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdCRC16()};");
             Console.WriteLine($"        public const ushort CHILDLIST_ENTITY_ID_CRC16 = {crc16test.UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdCRC16()};");
+
+            var (utf8CRC16, unicodeCRC16, utf32CRC16) = crc16test.UsingComplexPropertyWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorCRC16();
+            Console.WriteLine("");
+            Console.WriteLine($"        public const ushort CHILD_ENTITY_STRING_UTF8_CRC16 = {utf8CRC16};");
+            Console.WriteLine($"        public const ushort CHILD_ENTITY_STRING_UNICODE_CRC16 = {unicodeCRC16};");
+            Console.WriteLine($"        public const ushort CHILD_ENTITY_STRING_UTF32_CRC16 = {utf32CRC16};");
+
+            (utf8CRC16, unicodeCRC16, utf32CRC16) = crc16test.UsingComplexPropertyListWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorCRC16();
+
+            Console.WriteLine($"        public const ushort CHILDLIST_ENTITY_STRING_UTF8_CRC16 = {utf8CRC16};");
+            Console.WriteLine($"        public const ushort CHILDLIST_ENTITY_STRING_UNICODE_CRC16 = {unicodeCRC16};");
+            Console.WriteLine($"        public const ushort CHILDLIST_ENTITY_STRING_UTF32_CRC16 = {utf32CRC16};");
+
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
@@ -419,6 +458,19 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] DEFAULT_SHA1 = IncrementalHash.CreateHash(HashAlgorithmName.SHA1).GetHashAndReset();");
             Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA1())} }};");
             Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_ID_SHA1 = new byte[] {{ {string.Join(", ", sha1test.UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdSHA1())} }};");
+
+            var (utf8Hash, unicodeHash, utf32Hash) = sha1test.UsingComplexPropertyWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorSHA1();
+            Console.WriteLine("");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_STRING_UTF8_SHA1 = new byte[] {{ {string.Join(", ", utf8Hash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_STRING_UNICODE_SHA1 = new byte[] {{ {string.Join(", ", unicodeHash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_STRING_UTF32_SHA1 = new byte[] {{ {string.Join(", ", utf32Hash)} }};");
+
+            (utf8Hash, unicodeHash, utf32Hash) = sha1test.UsingComplexPropertyListWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorSHA1();
+
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF8_SHA1 = new byte[] {{ {string.Join(", ", utf8Hash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_STRING_UNICODE_SHA1 = new byte[] {{ {string.Join(", ", unicodeHash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF32_SHA1 = new byte[] {{ {string.Join(", ", utf32Hash)} }};");
+
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
@@ -498,6 +550,19 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] DEFAULT_SHA256 = IncrementalHash.CreateHash(HashAlgorithmName.SHA256).GetHashAndReset();");
             Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA256())} }};");
             Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_ID_SHA256 = new byte[] {{ {string.Join(", ", sha256test.UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdSHA256())} }};");
+
+            (utf8Hash, unicodeHash, utf32Hash) = sha256test.UsingComplexPropertyWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorSHA256();
+            Console.WriteLine("");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_STRING_UTF8_SHA256 = new byte[] {{ {string.Join(", ", utf8Hash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_STRING_UNICODE_SHA256 = new byte[] {{ {string.Join(", ", unicodeHash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_STRING_UTF32_SHA256 = new byte[] {{ {string.Join(", ", utf32Hash)} }};");
+
+            (utf8Hash, unicodeHash, utf32Hash) = sha256test.UsingComplexPropertyListWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorSHA256();
+
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF8_SHA256 = new byte[] {{ {string.Join(", ", utf8Hash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_STRING_UNICODE_SHA256 = new byte[] {{ {string.Join(", ", unicodeHash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF32_SHA256 = new byte[] {{ {string.Join(", ", utf32Hash)} }};");
+
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
@@ -577,6 +642,19 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] DEFAULT_SHA384 = IncrementalHash.CreateHash(HashAlgorithmName.SHA384).GetHashAndReset();");
             Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA384())} }};");
             Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_ID_SHA384 = new byte[] {{ {string.Join(", ", sha384test.UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdSHA384())} }};");
+
+            (utf8Hash, unicodeHash, utf32Hash) = sha384test.UsingComplexPropertyWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorSHA384();
+            Console.WriteLine("");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_STRING_UTF8_SHA384 = new byte[] {{ {string.Join(", ", utf8Hash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_STRING_UNICODE_SHA384 = new byte[] {{ {string.Join(", ", unicodeHash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_STRING_UTF32_SHA384 = new byte[] {{ {string.Join(", ", utf32Hash)} }};");
+
+            (utf8Hash, unicodeHash, utf32Hash) = sha384test.UsingComplexPropertyListWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorSHA384();
+
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF8_SHA384 = new byte[] {{ {string.Join(", ", utf8Hash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_STRING_UNICODE_SHA384 = new byte[] {{ {string.Join(", ", unicodeHash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF32_SHA384 = new byte[] {{ {string.Join(", ", utf32Hash)} }};");
+
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
@@ -656,6 +734,19 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] DEFAULT_SHA512 = IncrementalHash.CreateHash(HashAlgorithmName.SHA512).GetHashAndReset();");
             Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdSHA512())} }};");
             Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_ID_SHA512 = new byte[] {{ {string.Join(", ", sha512test.UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdSHA512())} }};");
+
+            (utf8Hash, unicodeHash, utf32Hash) = sha512test.UsingComplexPropertyWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorSHA512();
+            Console.WriteLine("");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_STRING_UTF8_SHA512 = new byte[] {{ {string.Join(", ", utf8Hash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_STRING_UNICODE_SHA512 = new byte[] {{ {string.Join(", ", unicodeHash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_STRING_UTF32_SHA512 = new byte[] {{ {string.Join(", ", utf32Hash)} }};");
+
+            (utf8Hash, unicodeHash, utf32Hash) = sha512test.UsingComplexPropertyListWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorSHA512();
+
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF8_SHA512 = new byte[] {{ {string.Join(", ", utf8Hash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_STRING_UNICODE_SHA512 = new byte[] {{ {string.Join(", ", unicodeHash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF32_SHA512 = new byte[] {{ {string.Join(", ", utf32Hash)} }};");
+
             Console.WriteLine("        #endregion");
 
             Console.WriteLine("");
@@ -735,6 +826,19 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public static readonly byte[] DEFAULT_MD5 = IncrementalHash.CreateHash(HashAlgorithmName.MD5).GetHashAndReset();");
             Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_ID_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdMD5())} }};");
             Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_ID_MD5 = new byte[] {{ {string.Join(", ", md5test.UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdMD5())} }};");
+
+            (utf8Hash, unicodeHash, utf32Hash) = md5test.UsingComplexPropertyWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorMD5();
+            Console.WriteLine("");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_STRING_UTF8_MD5 = new byte[] {{ {string.Join(", ", utf8Hash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_STRING_UNICODE_MD5 = new byte[] {{ {string.Join(", ", unicodeHash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILD_ENTITY_STRING_UTF32_MD5 = new byte[] {{ {string.Join(", ", utf32Hash)} }};");
+
+            (utf8Hash, unicodeHash, utf32Hash) = md5test.UsingComplexPropertyListWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorMD5();
+
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF8_MD5 = new byte[] {{ {string.Join(", ", utf8Hash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_STRING_UNICODE_MD5 = new byte[] {{ {string.Join(", ", unicodeHash)} }};");
+            Console.WriteLine($"        public static readonly byte[] CHILDLIST_ENTITY_STRING_UTF32_MD5 = new byte[] {{ {string.Join(", ", utf32Hash)} }};");
+
             Console.WriteLine("        #endregion");
         }
     }

@@ -1083,5 +1083,70 @@ namespace FluentHashCalculator.Tests
 
             return (actual, actual3);
         }
+
+        [Fact]
+        public (uint, uint, uint) UsingComplexPropertyWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorCRC32()
+        {
+            // Tests without context inheritance
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
+            calculator.WithEncoding(Encoding.Unicode).Using(e => e.Child).WithCRC32(calc => calc.WithEncoding(Encoding.UTF8).Using(e => e.Name));
+            Expression<Func<EntityWithAllSupportedTypes, Entity>> nullExpression = null;
+            Assert.Throws<ArgumentNullException>(() => calculator.Using(nullExpression, inheritContext: true));
+            var utf8Hash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_STRING_UTF8_CRC32, utf8Hash);
+            calculator.Context.Encoding = Encoding.Unicode;
+            var unicodeHash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_STRING_UTF8_CRC32, unicodeHash);
+            calculator.Context.Encoding = Encoding.UTF32;
+            var utf32Hash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_STRING_UTF8_CRC32, utf32Hash);
+
+            // Tests with context inheritance
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
+            calculator.Using(e => e.Child, inheritContext: true).WithCRC32(calc => calc.Using(e => e.Name));
+            utf8Hash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_STRING_UTF8_CRC32, utf8Hash);
+            calculator.Context.Encoding = Encoding.Unicode;
+            unicodeHash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_STRING_UNICODE_CRC32, unicodeHash);
+            calculator.Context.Encoding = Encoding.UTF32;
+            utf32Hash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_STRING_UTF32_CRC32, utf32Hash);
+
+            return (utf8Hash, unicodeHash, utf32Hash);
+        }
+
+        [Fact]
+        public (uint, uint, uint) UsingComplexPropertyListWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorCRC32()
+        {
+            // Tests without context inheritance
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
+            calculator.WithEncoding(Encoding.Unicode).UsingEach(e => e.ChildList).WithCRC32(calc => calc.WithEncoding(Encoding.UTF8).Using(e => e.Name));
+            Expression<Func<EntityWithAllSupportedTypes, IEnumerable<Entity>>> nullExpression = null;
+            Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression));
+            Assert.Throws<ArgumentNullException>(() => calculator.UsingEach(nullExpression, inheritContext: true));
+            var utf8Hash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILDLIST_ENTITY_STRING_UTF8_CRC32, utf8Hash);
+            calculator.Context.Encoding = Encoding.Unicode;
+            var unicodeHash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILDLIST_ENTITY_STRING_UTF8_CRC32, unicodeHash);
+            calculator.Context.Encoding = Encoding.UTF32;
+            var utf32Hash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILDLIST_ENTITY_STRING_UTF8_CRC32, utf32Hash);
+
+            // Tests with context inheritance
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.CRC32();
+            calculator.UsingEach(e => e.ChildList, inheritContext: true).WithCRC32(calc => calc.Using(e => e.Name));
+            utf8Hash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILDLIST_ENTITY_STRING_UTF8_CRC32, utf8Hash);
+            calculator.Context.Encoding = Encoding.Unicode;
+            unicodeHash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILDLIST_ENTITY_STRING_UNICODE_CRC32, unicodeHash);
+            calculator.Context.Encoding = Encoding.UTF32;
+            utf32Hash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILDLIST_ENTITY_STRING_UTF32_CRC32, utf32Hash);
+
+            return (utf8Hash, unicodeHash, utf32Hash);
+        }
     }
 }

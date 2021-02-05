@@ -1082,5 +1082,65 @@ namespace FluentHashCalculator.Tests
 
             return (actual, actual3);
         }
+
+        [Fact]
+        public (byte[], byte[], byte[]) UsingComplexPropertyWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorMD5()
+        {
+            // Tests without context inheritance
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.MD5();
+            calculator.WithEncoding(Encoding.Unicode).Using(e => e.Child).WithMD5(calc => calc.WithEncoding(Encoding.UTF8).Using(e => e.Name));
+            var utf8Hash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_STRING_UTF8_MD5, utf8Hash);
+            calculator.Context.Encoding = Encoding.Unicode;
+            var unicodeHash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_STRING_UTF8_MD5, unicodeHash);
+            calculator.Context.Encoding = Encoding.UTF32;
+            var utf32Hash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_STRING_UTF8_MD5, utf32Hash);
+
+            // Tests with context inheritance
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.MD5();
+            calculator.Using(e => e.Child, inheritContext: true).WithMD5(calc => calc.Using(e => e.Name));
+            utf8Hash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_STRING_UTF8_MD5, utf8Hash);
+            calculator.Context.Encoding = Encoding.Unicode;
+            unicodeHash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_STRING_UNICODE_MD5, unicodeHash);
+            calculator.Context.Encoding = Encoding.UTF32;
+            utf32Hash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILD_ENTITY_STRING_UTF32_MD5, utf32Hash);
+
+            return (utf8Hash, unicodeHash, utf32Hash);
+        }
+
+        [Fact]
+        public (byte[], byte[], byte[]) UsingComplexPropertyListWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorMD5()
+        {
+            // Tests without context inheritance
+            var calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.MD5();
+            calculator.WithEncoding(Encoding.Unicode).UsingEach(e => e.ChildList).WithMD5(calc => calc.WithEncoding(Encoding.UTF8).Using(e => e.Name));
+            var utf8Hash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILDLIST_ENTITY_STRING_UTF8_MD5, utf8Hash);
+            calculator.Context.Encoding = Encoding.Unicode;
+            var unicodeHash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILDLIST_ENTITY_STRING_UTF8_MD5, unicodeHash);
+            calculator.Context.Encoding = Encoding.UTF32;
+            var utf32Hash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILDLIST_ENTITY_STRING_UTF8_MD5, utf32Hash);
+
+            // Tests with context inheritance
+            calculator = new AbstractHashCalculatorBuilder<EntityWithAllSupportedTypes>.MD5();
+            calculator.UsingEach(e => e.ChildList, inheritContext: true).WithMD5(calc => calc.Using(e => e.Name));
+            utf8Hash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILDLIST_ENTITY_STRING_UTF8_MD5, utf8Hash);
+            calculator.Context.Encoding = Encoding.Unicode;
+            unicodeHash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILDLIST_ENTITY_STRING_UNICODE_MD5, unicodeHash);
+            calculator.Context.Encoding = Encoding.UTF32;
+            utf32Hash = calculator.Compute(new EntityWithAllSupportedTypes());
+            Assert.Equal(Consts.CHILDLIST_ENTITY_STRING_UTF32_MD5, utf32Hash);
+
+            return (utf8Hash, unicodeHash, utf32Hash);
+        }
     }
 }

@@ -15,9 +15,19 @@ namespace FluentHashCalculator
         private readonly Dictionary<int, SerializationContext> contexts
             = new Dictionary<int, SerializationContext>();
 
-        public SerializationContext Context { get; } = new SerializationContext();
+        public SerializationContext Context { get; internal set; } = new SerializationContext();
 
-        public IAbstractHashCalculatorBuilder<T> And => this;
+        public IAbstractHashCalculatorBuilder<T> WithErrorHandling(ErrorHandling errorHandling)
+        {
+            Context.IgnoreErrors = errorHandling == ErrorHandling.Ignore;
+            return this;
+        }
+
+        public IAbstractHashCalculatorBuilder<T> WithEncoding(Encoding encoding)
+        {
+            Context.Encoding = encoding;
+            return this;
+        }
 
         public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, bool>> expression, bool? ignoreError = null)
         {
@@ -177,6 +187,30 @@ namespace FluentHashCalculator
             return this;
         }
 
+        public IAbstractHashCalculatorBuilderComplexType<T, TComplex> Using<TComplex>(Expression<Func<T, TComplex>> expression, bool? ignoreError = null)
+            where TComplex : class
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+
+            return new AbstractHashCalculatorBuilderComplexType<T, TComplex>(this, compiled.CoerceToNonGeneric(), ignoreError, false);
+        }
+
+        public IAbstractHashCalculatorBuilderComplexType<T, TComplex> Using<TComplex>(Expression<Func<T, TComplex>> expression, bool inheritContext, bool? ignoreError = null)
+            where TComplex : class
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+
+            return new AbstractHashCalculatorBuilderComplexType<T, TComplex>(this, compiled.CoerceToNonGeneric(), ignoreError, inheritContext);
+        }
+
         public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<bool>>> expression, bool? ignoreError = null)
         {
             if (expression is null)
@@ -214,18 +248,6 @@ namespace FluentHashCalculator
             if (ignoreError.HasValue)
                 contexts.Add(getters.Count - 1, new SerializationContext { IgnoreErrors = ignoreError.Value });
             return this;
-        }
-
-        public IAbstractHashCalculatorBuilderComplexType<T, TComplex> Using<TComplex>(Expression<Func<T, TComplex>> expression, bool? ignoreError = null)
-            where TComplex : class
-        {
-            if (expression is null)
-                throw new ArgumentNullException(nameof(expression));
-
-            var member = expression.GetMember();
-            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
-
-            return new AbstractHashCalculatorBuilderComplexType<T, TComplex>(this, compiled.CoerceToNonGeneric(), ignoreError);
         }
 
         public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<DateTime?>>> expression, bool? ignoreError = null)
@@ -356,7 +378,19 @@ namespace FluentHashCalculator
             var member = expression.GetMember();
             var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
 
-            return new AbstractHashCalculatorBuilderComplexTypeList<T, TComplex>(this, compiled.CoerceToNonGeneric(), ignoreError);
+            return new AbstractHashCalculatorBuilderComplexTypeList<T, TComplex>(this, compiled.CoerceToNonGeneric(), ignoreError, false);
+        }
+
+        public IAbstractHashCalculatorBuilderComplexType<T, TComplex> UsingEach<TComplex>(Expression<Func<T, IEnumerable<TComplex>>> expression, bool inheritContext, bool? ignoreError = null)
+            where TComplex : class
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            var member = expression.GetMember();
+            var compiled = AccessorCache<T>.GetCachedAccessor(member, expression);
+
+            return new AbstractHashCalculatorBuilderComplexTypeList<T, TComplex>(this, compiled.CoerceToNonGeneric(), ignoreError, inheritContext);
         }
 
         protected IEnumerable<(object, SerializationContext)> ValuesFor(T instance)

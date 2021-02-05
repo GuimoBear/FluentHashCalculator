@@ -10,17 +10,6 @@ namespace FluentHashCalculator.Internal
     {
         public static readonly byte[] Empty = new byte[0];
 
-        internal static void XOR(ReadOnlySpan<byte> source, Span<byte> destination)
-        {
-            var length = GetLength(source, destination);
-            for (int i = 0; i < length; i++)
-                destination[i] = (byte)(source[i] ^ destination[i]);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static int GetLength(ReadOnlySpan<byte> left, ReadOnlySpan<byte> right)
-            => left.Length > right.Length ? right.Length : left.Length;
-
         internal static IEnumerable<byte[]> From(object value, SerializationContext context, bool supressException = false)
         {
             if (value is bool boolValue)

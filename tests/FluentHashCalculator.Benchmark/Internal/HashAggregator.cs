@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 
 namespace FluentHashCalculator.Internal
@@ -48,7 +49,7 @@ namespace FluentHashCalculator.Internal
             }
 
             public void Append(byte[] bytes)
-                => Bytes.XOR(algorithm.ComputeHash(bytes), container.Instance);
+                => XOR(algorithm.ComputeHash(bytes), container.Instance);
 
             public byte[] GetAndReset()
             {
@@ -64,6 +65,17 @@ namespace FluentHashCalculator.Internal
 
             public void Dispose()
                 => container.Dispose();
+            private static void XOR(ReadOnlySpan<byte> source, Span<byte> destination)
+            {
+                var length = GetLength(source, destination);
+                for (int i = 0; i < length; i++)
+                    destination[i] = (byte)(source[i] ^ destination[i]);
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            private static int GetLength(ReadOnlySpan<byte> left, ReadOnlySpan<byte> right)
+                => left.Length > right.Length ? right.Length : left.Length;
+
         }
     }
 }
