@@ -1,5 +1,4 @@
 ﻿using FluentHashCalculator.Internal;
-using System.Security.Cryptography;
 
 namespace FluentHashCalculator
 {
@@ -8,22 +7,19 @@ namespace FluentHashCalculator
     {
         public class SHA1 : AbstractHashCalculatorBuilder<T>, IAbstractHashCalculator<T, byte[]>
         {
-            private static readonly ObjectPool<IncrementalHash> pool
-                = new ObjectPool<IncrementalHash>(() => IncrementalHash.CreateHash(HashAlgorithmName.SHA1));
+            private static readonly System.Security.Cryptography.HashAlgorithm hash
+                = System.Security.Cryptography.SHA1.Create();
 
             public byte[] Compute(T instance)
             {
-                if (instance is null)
+                if (ReferenceEquals(instance, null))
                     return Bytes.Empty;
-                using (var container = pool.Acquire())
+                using (var mem = new System.IO.MemoryStream())
                 {
                     foreach ((var value, var context) in ValuesFor(instance))
-                        if (value is byte[] bytes)
-                            container.Instance.AppendData(bytes);
-                        else
-                            foreach (var item in Bytes.From(value, context))
-                                container.Instance.AppendData(item);
-                    return container.Instance.GetHashAndReset();
+                        foreach (var item in Bytes.From(value, context))
+                            mem.Write(item);
+                    return hash.ComputeHash(mem.ToArray());
                 }
             }
         }

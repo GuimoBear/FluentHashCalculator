@@ -1,42 +1,24 @@
 ﻿using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Jobs;
 
 namespace FluentHashCalculator.Benchmark
 {
-    [SimpleJob(RuntimeMoniker.Net50)]
-    [SimpleJob(RuntimeMoniker.NetCoreApp31)]
-    [SimpleJob(RuntimeMoniker.Net48)]
-    [MarkdownExporter]
-    [MemoryDiagnoser]
-    public class SHA1FluentHashCalculatorWithoutPoolBenchmark
+    [BenchmarkCategory("Hash Algorithm")]
+    public abstract class BenchmarkBase<THashType>
     {
-        private Entity entity;
-        private IAbstractHashCalculator<Entity, byte[]> calculator;
+        protected Entity entity;
+        protected IAbstractHashCalculator<Entity, THashType> calculator;
 
-        [GlobalSetup]
-        public void GlobalSetup()
+        public virtual void GlobalSetup()
         {
-            this.calculator = create();
             entity = new Entity();
+            calculator = Create();
         }
 
-        [Benchmark]
-        public byte[] Compute()
-            => calculator.Compute(entity);
+        protected abstract IAbstractHashCalculator<Entity, THashType> Create();
 
-        /*
-        [Benchmark]
-        public byte[] CreateAndCompute()
+        protected void Configure(IAbstractHashCalculatorBuilder<Entity> builder)
         {
-            var calc = create();
-            return calc.Compute(entity);
-        }
-        */
-
-        private IAbstractHashCalculator<Entity, byte[]> create()
-        {
-            var calculator = new Calculators.AbstractHashCalculatorBuilder<Entity>.SHA1();
-            calculator.Using(e => e.BoolProperty)
+            builder.Using(e => e.BoolProperty)
                 .UsingEach(e => e.BoolArrayProperty)
                 .Using(e => e.NullableBoolProperty)
                 .UsingEach(e => e.NullableBoolArrayProperty)
@@ -102,8 +84,6 @@ namespace FluentHashCalculator.Benchmark
                 .UsingEach(e => e.GuidArrayProperty)
                 .Using(e => e.NullableGuidProperty)
                 .UsingEach(e => e.NullableGuidArrayProperty);
-
-            return calculator;
         }
     }
 }

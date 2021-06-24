@@ -11,7 +11,7 @@ namespace FluentHashCalculator
     {
         public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, byte>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -24,7 +24,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, byte?>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -37,7 +37,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, sbyte>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -50,7 +50,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, sbyte?>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -63,7 +63,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, short>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -76,7 +76,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, short?>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -89,7 +89,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, ushort>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -102,7 +102,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, ushort?>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -115,7 +115,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, int>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -128,7 +128,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, int?>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -141,7 +141,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, uint>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -154,7 +154,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, uint?>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -167,7 +167,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, long>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -180,7 +180,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, long?>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -193,7 +193,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, ulong>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -206,7 +206,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> Using(Expression<Func<T, ulong?>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -219,7 +219,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<byte>>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -232,7 +232,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<byte?>>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -245,7 +245,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<sbyte>>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -258,7 +258,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<sbyte?>>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -271,7 +271,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<short>>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -284,7 +284,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<short?>>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -297,7 +297,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ushort>>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -310,7 +310,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ushort?>>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -323,7 +323,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<int>>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -336,7 +336,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<int?>>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -349,7 +349,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<uint>>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -362,7 +362,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<uint?>>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -375,7 +375,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<long>>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -388,7 +388,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<long?>>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -401,7 +401,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ulong>>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();
@@ -414,7 +414,7 @@ namespace FluentHashCalculator
 
         public IAbstractHashCalculatorBuilder<T> UsingEach(Expression<Func<T, IEnumerable<ulong?>>> expression, bool? ignoreError = null)
         {
-            if (expression is null)
+            if (ReferenceEquals(expression, null))
                 throw new ArgumentNullException(nameof(expression));
 
             var member = expression.GetMember();

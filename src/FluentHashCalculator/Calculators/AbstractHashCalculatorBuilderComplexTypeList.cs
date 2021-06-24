@@ -24,9 +24,24 @@ namespace FluentHashCalculator
         private IEnumerable<TComplex> GetList(T instance)
         {
             var obj = accessor(instance);
-            if (obj is null)
+            if (ReferenceEquals(obj, null))
                 throw new NullReferenceException();
             return obj as IEnumerable<TComplex>;
+        }
+
+        public IAbstractHashCalculatorBuilder<T> WithHashCode(Action<IAbstractHashCalculatorBuilder<TComplex>> configurer)
+        {
+            var calculator = new AbstractHashCalculatorBuilder<TComplex>.HashCode();
+            if (inheritContext)
+                calculator.Context = parent.Context;
+            else
+            {
+                calculator.Context.IgnoreErrors = parent.Context.IgnoreErrors;
+                calculator.Context.Encoding = parent.Context.Encoding;
+            }
+            configurer(calculator);
+            parent.UsingEach(instance => GetList(instance).SelectMany(prop => BitConverter.GetBytes(calculator.Compute(prop))), ignoreError);
+            return parent;
         }
 
         public IAbstractHashCalculatorBuilder<T> WithCRC16(Action<IAbstractHashCalculatorBuilder<TComplex>> configurer)

@@ -19,6 +19,21 @@ namespace FluentHashCalculator
             this.inheritContext = inheritContext;
         }
 
+        public IAbstractHashCalculatorBuilder<T> WithHashCode(Action<IAbstractHashCalculatorBuilder<TComplex>> configurer)
+        {
+            var calculator = new AbstractHashCalculatorBuilder<TComplex>.HashCode();
+            if (inheritContext)
+                calculator.Context = parent.Context;
+            else
+            {
+                calculator.Context.IgnoreErrors = parent.Context.IgnoreErrors;
+                calculator.Context.Encoding = parent.Context.Encoding;
+            }
+            configurer(calculator);
+            parent.UsingEach(instance => BitConverter.GetBytes(calculator.Compute(accessor(instance) as TComplex)), ignoreError);
+            return parent;
+        }
+
         public IAbstractHashCalculatorBuilder<T> WithCRC16(Action<IAbstractHashCalculatorBuilder<TComplex>> configurer)
         {
             var calculator = new AbstractHashCalculatorBuilder<TComplex>.CRC16();

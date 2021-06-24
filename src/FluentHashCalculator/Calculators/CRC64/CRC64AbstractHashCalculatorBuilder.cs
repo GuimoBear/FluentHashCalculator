@@ -9,7 +9,7 @@ namespace FluentHashCalculator
         {
             public ulong Compute(T instance)
             {
-                if (instance is null)
+                if (ReferenceEquals(instance, null))
                     return ulong.MinValue;
                 ulong crc = 0;
                 foreach ((var value, var context) in ValuesFor(instance))

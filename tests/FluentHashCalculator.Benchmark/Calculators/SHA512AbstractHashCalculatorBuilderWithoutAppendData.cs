@@ -14,7 +14,7 @@ namespace FluentHashCalculator.Benchmark.Calculators
 
             public byte[] Compute(T instance)
             {
-                if (instance is null)
+                if (ReferenceEquals(instance, null))
                     return Bytes.Empty;
                 using (var mem = new MemoryStream())
                 {

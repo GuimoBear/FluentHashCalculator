@@ -103,7 +103,7 @@ namespace FluentHashCalculator.Internal
                     yield return item;
                 yield break;
             }
-            else if (value is null || supressException)
+            else if (ReferenceEquals(value, null) || supressException)
                 yield break;
             else 
                 throw new TypeNotSupportedException();

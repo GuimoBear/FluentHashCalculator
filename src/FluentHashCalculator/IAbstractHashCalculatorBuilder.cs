@@ -96,6 +96,7 @@ namespace FluentHashCalculator
         where T : class
         where TComplex : class
     {
+        IAbstractHashCalculatorBuilder<T> WithHashCode(Action<IAbstractHashCalculatorBuilder<TComplex>> configurer);
         IAbstractHashCalculatorBuilder<T> WithCRC16(Action<IAbstractHashCalculatorBuilder<TComplex>> configurer);
         IAbstractHashCalculatorBuilder<T> WithCRC32(Action<IAbstractHashCalculatorBuilder<TComplex>> configurer);
         IAbstractHashCalculatorBuilder<T> WithCRC64(Action<IAbstractHashCalculatorBuilder<TComplex>> configurer);

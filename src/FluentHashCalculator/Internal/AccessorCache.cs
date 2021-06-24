@@ -1,5 +1,6 @@
 ﻿namespace FluentHashCalculator.Internal
 {
+    using FluentHashCalculator.Internal.Utils;
     using System;
     using System.Collections.Concurrent;
     using System.Linq.Expressions;
@@ -32,37 +33,29 @@
 			return (Func<T, TProperty>)_cache.GetOrAdd(key, k => expression.Compile());
 		}
 
-		internal class Key
+		internal class Key : IEquatable<Key>
 		{
 			private readonly MemberInfo _memberInfo;
-			private readonly string _expressionDebugView;
+			private readonly int _hashCode;
 
 			public Key(MemberInfo member, Expression expression)
 			{
 				_memberInfo = member;
-				_expressionDebugView = expression.ToString();
+				_hashCode = ExpressionEqualityComparer.Instance.GetHashCode(expression);
 			}
 
-			protected bool Equals(Key other)
+			public bool Equals(Key other)
 			{
-				return Equals(_memberInfo, other._memberInfo) && string.Equals(_expressionDebugView, other._expressionDebugView);
-			}
-
-			public override bool Equals(object obj)
-			{
-				if (ReferenceEquals(null, obj)) return false;
-				if (ReferenceEquals(this, obj)) return true;
-				if (obj.GetType() != GetType()) return false;
-				return Equals((Key)obj);
+				return !ReferenceEquals(other, null) && Equals(_memberInfo, other._memberInfo) && _hashCode == other._hashCode;
 			}
 
 			public override int GetHashCode()
 			{
 				unchecked
 				{
-					return ((_memberInfo != null ? _memberInfo.GetHashCode() : 0) * 397) ^ (_expressionDebugView != null ? _expressionDebugView.GetHashCode() : 0);
+					return HashCode.Combine(_memberInfo.GetHashCode(), _hashCode);
 				}
 			}
-		}
+        }
 	}
 }

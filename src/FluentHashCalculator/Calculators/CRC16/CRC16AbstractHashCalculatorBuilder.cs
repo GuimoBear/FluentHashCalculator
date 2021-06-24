@@ -9,7 +9,7 @@ namespace FluentHashCalculator
         {
             public ushort Compute(T instance)
             {
-                if (instance is null)
+                if (ReferenceEquals(instance, null))
                     return ushort.MinValue;
                 var crc = ushort.MinValue;
                 foreach ((var value, var context) in ValuesFor(instance))

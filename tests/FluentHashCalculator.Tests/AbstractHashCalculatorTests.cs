@@ -112,6 +112,39 @@ namespace FluentHashCalculator.Tests
         }
 
         [Fact]
+        public void UsingAnValidInstanceWhenHashCodeComputeCallThenNotThrowAnyException()
+        {
+            var calculator = new HashCodeEntityAbstractHashCalculator();
+
+            var instance = new Entity
+            {
+                Id = 2,
+                Birthday = new DateTime(2000, 11, 3),
+                Name = "Test"
+            };
+
+            calculator.Compute(instance);
+
+            calculator.Compute(null)
+                .Should().Be(ushort.MinValue);
+
+            calculator = new HashCodeEntityAbstractHashCalculator(ignoreErrors: false);
+
+            Assert.Throws<NullReferenceException>(() => calculator.Compute(instance));
+
+            instance = new Entity
+            {
+                Id = 2,
+                Birthday = new DateTime(2000, 11, 3),
+                Name = "Test",
+                Another = new AnotherEntity(),
+                AnotherList = new List<AnotherEntity> { new AnotherEntity() }
+            };
+
+            calculator.Compute(instance);
+        }
+
+        [Fact]
         public void UsingAnValidInstanceWhenSHA1ComputeCallThenNotThrowAnyException()
         {
             var calculator = new SHA1EntityAbstractHashCalculator();

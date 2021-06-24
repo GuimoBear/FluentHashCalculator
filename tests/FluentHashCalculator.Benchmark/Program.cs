@@ -1,11 +1,9 @@
 ﻿using BenchmarkDotNet.Running;
-using FluentHashCalculator.Tests;
 using System;
-using System.Security.Cryptography;
 
 namespace FluentHashCalculator.Benchmark
 {
-    class Program
+    public class Program
     {
         public class Person
         {
@@ -27,57 +25,41 @@ namespace FluentHashCalculator.Benchmark
             }
         }
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            /*
-            var crc32Calculator = new PersonHashCalculator();
+            //var crc32Calculator = new PersonHashCalculator();
 
-            var person = new Person
-            {
-                Name = "John Krasinski", 
-                Birthday = new DateTime(1979, 10, 20)
-            };
+            //var person = new Person
+            //{
+            //    Name = "John Krasinski",
+            //    Birthday = new DateTime(1979, 10, 20)
+            //};
 
-            var crc32 = crc32Calculator.Compute(person);
+            //var crc32 = crc32Calculator.Compute(person);
 
-            // Print 1158920806
-            Console.WriteLine(crc32);
-            */
+            //// Print 1158920806
+            //Console.WriteLine(crc32);
 
-            /*
-            // BenchmarkRunner.Run<CRC16FluentHashCalculatorBenchmark>();
-            // BenchmarkRunner.Run<CRC32FluentHashCalculatorBenchmark>();
-            // BenchmarkRunner.Run<CRC64FluentHashCalculatorBenchmark>();
-            BenchmarkRunner.Run<SHA1FluentHashCalculatorBenchmark>();
-            BenchmarkRunner.Run<SHA1FluentHashCalculatorWithoutPoolBenchmark>();
-            BenchmarkRunner.Run<SHA1FluentHashCalculatorWithoutPoolAndAppendDataBenchmark>();
-            BenchmarkRunner.Run<SHA256FluentHashCalculatorBenchmark>();
-            BenchmarkRunner.Run<SHA256FluentHashCalculatorWithoutPoolBenchmark>();
-            BenchmarkRunner.Run<SHA256FluentHashCalculatorWithoutPoolAndAppendDataBenchmark>();
-            BenchmarkRunner.Run<SHA384FluentHashCalculatorBenchmark>();
-            BenchmarkRunner.Run<SHA384FluentHashCalculatorWithoutPoolBenchmark>();
-            BenchmarkRunner.Run<SHA384FluentHashCalculatorWithoutPoolAndAppendDataBenchmark>();
-            BenchmarkRunner.Run<SHA512FluentHashCalculatorBenchmark>();
-            BenchmarkRunner.Run<SHA512FluentHashCalculatorWithoutPoolBenchmark>();
-            BenchmarkRunner.Run<SHA512FluentHashCalculatorWithoutPoolAndAppendDataBenchmark>();
-            */
-            PrintResults();
+            new BenchmarkSwitcher(typeof(Program).Assembly).Run(args, new Config());
+            //PrintResults();
         }
 
         private static void PrintResults()
         {
-            var crc64test = new CRC64FluentHashCalculatorTests();
-            var crc32test = new CRC32FluentHashCalculatorTests();
-            var crc16test = new CRC16FluentHashCalculatorTests();
-            var sha1test = new SHA1FluentHashCalculatorTests();
-            var sha256test = new SHA256FluentHashCalculatorTests();
-            var sha384test = new SHA384FluentHashCalculatorTests();
-            var sha512test = new SHA512FluentHashCalculatorTests();
-            var md5test = new MD5FluentHashCalculatorTests();
+            var crc64test = new Tests.CRC64FluentHashCalculatorTests();
+            var crc32test = new Tests.CRC32FluentHashCalculatorTests();
+            var crc16test = new Tests.CRC16FluentHashCalculatorTests();
+            var hashCodetest = new Tests.HashCodeFluentHashCalculatorTests();
+            var sha1test = new Tests.SHA1FluentHashCalculatorTests();
+            var sha256test = new Tests.SHA256FluentHashCalculatorTests();
+            var sha384test = new Tests.SHA384FluentHashCalculatorTests();
+            var sha512test = new Tests.SHA512FluentHashCalculatorTests();
+            var md5test = new Tests.MD5FluentHashCalculatorTests();
 
             var (crc64With, crc64Without) = crc64test.UsingAllPropertiesInCalculatorWhenComputeThenReturnCRC64();
             var (crc32With, crc32Without) = crc32test.UsingAllPropertiesInCalculatorWhenComputeThenReturnCRC32();
             var (crc16With, crc16Without) = crc16test.UsingAllPropertiesInCalculatorWhenComputeThenReturnCRC16();
+            var (hashCodeWith, hashCodeWithout) = hashCodetest.UsingAllPropertiesInCalculatorWhenComputeThenReturnHashCode();
             var (sha1With, sha1Without) = sha1test.UsingAllPropertiesInCalculatorWhenComputeThenReturnSHA1();
             var (sha256With, sha256Without) = sha256test.UsingAllPropertiesInCalculatorWhenComputeThenReturnSHA256();
             var (sha384With, sha384Without) = sha384test.UsingAllPropertiesInCalculatorWhenComputeThenReturnSHA384();
@@ -93,6 +75,9 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"");
             Console.WriteLine($"        public const ushort ENTITY_WITH_ALL_SUPPORTED_TYPES_CRC16 = {crc16With};");
             Console.WriteLine($"        public const ushort ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_CRC16 = {crc16Without};");
+            Console.WriteLine($"");
+            Console.WriteLine($"        public const int ENTITY_WITH_ALL_SUPPORTED_TYPES_HASH_CODE = {hashCodeWith};");
+            Console.WriteLine($"        public const int ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_HASH_CODE = {hashCodeWithout};");
             Console.WriteLine($"");
             Console.WriteLine($"        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPES_SHA1 = new byte[] {{ {string.Join(", ", sha1With)} }};");
             Console.WriteLine($"        public static readonly byte[] ENTITY_WITH_ALL_SUPPORTED_TYPESBUT_WITH_NO_UINT_PROPERTY_SHA1 = new byte[] {{ {string.Join(", ", sha1Without)} }};");
@@ -378,6 +363,97 @@ namespace FluentHashCalculator.Benchmark
             Console.WriteLine($"        public const ushort CHILDLIST_ENTITY_STRING_UTF8_CRC16 = {utf8CRC16};");
             Console.WriteLine($"        public const ushort CHILDLIST_ENTITY_STRING_UNICODE_CRC16 = {unicodeCRC16};");
             Console.WriteLine($"        public const ushort CHILDLIST_ENTITY_STRING_UTF32_CRC16 = {utf32CRC16};");
+
+            Console.WriteLine("        #endregion");
+
+            Console.WriteLine("");
+
+            Console.WriteLine("        #region Valores dos HashCode dos valores padrão");
+            Console.WriteLine($"        public const int BOOL_HASH_CODE = {hashCodetest.UsingBoolPropertyInCalculatorWhenComputeThenReturnBoolHashCode()};");
+            Console.WriteLine($"        public const int BOOL_ARRAY_HASH_CODE = {hashCodetest.UsingBoolArrayPropertyInCalculatorWhenComputeThenReturnBoolArrayHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_BOOL_HASH_CODE = {hashCodetest.UsingNullableBoolPropertyInCalculatorWhenComputeThenReturnNullableBoolHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_BOOL_ARRAY_HASH_CODE = {hashCodetest.UsingNullableBoolArrayPropertyInCalculatorWhenComputeThenReturnNullableBoolArrayHashCode()};");
+            Console.WriteLine($"        public const int BYTE_HASH_CODE = {hashCodetest.UsingBytePropertyInCalculatorWhenComputeThenReturnByteHashCode()};");
+            Console.WriteLine($"        public const int BYTE_ARRAY_HASH_CODE = {hashCodetest.UsingByteArrayPropertyInCalculatorWhenComputeThenReturnByteArrayHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_BYTE_HASH_CODE = {hashCodetest.UsingNullableBytePropertyInCalculatorWhenComputeThenReturnNullableByteHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_BYTE_ARRAY_HASH_CODE = {hashCodetest.UsingNullableByteArrayPropertyInCalculatorWhenComputeThenReturnNullableByteArrayHashCode()};");
+            Console.WriteLine($"        public const int SBYTE_HASH_CODE = {hashCodetest.UsingSbytePropertyInCalculatorWhenComputeThenReturnSbyteHashCode()};");
+            Console.WriteLine($"        public const int SBYTE_ARRAY_HASH_CODE = {hashCodetest.UsingSbyteArrayPropertyInCalculatorWhenComputeThenReturnSbyteArrayHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_SBYTE_HASH_CODE = {hashCodetest.UsingNullableSbytePropertyInCalculatorWhenComputeThenReturnNullableSbyteHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_SBYTE_ARRAY_HASH_CODE = {hashCodetest.UsingNullableSbyteArrayPropertyInCalculatorWhenComputeThenReturnNullableSbyteArrayHashCode()};");
+            Console.WriteLine($"        public const int SHORT_HASH_CODE = {hashCodetest.UsingShortPropertyInCalculatorWhenComputeThenReturnShortHashCode()};");
+            Console.WriteLine($"        public const int SHORT_ARRAY_HASH_CODE = {hashCodetest.UsingShortArrayPropertyInCalculatorWhenComputeThenReturnShortArrayHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_SHORT_HASH_CODE = {hashCodetest.UsingNullableShortPropertyInCalculatorWhenComputeThenReturnNullableShortHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_SHORT_ARRAY_HASH_CODE = {hashCodetest.UsingNullableShortArrayPropertyInCalculatorWhenComputeThenReturnNullableShortArrayHashCode()};");
+            Console.WriteLine($"        public const int USHORT_HASH_CODE = {hashCodetest.UsingUshortPropertyInCalculatorWhenComputeThenReturnUshortHashCode()};");
+            Console.WriteLine($"        public const int USHORT_ARRAY_HASH_CODE = {hashCodetest.UsingUshortArrayPropertyInCalculatorWhenComputeThenReturnUshortArrayHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_USHORT_HASH_CODE = {hashCodetest.UsingNullableUshortPropertyInCalculatorWhenComputeThenReturnNullableUshortHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_USHORT_ARRAY_HASH_CODE = {hashCodetest.UsingNullableUshortArrayPropertyInCalculatorWhenComputeThenReturnNullableUshortArrayHashCode()};");
+            Console.WriteLine($"        public const int INT_HASH_CODE = {hashCodetest.UsingIntPropertyInCalculatorWhenComputeThenReturnIntHashCode()};");
+            Console.WriteLine($"        public const int INT_ARRAY_HASH_CODE = {hashCodetest.UsingIntArrayPropertyInCalculatorWhenComputeThenReturnIntArrayHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_INT_HASH_CODE = {hashCodetest.UsingNullableIntPropertyInCalculatorWhenComputeThenReturnNullableIntHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_INT_ARRAY_HASH_CODE = {hashCodetest.UsingNullableIntArrayPropertyInCalculatorWhenComputeThenReturnNullableIntArrayHashCode()};");
+            Console.WriteLine($"        public const int UINT_HASH_CODE = {hashCodetest.UsingUintPropertyInCalculatorWhenComputeThenReturnUintHashCode()};");
+            Console.WriteLine($"        public const int UINT_ARRAY_HASH_CODE = {hashCodetest.UsingUintArrayPropertyInCalculatorWhenComputeThenReturnUintArrayHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_UINT_HASH_CODE = {hashCodetest.UsingNullableUintPropertyInCalculatorWhenComputeThenReturnNullableUintHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_UINT_ARRAY_HASH_CODE = {hashCodetest.UsingNullableUintArrayPropertyInCalculatorWhenComputeThenReturnNullableUintArrayHashCode()};");
+            Console.WriteLine($"        public const int LONG_HASH_CODE = {hashCodetest.UsingLongPropertyInCalculatorWhenComputeThenReturnLongHashCode()};");
+            Console.WriteLine($"        public const int LONG_ARRAY_HASH_CODE = {hashCodetest.UsingLongArrayPropertyInCalculatorWhenComputeThenReturnLongArrayHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_LONG_HASH_CODE = {hashCodetest.UsingNullableLongPropertyInCalculatorWhenComputeThenReturnNullableLongHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_LONG_ARRAY_HASH_CODE = {hashCodetest.UsingNullableLongArrayPropertyInCalculatorWhenComputeThenReturnNullableLongArrayHashCode()};");
+            Console.WriteLine($"        public const int ULONG_HASH_CODE = {hashCodetest.UsingUlongPropertyInCalculatorWhenComputeThenReturnUlongHashCode()};");
+            Console.WriteLine($"        public const int ULONG_ARRAY_HASH_CODE = {hashCodetest.UsingUlongArrayPropertyInCalculatorWhenComputeThenReturnUlongArrayHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_ULONG_HASH_CODE = {hashCodetest.UsingNullableUlongPropertyInCalculatorWhenComputeThenReturnNullableUlongHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_ULONG_ARRAY_HASH_CODE = {hashCodetest.UsingNullableUlongArrayPropertyInCalculatorWhenComputeThenReturnNullableUlongArrayHashCode()};");
+            Console.WriteLine($"        public const int FLOAT_HASH_CODE = {hashCodetest.UsingFloatPropertyInCalculatorWhenComputeThenReturnFloatHashCode()};");
+            Console.WriteLine($"        public const int FLOAT_ARRAY_HASH_CODE = {hashCodetest.UsingFloatArrayPropertyInCalculatorWhenComputeThenReturnFloatArrayHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_FLOAT_HASH_CODE = {hashCodetest.UsingNullableFloatPropertyInCalculatorWhenComputeThenReturnNullableFloatHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_FLOAT_ARRAY_HASH_CODE = {hashCodetest.UsingNullableFloatArrayPropertyInCalculatorWhenComputeThenReturnNullableFloatArrayHashCode()};");
+            Console.WriteLine($"        public const int DOUBLE_HASH_CODE = {hashCodetest.UsingDoublePropertyInCalculatorWhenComputeThenReturnDoubleHashCode()};");
+            Console.WriteLine($"        public const int DOUBLE_ARRAY_HASH_CODE = {hashCodetest.UsingDoubleArrayPropertyInCalculatorWhenComputeThenReturnDoubleArrayHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_DOUBLE_HASH_CODE = {hashCodetest.UsingNullableDoublePropertyInCalculatorWhenComputeThenReturnNullableDoubleHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_DOUBLE_ARRAY_HASH_CODE = {hashCodetest.UsingNullableDoubleArrayPropertyInCalculatorWhenComputeThenReturnNullableDoubleArrayHashCode()};");
+            Console.WriteLine($"        public const int DECIMAL_HASH_CODE = {hashCodetest.UsingDecimalPropertyInCalculatorWhenComputeThenReturnDecimalHashCode()};");
+            Console.WriteLine($"        public const int DECIMAL_ARRAY_HASH_CODE = {hashCodetest.UsingDecimalArrayPropertyInCalculatorWhenComputeThenReturnDecimalArrayHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_DECIMAL_HASH_CODE = {hashCodetest.UsingNullableDecimalPropertyInCalculatorWhenComputeThenReturnNullableDecimalHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_DECIMAL_ARRAY_HASH_CODE = {hashCodetest.UsingNullableDecimalArrayPropertyInCalculatorWhenComputeThenReturnNullableDecimalArrayHashCode()};");
+            Console.WriteLine($"        public const int DATETIME_HASH_CODE = {hashCodetest.UsingDateTimePropertyInCalculatorWhenComputeThenReturnDateTimeHashCode()};");
+            Console.WriteLine($"        public const int DATETIME_ARRAY_HASH_CODE = {hashCodetest.UsingDateTimeArrayPropertyInCalculatorWhenComputeThenReturnDateTimeArrayHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_DATETIME_HASH_CODE = {hashCodetest.UsingNullableDateTimePropertyInCalculatorWhenComputeThenReturnNullableDateTimeHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_DATETIME_ARRAY_HASH_CODE = {hashCodetest.UsingNullableDateTimeArrayPropertyInCalculatorWhenComputeThenReturnNullableDateTimeArrayHashCode()};");
+            Console.WriteLine($"        public const int TIMESPAN_HASH_CODE = {hashCodetest.UsingTimeSpanPropertyInCalculatorWhenComputeThenReturnTimeSpanHashCode()};");
+            Console.WriteLine($"        public const int TIMESPAN_ARRAY_HASH_CODE = {hashCodetest.UsingTimeSpanArrayPropertyInCalculatorWhenComputeThenReturnTimeSpanArrayHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_TIMESPAN_HASH_CODE = {hashCodetest.UsingNullableTimeSpanPropertyInCalculatorWhenComputeThenReturnNullableTimeSpanHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_TIMESPAN_ARRAY_HASH_CODE = {hashCodetest.UsingNullableTimeSpanArrayPropertyInCalculatorWhenComputeThenReturnNullableTimeSpanArrayHashCode()};");
+            Console.WriteLine($"        public const int CHAR_HASH_CODE = {hashCodetest.UsingCharPropertyInCalculatorWhenComputeThenReturnCharHashCode()};");
+            Console.WriteLine($"        public const int CHAR_ARRAY_HASH_CODE = {hashCodetest.UsingCharArrayPropertyInCalculatorWhenComputeThenReturnCharArrayHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_CHAR_HASH_CODE = {hashCodetest.UsingNullableCharPropertyInCalculatorWhenComputeThenReturnNullableCharHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_CHAR_ARRAY_HASH_CODE = {hashCodetest.UsingNullableCharArrayPropertyInCalculatorWhenComputeThenReturnNullableCharArrayHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_STRING_UTF8_HASH_CODE = {hashCodetest.UsingNullableStringPropertyInCalculatorWhenComputeThenReturnNullableStringHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_STRING_UNICODE_HASH_CODE = {hashCodetest.UsingNullableStringPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_STRING_UTF32_HASH_CODE = {hashCodetest.UsingNullableStringPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_STRING_ARRAY_UTF8_HASH_CODE = {hashCodetest.UsingNullableStringArrayPropertyInCalculatorWhenComputeThenReturnNullableStringArrayHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_STRING_ARRAY_UNICODE_HASH_CODE = {hashCodetest.UsingNullableStringArrayPropertyAndUnicodeEncodingInCalculatorWhenComputeThenReturnNullableStringArrayHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_STRING_ARRAY_UTF32_HASH_CODE = {hashCodetest.UsingNullableStringArrayPropertyAndUTF32EncodingInCalculatorWhenComputeThenReturnNullableStringArrayHashCode()};");
+            Console.WriteLine($"        public const int GUID_HASH_CODE = {hashCodetest.UsingGuidPropertyInCalculatorWhenComputeThenReturnGuidHashCode()};");
+            Console.WriteLine($"        public const int GUID_ARRAY_HASH_CODE = {hashCodetest.UsingGuidArrayPropertyInCalculatorWhenComputeThenReturnGuidArrayHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_GUID_HASH_CODE = {hashCodetest.UsingNullableGuidPropertyInCalculatorWhenComputeThenReturnNullableGuidHashCode()};");
+            Console.WriteLine($"        public const int NULLABLE_GUID_ARRAY_HASH_CODE = {hashCodetest.UsingNullableGuidArrayPropertyInCalculatorWhenComputeThenReturnNullableGuidArrayHashCode()};");
+            Console.WriteLine($"");
+            Console.WriteLine($"        public const int CHILD_ENTITY_ID_HASH_CODE = {hashCodetest.UsingComplexPropertyInCalculatorWhenComputeThenReturnEntityIdHashCode()};");
+            Console.WriteLine($"        public const int CHILDLIST_ENTITY_ID_HASH_CODE = {hashCodetest.UsingComplexListPropertyInCalculatorWhenComputeThenReturnEntityIdHashCode()};");
+
+            var (utf8HashCode, unicodeHashCode, utf32HashCode) = hashCodetest.UsingComplexPropertyWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorHashCode();
+            Console.WriteLine("");
+            Console.WriteLine($"        public const int CHILD_ENTITY_STRING_UTF8_HASH_CODE = {utf8HashCode};");
+            Console.WriteLine($"        public const int CHILD_ENTITY_STRING_UNICODE_HASH_CODE = {unicodeHashCode};");
+            Console.WriteLine($"        public const int CHILD_ENTITY_STRING_UTF32_HASH_CODE = {utf32HashCode};");
+
+            (utf8HashCode, unicodeHashCode, utf32HashCode) = hashCodetest.UsingComplexPropertyListWithStringInCalculatorWhenComputeThenReturnEntityIdWithSameEncodingToParentCalculatorHashCode();
+
+            Console.WriteLine($"        public const int CHILDLIST_ENTITY_STRING_UTF8_HASH_CODE = {utf8HashCode};");
+            Console.WriteLine($"        public const int CHILDLIST_ENTITY_STRING_UNICODE_HASH_CODE = {unicodeHashCode};");
+            Console.WriteLine($"        public const int CHILDLIST_ENTITY_STRING_UTF32_HASH_CODE = {utf32HashCode};");
 
             Console.WriteLine("        #endregion");
 

@@ -73,7 +73,21 @@ namespace FluentHashCalculator.Benchmark
         public Guid? NullableGuidProperty { get; } = Consts.NULLABLE_GUID_DEFAULT_VALUE;
         public IEnumerable<Guid?> NullableGuidArrayProperty { get; } = Consts.NULLABLE_GUID_ARRAY_DEFAULT_VALUE;
 
-        public Entity Child { get; } = new Entity();
-        public IEnumerable<Entity> ChildList { get; } = new List<Entity> { new Entity() };
+        public Entity Child { get; }
+        public IEnumerable<Entity> ChildList { get; }
+
+        public Entity() { }
+        private Entity(bool createChildInstance)
+        {
+            if (createChildInstance)
+            {
+                Child = new Entity(false);
+                ChildList = new List<Entity> { new Entity(false) };
+            }
+            else
+            {
+                ChildList = new List<Entity> {  };
+            }
+        }
     }
 }
